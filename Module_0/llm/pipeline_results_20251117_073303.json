@@ -1,0 +1,48 @@
+{
+  "timestamp": "20251117_073303",
+  "family": "FLAN-T5 Family",
+  "models": {
+    "base": {
+      "repo": "google/flan-t5-small",
+      "params": "80M",
+      "endpoint": "base-1763344779"
+    },
+    "sft": {
+      "repo": "google/flan-t5-base",
+      "params": "250M",
+      "endpoint": "sft-1763344800"
+    },
+    "rl": {
+      "repo": "google/flan-t5-large",
+      "params": "780M",
+      "endpoint": "rl-1763344821"
+    }
+  },
+  "test_results": {
+    "Simple Completion": {
+      "base": "The weather today is",
+      "sft": "The weather today is",
+      "rl": "The weather today is"
+    },
+    "Question Answering": {
+      "base": "Q: What is the capital of France?\nA:",
+      "sft": "Q: What is the capital of France?\nA:",
+      "rl": "Q: What is the capital of France?\nA:"
+    },
+    "Instruction Following": {
+      "base": "Write a haiku about summer:",
+      "sft": "Write a haiku about summer:er.",
+      "rl": "Write a haiku about summer: in the glass"
+    },
+    "Math Problem": {
+      "base": "Calculate: 15 + 27 =",
+      "sft": "Calculate: 15 + 27 =",
+      "rl": "Calculate: 15 + 27 ="
+    },
+    "Translation": {
+      "base": "Translate to Spanish: Hello, how are you?",
+      "sft": "Translate to Spanish: Hello, how are you?",
+      "rl": "Translate to Spanish: Hello, how are you?"
+    }
+  }
+}

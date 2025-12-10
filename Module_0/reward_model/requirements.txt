@@ -1,0 +1,23 @@
+# Requirements for Running Reward Models on Laptop
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+transformers>=4.35.0
+torch>=2.0.0
+tokenizers>=0.15.0
+
+# Optional but recommended
+accelerate>=0.25.0
+sentencepiece>=0.1.99
+
+# FastAPI dependencies
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+
+# For data handling (if needed)
+numpy>=1.24.0
+pandas>=2.0.0
+
+# For visualization (optional)
+matplotlib>=3.7.0

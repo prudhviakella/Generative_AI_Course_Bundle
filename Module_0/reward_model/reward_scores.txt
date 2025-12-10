@@ -1,0 +1,14 @@
+REWARD MODEL SCORING RESULTS
+======================================================================
+
+Prompt: How do I make scrambled eggs?
+
+#1 - Score: +5.6701
+   First, crack your eggs into a bowl. Add a splash of milk, salt, and pepper. Whisk thoroughly. Heat a non-stick pan with butter over medium-low heat. Pour in eggs and cook slowly, stirring gently, until soft curds form.
+
+#2 - Score: +3.3984
+   Crack 2-3 eggs into a bowl, whisk with salt and pepper. Heat butter in a pan over medium heat. Pour in eggs, gently stir with spatula until just set. Serve hot.
+
+#3 - Score: -5.7265
+   Put eggs in pan and cook them.
+
