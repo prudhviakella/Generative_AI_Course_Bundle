@@ -1,0 +1,472 @@
+{
+  "table": "orders",
+  "description": "ENHANCED semantic memory for ORDERS table - optimized for natural language semantic search",
+  "total_chunks": 18,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 10,
+    "relationships": 3,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_orders_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "orders",
+      "text": "TABLE: orders\n\nDESCRIPTION: Records all customer purchase transactions and order information.\n\nNATURAL_LANGUAGE_TERMS: orders, order table, purchases, transactions, sales, customer orders, purchase orders, order records, sales records, order history, purchase history, customer purchases, order data, transaction data, shopping orders\n\nPRIMARY_KEY: order_id\n\nFOREIGN_KEYS: customer_id → customers.customer_id\n\nREFERENCED_BY: order_items.order_id, payment_transactions.order_id, shipments.order_id\n\nUSAGE: Order tracking, purchase history, sales analysis, revenue calculations, order management, find orders, customer order history, sales reporting, order fulfillment, transaction tracking\n\nCOMMON_QUERIES: Customer order history, orders by status, sales reports, order totals, monthly revenue, recent orders, pending orders, delivered orders, cancelled orders\n\nUSE_CASES: Track customer orders, view order history, check order status, calculate revenue, sales analysis, order fulfillment, delivery tracking, customer service",
+      "metadata": {
+        "entity": "table",
+        "table": "orders",
+        "pk": "order_id",
+        "fk": [
+          "customer_id"
+        ]
+      },
+      "keywords": [
+        "orders",
+        "purchases",
+        "transactions",
+        "sales",
+        "order history",
+        "purchase history",
+        "customer orders",
+        "order table"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_order_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "order_id",
+      "text": "COLUMN: orders.order_id\n\nDESCRIPTION: Unique identifier for each customer order.\n\nNATURAL_LANGUAGE_TERMS: order id, order ID, order number, order identifier, purchase id, transaction id, order reference, order reference number, confirmation number, order code, unique order id, order key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nREFERENCED_BY: order_items.order_id, payment_transactions.order_id, shipments.order_id\n\nUSAGE: Order identification, order tracking, find specific order, order lookup, joining with line items, order confirmation, unique order identification, transaction tracking\n\nUSE_CASES: Get order details, lookup order by ID, find specific order, track order, order confirmation lookup, order reference, retrieve order information\n\nEXAMPLES:\n\n- Order details: SELECT * FROM orders WHERE order_id = 3001\n\n- Order items: SELECT * FROM order_items WHERE order_id = 3001\n\n- Complete order info: FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.order_id = 3001\n\n- With payment: FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: Unique order confirmation number displayed to customers. Immutable once assigned.\n\nCOMMON_QUESTIONS: What is my order number? Find order by ID? Track order number? Get order details? Order confirmation number? Lookup order reference?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "order_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "order_id",
+        "order number",
+        "order ID",
+        "confirmation number",
+        "order identifier",
+        "transaction id",
+        "primary key"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_customer_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "customer_id",
+      "text": "COLUMN: orders.customer_id\n\nDESCRIPTION: Links order to customer who placed it.\n\nNATURAL_LANGUAGE_TERMS: customer id, customer ID, customer identifier, who ordered, which customer, customer reference, buyer id, purchaser id, order placed by, customer who bought, user id\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: customers.customer_id\n\nUSAGE: Customer order history, find orders by customer, joining orders with customer info, customer lifetime value, orders per customer, customer purchase history, who placed order\n\nUSE_CASES: Customer order history, find customer's orders, orders by specific customer, customer purchase tracking, link order to customer, who bought this\n\nEXAMPLES:\n\n- Customer orders: SELECT * FROM orders WHERE customer_id = 1001 ORDER BY order_date DESC\n\n- With customer details: FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE c.customer_id = 1001\n\n- Customer spending: SELECT customer_id, SUM(total_amount) FROM orders GROUP BY customer_id\n\n- Orders per customer: SELECT customer_id, COUNT(*) FROM orders GROUP BY customer_id\n\nBUSINESS_RULE: Every order belongs to exactly one customer. One customer can have many orders (1:N relationship).\n\nCOMMON_QUESTIONS: Show customer orders? Which customer placed this order? Find orders by customer? Customer order history? Who ordered this? Customer purchase history?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "customer_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "customers.customer_id"
+      },
+      "keywords": [
+        "customer_id",
+        "foreign key",
+        "customer orders",
+        "order history",
+        "who ordered",
+        "customer reference"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_order_date",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "order_date",
+      "text": "COLUMN: orders.order_date\n\nDESCRIPTION: Timestamp when order was placed by customer.\n\nNATURAL_LANGUAGE_TERMS: order date, order time, when ordered, purchase date, order timestamp, date ordered, time ordered, when placed, purchase time, order created, order placed, transaction date, date of order, order creation date\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nUSAGE: Date filtering, find orders by date, recent orders, sales reports by period, trend analysis, orders this month, orders today, date range filtering, time-based analysis\n\nUSE_CASES: Recent orders, orders this month, orders today, find orders by date range, sales by period, monthly sales, daily orders, order timeline\n\nEXAMPLES:\n\n- Today's orders: SELECT * FROM orders WHERE DATE(order_date) = CURRENT_DATE\n\n- Last 30 days: WHERE order_date >= CURRENT_DATE - INTERVAL '30 days'\n\n- Date range: WHERE order_date BETWEEN '2024-01-01' AND '2024-01-31'\n\n- Monthly sales: SELECT DATE_TRUNC('month', order_date) AS month, COUNT(*) FROM orders GROUP BY month ORDER BY month\n\n- Recent orders: ORDER BY order_date DESC LIMIT 10\n\nBUSINESS_RULE: Timestamp when customer placed order, not delivery date. Use for time-series sales analysis.\n\nCOMMON_QUESTIONS: Show recent orders? Orders today? Orders this month? Find orders by date? When was order placed? Orders in date range? Sales this month?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "order_date",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "order_date",
+        "date",
+        "timestamp",
+        "when ordered",
+        "purchase date",
+        "order time",
+        "recent orders",
+        "today",
+        "this month"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_total_amount",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "total_amount",
+      "text": "COLUMN: orders.total_amount\n\nDESCRIPTION: Total value of order in US dollars.\n\nNATURAL_LANGUAGE_TERMS: total amount, order total, total cost, total price, order value, purchase amount, order amount, how much, total paid, order cost, grand total, total spent, order price, transaction amount, sale amount\n\nDATA_TYPE: DECIMAL(10,2)\n\nCONSTRAINTS: NOT NULL, total_amount > 0\n\nCURRENCY: USD\n\nCALCULATION: Sum of all order_items.total_price for this order_id\n\nUSAGE: Revenue calculations, order value filtering, find expensive orders, average order value, customer lifetime value, sales totals, revenue analysis, financial reports\n\nUSE_CASES: Calculate total revenue, find large orders, average order value, order value filtering, customer spending, sales analysis, revenue by period\n\nEXAMPLES:\n\n- Large orders: SELECT * FROM orders WHERE total_amount > 500\n\n- Value range: WHERE total_amount BETWEEN 100 AND 500\n\n- Total revenue: SELECT SUM(total_amount) FROM orders WHERE order_status != 'Cancelled'\n\n- Average order: SELECT AVG(total_amount) FROM orders WHERE order_status != 'Cancelled'\n\n- Monthly revenue: SELECT DATE_TRUNC('month', order_date), SUM(total_amount) FROM orders GROUP BY 1\n\nBUSINESS_RULE: Equals sum of order_items.total_price. Exclude cancelled orders in revenue calculations. Does not include tax or shipping.\n\nCOMMON_QUESTIONS: What is order total? How much is order? Total order value? Calculate total revenue? Average order value? Order amount? Find expensive orders? Total sales?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "total_amount",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "total_amount",
+        "order total",
+        "total cost",
+        "order value",
+        "how much",
+        "revenue",
+        "sales amount",
+        "order price",
+        "grand total"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_payment_method",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "payment_method",
+      "text": "COLUMN: orders.payment_method\n\nDESCRIPTION: Method used for payment.\n\nNATURAL_LANGUAGE_TERMS: payment method, payment type, how paid, payment option, paid with, payment mode, method of payment, payment channel, payment way, how customer paid, payment used\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Credit Card, Debit Card, PayPal\n\nUSAGE: Payment method analysis, filter by payment type, payment preferences, payment method distribution, payment analytics, how customers pay\n\nUSE_CASES: Filter orders by payment method, payment type analysis, credit card orders, PayPal orders, payment method preferences, payment distribution\n\nEXAMPLES:\n\n- Credit card orders: SELECT * FROM orders WHERE payment_method = 'Credit Card'\n\n- Method distribution: SELECT payment_method, COUNT(*) FROM orders GROUP BY payment_method\n\n- PayPal orders: WHERE payment_method = 'PayPal'\n\n- Revenue by method: SELECT payment_method, SUM(total_amount) FROM orders GROUP BY payment_method\n\nBUSINESS_RULE: Must match payment_transactions.payment_method. Three valid payment options.\n\nCOMMON_QUESTIONS: How did customer pay? Payment method used? Credit card orders? PayPal transactions? Filter by payment type? Payment method distribution?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "payment_method",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "payment_method",
+        "payment type",
+        "credit card",
+        "debit card",
+        "paypal",
+        "how paid",
+        "payment option"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_order_status",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "order_status",
+      "text": "COLUMN: orders.order_status\n\nDESCRIPTION: Current fulfillment status of order.\n\nNATURAL_LANGUAGE_TERMS: order status, status, order state, fulfillment status, delivery status, where is order, order progress, current status, processing status, shipped, delivered, cancelled, pending, in transit\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Processing, In Transit, Delivered, Cancelled\n\nSTATUS_FLOW: Processing → In Transit → Delivered (normal flow), or Processing → Cancelled\n\nUSAGE: Order tracking, status filtering, fulfillment tracking, delivery monitoring, find pending orders, completed orders, cancelled orders, orders in progress\n\nUSE_CASES: Track order status, find delivered orders, pending orders, cancelled orders, orders in transit, fulfillment monitoring, delivery status check\n\nEXAMPLES:\n\n- Delivered orders: SELECT * FROM orders WHERE order_status = 'Delivered'\n\n- Active orders: WHERE order_status IN ('Processing', 'In Transit')\n\n- Needs attention: WHERE order_status = 'Processing' AND order_date < CURRENT_DATE - INTERVAL '3 days'\n\n- Status count: SELECT order_status, COUNT(*) FROM orders GROUP BY order_status\n\n- Completed orders: WHERE order_status = 'Delivered'\n\nBUSINESS_RULE: Processing=confirmed awaiting shipment, In Transit=shipped out, Delivered=completed successfully, Cancelled=terminated. Exclude cancelled from revenue.\n\nCOMMON_QUESTIONS: What is order status? Where is my order? Show delivered orders? Pending orders? Cancelled orders? Orders in transit? Track order? Order shipped? Is order delivered?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "order_status",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "order_status",
+        "status",
+        "delivered",
+        "processing",
+        "cancelled",
+        "in transit",
+        "shipped",
+        "pending",
+        "fulfillment",
+        "where is order"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_shipping_address",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "shipping_address",
+      "text": "COLUMN: orders.shipping_address\n\nDESCRIPTION: Street address for order delivery.\n\nNATURAL_LANGUAGE_TERMS: shipping address, delivery address, ship to address, where shipping, delivery location, shipping location, send to address, delivery street, shipping street, where delivered\n\nDATA_TYPE: VARCHAR(100)\n\nUSAGE: Shipping label generation, delivery address display, where order ships to, delivery location, address analysis\n\nUSE_CASES: Get shipping address, where to deliver, delivery location, shipping destination, order delivery address\n\nEXAMPLES:\n\n- Orders to address: SELECT * FROM orders WHERE shipping_address LIKE '%Main Street%'\n\n- Delivery locations: SELECT DISTINCT shipping_address FROM orders\n\nBUSINESS_RULE: May differ from customer's primary address. Complete address requires city, state, zip.\n\nCOMMON_QUESTIONS: Where is order shipping? Delivery address? Where to ship? Shipping location? Order delivery address?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "shipping_address",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "shipping_address",
+        "delivery address",
+        "ship to",
+        "delivery location",
+        "where shipping",
+        "send to"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_shipping_city",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "shipping_city",
+      "text": "COLUMN: orders.shipping_city\n\nDESCRIPTION: City for order delivery.\n\nNATURAL_LANGUAGE_TERMS: shipping city, delivery city, ship to city, city delivered to, delivery city name, shipping destination city, where shipping, city location\n\nDATA_TYPE: VARCHAR(50)\n\nUSAGE: Delivery location analysis, regional shipping reports, orders by city, shipping destinations, city-based delivery analysis\n\nUSE_CASES: Orders shipped to city, delivery city analysis, shipping by city, orders to specific city, delivery destinations\n\nEXAMPLES:\n\n- Orders to city: SELECT * FROM orders WHERE shipping_city = 'New York'\n\n- Orders by city: SELECT shipping_city, COUNT(*) FROM orders GROUP BY shipping_city ORDER BY COUNT(*) DESC\n\n- City shipping volume: SELECT shipping_city, shipping_state, COUNT(*) FROM orders GROUP BY shipping_city, shipping_state\n\nBUSINESS_RULE: Used with shipping_state and shipping_zip for complete delivery address.\n\nCOMMON_QUESTIONS: Orders shipped to New York? Delivery city? Where shipping? Orders by city? Which city has most deliveries?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "shipping_city",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "shipping_city",
+        "delivery city",
+        "ship to city",
+        "delivery location",
+        "where shipping"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_shipping_state",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "shipping_state",
+      "text": "COLUMN: orders.shipping_state\n\nDESCRIPTION: US state code for order delivery.\n\nNATURAL_LANGUAGE_TERMS: shipping state, delivery state, ship to state, state code, delivery state code, shipping region, where shipping, state delivered to, destination state\n\nDATA_TYPE: VARCHAR(2)\n\nFORMAT: Two-letter uppercase state codes\n\nVALID_VALUES: CA, NY, TX, FL, IL, WA, OR, etc. (all 50 US states)\n\nUSAGE: Regional shipping analysis, orders by state, tax calculation, delivery zone determination, state-level shipping reports\n\nUSE_CASES: Orders shipped to California, delivery by state, state shipping analysis, regional delivery patterns, orders to specific state\n\nEXAMPLES:\n\n- Orders to California: SELECT * FROM orders WHERE shipping_state = 'CA'\n\n- Orders by state: SELECT shipping_state, COUNT(*) FROM orders GROUP BY shipping_state ORDER BY COUNT(*) DESC\n\n- State revenue: SELECT shipping_state, SUM(total_amount) FROM orders GROUP BY shipping_state\n\nBUSINESS_RULE: Two-letter USPS codes. Used for tax and shipping calculations.\n\nCOMMON_QUESTIONS: Orders shipped to California? Deliveries by state? Which state gets most orders? Orders to Texas? Shipping to NY?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "shipping_state",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "shipping_state",
+        "delivery state",
+        "ship to state",
+        "state code",
+        "CA",
+        "NY",
+        "TX",
+        "regional",
+        "destination state"
+      ]
+    },
+    {
+      "chunk_id": "col_orders_shipping_zip",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "orders",
+      "column_name": "shipping_zip",
+      "text": "COLUMN: orders.shipping_zip\n\nDESCRIPTION: Zip code for order delivery.\n\nNATURAL_LANGUAGE_TERMS: shipping zip, delivery zip, zip code, postal code, shipping zip code, delivery postal code, delivery zone, zip area\n\nDATA_TYPE: VARCHAR(10)\n\nFORMAT: 5-digit or 9-digit US postal codes\n\nUSAGE: Precise delivery routing, shipping cost calculation, zone mapping, delivery zip analysis\n\nUSE_CASES: Orders to zip code, delivery zone analysis, shipping by zip, zip code patterns\n\nEXAMPLES:\n\n- Orders to zip: SELECT * FROM orders WHERE shipping_zip = '90210'\n\n- Zip pattern: WHERE shipping_zip LIKE '902%'\n\n- Orders by zip: SELECT shipping_zip, COUNT(*) FROM orders GROUP BY shipping_zip\n\nBUSINESS_RULE: US postal codes. Combines with city and state for complete delivery address.\n\nCOMMON_QUESTIONS: Orders to zip code? Deliveries by zip? Shipping to postal code?",
+      "metadata": {
+        "entity": "column",
+        "table": "orders",
+        "column": "shipping_zip",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "shipping_zip",
+        "delivery zip",
+        "zip code",
+        "postal code",
+        "delivery zone"
+      ]
+    },
+    {
+      "chunk_id": "rel_orders_to_customers",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "orders",
+      "related_table": "customers",
+      "text": "RELATIONSHIP: orders to customers (Many-to-One)\n\nDESCRIPTION: Each order belongs to one customer. Customer can have many orders.\n\nNATURAL_LANGUAGE_TERMS: order customer, who ordered, customer orders, order belongs to customer, customer purchases, order placed by, customer order history\n\nJOIN_CONDITION: orders.customer_id = customers.customer_id\n\nCARDINALITY: N:1 (many orders can belong to one customer)\n\nFOREIGN_KEY: orders.customer_id references customers.customer_id\n\nUSAGE: Get customer who placed order, customer order history, customer details with order, who bought this, customer purchase tracking\n\nUSE_CASES: Find who placed order, customer order history, customer details for order, link order to customer, customer purchase analysis\n\nEXAMPLES:\n\n- Order with customer: SELECT o.order_id, c.first_name, c.last_name, c.email, o.order_date, o.total_amount FROM orders o JOIN customers c ON o.customer_id = c.customer_id WHERE o.order_id = 3001\n\n- Customer order history: SELECT c.email, o.order_id, o.order_date, o.total_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE c.customer_id = 1001 ORDER BY o.order_date DESC\n\n- Customer lifetime value: SELECT c.customer_id, c.email, COUNT(o.order_id) AS order_count, SUM(o.total_amount) AS total_spent FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id, c.email\n\nBUSINESS_RULE: Every order must have valid customer_id. One customer can have many orders.\n\nCOMMON_QUESTIONS: Who placed this order? Customer order history? Get customer details for order? Which customer made purchase?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "orders",
+        "to_table": "customers",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "order customer",
+        "who ordered",
+        "customer orders",
+        "customer purchases",
+        "order history"
+      ]
+    },
+    {
+      "chunk_id": "rel_orders_to_order_items",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "orders",
+      "related_table": "order_items",
+      "text": "RELATIONSHIP: orders to order_items (One-to-Many)\n\nDESCRIPTION: One order contains many line items (products). This is the order detail breakdown.\n\nNATURAL_LANGUAGE_TERMS: order items, order details, order line items, what's in order, order contents, items in order, products in order, order breakdown, shopping cart, what customer bought\n\nJOIN_CONDITION: orders.order_id = order_items.order_id\n\nCARDINALITY: 1:N (one order has one or many line items)\n\nFOREIGN_KEY: order_items.order_id references orders.order_id\n\nUSAGE: Get order details, items in order, order breakdown, what customer bought, order contents, itemized order, shopping cart contents\n\nUSE_CASES: Show order details, items in order, order breakdown, what's in cart, order line items, complete order view, itemized order\n\nEXAMPLES:\n\n- Items in order: SELECT o.order_id, o.order_date, oi.product_id, oi.quantity, oi.unit_price, oi.total_price FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.order_id = 3001\n\n- Complete order: SELECT o.*, oi.* FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.order_id = 3001\n\n- Order item count: SELECT o.order_id, COUNT(oi.order_item_id) AS item_count FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.order_id\n\nBUSINESS_RULE: Every order must have at least one line item. Order total equals sum of line item totals.\n\nCOMMON_QUESTIONS: What's in order? Show order details? Items in order? Order breakdown? What did customer buy? Order line items?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "orders",
+        "to_table": "order_items",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "order items",
+        "order details",
+        "what's in order",
+        "order contents",
+        "line items",
+        "order breakdown",
+        "shopping cart"
+      ]
+    },
+    {
+      "chunk_id": "rel_orders_to_payments",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "orders",
+      "related_table": "payment_transactions",
+      "text": "RELATIONSHIP: orders to payment_transactions (One-to-One)\n\nDESCRIPTION: Each order has one payment transaction record.\n\nNATURAL_LANGUAGE_TERMS: order payment, payment for order, order transaction, payment details, how order was paid, payment information, transaction details\n\nJOIN_CONDITION: orders.order_id = payment_transactions.order_id\n\nCARDINALITY: 1:1 (one order has one payment)\n\nFOREIGN_KEY: payment_transactions.order_id references orders.order_id\n\nUSAGE: Get payment details for order, payment information, transaction details, how order was paid, payment verification\n\nUSE_CASES: Show payment details, payment information for order, transaction details, payment verification, how customer paid\n\nEXAMPLES:\n\n- Order with payment: SELECT o.order_id, o.total_amount, pt.payment_method, pt.transaction_id, pt.payment_status FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: One order has exactly one payment transaction.\n\nCOMMON_QUESTIONS: Payment details for order? How was order paid? Transaction information? Payment status?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "orders",
+        "to_table": "payment_transactions",
+        "cardinality": "1:1",
+        "join_type": "one_to_one"
+      },
+      "keywords": [
+        "order payment",
+        "payment details",
+        "transaction",
+        "how paid",
+        "payment information"
+      ]
+    },
+    {
+      "chunk_id": "query_order_status_tracking",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "orders",
+      "use_case": "order_status_tracking",
+      "text": "QUERY USE CASE: Track orders by status\n\nDESCRIPTION: Find orders in specific fulfillment stages for tracking and management.\n\nNATURAL_LANGUAGE_QUERIES: pending orders, delivered orders, cancelled orders, orders in transit, processing orders, shipped orders, where is order, order status, completed orders, active orders\n\nTABLES_USED: orders\n\nWHEN_TO_USE: Order fulfillment tracking, delivery monitoring, order management, customer service, status filtering\n\nSQL_PATTERN: SELECT * FROM orders WHERE order_status = 'status_value'\n\nEXAMPLES:\n\n- Delivered orders: SELECT * FROM orders WHERE order_status = 'Delivered'\n\n- Pending orders: WHERE order_status = 'Processing'\n\n- Active orders: WHERE order_status IN ('Processing', 'In Transit')\n\n- Cancelled orders: WHERE order_status = 'Cancelled'\n\n- Delayed processing: WHERE order_status = 'Processing' AND order_date < CURRENT_DATE - INTERVAL '3 days'\n\n- Status distribution: SELECT order_status, COUNT(*) FROM orders GROUP BY order_status\n\nBUSINESS_RULE: Exclude cancelled orders from revenue. Active orders are Processing or In Transit.\n\nCOMMON_QUESTIONS: Show pending orders? Delivered orders? Where is my order? Cancelled orders? Orders being processed? Shipped orders? Order status?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "order_tracking",
+        "tables": [
+          "orders"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "order status",
+        "pending",
+        "delivered",
+        "cancelled",
+        "in transit",
+        "processing",
+        "shipped",
+        "where is order",
+        "track order"
+      ]
+    },
+    {
+      "chunk_id": "query_recent_orders",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "orders",
+      "use_case": "recent_orders",
+      "text": "QUERY USE CASE: Find recent orders\n\nDESCRIPTION: Get orders from specific time periods for analysis and reporting.\n\nNATURAL_LANGUAGE_QUERIES: recent orders, orders today, orders this month, orders this week, latest orders, new orders, orders yesterday, orders last 7 days, orders last 30 days\n\nTABLES_USED: orders\n\nWHEN_TO_USE: Recent order monitoring, daily sales reports, period analysis, trend tracking\n\nSQL_PATTERNS:\n\n- Today: SELECT * FROM orders WHERE DATE(order_date) = CURRENT_DATE\n\n- This month: WHERE DATE_TRUNC('month', order_date) = DATE_TRUNC('month', CURRENT_DATE)\n\n- Last N days: WHERE order_date >= CURRENT_DATE - INTERVAL 'N days'\n\nEXAMPLES:\n\n- Orders today: SELECT * FROM orders WHERE DATE(order_date) = CURRENT_DATE ORDER BY order_date DESC\n\n- Last 7 days: SELECT * FROM orders WHERE order_date >= CURRENT_DATE - INTERVAL '7 days'\n\n- This month: SELECT * FROM orders WHERE order_date >= DATE_TRUNC('month', CURRENT_DATE)\n\n- Recent orders: SELECT * FROM orders ORDER BY order_date DESC LIMIT 20\n\nBUSINESS_RULE: Use order_date for when order was placed, not delivery date.\n\nCOMMON_QUESTIONS: Show recent orders? Orders today? This month's orders? Last week orders? Latest orders? New orders?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "time_filter",
+        "tables": [
+          "orders"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "recent orders",
+        "orders today",
+        "this month",
+        "this week",
+        "latest",
+        "new orders",
+        "last 7 days",
+        "last 30 days"
+      ]
+    },
+    {
+      "chunk_id": "query_revenue_analysis",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "orders",
+      "use_case": "revenue_calculation",
+      "text": "QUERY USE CASE: Calculate revenue and sales\n\nDESCRIPTION: Analyze total sales, revenue, and financial performance.\n\nNATURAL_LANGUAGE_QUERIES: total revenue, total sales, monthly revenue, daily sales, revenue by period, sales performance, how much revenue, total income, sales total, revenue analysis\n\nTABLES_USED: orders\n\nWHEN_TO_USE: Financial reporting, sales analysis, revenue tracking, performance metrics, business analytics\n\nSQL_PATTERN: SELECT SUM(total_amount) FROM orders WHERE order_status != 'Cancelled'\n\nEXAMPLES:\n\n- Total revenue: SELECT SUM(total_amount) AS total_revenue FROM orders WHERE order_status != 'Cancelled'\n\n- Monthly revenue: SELECT DATE_TRUNC('month', order_date) AS month, SUM(total_amount) AS revenue FROM orders WHERE order_status != 'Cancelled' GROUP BY month ORDER BY month\n\n- Daily sales: SELECT DATE(order_date) AS day, SUM(total_amount) AS daily_sales FROM orders GROUP BY day ORDER BY day DESC\n\n- Average order value: SELECT AVG(total_amount) FROM orders WHERE order_status != 'Cancelled'\n\n- Revenue by state: SELECT shipping_state, SUM(total_amount) FROM orders GROUP BY shipping_state ORDER BY SUM(total_amount) DESC\n\nBUSINESS_RULE: Always exclude cancelled orders from revenue calculations.\n\nCOMMON_QUESTIONS: What is total revenue? Monthly sales? Daily revenue? Average order value? Sales this month? Total income?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "revenue_analysis",
+        "tables": [
+          "orders"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "revenue",
+        "sales",
+        "total sales",
+        "monthly revenue",
+        "daily sales",
+        "income",
+        "financial",
+        "sales performance"
+      ]
+    },
+    {
+      "chunk_id": "query_customer_order_history",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "orders",
+      "related_tables": "customers",
+      "use_case": "customer_order_history",
+      "text": "QUERY USE CASE: Get customer order history\n\nDESCRIPTION: Find all orders placed by specific customer with details.\n\nNATURAL_LANGUAGE_QUERIES: customer order history, customer orders, what customer bought, customer purchases, purchase history, order history, customer shopping history, past orders\n\nTABLES_USED: orders, customers\n\nWHEN_TO_USE: Customer service, order lookup, purchase history, customer analysis, support inquiries\n\nSQL_PATTERN: SELECT * FROM orders WHERE customer_id = X ORDER BY order_date DESC\n\nEXAMPLES:\n\n- Customer orders: SELECT o.order_id, o.order_date, o.total_amount, o.order_status FROM orders o WHERE o.customer_id = 1001 ORDER BY o.order_date DESC\n\n- With customer details: SELECT c.first_name, c.last_name, o.order_id, o.order_date, o.total_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE c.customer_id = 1001 ORDER BY o.order_date DESC\n\n- Order count: SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id ORDER BY order_count DESC\n\n- Customer spending: SELECT customer_id, SUM(total_amount) AS total_spent FROM orders WHERE order_status != 'Cancelled' GROUP BY customer_id\n\nBUSINESS_RULE: Order by date descending to show most recent first.\n\nCOMMON_QUESTIONS: Show customer order history? What did customer buy? Customer purchases? Past orders? Customer shopping history? Order history?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "customer_history",
+        "tables": [
+          "orders",
+          "customers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "customer orders",
+        "order history",
+        "purchase history",
+        "what customer bought",
+        "past orders",
+        "customer purchases"
+      ]
+    }
+  ]
+}

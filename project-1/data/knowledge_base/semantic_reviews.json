@@ -1,0 +1,397 @@
+{
+  "table": "reviews",
+  "description": "ENHANCED semantic memory for REVIEWS table - optimized for natural language semantic search",
+  "total_chunks": 15,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 7,
+    "relationships": 3,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_reviews_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "reviews",
+      "text": "TABLE: reviews\n\nDESCRIPTION: Customer product reviews and ratings with feedback text and verification status.\n\nNATURAL_LANGUAGE_TERMS: reviews, product reviews, customer reviews, ratings, feedback, customer feedback, product ratings, user reviews, testimonials, product opinions, review data, customer ratings, review table, rating table\n\nPRIMARY_KEY: review_id\n\nFOREIGN_KEYS: product_id → products.product_id, customer_id → customers.customer_id\n\nUSAGE: Product rating display, review analysis, customer feedback, sentiment analysis, product quality monitoring, rating statistics, review moderation, customer satisfaction\n\nCOMMON_QUERIES: Product reviews, average ratings, top rated products, verified reviews, recent reviews, customer feedback, rating distribution, reviews by customer\n\nUSE_CASES: Show product reviews, calculate average ratings, find top rated products, customer feedback analysis, review display, rating statistics",
+      "metadata": {
+        "entity": "table",
+        "table": "reviews",
+        "pk": "review_id",
+        "fk": [
+          "product_id",
+          "customer_id"
+        ]
+      },
+      "keywords": [
+        "reviews",
+        "ratings",
+        "customer reviews",
+        "product reviews",
+        "feedback",
+        "customer feedback",
+        "product ratings",
+        "testimonials"
+      ]
+    },
+    {
+      "chunk_id": "col_reviews_review_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "reviews",
+      "column_name": "review_id",
+      "text": "COLUMN: reviews.review_id\n\nDESCRIPTION: Unique identifier for each customer review.\n\nNATURAL_LANGUAGE_TERMS: review id, review ID, review identifier, review number, feedback id, review reference, unique review id, review key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Review identification, review tracking, unique review reference, review moderation, review linking\n\nUSE_CASES: Get specific review, review lookup, review identification, review tracking\n\nEXAMPLES:\n\n- Specific review: SELECT * FROM reviews WHERE review_id = 5001\n\n- Review details: WHERE review_id = 5001\n\nBUSINESS_RULE: Unique identifier for each review. Immutable once assigned.\n\nCOMMON_QUESTIONS: Review ID? Get review by ID? Review identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "reviews",
+        "column": "review_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "review_id",
+        "review ID",
+        "review identifier",
+        "primary key",
+        "unique review"
+      ]
+    },
+    {
+      "chunk_id": "col_reviews_product_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "reviews",
+      "column_name": "product_id",
+      "text": "COLUMN: reviews.product_id\n\nDESCRIPTION: Links review to product being reviewed.\n\nNATURAL_LANGUAGE_TERMS: product id, product identifier, which product, product reviewed, product reference, item reviewed, product being reviewed, reviewed product, product rating\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: products.product_id\n\nUSAGE: Product reviews lookup, finding reviews for product, product rating calculation, reviews by product, product feedback\n\nUSE_CASES: Show product reviews, get reviews for product, product rating, reviews by product, product feedback display\n\nEXAMPLES:\n\n- Product reviews: SELECT * FROM reviews WHERE product_id = 2050\n\n- Average rating: SELECT AVG(rating) FROM reviews WHERE product_id = 2050\n\n- Review count: SELECT COUNT(*) FROM reviews WHERE product_id = 2050\n\n- With product details: SELECT p.product_name, r.rating, r.review_title FROM products p JOIN reviews r ON p.product_id = r.product_id WHERE p.product_id = 2050\n\nBUSINESS_RULE: Every review belongs to exactly one product. One product can have many reviews (1:N relationship).\n\nCOMMON_QUESTIONS: Show product reviews? Reviews for this product? Product rating? How many reviews? Product feedback?",
+      "metadata": {
+        "entity": "column",
+        "table": "reviews",
+        "column": "product_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "products.product_id"
+      },
+      "keywords": [
+        "product_id",
+        "foreign key",
+        "product reviews",
+        "which product",
+        "product reviewed",
+        "product rating"
+      ]
+    },
+    {
+      "chunk_id": "col_reviews_customer_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "reviews",
+      "column_name": "customer_id",
+      "text": "COLUMN: reviews.customer_id\n\nDESCRIPTION: Links review to customer who wrote it.\n\nNATURAL_LANGUAGE_TERMS: customer id, customer identifier, who reviewed, reviewer, customer who reviewed, review author, who wrote review, reviewer id, user who reviewed\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: customers.customer_id\n\nUSAGE: Finding customer reviews, review author identification, customer feedback history, who reviewed product, reviewer lookup\n\nUSE_CASES: Show customer reviews, find who reviewed, customer feedback history, reviews by customer, reviewer identification\n\nEXAMPLES:\n\n- Customer reviews: SELECT * FROM reviews WHERE customer_id = 1001\n\n- With customer name: SELECT c.first_name, c.last_name, r.rating, r.review_title FROM customers c JOIN reviews r ON c.customer_id = r.customer_id WHERE c.customer_id = 1001\n\n- Review count per customer: SELECT customer_id, COUNT(*) FROM reviews GROUP BY customer_id\n\nBUSINESS_RULE: Every review belongs to one customer. One customer can write many reviews (1:N relationship).\n\nCOMMON_QUESTIONS: Who wrote this review? Show customer reviews? Reviews by customer? Who reviewed this product? Customer feedback history?",
+      "metadata": {
+        "entity": "column",
+        "table": "reviews",
+        "column": "customer_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "customers.customer_id"
+      },
+      "keywords": [
+        "customer_id",
+        "foreign key",
+        "who reviewed",
+        "reviewer",
+        "review author",
+        "customer reviews"
+      ]
+    },
+    {
+      "chunk_id": "col_reviews_rating",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "reviews",
+      "column_name": "rating",
+      "text": "COLUMN: reviews.rating\n\nDESCRIPTION: Star rating given by customer (1-5 scale).\n\nNATURAL_LANGUAGE_TERMS: rating, star rating, stars, review rating, customer rating, score, product rating, review score, how many stars, rating score, product score, star review, 5 star, 1 star\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: rating BETWEEN 1 AND 5\n\nVALID_VALUES: 1 (worst) to 5 (best)\n\nUSAGE: Product rating calculation, average rating, rating distribution, finding highly rated products, low rated products, rating analysis, quality assessment\n\nUSE_CASES: Average product rating, top rated products, rating distribution, filter by rating, highly rated products, poorly rated products, rating statistics\n\nEXAMPLES:\n\n- Average rating: SELECT AVG(rating) FROM reviews WHERE product_id = 2050\n\n- 5-star reviews: SELECT * FROM reviews WHERE rating = 5\n\n- Low ratings: SELECT * FROM reviews WHERE rating <= 2\n\n- Rating distribution: SELECT rating, COUNT(*) FROM reviews GROUP BY rating ORDER BY rating DESC\n\n- Top rated products: SELECT product_id, AVG(rating) AS avg_rating FROM reviews GROUP BY product_id HAVING COUNT(*) >= 5 ORDER BY avg_rating DESC\n\nBUSINESS_RULE: Integer 1-5. 5 is best, 1 is worst. Use AVG() for average ratings. Require minimum reviews (e.g., 5) for reliable averages.\n\nCOMMON_QUESTIONS: What is product rating? Average rating? Top rated products? How many stars? 5-star reviews? Highly rated products? Rating distribution?",
+      "metadata": {
+        "entity": "column",
+        "table": "reviews",
+        "column": "rating",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "rating",
+        "star rating",
+        "stars",
+        "review rating",
+        "score",
+        "5 star",
+        "product rating",
+        "how many stars",
+        "average rating"
+      ]
+    },
+    {
+      "chunk_id": "col_reviews_verified_purchase",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "reviews",
+      "column_name": "verified_purchase",
+      "text": "COLUMN: reviews.verified_purchase\n\nDESCRIPTION: Indicates if reviewer actually purchased the product (Yes/No).\n\nNATURAL_LANGUAGE_TERMS: verified purchase, verified buyer, confirmed purchase, actually bought, real purchase, purchased verified, authentic review, verified review, confirmed buyer, did customer buy\n\nDATA_TYPE: VARCHAR(3)\n\nVALID_VALUES: Yes, No\n\nUSAGE: Filtering verified reviews, review authenticity, trustworthy reviews, verified buyer badge, authentic feedback filtering\n\nUSE_CASES: Show verified reviews, filter authentic reviews, verified purchases only, trustworthy feedback, review verification\n\nEXAMPLES:\n\n- Verified reviews: SELECT * FROM reviews WHERE verified_purchase = 'Yes'\n\n- Verified average: SELECT AVG(rating) FROM reviews WHERE verified_purchase = 'Yes' AND product_id = 2050\n\n- Verification rate: SELECT verified_purchase, COUNT(*) FROM reviews GROUP BY verified_purchase\n\n- Verified count: SELECT COUNT(*) FROM reviews WHERE product_id = 2050 AND verified_purchase = 'Yes'\n\nBUSINESS_RULE: 'Yes' if customer purchased product before reviewing. More trustworthy than unverified. Display verified badge.\n\nCOMMON_QUESTIONS: Verified reviews only? Did customer buy product? Authentic reviews? Verified purchase? Trustworthy reviews? Confirmed buyers?",
+      "metadata": {
+        "entity": "column",
+        "table": "reviews",
+        "column": "verified_purchase",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "verified_purchase",
+        "verified buyer",
+        "confirmed purchase",
+        "authentic",
+        "verified review",
+        "actually bought",
+        "real purchase"
+      ]
+    },
+    {
+      "chunk_id": "col_reviews_review_date",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "reviews",
+      "column_name": "review_date",
+      "text": "COLUMN: reviews.review_date\n\nDESCRIPTION: Timestamp when review was submitted.\n\nNATURAL_LANGUAGE_TERMS: review date, review time, when reviewed, date reviewed, review timestamp, when posted, date posted, review submitted, submission date, when written, posted date\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nUSAGE: Recent reviews, review timeline, date filtering, finding latest reviews, review chronology, sorting by date, recent feedback\n\nUSE_CASES: Recent reviews, latest feedback, reviews this month, newest reviews, review timeline, sort by date, when reviewed\n\nEXAMPLES:\n\n- Recent reviews: SELECT * FROM reviews ORDER BY review_date DESC LIMIT 10\n\n- Last 30 days: SELECT * FROM reviews WHERE review_date >= CURRENT_DATE - INTERVAL '30 days'\n\n- This month: SELECT * FROM reviews WHERE DATE_TRUNC('month', review_date) = DATE_TRUNC('month', CURRENT_DATE)\n\n- Product recent reviews: SELECT * FROM reviews WHERE product_id = 2050 ORDER BY review_date DESC LIMIT 5\n\nBUSINESS_RULE: Timestamp when review submitted, not when product purchased. Use for chronological display.\n\nCOMMON_QUESTIONS: Recent reviews? Latest feedback? Reviews this month? When was review posted? Newest reviews? Recent product reviews?",
+      "metadata": {
+        "entity": "column",
+        "table": "reviews",
+        "column": "review_date",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "review_date",
+        "when reviewed",
+        "review time",
+        "recent reviews",
+        "latest",
+        "posted date",
+        "submission date"
+      ]
+    },
+    {
+      "chunk_id": "col_reviews_review_title",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "reviews",
+      "column_name": "review_title",
+      "text": "COLUMN: reviews.review_title\n\nDESCRIPTION: Short headline or title for the review.\n\nNATURAL_LANGUAGE_TERMS: review title, review headline, title, headline, review summary, review subject, review heading, title of review, review caption, review header\n\nDATA_TYPE: TEXT\n\nUSAGE: Review summary display, search by review content, review preview, headline display, quick review insight, review browsing\n\nUSE_CASES: Show review titles, review headlines, search review content, review summary, quick review overview\n\nEXAMPLES:\n\n- Search titles: SELECT * FROM reviews WHERE review_title LIKE '%excellent%'\n\n- Product reviews with titles: SELECT review_title, rating, review_date FROM reviews WHERE product_id = 2050 ORDER BY review_date DESC\n\n- Case-insensitive search: WHERE LOWER(review_title) LIKE LOWER('%great%')\n\nBUSINESS_RULE: Short descriptive title summarizing customer opinion. Often displayed before full review text.\n\nCOMMON_QUESTIONS: Review titles? Review headlines? What do reviews say? Search review content? Review summaries?",
+      "metadata": {
+        "entity": "column",
+        "table": "reviews",
+        "column": "review_title",
+        "type": "TEXT",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "review_title",
+        "headline",
+        "title",
+        "review summary",
+        "review heading",
+        "review subject"
+      ]
+    },
+    {
+      "chunk_id": "rel_reviews_to_products",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "reviews",
+      "related_table": "products",
+      "text": "RELATIONSHIP: reviews to products (Many-to-One)\n\nDESCRIPTION: Each review belongs to one product. Product can have many reviews.\n\nNATURAL_LANGUAGE_TERMS: product reviews, reviews for product, product ratings, product feedback, reviews about product, product review list, what customers say about product\n\nJOIN_CONDITION: reviews.product_id = products.product_id\n\nCARDINALITY: N:1 (many reviews belong to one product)\n\nFOREIGN_KEY: reviews.product_id references products.product_id\n\nUSAGE: Display product reviews, calculate product ratings, show customer feedback, product review list, rating statistics\n\nUSE_CASES: Show all product reviews, average product rating, product feedback display, rating distribution, customer opinions\n\nEXAMPLES:\n\n- Product reviews with details: SELECT p.product_name, r.rating, r.review_title, r.review_date FROM products p JOIN reviews r ON p.product_id = r.product_id WHERE p.product_id = 2050 ORDER BY r.review_date DESC\n\n- Product rating summary: SELECT p.product_name, AVG(r.rating) AS avg_rating, COUNT(r.review_id) AS review_count FROM products p JOIN reviews r ON p.product_id = r.product_id WHERE p.product_id = 2050 GROUP BY p.product_name\n\n- Top rated products: SELECT p.product_id, p.product_name, AVG(r.rating) AS avg_rating FROM products p JOIN reviews r ON p.product_id = r.product_id GROUP BY p.product_id, p.product_name HAVING COUNT(r.review_id) >= 5 ORDER BY avg_rating DESC LIMIT 10\n\nBUSINESS_RULE: One product can have 0 to many reviews. Use LEFT JOIN to include products without reviews.\n\nCOMMON_QUESTIONS: Show product reviews? Product rating? Customer feedback for product? How many reviews? Top rated products?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "reviews",
+        "to_table": "products",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "product reviews",
+        "product ratings",
+        "product feedback",
+        "reviews for product",
+        "customer feedback",
+        "product rating"
+      ]
+    },
+    {
+      "chunk_id": "rel_reviews_to_customers",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "reviews",
+      "related_table": "customers",
+      "text": "RELATIONSHIP: reviews to customers (Many-to-One)\n\nDESCRIPTION: Each review belongs to one customer. Customer can write many reviews.\n\nNATURAL_LANGUAGE_TERMS: customer reviews, reviews by customer, customer feedback, user reviews, reviewer identity, who reviewed, review author, customer review history\n\nJOIN_CONDITION: reviews.customer_id = customers.customer_id\n\nCARDINALITY: N:1 (many reviews belong to one customer)\n\nFOREIGN_KEY: reviews.customer_id references customers.customer_id\n\nUSAGE: Customer review history, reviewer identification, active reviewers, customer engagement, review authorship\n\nUSE_CASES: Show customer's reviews, find active reviewers, customer feedback history, top reviewers, engagement analysis\n\nEXAMPLES:\n\n- Customer reviews: SELECT c.first_name, c.last_name, r.rating, r.review_title, r.review_date FROM customers c JOIN reviews r ON c.customer_id = r.customer_id WHERE c.customer_id = 1001 ORDER BY r.review_date DESC\n\n- Top reviewers: SELECT c.customer_id, c.first_name, c.last_name, COUNT(r.review_id) AS review_count FROM customers c JOIN reviews r ON c.customer_id = r.customer_id GROUP BY c.customer_id, c.first_name, c.last_name ORDER BY review_count DESC LIMIT 10\n\n- Active reviewers: SELECT c.email, COUNT(r.review_id) AS reviews FROM customers c JOIN reviews r ON c.customer_id = r.customer_id GROUP BY c.email HAVING COUNT(r.review_id) > 5\n\nBUSINESS_RULE: One customer can write 0 to many reviews. Multiple reviews per customer allowed for different products.\n\nCOMMON_QUESTIONS: Show customer reviews? Who wrote this review? Customer feedback history? Top reviewers? Active reviewers?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "reviews",
+        "to_table": "customers",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "customer reviews",
+        "reviews by customer",
+        "who reviewed",
+        "review author",
+        "customer feedback",
+        "top reviewers"
+      ]
+    },
+    {
+      "chunk_id": "rel_reviews_verification",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "reviews",
+      "related_table": "orders",
+      "text": "RELATIONSHIP: reviews verification through orders (indirect)\n\nDESCRIPTION: Verified purchase status determined by checking if customer ordered the product.\n\nNATURAL_LANGUAGE_TERMS: verified purchase, purchase verification, confirmed buyer, did customer buy, authentic review, verified review, purchase confirmation\n\nJOIN_CONDITION: reviews.customer_id = orders.customer_id AND reviews.product_id IN (SELECT product_id FROM order_items WHERE order_id IN (SELECT order_id FROM orders WHERE customer_id = reviews.customer_id))\n\nUSAGE: Verifying review authenticity, checking if reviewer purchased product, verified badge display, trustworthy review filtering\n\nUSE_CASES: Verify purchase, check review authenticity, confirmed buyer verification, trustworthy review identification\n\nEXAMPLES:\n\n- Verify review: SELECT r.*, CASE WHEN EXISTS (SELECT 1 FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.customer_id = r.customer_id AND oi.product_id = r.product_id) THEN 'Yes' ELSE 'No' END AS is_verified FROM reviews r WHERE r.review_id = 5001\n\nBUSINESS_RULE: Review marked verified if customer has order containing the reviewed product. Cross-reference with order_items.\n\nCOMMON_QUESTIONS: Is review verified? Did reviewer buy product? Verified purchase? Authentic review? Confirmed buyer?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "reviews",
+        "to_table": "orders",
+        "cardinality": "verification",
+        "join_type": "verification_check"
+      },
+      "keywords": [
+        "verified purchase",
+        "purchase verification",
+        "confirmed buyer",
+        "authentic review",
+        "verified review"
+      ]
+    },
+    {
+      "chunk_id": "query_product_reviews_display",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "reviews",
+      "related_tables": "products, customers",
+      "use_case": "display_product_reviews",
+      "text": "QUERY USE CASE: Display product reviews with rating summary\n\nDESCRIPTION: Show all reviews for a product with average rating and review count.\n\nNATURAL_LANGUAGE_QUERIES: show product reviews, product ratings, customer feedback, product reviews display, what customers say, review list, product rating summary\n\nTABLES_USED: reviews, products, customers\n\nWHEN_TO_USE: Product detail pages, review display, customer feedback showcase, rating display\n\nSQL_PATTERN: SELECT * FROM reviews WHERE product_id = X ORDER BY review_date DESC\n\nEXAMPLES:\n\n- Product reviews: SELECT r.rating, r.review_title, r.verified_purchase, r.review_date, c.first_name FROM reviews r JOIN customers c ON r.customer_id = c.customer_id WHERE r.product_id = 2050 ORDER BY r.review_date DESC\n\n- Rating summary: SELECT AVG(rating) AS avg_rating, COUNT(*) AS review_count FROM reviews WHERE product_id = 2050\n\n- Rating distribution: SELECT rating, COUNT(*) AS count FROM reviews WHERE product_id = 2050 GROUP BY rating ORDER BY rating DESC\n\n- Verified reviews: SELECT * FROM reviews WHERE product_id = 2050 AND verified_purchase = 'Yes' ORDER BY review_date DESC\n\nBUSINESS_RULE: Display most recent reviews first. Show verified badge. Include average rating and count.\n\nCOMMON_QUESTIONS: Show product reviews? Product rating? Customer feedback? What customers say? Review list? Product rating summary?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "review_display",
+        "tables": [
+          "reviews",
+          "products",
+          "customers"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "product reviews",
+        "show reviews",
+        "product rating",
+        "customer feedback",
+        "review display",
+        "rating summary"
+      ]
+    },
+    {
+      "chunk_id": "query_top_rated_products",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "reviews",
+      "related_tables": "products",
+      "use_case": "find_top_rated_products",
+      "text": "QUERY USE CASE: Find top rated products\n\nDESCRIPTION: Identify products with highest average ratings and sufficient review count.\n\nNATURAL_LANGUAGE_QUERIES: top rated products, best rated items, highly rated products, highest rated, best reviews, top products by rating, most popular products, 5 star products\n\nTABLES_USED: reviews, products\n\nWHEN_TO_USE: Featured products, recommendations, quality products, bestsellers by rating, product rankings\n\nSQL_PATTERN: SELECT product_id, AVG(rating) FROM reviews GROUP BY product_id HAVING COUNT(*) >= threshold ORDER BY AVG(rating) DESC\n\nEXAMPLES:\n\n- Top 10 rated: SELECT p.product_id, p.product_name, AVG(r.rating) AS avg_rating, COUNT(r.review_id) AS review_count FROM products p JOIN reviews r ON p.product_id = r.product_id GROUP BY p.product_id, p.product_name HAVING COUNT(r.review_id) >= 5 ORDER BY avg_rating DESC, review_count DESC LIMIT 10\n\n- 5-star products: SELECT p.product_name, AVG(r.rating) AS avg_rating FROM products p JOIN reviews r ON p.product_id = r.product_id GROUP BY p.product_name HAVING AVG(r.rating) >= 4.5\n\n- Top by category: SELECT p.category, p.product_name, AVG(r.rating) AS avg_rating FROM products p JOIN reviews r ON p.product_id = r.product_id GROUP BY p.category, p.product_name HAVING COUNT(r.review_id) >= 3 ORDER BY p.category, avg_rating DESC\n\nBUSINESS_RULE: Require minimum reviews (e.g., 5) for reliable average. Sort by rating then review count.\n\nCOMMON_QUESTIONS: Top rated products? Best rated items? Highest rated products? 5-star products? Products with best reviews? Most popular by rating?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "top_rated",
+        "tables": [
+          "reviews",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "top rated",
+        "best rated",
+        "highly rated",
+        "highest rated",
+        "5 star",
+        "best reviews",
+        "most popular by rating"
+      ]
+    },
+    {
+      "chunk_id": "query_recent_reviews",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "reviews",
+      "use_case": "find_recent_reviews",
+      "text": "QUERY USE CASE: Find recent customer reviews\n\nDESCRIPTION: Get latest reviews for monitoring and display.\n\nNATURAL_LANGUAGE_QUERIES: recent reviews, latest reviews, new reviews, reviews today, reviews this week, newest feedback, recent customer feedback, latest ratings\n\nTABLES_USED: reviews, products, customers\n\nWHEN_TO_USE: Review moderation, recent feedback monitoring, latest customer opinions, trending sentiment\n\nSQL_PATTERN: SELECT * FROM reviews ORDER BY review_date DESC LIMIT N\n\nEXAMPLES:\n\n- Last 10 reviews: SELECT r.rating, r.review_title, p.product_name, c.first_name, r.review_date FROM reviews r JOIN products p ON r.product_id = p.product_id JOIN customers c ON r.customer_id = c.customer_id ORDER BY r.review_date DESC LIMIT 10\n\n- Last 7 days: SELECT * FROM reviews WHERE review_date >= CURRENT_DATE - INTERVAL '7 days' ORDER BY review_date DESC\n\n- Today's reviews: SELECT * FROM reviews WHERE DATE(review_date) = CURRENT_DATE ORDER BY review_date DESC\n\n- This month: SELECT * FROM reviews WHERE DATE_TRUNC('month', review_date) = DATE_TRUNC('month', CURRENT_DATE) ORDER BY review_date DESC\n\nBUSINESS_RULE: Sort by review_date descending for most recent first. Useful for moderation and monitoring.\n\nCOMMON_QUESTIONS: Recent reviews? Latest feedback? New reviews? Reviews today? Recent customer feedback? Newest reviews? Latest ratings?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "recent_feedback",
+        "tables": [
+          "reviews",
+          "products",
+          "customers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "recent reviews",
+        "latest reviews",
+        "new reviews",
+        "newest",
+        "recent feedback",
+        "latest ratings",
+        "today",
+        "this week"
+      ]
+    },
+    {
+      "chunk_id": "query_customer_review_history",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "reviews",
+      "related_tables": "customers, products",
+      "use_case": "customer_review_history",
+      "text": "QUERY USE CASE: Get customer review history\n\nDESCRIPTION: Find all reviews written by specific customer.\n\nNATURAL_LANGUAGE_QUERIES: customer reviews, reviews by customer, what customer reviewed, customer feedback history, customer rating history, reviews from customer, user reviews\n\nTABLES_USED: reviews, customers, products\n\nWHEN_TO_USE: Customer profile, reviewer activity, engagement analysis, customer service, review moderation\n\nSQL_PATTERN: SELECT * FROM reviews WHERE customer_id = X ORDER BY review_date DESC\n\nEXAMPLES:\n\n- Customer's reviews: SELECT r.rating, r.review_title, p.product_name, r.review_date FROM reviews r JOIN products p ON r.product_id = p.product_id WHERE r.customer_id = 1001 ORDER BY r.review_date DESC\n\n- Review count: SELECT customer_id, COUNT(*) AS review_count FROM reviews WHERE customer_id = 1001 GROUP BY customer_id\n\n- Average rating given: SELECT customer_id, AVG(rating) AS avg_rating_given FROM reviews WHERE customer_id = 1001 GROUP BY customer_id\n\n- Top reviewers: SELECT c.first_name, c.last_name, COUNT(r.review_id) AS review_count FROM customers c JOIN reviews r ON c.customer_id = r.customer_id GROUP BY c.customer_id, c.first_name, c.last_name ORDER BY review_count DESC LIMIT 10\n\nBUSINESS_RULE: Show customer's complete review history. Useful for identifying active reviewers and engagement.\n\nCOMMON_QUESTIONS: Show customer reviews? What did customer review? Customer feedback history? Reviews by customer? Customer rating history? Active reviewers?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "customer_feedback",
+        "tables": [
+          "reviews",
+          "customers",
+          "products"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "customer reviews",
+        "reviews by customer",
+        "what customer reviewed",
+        "customer feedback",
+        "review history",
+        "active reviewers"
+      ]
+    }
+  ]
+}

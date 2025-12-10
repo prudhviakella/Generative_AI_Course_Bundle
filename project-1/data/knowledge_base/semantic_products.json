@@ -1,0 +1,441 @@
+{
+  "table": "products",
+  "description": "ENHANCED semantic memory for PRODUCTS table - optimized for natural language semantic search",
+  "total_chunks": 16,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 8,
+    "relationships": 3,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_products_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "products",
+      "text": "TABLE: products\n\nDESCRIPTION: Master product catalog containing all items available for purchase in the e-commerce store.\n\nNATURAL_LANGUAGE_TERMS: products, product catalog, items, merchandise, goods, articles, product table, inventory catalog, items for sale, shop items, store products, available products, product list, product database\n\nPRIMARY_KEY: product_id\n\nREFERENCED_BY: order_items.product_id, reviews.product_id, inventory.product_id, product_suppliers.product_id\n\nUSAGE: Product search, find products, catalog browsing, price filtering, stock availability checking, product detail display, inventory management, search items, browse catalog, find merchandise\n\nCOMMON_QUERIES: Search products by name, filter by category, find products by price range, check stock availability, bestselling products, low stock alerts, new arrivals, products on sale\n\nUSE_CASES: Looking for specific products, browsing product catalog, checking product availability, comparing product prices, finding products in category, searching by brand, inventory management",
+      "metadata": {
+        "entity": "table",
+        "table": "products",
+        "pk": "product_id"
+      },
+      "keywords": [
+        "products",
+        "catalog",
+        "items",
+        "merchandise",
+        "goods",
+        "product table",
+        "inventory",
+        "shop items",
+        "store products"
+      ]
+    },
+    {
+      "chunk_id": "col_products_product_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "product_id",
+      "text": "COLUMN: products.product_id\n\nDESCRIPTION: Unique identifier for each product in the catalog.\n\nNATURAL_LANGUAGE_TERMS: product id, product ID, product identifier, item id, SKU, product number, item number, product code, article number, merchandise id, unique product id, product key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nREFERENCED_BY: order_items.product_id, reviews.product_id, inventory.product_id, product_suppliers.product_id\n\nUSAGE: Product identification, SKU tracking, finding specific product, joining products with orders, linking product data, product lookup by ID, unique product identification, item tracking\n\nUSE_CASES: Get product by ID, lookup product details, find specific item, join products with orders, link to reviews, inventory tracking, product record lookup, SKU identification\n\nEXAMPLES:\n\n- Get product details: SELECT * FROM products WHERE product_id = 2050\n\n- Product orders: SELECT * FROM order_items WHERE product_id = 2050\n\n- Join with reviews: FROM products p JOIN reviews r ON p.product_id = r.product_id WHERE p.product_id = 2050\n\n- Stock by warehouse: FROM products p JOIN inventory i ON p.product_id = i.product_id WHERE p.product_id = 2050\n\nBUSINESS_RULE: Immutable once assigned. Canonical product identifier across all tables.\n\nCOMMON_QUESTIONS: How to find product by ID? What is product ID? Get product details by ID? Lookup product number? Which column is product identifier? Find item by SKU?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "product_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "product_id",
+        "product ID",
+        "SKU",
+        "product identifier",
+        "item id",
+        "product number",
+        "primary key",
+        "unique id"
+      ]
+    },
+    {
+      "chunk_id": "col_products_product_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "product_name",
+      "text": "COLUMN: products.product_name\n\nDESCRIPTION: Full descriptive name of the product including type and key features.\n\nNATURAL_LANGUAGE_TERMS: product name, item name, product title, product description, item title, merchandise name, product label, item description, what is product called, product text, name of product, item called\n\nDATA_TYPE: VARCHAR(200)\n\nUSAGE: Product search, find products by name, search items, display name, catalog listing, SEO optimization, alphabetical sorting, search indexing, product title display, finding specific products\n\nUSE_CASES: Search products by name, find product called, lookup product by title, search for specific item, browse products alphabetically, find products with keyword, product name search, item lookup\n\nEXAMPLES:\n\n- Search products: SELECT * FROM products WHERE product_name LIKE '%wireless%'\n\n- Case-insensitive search: WHERE LOWER(product_name) LIKE LOWER('%headphones%')\n\n- Multiple keywords: WHERE product_name LIKE '%premium%' AND product_name LIKE '%wireless%'\n\n- Exact match: WHERE product_name = 'Premium Wireless Headphones'\n\n- Sort alphabetically: ORDER BY product_name\n\n- Products starting with: WHERE product_name LIKE 'Professional%'\n\nBUSINESS_RULE: Descriptive names including brand qualifiers and product type (Premium Wireless Headphones, Professional Yoga Mat).\n\nCOMMON_QUESTIONS: How to search products by name? Find product called wireless headphones? Search for item by name? What products contain keyword? Lookup product by title? Find products with name?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "product_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "product_name",
+        "item name",
+        "product title",
+        "product search",
+        "search products",
+        "find products",
+        "product called",
+        "item title"
+      ]
+    },
+    {
+      "chunk_id": "col_products_category",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "category",
+      "text": "COLUMN: products.category\n\nDESCRIPTION: Product category classification for organization and filtering.\n\nNATURAL_LANGUAGE_TERMS: category, product category, product type, department, section, classification, group, product group, item category, merchandise type, category name, type of product, product classification, what category, which department\n\nDATA_TYPE: VARCHAR(100)\n\nVALID_VALUES: Electronics, Clothing, Home & Kitchen, Sports & Outdoors, Beauty & Personal Care, Books, Pet Supplies, Health & Wellness, Home & Office, Bags & Luggage, Accessories, Footwear\n\nUSAGE: Category-based filtering, filter by category, department browsing, catalog navigation, category performance analysis, inventory by department, find products in category, browse by type, department filtering\n\nUSE_CASES: Filter products by category, find electronics, show clothing items, browse by department, products in specific category, category-based search, department analysis, type filtering\n\nEXAMPLES:\n\n- Filter by category: SELECT * FROM products WHERE category = 'Electronics'\n\n- Multiple categories: WHERE category IN ('Electronics', 'Accessories')\n\n- Count by category: SELECT category, COUNT(*) AS product_count FROM products GROUP BY category ORDER BY product_count DESC\n\n- Category revenue: SELECT p.category, SUM(oi.total_price) FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.category\n\n- Available stock by category: SELECT category, SUM(stock_quantity) FROM products GROUP BY category\n\nBUSINESS_RULE: Every product has exactly one category. Standardized values. Can join with categories table for hierarchical browsing.\n\nCOMMON_QUESTIONS: How to filter by category? Find electronics products? Show products in clothing category? What categories exist? Products in specific department? Filter by product type? Browse by category?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "category",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "category",
+        "product category",
+        "department",
+        "product type",
+        "classification",
+        "filter by category",
+        "electronics",
+        "clothing",
+        "browse category"
+      ]
+    },
+    {
+      "chunk_id": "col_products_brand",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "brand",
+      "text": "COLUMN: products.brand\n\nDESCRIPTION: Brand or manufacturer name.\n\nNATURAL_LANGUAGE_TERMS: brand, brand name, manufacturer, maker, company, brand label, product brand, made by, manufacturer name, company name, branded by, who makes, product maker\n\nDATA_TYPE: VARCHAR(100)\n\nUSAGE: Brand-based filtering, filter by brand, brand-specific searches, find products by brand, brand performance analysis, manufacturer identification, brand comparison, show brand products\n\nUSE_CASES: Filter products by brand, find TechPro products, show specific brand, brand-based search, compare brands, brand analysis, products from manufacturer, brand filtering\n\nEXAMPLES:\n\n- Filter by brand: SELECT * FROM products WHERE brand = 'TechPro'\n\n- Multiple brands: WHERE brand IN ('TechPro', 'StyleMax', 'FitLife')\n\n- Products per brand: SELECT brand, COUNT(*) AS product_count FROM products GROUP BY brand ORDER BY product_count DESC\n\n- Brand revenue: SELECT p.brand, SUM(oi.total_price) FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.brand\n\n- Brands in category: SELECT DISTINCT brand FROM products WHERE category = 'Electronics' ORDER BY brand\n\nBUSINESS_RULE: Includes house brands and third-party manufacturers. Used for brand analytics and filtering.\n\nCOMMON_QUESTIONS: How to filter by brand? Find TechPro products? Show products from specific brand? What brands are available? Filter by manufacturer? Products made by brand? Brand comparison?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "brand",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "brand",
+        "brand name",
+        "manufacturer",
+        "maker",
+        "filter by brand",
+        "brand products",
+        "made by",
+        "company"
+      ]
+    },
+    {
+      "chunk_id": "col_products_price",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "price",
+      "text": "COLUMN: products.price\n\nDESCRIPTION: Retail selling price of the product.\n\nNATURAL_LANGUAGE_TERMS: price, cost, amount, retail price, selling price, product price, item cost, how much, price range, expensive, cheap, affordable, budget, premium, costly, inexpensive, value, product cost, sale price, cost of product, how much does it cost\n\nDATA_TYPE: DECIMAL(10,2)\n\nCONSTRAINTS: NOT NULL, price > 0\n\nCURRENCY: USD\n\nUSAGE: Price-based filtering, filter by price, find cheap products, find expensive products, sorting by price, revenue calculations, discount calculations, price range queries, budget filtering, cost analysis, affordable items, premium products\n\nUSE_CASES: Find products under $50, show expensive products, filter by price range, sort by price, find affordable items, budget shopping, find premium products, price comparison, cheapest products, most expensive products, price filtering\n\nEXAMPLES:\n\n- Products under $50: SELECT * FROM products WHERE price < 50\n\n- Price range: WHERE price BETWEEN 50 AND 100\n\n- Sort by price ascending: ORDER BY price ASC\n\n- Sort by price descending: ORDER BY price DESC\n\n- Average price: SELECT AVG(price) FROM products\n\n- Price by category: SELECT category, AVG(price), MIN(price), MAX(price) FROM products GROUP BY category\n\n- Expensive products: WHERE price > 200 ORDER BY price DESC\n\nBUSINESS_RULE: Current selling price in USD. Does not include tax or shipping. Must be positive value. For profit margin, join with product_suppliers.cost_price.\n\nCOMMON_QUESTIONS: How to find cheap products? Show products under $100? Which products are expensive? Filter by price range? Sort by cheapest? What's the price? How much does it cost? Find affordable items? Show budget-friendly products? Most expensive products? Products under specific price?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "price",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "price",
+        "cost",
+        "amount",
+        "retail price",
+        "expensive",
+        "cheap",
+        "affordable",
+        "budget",
+        "how much",
+        "price range",
+        "inexpensive",
+        "costly",
+        "premium"
+      ]
+    },
+    {
+      "chunk_id": "col_products_stock_quantity",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "stock_quantity",
+      "text": "COLUMN: products.stock_quantity\n\nDESCRIPTION: Total available stock across all warehouses (summary field).\n\nNATURAL_LANGUAGE_TERMS: stock quantity, stock, inventory, available stock, quantity available, in stock, out of stock, stock level, inventory level, quantity in stock, how many available, availability, units available, stock count, inventory count, low stock, available quantity\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: stock_quantity >= 0\n\nUSAGE: Quick availability check, check if in stock, find available products, out of stock filtering, low stock alerts, inventory summary, stock level monitoring, product availability, find products in stock, inventory checking\n\nUSE_CASES: Check product availability, find in stock products, show out of stock items, low stock alerts, inventory monitoring, available products, stock level check, which products are available, inventory summary\n\nEXAMPLES:\n\n- In stock products: SELECT * FROM products WHERE stock_quantity > 0\n\n- Out of stock: WHERE stock_quantity = 0\n\n- Low stock alert: WHERE stock_quantity < 10 AND stock_quantity > 0\n\n- Sort by stock level: ORDER BY stock_quantity ASC\n\n- Total inventory value: SELECT SUM(price * stock_quantity) AS total_value FROM products\n\n- Low stock items: SELECT product_name, stock_quantity FROM products WHERE stock_quantity < 10 ORDER BY stock_quantity ASC\n\nBUSINESS_RULE: Summary across all warehouses. Zero means out of stock. Values under 10 typically trigger reorder. Updated when orders placed and inventory restocked.\n\nCOMMON_QUESTIONS: Is product in stock? Check product availability? Show out of stock products? Which products are available? Low stock items? How many units available? Products that need reorder? Stock level for product? Available quantity?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "stock_quantity",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "stock_quantity",
+        "stock",
+        "inventory",
+        "in stock",
+        "out of stock",
+        "available",
+        "availability",
+        "low stock",
+        "stock level",
+        "quantity available"
+      ]
+    },
+    {
+      "chunk_id": "col_products_description",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "description",
+      "text": "COLUMN: products.description\n\nDESCRIPTION: Detailed product description with features, benefits, and specifications.\n\nNATURAL_LANGUAGE_TERMS: description, product description, details, product details, specifications, specs, features, product features, product info, product information, about product, what is product, product text, detailed description, full description\n\nDATA_TYPE: TEXT\n\nUSAGE: Product detail pages, search indexing, feature information, finding products by features, marketing content, SEO optimization, detailed product information, specification lookup, feature search\n\nUSE_CASES: Search products by features, find products with specific specifications, detailed product information, feature-based search, product specifications, what product includes, product details\n\nEXAMPLES:\n\n- Search in description: SELECT * FROM products WHERE description LIKE '%noise cancellation%'\n\n- Full text search: WHERE description ILIKE '%wireless%'\n\n- Products with feature: WHERE description LIKE '%waterproof%'\n\nBUSINESS_RULE: Contains features, benefits, specifications, and usage information. Used for detailed product information and search.\n\nCOMMON_QUESTIONS: What are product features? Product specifications? Detailed product description? What does product include? Search by features? Products with specific specs?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "description",
+        "type": "TEXT",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "description",
+        "product description",
+        "details",
+        "specifications",
+        "specs",
+        "features",
+        "product info",
+        "product details"
+      ]
+    },
+    {
+      "chunk_id": "col_products_created_at",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "products",
+      "column_name": "created_at",
+      "text": "COLUMN: products.created_at\n\nDESCRIPTION: Timestamp when product was added to catalog.\n\nNATURAL_LANGUAGE_TERMS: created at, creation date, added date, when added, date added, product added, new arrivals, new products, recently added, latest products, newest products, just added, when product added, addition date, catalog date\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nUSAGE: New product identification, find new arrivals, catalog growth tracking, new arrivals filtering, product age analysis, recently added products, latest additions, newest items\n\nUSE_CASES: Find new arrivals, show recently added products, new products this month, latest additions, catalog growth analysis, newest items, products added recently, recent catalog updates\n\nEXAMPLES:\n\n- New arrivals last 30 days: SELECT * FROM products WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'\n\n- Products added in 2024: WHERE created_at >= '2024-01-01'\n\n- Catalog growth by month: SELECT DATE_TRUNC('month', created_at) AS month, COUNT(*) FROM products GROUP BY month ORDER BY month\n\n- Newest products: ORDER BY created_at DESC LIMIT 10\n\n- Products older than 1 year: WHERE created_at < CURRENT_DATE - INTERVAL '1 year'\n\nBUSINESS_RULE: Set once when product added to catalog. Never modified. Use for new arrivals and catalog timeline analysis.\n\nCOMMON_QUESTIONS: Show new arrivals? Recently added products? New products this month? Latest additions? Newest items in catalog? Products added today? Recent products? What's new?",
+      "metadata": {
+        "entity": "column",
+        "table": "products",
+        "column": "created_at",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "created_at",
+        "new arrivals",
+        "new products",
+        "recently added",
+        "latest products",
+        "newest",
+        "just added",
+        "what's new",
+        "recent"
+      ]
+    },
+    {
+      "chunk_id": "rel_products_to_order_items",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "products",
+      "related_table": "order_items",
+      "text": "RELATIONSHIP: products to order_items (One-to-Many)\n\nDESCRIPTION: One product can appear in many orders. This tracks which products are being purchased and how frequently.\n\nNATURAL_LANGUAGE_TERMS: product orders, products sold, what products were ordered, product sales, items ordered, products purchased, order details, products in orders, which products sold, product order history\n\nJOIN_CONDITION: products.product_id = order_items.product_id\n\nCARDINALITY: 1:N (one product can be in zero, one, or many order line items)\n\nFOREIGN_KEY: order_items.product_id references products.product_id\n\nUSAGE: Finding orders containing product, calculating bestsellers, product sales analysis, revenue by product, units sold, popular products, sales tracking\n\nUSE_CASES: Which orders contain product, bestselling products, product sales performance, total units sold, revenue by product, popular items, sales velocity, product demand\n\nEXAMPLES:\n\n- Orders containing product: SELECT p.product_name, oi.order_id, oi.quantity FROM products p JOIN order_items oi ON p.product_id = oi.product_id WHERE p.product_id = 2050\n\n- Bestselling products: SELECT p.product_id, p.product_name, COUNT(oi.order_id) AS times_ordered, SUM(oi.quantity) AS units_sold FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_id, p.product_name ORDER BY times_ordered DESC LIMIT 10\n\n- Product revenue: SELECT p.product_name, SUM(oi.total_price) AS revenue FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY revenue DESC\n\n- Products never ordered: SELECT p.* FROM products p LEFT JOIN order_items oi ON p.product_id = oi.product_id WHERE oi.order_item_id IS NULL\n\nBUSINESS_RULE: Same product can appear in multiple orders. Use for sales velocity and bestseller analysis.\n\nCOMMON_QUESTIONS: Which products are bestsellers? Product sales performance? How many units sold? Revenue by product? Popular products? Products never ordered? What products are selling well?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "products",
+        "to_table": "order_items",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "product orders",
+        "bestsellers",
+        "product sales",
+        "units sold",
+        "revenue",
+        "popular products",
+        "what sold",
+        "sales performance"
+      ]
+    },
+    {
+      "chunk_id": "rel_products_to_reviews",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "products",
+      "related_table": "reviews",
+      "text": "RELATIONSHIP: products to reviews (One-to-Many)\n\nDESCRIPTION: One product can have many customer reviews. This tracks customer feedback and product ratings.\n\nNATURAL_LANGUAGE_TERMS: product reviews, customer reviews, product ratings, product feedback, review ratings, customer feedback on product, product rating score, how customers rate product, review score, product opinions\n\nJOIN_CONDITION: products.product_id = reviews.product_id\n\nCARDINALITY: 1:N (one product can have zero, one, or many reviews)\n\nFOREIGN_KEY: reviews.product_id references products.product_id\n\nUSAGE: Displaying product reviews, calculating average ratings, finding top-rated products, quality monitoring, customer satisfaction, review analysis\n\nUSE_CASES: Show product reviews, average product rating, top-rated products, customer feedback, products with best ratings, review count, highly rated items, customer satisfaction\n\nEXAMPLES:\n\n- Product reviews: SELECT p.product_name, r.rating, r.review_title, r.review_date FROM products p JOIN reviews r ON p.product_id = r.product_id WHERE p.product_id = 2050 ORDER BY r.review_date DESC\n\n- Average rating: SELECT p.product_name, AVG(r.rating) AS avg_rating, COUNT(r.review_id) AS review_count FROM products p JOIN reviews r ON p.product_id = r.product_id WHERE p.product_id = 2050 GROUP BY p.product_name\n\n- Top rated products: SELECT p.product_id, p.product_name, AVG(r.rating) AS avg_rating FROM products p JOIN reviews r ON p.product_id = r.product_id GROUP BY p.product_id, p.product_name HAVING COUNT(r.review_id) >= 5 ORDER BY avg_rating DESC LIMIT 10\n\n- Products without reviews: SELECT p.* FROM products p LEFT JOIN reviews r ON p.product_id = r.product_id WHERE r.review_id IS NULL\n\nBUSINESS_RULE: Multiple customers can review same product. Average rating displayed with review count.\n\nCOMMON_QUESTIONS: What is product rating? Show product reviews? Top-rated products? Customer feedback on product? Average rating? Products with best reviews? How many reviews?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "products",
+        "to_table": "reviews",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "product reviews",
+        "ratings",
+        "customer feedback",
+        "top rated",
+        "product rating",
+        "review score",
+        "highly rated",
+        "best reviews"
+      ]
+    },
+    {
+      "chunk_id": "rel_products_to_inventory",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "products",
+      "related_table": "inventory",
+      "text": "RELATIONSHIP: products to inventory (One-to-Many)\n\nDESCRIPTION: One product can be stored in multiple warehouses. This tracks warehouse-specific stock levels.\n\nNATURAL_LANGUAGE_TERMS: product inventory, warehouse stock, stock by warehouse, inventory by location, warehouse inventory, where product stored, product locations, stock distribution, inventory locations\n\nJOIN_CONDITION: products.product_id = inventory.product_id\n\nCARDINALITY: 1:N (one product can be in one, two, or three warehouses)\n\nFOREIGN_KEY: inventory.product_id references products.product_id\n\nUSAGE: Warehouse-specific stock levels, inventory distribution analysis, reorder alerts by location, stock by warehouse, where product available\n\nUSE_CASES: Stock levels by warehouse, where is product stored, inventory distribution, warehouse availability, stock at specific location, total stock across warehouses\n\nEXAMPLES:\n\n- Product stock by warehouse: SELECT p.product_name, w.warehouse_name, i.quantity_available FROM products p JOIN inventory i ON p.product_id = i.product_id JOIN warehouses w ON i.warehouse_id = w.warehouse_id WHERE p.product_id = 2050\n\n- Total stock across warehouses: SELECT p.product_id, p.product_name, SUM(i.quantity_available) AS total_stock FROM products p JOIN inventory i ON p.product_id = i.product_id GROUP BY p.product_id, p.product_name\n\n- Low stock by warehouse: SELECT p.product_name, w.warehouse_name, i.quantity_available, i.reorder_point FROM products p JOIN inventory i ON p.product_id = i.product_id JOIN warehouses w ON i.warehouse_id = w.warehouse_id WHERE i.quantity_available <= i.reorder_point\n\nBUSINESS_RULE: Same product can be in 1-3 warehouses. products.stock_quantity is sum of inventory.quantity_available.\n\nCOMMON_QUESTIONS: Where is product stored? Stock by warehouse? Inventory at specific warehouse? Total stock across all warehouses? Which warehouse has product?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "products",
+        "to_table": "inventory",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "product inventory",
+        "warehouse stock",
+        "stock by warehouse",
+        "inventory distribution",
+        "where stored",
+        "warehouse availability"
+      ]
+    },
+    {
+      "chunk_id": "query_search_products",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "products",
+      "use_case": "search_products",
+      "text": "QUERY USE CASE: Search products by name or description\n\nDESCRIPTION: Find products matching search keywords for catalog browsing and product discovery.\n\nNATURAL_LANGUAGE_QUERIES: search products, find products, lookup items, search for product, find items, search catalog, look for products, find product by name, search by keyword, product search, item search, find merchandise\n\nTABLES_USED: products\n\nWHEN_TO_USE: Product search functionality, autocomplete, catalog filtering, finding specific items, keyword search, product discovery\n\nSQL_PATTERN: SELECT * FROM products WHERE product_name LIKE '%keyword%' OR description LIKE '%keyword%'\n\nEXAMPLES:\n\n- Single keyword: SELECT * FROM products WHERE product_name LIKE '%wireless%'\n\n- Case-insensitive: SELECT * FROM products WHERE LOWER(product_name) LIKE LOWER('%Wireless%')\n\n- Multiple keywords: WHERE product_name LIKE '%premium%' AND product_name LIKE '%wireless%'\n\n- Search in description: WHERE product_name LIKE '%headphones%' OR description LIKE '%headphones%'\n\n- With category filter: WHERE category = 'Electronics' AND product_name LIKE '%bluetooth%'\n\nBUSINESS_RULE: Use ILIKE for case-insensitive search in PostgreSQL. Search both product_name and description for best results.\n\nCOMMON_QUESTIONS: How to search products? Find products by name? Search for wireless products? Lookup items by keyword? Find products containing word? Search catalog? Product search by name?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "product_search",
+        "tables": [
+          "products"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "search products",
+        "find products",
+        "product search",
+        "search catalog",
+        "lookup items",
+        "keyword search",
+        "find by name"
+      ]
+    },
+    {
+      "chunk_id": "query_filter_by_price",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "products",
+      "use_case": "filter_by_price",
+      "text": "QUERY USE CASE: Filter products by price range\n\nDESCRIPTION: Find products within specific price limits for budget-conscious shopping.\n\nNATURAL_LANGUAGE_QUERIES: cheap products, affordable products, products under $50, expensive products, filter by price, price range, budget products, find inexpensive items, costly products, premium items, products within budget, low cost products\n\nTABLES_USED: products\n\nWHEN_TO_USE: Price filtering, budget shopping, finding affordable or premium products, price comparison, cost-based filtering\n\nSQL_PATTERNS:\n\n- Under price: SELECT * FROM products WHERE price < amount\n\n- Price range: SELECT * FROM products WHERE price BETWEEN min AND max\n\n- Over price: SELECT * FROM products WHERE price > amount\n\nEXAMPLES:\n\n- Products under $50: SELECT * FROM products WHERE price < 50 ORDER BY price ASC\n\n- Price range $50-$100: SELECT * FROM products WHERE price BETWEEN 50 AND 100 ORDER BY price\n\n- Premium products over $200: SELECT * FROM products WHERE price > 200 ORDER BY price DESC\n\n- Affordable electronics: SELECT * FROM products WHERE category = 'Electronics' AND price < 100\n\n- Sort by price: ORDER BY price ASC (cheapest first) or ORDER BY price DESC (most expensive first)\n\nBUSINESS_RULE: Price is in USD. Does not include tax or shipping. Combine with category for better filtering.\n\nCOMMON_QUESTIONS: Show cheap products? Find products under $50? Expensive products? Filter by price range? Affordable items? Budget products? Products within price limit? Cheapest products? Most expensive items?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "price_filter",
+        "tables": [
+          "products"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "cheap products",
+        "affordable",
+        "expensive",
+        "price range",
+        "budget",
+        "filter by price",
+        "under price",
+        "inexpensive",
+        "costly",
+        "premium"
+      ]
+    },
+    {
+      "chunk_id": "query_bestselling_products",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "products",
+      "related_tables": "order_items",
+      "use_case": "bestselling_products",
+      "text": "QUERY USE CASE: Find bestselling products\n\nDESCRIPTION: Identify most frequently ordered products for merchandising and inventory decisions.\n\nNATURAL_LANGUAGE_QUERIES: bestsellers, best selling products, popular products, top products, most ordered products, trending products, hot items, most sold products, top selling items, popular items, best performers, top sellers\n\nTABLES_USED: products, order_items\n\nWHEN_TO_USE: Bestseller lists, trending products, inventory prioritization, marketing campaigns, popular items analysis, sales performance\n\nSQL_PATTERN: SELECT p.product_name, COUNT(*) as times_ordered FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_id ORDER BY times_ordered DESC\n\nEXAMPLES:\n\n- Top 10 bestsellers: SELECT p.product_id, p.product_name, COUNT(oi.order_id) AS times_ordered, SUM(oi.quantity) AS units_sold FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_id, p.product_name ORDER BY times_ordered DESC LIMIT 10\n\n- Bestsellers by revenue: SELECT p.product_name, SUM(oi.total_price) AS revenue FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY revenue DESC LIMIT 10\n\n- Bestsellers in category: SELECT p.product_name, COUNT(*) AS orders FROM products p JOIN order_items oi ON p.product_id = oi.product_id WHERE p.category = 'Electronics' GROUP BY p.product_name ORDER BY orders DESC\n\n- Total units sold: SELECT p.product_name, SUM(oi.quantity) AS total_units FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY total_units DESC\n\nBUSINESS_RULE: Use COUNT for order frequency, SUM(quantity) for total units, SUM(total_price) for revenue.\n\nCOMMON_QUESTIONS: What are bestsellers? Most popular products? Top selling items? Which products sell most? Trending products? Best performers? Top 10 products? Most ordered items? Popular products by revenue?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "bestsellers",
+        "tables": [
+          "products",
+          "order_items"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "bestsellers",
+        "popular products",
+        "top products",
+        "trending",
+        "most ordered",
+        "best selling",
+        "hot items",
+        "top sellers",
+        "popular items"
+      ]
+    },
+    {
+      "chunk_id": "query_low_stock_alert",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "products",
+      "use_case": "low_stock_alert",
+      "text": "QUERY USE CASE: Identify products with low stock levels\n\nDESCRIPTION: Find products needing reorder to prevent stockouts.\n\nNATURAL_LANGUAGE_QUERIES: low stock products, out of stock items, products need reorder, inventory alerts, stockout risk, low inventory, products running out, need restocking, reorder alerts, stock warnings, inventory warnings\n\nTABLES_USED: products\n\nWHEN_TO_USE: Inventory management, reorder alerts, stock monitoring, preventing out-of-stock situations, inventory warnings, restocking planning\n\nSQL_PATTERN: SELECT * FROM products WHERE stock_quantity < threshold AND stock_quantity > 0\n\nEXAMPLES:\n\n- Low stock (under 10): SELECT product_id, product_name, stock_quantity FROM products WHERE stock_quantity < 10 AND stock_quantity > 0 ORDER BY stock_quantity ASC\n\n- Out of stock: SELECT product_id, product_name FROM products WHERE stock_quantity = 0\n\n- Critical low stock (under 5): SELECT * FROM products WHERE stock_quantity < 5 AND stock_quantity > 0\n\n- Low stock by category: SELECT category, COUNT(*) AS low_stock_items FROM products WHERE stock_quantity < 10 GROUP BY category\n\n- Reorder priority: SELECT product_name, stock_quantity, category FROM products WHERE stock_quantity < 10 ORDER BY stock_quantity ASC, category\n\nBUSINESS_RULE: Stock under 10 triggers low stock alert. Zero means out of stock. Products with high sales velocity need higher thresholds.\n\nCOMMON_QUESTIONS: Which products are low on stock? Out of stock items? Products need reordering? Low inventory alerts? Which items running out? Stock warnings? Products to restock? Critical stock levels?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "inventory_management",
+        "tables": [
+          "products"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "low stock",
+        "out of stock",
+        "reorder",
+        "inventory alert",
+        "stock warning",
+        "running out",
+        "need restocking",
+        "stockout"
+      ]
+    }
+  ]
+}

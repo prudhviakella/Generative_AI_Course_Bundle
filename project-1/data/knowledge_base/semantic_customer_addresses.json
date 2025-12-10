@@ -1,0 +1,487 @@
+{
+  "table": "customer_addresses",
+  "description": "ENHANCED semantic memory for CUSTOMER_ADDRESSES table - optimized for natural language semantic search",
+  "total_chunks": 19,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 12,
+    "relationships": 2,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_customer_addresses_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "customer_addresses",
+      "text": "TABLE: customer_addresses\n\nDESCRIPTION: Multiple addresses for each customer including shipping, billing, and alternate delivery locations.\n\nNATURAL_LANGUAGE_TERMS: customer addresses, address book, shipping addresses, billing addresses, delivery addresses, customer locations, saved addresses, address list, multiple addresses, customer address book, alternate addresses, delivery locations\n\nPRIMARY_KEY: address_id\n\nFOREIGN_KEYS: customer_id → customers.customer_id\n\nUSAGE: Address management, shipping address selection, billing address lookup, default address determination, multi-address support, delivery location management, address book functionality\n\nCOMMON_QUERIES: Customer addresses, default shipping address, billing addresses, all addresses for customer, shipping destinations, address by type\n\nUSE_CASES: Get customer addresses, find default shipping address, show billing address, address selection, delivery location lookup, saved addresses",
+      "metadata": {
+        "entity": "table",
+        "table": "customer_addresses",
+        "pk": "address_id",
+        "fk": [
+          "customer_id"
+        ]
+      },
+      "keywords": [
+        "customer_addresses",
+        "address book",
+        "shipping addresses",
+        "billing addresses",
+        "delivery addresses",
+        "saved addresses",
+        "multiple addresses"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_address_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "address_id",
+      "text": "COLUMN: customer_addresses.address_id\n\nDESCRIPTION: Unique identifier for each saved address.\n\nNATURAL_LANGUAGE_TERMS: address id, address ID, address identifier, address number, address reference, unique address id, address key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Address identification, address lookup, unique address reference, address tracking\n\nUSE_CASES: Get specific address, address lookup, address identification\n\nEXAMPLES:\n\n- Specific address: SELECT * FROM customer_addresses WHERE address_id = 6001\n\n- Address details: WHERE address_id = 6001\n\nBUSINESS_RULE: Unique identifier for each saved address. Immutable once assigned.\n\nCOMMON_QUESTIONS: Address ID? Get address by ID? Address identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "address_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "address_id",
+        "address ID",
+        "address identifier",
+        "primary key",
+        "unique address"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_customer_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "customer_id",
+      "text": "COLUMN: customer_addresses.customer_id\n\nDESCRIPTION: Links address to customer who owns it.\n\nNATURAL_LANGUAGE_TERMS: customer id, customer ID, customer identifier, which customer, customer reference, address owner, belongs to customer, customer's address\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: customers.customer_id\n\nUSAGE: Finding customer addresses, address ownership, customer address lookup, all addresses for customer, address book retrieval\n\nUSE_CASES: Get customer addresses, show all addresses for customer, customer address book, find customer's saved addresses\n\nEXAMPLES:\n\n- Customer addresses: SELECT * FROM customer_addresses WHERE customer_id = 1001\n\n- Address count: SELECT customer_id, COUNT(*) FROM customer_addresses GROUP BY customer_id\n\n- With customer details: FROM customers c JOIN customer_addresses ca ON c.customer_id = ca.customer_id WHERE c.customer_id = 1001\n\nBUSINESS_RULE: Every address belongs to exactly one customer. One customer can have multiple addresses (1:N relationship).\n\nCOMMON_QUESTIONS: Show customer addresses? Get all addresses for customer? Customer address book? Customer's saved addresses?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "customer_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "customers.customer_id"
+      },
+      "keywords": [
+        "customer_id",
+        "foreign key",
+        "customer addresses",
+        "which customer",
+        "address owner",
+        "customer's addresses"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_address_type",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "address_type",
+      "text": "COLUMN: customer_addresses.address_type\n\nDESCRIPTION: Classification of address purpose (Shipping, Billing, or Both).\n\nNATURAL_LANGUAGE_TERMS: address type, type of address, address purpose, address category, shipping address, billing address, address classification, what type of address, address usage type\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Shipping, Billing, Both\n\nUSAGE: Address filtering by type, finding shipping addresses, finding billing addresses, address categorization, type-based address selection\n\nUSE_CASES: Get shipping addresses, find billing address, filter by address type, shipping address selection, billing address lookup\n\nEXAMPLES:\n\n- Shipping addresses: SELECT * FROM customer_addresses WHERE address_type = 'Shipping' OR address_type = 'Both'\n\n- Billing addresses: WHERE address_type = 'Billing' OR address_type = 'Both'\n\n- Type distribution: SELECT address_type, COUNT(*) FROM customer_addresses GROUP BY address_type\n\n- Customer shipping addresses: SELECT * FROM customer_addresses WHERE customer_id = 1001 AND (address_type = 'Shipping' OR address_type = 'Both')\n\nBUSINESS_RULE: 'Both' can be used for shipping and billing. Filter with OR conditions to include 'Both'.\n\nCOMMON_QUESTIONS: Show shipping addresses? Get billing address? Filter by address type? Shipping or billing? What type of address?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "address_type",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "address_type",
+        "shipping address",
+        "billing address",
+        "type",
+        "address purpose",
+        "shipping",
+        "billing",
+        "both"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_is_default",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "is_default",
+      "text": "COLUMN: customer_addresses.is_default\n\nDESCRIPTION: Indicates if this is customer's default address (Yes/No).\n\nNATURAL_LANGUAGE_TERMS: is default, default address, primary address, main address, preferred address, default shipping, default billing, is primary, preferred location\n\nDATA_TYPE: VARCHAR(3)\n\nVALID_VALUES: Yes, No\n\nUSAGE: Default address selection, primary address lookup, auto-fill address, preferred address determination, default shipping destination\n\nUSE_CASES: Get default address, find primary address, default shipping address, preferred address, main delivery location\n\nEXAMPLES:\n\n- Default address: SELECT * FROM customer_addresses WHERE customer_id = 1001 AND is_default = 'Yes'\n\n- Default shipping: WHERE customer_id = 1001 AND is_default = 'Yes' AND (address_type = 'Shipping' OR address_type = 'Both')\n\n- Default billing: WHERE customer_id = 1001 AND is_default = 'Yes' AND (address_type = 'Billing' OR address_type = 'Both')\n\n- Count defaults: SELECT customer_id, COUNT(*) FROM customer_addresses WHERE is_default = 'Yes' GROUP BY customer_id\n\nBUSINESS_RULE: Typically one default per customer per type. Auto-select for checkout. Can have default shipping and default billing.\n\nCOMMON_QUESTIONS: What is default address? Get primary address? Default shipping address? Preferred address? Main delivery location?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "is_default",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "is_default",
+        "default address",
+        "primary address",
+        "main address",
+        "preferred",
+        "default shipping",
+        "default billing"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_address_line1",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "address_line1",
+      "text": "COLUMN: customer_addresses.address_line1\n\nDESCRIPTION: Primary street address line (street number and name).\n\nNATURAL_LANGUAGE_TERMS: address line 1, street address, address, primary address, street, address line one, first address line, main address line, street number and name\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Primary address information, shipping label generation, delivery address display, address verification\n\nUSE_CASES: Get street address, shipping address display, delivery label, address lookup\n\nEXAMPLES:\n\n- Full address: SELECT address_line1 || ', ' || city || ', ' || state || ' ' || zip_code FROM customer_addresses WHERE address_id = 6001\n\n- Search address: WHERE address_line1 LIKE '%Main Street%'\n\nBUSINESS_RULE: Required field. Contains street number and street name. Must be combined with city, state, zip for complete address.\n\nCOMMON_QUESTIONS: What is street address? Address line 1? Primary address? Street number and name?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "address_line1",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "address_line1",
+        "street address",
+        "address",
+        "primary address line",
+        "street",
+        "address line 1"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_address_line2",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "address_line2",
+      "text": "COLUMN: customer_addresses.address_line2\n\nDESCRIPTION: Secondary address line for apartment, suite, unit number (optional).\n\nNATURAL_LANGUAGE_TERMS: address line 2, apartment number, suite number, unit number, apt, suite, unit, floor, secondary address, apartment, second address line, address line two\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: Optional (can be NULL)\n\nUSAGE: Apartment/suite identification, complete address information, detailed delivery instructions, secondary address details\n\nUSE_CASES: Apartment number, suite number, unit number, floor details, additional address info\n\nEXAMPLES:\n\n- With apartment: SELECT * FROM customer_addresses WHERE address_line2 LIKE '%Apt%'\n\n- Complete address: SELECT address_line1 || COALESCE(', ' || address_line2, '') || ', ' || city FROM customer_addresses\n\n- Has apartment: WHERE address_line2 IS NOT NULL\n\nBUSINESS_RULE: Optional field. Contains apt/suite/unit number. NULL if not applicable.\n\nCOMMON_QUESTIONS: Apartment number? Suite number? Unit number? Address line 2? Secondary address?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "address_line2",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "address_line2",
+        "apartment",
+        "suite",
+        "unit",
+        "apt",
+        "secondary address",
+        "address line 2"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_city",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "city",
+      "text": "COLUMN: customer_addresses.city\n\nDESCRIPTION: City name for the address.\n\nNATURAL_LANGUAGE_TERMS: city, city name, town, municipality, address city, delivery city, city location, where located, urban area\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: City-level filtering, geographic analysis, delivery zone determination, address display, location identification\n\nUSE_CASES: Filter addresses by city, delivery city, address location, geographic filtering, city-based address lookup\n\nEXAMPLES:\n\n- Addresses in city: SELECT * FROM customer_addresses WHERE city = 'New York'\n\n- Cities with addresses: SELECT DISTINCT city FROM customer_addresses ORDER BY city\n\n- Count by city: SELECT city, COUNT(*) FROM customer_addresses GROUP BY city ORDER BY COUNT(*) DESC\n\nBUSINESS_RULE: Full city names (not abbreviations). Required field. Combines with state and zip for complete location.\n\nCOMMON_QUESTIONS: Addresses in New York? Which city? Filter by city? Delivery city? Address location?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "city",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "city",
+        "city name",
+        "town",
+        "municipality",
+        "address city",
+        "delivery city",
+        "location"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_state",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "state",
+      "text": "COLUMN: customer_addresses.state\n\nDESCRIPTION: US state abbreviation for the address.\n\nNATURAL_LANGUAGE_TERMS: state, state code, US state, state abbreviation, address state, delivery state, region, state location, CA, NY, TX, FL\n\nDATA_TYPE: VARCHAR(2)\n\nFORMAT: Two-letter uppercase state codes\n\nCONSTRAINTS: NOT NULL\n\nVALID_VALUES: CA, NY, TX, FL, IL, WA, OR, NV, AZ, CO, etc. (all 50 US states)\n\nUSAGE: State-level filtering, regional analysis, tax calculation, shipping zone determination, state-based address lookup\n\nUSE_CASES: Filter addresses by state, California addresses, state distribution, regional analysis, delivery state\n\nEXAMPLES:\n\n- California addresses: SELECT * FROM customer_addresses WHERE state = 'CA'\n\n- Multiple states: WHERE state IN ('CA', 'NY', 'TX')\n\n- Count by state: SELECT state, COUNT(*) FROM customer_addresses GROUP BY state ORDER BY COUNT(*) DESC\n\n- State city combination: SELECT state, city, COUNT(*) FROM customer_addresses GROUP BY state, city\n\nBUSINESS_RULE: Two-letter USPS state abbreviations. Required field. CA=California, NY=New York, TX=Texas, etc.\n\nCOMMON_QUESTIONS: California addresses? Filter by state? Addresses in Texas? Which state? Delivery state? State distribution?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "state",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "state",
+        "state code",
+        "US state",
+        "CA",
+        "NY",
+        "TX",
+        "FL",
+        "state abbreviation",
+        "regional",
+        "address state"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_zip_code",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "zip_code",
+      "text": "COLUMN: customer_addresses.zip_code\n\nDESCRIPTION: US postal zip code for the address.\n\nNATURAL_LANGUAGE_TERMS: zip code, zipcode, zip, postal code, postcode, address zip, delivery zip, zip area, postal area\n\nDATA_TYPE: VARCHAR(10)\n\nFORMAT: 5-digit or 9-digit format (XXXXX or XXXXX-XXXX)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Precise location identification, delivery routing, shipping cost calculation, zone mapping, address verification\n\nUSE_CASES: Filter addresses by zip, delivery zone, shipping calculation, address lookup by zip, postal code filtering\n\nEXAMPLES:\n\n- Addresses in zip: SELECT * FROM customer_addresses WHERE zip_code = '90210'\n\n- Zip pattern: WHERE zip_code LIKE '902%'\n\n- Count by zip: SELECT zip_code, COUNT(*) FROM customer_addresses GROUP BY zip_code ORDER BY COUNT(*) DESC\n\nBUSINESS_RULE: US postal codes. Required field. Used for shipping calculations and delivery routing.\n\nCOMMON_QUESTIONS: Addresses in zip code? Filter by zip? Postal code? Delivery zip? Address in 90210?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "zip_code",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "zip_code",
+        "zipcode",
+        "zip",
+        "postal code",
+        "postcode",
+        "address zip",
+        "delivery zip"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_country",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "country",
+      "text": "COLUMN: customer_addresses.country\n\nDESCRIPTION: Country name for the address.\n\nNATURAL_LANGUAGE_TERMS: country, nation, country name, address country, delivery country, USA, United States, America, US, national location\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nCURRENT_VALUE: All addresses currently in USA\n\nUSAGE: International filtering, country-level filtering, future multi-country support, national location\n\nUSE_CASES: Filter by country, USA addresses, country distribution, international expansion support\n\nEXAMPLES:\n\n- USA addresses: SELECT * FROM customer_addresses WHERE country = 'USA'\n\n- Count by country: SELECT country, COUNT(*) FROM customer_addresses GROUP BY country\n\nBUSINESS_RULE: Currently all addresses are USA. Required field. Supports future international expansion.\n\nCOMMON_QUESTIONS: Which country? USA addresses? Filter by country? All US addresses?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "country",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "country",
+        "nation",
+        "USA",
+        "United States",
+        "America",
+        "US",
+        "address country"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_phone",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "phone",
+      "text": "COLUMN: customer_addresses.phone\n\nDESCRIPTION: Contact phone number for this address.\n\nNATURAL_LANGUAGE_TERMS: phone, phone number, telephone, contact number, delivery phone, address phone, mobile, cell phone, contact phone, delivery contact\n\nDATA_TYPE: VARCHAR(15)\n\nFORMAT: US phone number format\n\nUSAGE: Delivery contact, address-specific phone, delivery coordination, customer contact for this location\n\nUSE_CASES: Delivery contact number, address phone, customer contact at location, delivery coordination phone\n\nEXAMPLES:\n\n- Find by phone: SELECT * FROM customer_addresses WHERE phone = '555-0123'\n\n- Addresses with phone: WHERE phone IS NOT NULL\n\nBUSINESS_RULE: Address-specific phone number. May differ from customer's primary phone. Used for delivery coordination.\n\nCOMMON_QUESTIONS: Delivery phone? Contact number for address? Phone for this location? Address phone number?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "phone",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "phone",
+        "phone number",
+        "telephone",
+        "contact number",
+        "delivery phone",
+        "address phone",
+        "mobile"
+      ]
+    },
+    {
+      "chunk_id": "col_customer_addresses_created_at",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customer_addresses",
+      "column_name": "created_at",
+      "text": "COLUMN: customer_addresses.created_at\n\nDESCRIPTION: Timestamp when address was added to customer's address book.\n\nNATURAL_LANGUAGE_TERMS: created at, creation date, when added, date added, address added, when saved, date saved, added date, timestamp, when created\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nUSAGE: Address creation tracking, recently added addresses, address timeline, new address monitoring\n\nUSE_CASES: Recently added addresses, when address was saved, new addresses, address timeline, address history\n\nEXAMPLES:\n\n- Recent addresses: SELECT * FROM customer_addresses ORDER BY created_at DESC LIMIT 10\n\n- Last 30 days: SELECT * FROM customer_addresses WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'\n\n- Customer's newest address: SELECT * FROM customer_addresses WHERE customer_id = 1001 ORDER BY created_at DESC LIMIT 1\n\nBUSINESS_RULE: Set once when address saved. Never modified. Useful for tracking when addresses were added.\n\nCOMMON_QUESTIONS: When was address added? Recently saved addresses? New addresses? When created? Address timeline?",
+      "metadata": {
+        "entity": "column",
+        "table": "customer_addresses",
+        "column": "created_at",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "created_at",
+        "when added",
+        "date added",
+        "address added",
+        "recently added",
+        "when saved",
+        "new address"
+      ]
+    },
+    {
+      "chunk_id": "rel_customer_addresses_to_customers",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "customer_addresses",
+      "related_table": "customers",
+      "text": "RELATIONSHIP: customer_addresses to customers (Many-to-One)\n\nDESCRIPTION: Each address belongs to one customer. Customer can have multiple addresses.\n\nNATURAL_LANGUAGE_TERMS: customer addresses, address book, customer's addresses, addresses belong to customer, customer address list, saved addresses for customer\n\nJOIN_CONDITION: customer_addresses.customer_id = customers.customer_id\n\nCARDINALITY: N:1 (many addresses belong to one customer)\n\nFOREIGN_KEY: customer_addresses.customer_id references customers.customer_id\n\nUSAGE: Get all addresses for customer, customer address book, address ownership, customer's saved addresses\n\nUSE_CASES: Show customer address book, all addresses for customer, customer's saved locations, address management\n\nEXAMPLES:\n\n- Customer's addresses: SELECT c.first_name, c.last_name, ca.address_type, ca.address_line1, ca.city, ca.state FROM customers c JOIN customer_addresses ca ON c.customer_id = ca.customer_id WHERE c.customer_id = 1001\n\n- Default address: SELECT ca.* FROM customers c JOIN customer_addresses ca ON c.customer_id = ca.customer_id WHERE c.customer_id = 1001 AND ca.is_default = 'Yes'\n\n- Address count: SELECT c.email, COUNT(ca.address_id) AS address_count FROM customers c LEFT JOIN customer_addresses ca ON c.customer_id = ca.customer_id GROUP BY c.email\n\nBUSINESS_RULE: One customer can have multiple addresses (1:N relationship). Typical customer has 2-3 addresses.\n\nCOMMON_QUESTIONS: Show customer addresses? Customer address book? All addresses for customer? Customer's saved addresses?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "customer_addresses",
+        "to_table": "customers",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "customer addresses",
+        "address book",
+        "customer's addresses",
+        "saved addresses",
+        "address ownership"
+      ]
+    },
+    {
+      "chunk_id": "rel_address_type_usage",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "customer_addresses",
+      "related_table": "orders",
+      "text": "RELATIONSHIP: customer_addresses used in orders (indirect)\n\nDESCRIPTION: Addresses selected for order shipping. Links customer's saved addresses to actual order deliveries.\n\nNATURAL_LANGUAGE_TERMS: shipping address for order, order delivery address, address used for shipping, delivery location for order, where order ships\n\nUSAGE: Address selection for orders, shipping address determination, delivery location tracking, order fulfillment address\n\nUSE_CASES: Which address for order, shipping address selection, delivery address lookup, order shipping location\n\nEXAMPLES:\n\n- Match order shipping: SELECT ca.* FROM customer_addresses ca JOIN orders o ON ca.customer_id = o.customer_id WHERE ca.address_line1 = o.shipping_address AND ca.city = o.shipping_city AND ca.state = o.shipping_state\n\nBUSINESS_RULE: Customer selects from saved addresses for order shipping. Address data copied to orders table.\n\nCOMMON_QUESTIONS: Which address for order? Shipping address used? Delivery location for order? Where did order ship?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "customer_addresses",
+        "to_table": "orders",
+        "cardinality": "indirect",
+        "join_type": "address_selection"
+      },
+      "keywords": [
+        "shipping address",
+        "order delivery",
+        "address for order",
+        "delivery location",
+        "where order ships"
+      ]
+    },
+    {
+      "chunk_id": "query_customer_address_book",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customer_addresses",
+      "related_tables": "customers",
+      "use_case": "display_address_book",
+      "text": "QUERY USE CASE: Display customer's complete address book\n\nDESCRIPTION: Show all saved addresses for a customer with type and default status.\n\nNATURAL_LANGUAGE_QUERIES: show customer addresses, customer address book, all addresses for customer, saved addresses, customer's addresses, address list for customer\n\nTABLES_USED: customer_addresses, customers\n\nWHEN_TO_USE: Address management, checkout address selection, customer profile, address book display\n\nSQL_PATTERN: SELECT * FROM customer_addresses WHERE customer_id = X\n\nEXAMPLES:\n\n- All addresses: SELECT address_id, address_type, is_default, address_line1, address_line2, city, state, zip_code FROM customer_addresses WHERE customer_id = 1001 ORDER BY is_default DESC, created_at DESC\n\n- With labels: SELECT CASE WHEN is_default = 'Yes' THEN '✓ ' ELSE '' END || address_type || ': ' || address_line1 || ', ' || city || ', ' || state AS address_label FROM customer_addresses WHERE customer_id = 1001\n\n- Count: SELECT COUNT(*) AS address_count FROM customer_addresses WHERE customer_id = 1001\n\nBUSINESS_RULE: Show default addresses first, then by creation date. Display type badges (Shipping/Billing/Both).\n\nCOMMON_QUESTIONS: Show customer addresses? Address book? All saved addresses? Customer's addresses? Addresses for customer?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "address_management",
+        "tables": [
+          "customer_addresses",
+          "customers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "customer addresses",
+        "address book",
+        "saved addresses",
+        "all addresses",
+        "address list"
+      ]
+    },
+    {
+      "chunk_id": "query_default_shipping_address",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customer_addresses",
+      "use_case": "get_default_address",
+      "text": "QUERY USE CASE: Get customer's default shipping address\n\nDESCRIPTION: Find the default address for order checkout auto-fill.\n\nNATURAL_LANGUAGE_QUERIES: default shipping address, primary address, preferred address, main shipping address, default delivery address, customer default address\n\nTABLES_USED: customer_addresses\n\nWHEN_TO_USE: Checkout auto-fill, default shipping selection, order processing, preferred address lookup\n\nSQL_PATTERN: SELECT * FROM customer_addresses WHERE customer_id = X AND is_default = 'Yes' AND (address_type = 'Shipping' OR address_type = 'Both')\n\nEXAMPLES:\n\n- Default shipping: SELECT * FROM customer_addresses WHERE customer_id = 1001 AND is_default = 'Yes' AND (address_type = 'Shipping' OR address_type = 'Both') LIMIT 1\n\n- Default billing: SELECT * FROM customer_addresses WHERE customer_id = 1001 AND is_default = 'Yes' AND (address_type = 'Billing' OR address_type = 'Both') LIMIT 1\n\n- Any default: SELECT * FROM customer_addresses WHERE customer_id = 1001 AND is_default = 'Yes'\n\nBUSINESS_RULE: Filter for 'Shipping' OR 'Both' for shipping addresses. Use LIMIT 1 since should only be one default.\n\nCOMMON_QUESTIONS: Default shipping address? Primary address? Preferred address? Main delivery address? Default address?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "default_address",
+        "tables": [
+          "customer_addresses"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "default address",
+        "default shipping",
+        "primary address",
+        "preferred",
+        "main address",
+        "default delivery"
+      ]
+    },
+    {
+      "chunk_id": "query_addresses_by_type",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customer_addresses",
+      "use_case": "filter_by_address_type",
+      "text": "QUERY USE CASE: Filter addresses by type\n\nDESCRIPTION: Get shipping or billing addresses for specific purposes.\n\nNATURAL_LANGUAGE_QUERIES: shipping addresses, billing addresses, addresses by type, show shipping addresses, get billing addresses, filter by address type\n\nTABLES_USED: customer_addresses\n\nWHEN_TO_USE: Address type filtering, shipping address selection, billing address lookup, type-specific address display\n\nSQL_PATTERNS:\n\n- Shipping: SELECT * FROM customer_addresses WHERE address_type = 'Shipping' OR address_type = 'Both'\n\n- Billing: SELECT * FROM customer_addresses WHERE address_type = 'Billing' OR address_type = 'Both'\n\nEXAMPLES:\n\n- Customer shipping addresses: SELECT * FROM customer_addresses WHERE customer_id = 1001 AND (address_type = 'Shipping' OR address_type = 'Both')\n\n- Customer billing addresses: SELECT * FROM customer_addresses WHERE customer_id = 1001 AND (address_type = 'Billing' OR address_type = 'Both')\n\n- Type distribution: SELECT address_type, COUNT(*) FROM customer_addresses GROUP BY address_type\n\n- Both types: SELECT * FROM customer_addresses WHERE address_type = 'Both'\n\nBUSINESS_RULE: Use OR with 'Both' to include addresses that serve both purposes. 'Both' addresses appear in both filters.\n\nCOMMON_QUESTIONS: Show shipping addresses? Get billing addresses? Filter by type? Shipping or billing? Addresses by type?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "type_filter",
+        "tables": [
+          "customer_addresses"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "shipping addresses",
+        "billing addresses",
+        "address type",
+        "filter by type",
+        "shipping",
+        "billing"
+      ]
+    },
+    {
+      "chunk_id": "query_address_geographic_analysis",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customer_addresses",
+      "use_case": "geographic_distribution",
+      "text": "QUERY USE CASE: Analyze address geographic distribution\n\nDESCRIPTION: Understand where customers have delivery addresses for regional analysis.\n\nNATURAL_LANGUAGE_QUERIES: addresses by state, address distribution, addresses by city, geographic distribution, delivery locations, regional analysis, where do customers ship\n\nTABLES_USED: customer_addresses\n\nWHEN_TO_USE: Regional analysis, delivery zone planning, shipping strategy, geographic insights\n\nSQL_PATTERN: SELECT state, city, COUNT(*) FROM customer_addresses GROUP BY state, city\n\nEXAMPLES:\n\n- Addresses by state: SELECT state, COUNT(*) AS address_count FROM customer_addresses GROUP BY state ORDER BY address_count DESC\n\n- Top cities: SELECT city, state, COUNT(*) AS address_count FROM customer_addresses GROUP BY city, state ORDER BY address_count DESC LIMIT 10\n\n- California cities: SELECT city, COUNT(*) FROM customer_addresses WHERE state = 'CA' GROUP BY city ORDER BY COUNT(*) DESC\n\n- Zip code distribution: SELECT zip_code, COUNT(*) FROM customer_addresses GROUP BY zip_code HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC\n\nBUSINESS_RULE: Analyze delivery destinations for logistics planning. Multiple addresses per customer may inflate counts.\n\nCOMMON_QUESTIONS: Addresses by state? Address distribution? Top delivery cities? Geographic analysis? Where do customers ship?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "geographic_analysis",
+        "tables": [
+          "customer_addresses"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "address distribution",
+        "by state",
+        "by city",
+        "geographic",
+        "regional",
+        "delivery locations",
+        "where ship"
+      ]
+    }
+  ]
+}

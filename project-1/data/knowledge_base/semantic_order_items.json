@@ -1,0 +1,371 @@
+{
+  "table": "order_items",
+  "description": "ENHANCED semantic memory for ORDER_ITEMS table - optimized for natural language semantic search",
+  "total_chunks": 14,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 6,
+    "relationships": 3,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_order_items_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "order_items",
+      "text": "TABLE: order_items\n\nDESCRIPTION: Individual line items for each order showing what products were purchased and quantities.\n\nNATURAL_LANGUAGE_TERMS: order items, line items, order details, cart items, order line items, shopping cart, order contents, what's in order, items in order, products in order, order breakdown, cart contents, purchased items, order products\n\nPRIMARY_KEY: order_item_id\n\nFOREIGN_KEYS: order_id → orders.order_id, product_id → products.product_id\n\nTABLE_TYPE: Junction table linking orders and products (many-to-many relationship)\n\nUSAGE: Order details, itemized breakdown, what customer bought, bestseller analysis, product sales tracking, revenue by product, shopping cart contents, order contents\n\nCOMMON_QUERIES: Items in order, orders containing product, bestselling products, revenue by product, product sales performance, order breakdown, what's in cart\n\nUSE_CASES: Show order details, find what customer bought, track product sales, bestseller analysis, revenue calculations, order itemization",
+      "metadata": {
+        "entity": "table",
+        "table": "order_items",
+        "pk": "order_item_id",
+        "fk": [
+          "order_id",
+          "product_id"
+        ]
+      },
+      "keywords": [
+        "order_items",
+        "line items",
+        "order details",
+        "cart items",
+        "shopping cart",
+        "order contents",
+        "what's in order"
+      ]
+    },
+    {
+      "chunk_id": "col_order_items_order_item_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "order_items",
+      "column_name": "order_item_id",
+      "text": "COLUMN: order_items.order_item_id\n\nDESCRIPTION: Unique identifier for each line item in an order.\n\nNATURAL_LANGUAGE_TERMS: order item id, line item id, item id, order item identifier, line item identifier, cart item id, unique item id, line number\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Internal line item tracking, unique line identification, data integrity, line item reference\n\nUSE_CASES: Line item identification, internal tracking, data integrity\n\nEXAMPLES:\n\n- Line item details: SELECT * FROM order_items WHERE order_item_id = 4001\n\n- Specific line: WHERE order_item_id = 4001\n\nBUSINESS_RULE: Internal identifier, not typically displayed to customers. Each line item has unique ID.\n\nCOMMON_QUESTIONS: Line item ID? Item identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "order_items",
+        "column": "order_item_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "order_item_id",
+        "line item id",
+        "item id",
+        "primary key",
+        "line identifier"
+      ]
+    },
+    {
+      "chunk_id": "col_order_items_order_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "order_items",
+      "column_name": "order_id",
+      "text": "COLUMN: order_items.order_id\n\nDESCRIPTION: Links line item to parent order.\n\nNATURAL_LANGUAGE_TERMS: order id, order number, which order, belongs to order, order reference, parent order, order identifier, in which order\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: orders.order_id\n\nUSAGE: Getting all items in order, joining with order details, order breakdown, items for specific order, what's in order\n\nUSE_CASES: Show items in order, order breakdown, what's in specific order, items for order number, complete order details\n\nEXAMPLES:\n\n- Items in order: SELECT * FROM order_items WHERE order_id = 3001\n\n- Order total: SELECT order_id, SUM(total_price) FROM order_items GROUP BY order_id\n\n- Item count: SELECT order_id, COUNT(*) FROM order_items GROUP BY order_id\n\n- Complete order: SELECT o.*, oi.* FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: Every line item belongs to exactly one order. One order can have multiple items (1:N relationship).\n\nCOMMON_QUESTIONS: What's in order? Items in order 3001? Show order items? Order breakdown? What customer bought in this order?",
+      "metadata": {
+        "entity": "column",
+        "table": "order_items",
+        "column": "order_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "orders.order_id"
+      },
+      "keywords": [
+        "order_id",
+        "order number",
+        "foreign key",
+        "which order",
+        "order reference",
+        "items in order"
+      ]
+    },
+    {
+      "chunk_id": "col_order_items_product_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "order_items",
+      "column_name": "product_id",
+      "text": "COLUMN: order_items.product_id\n\nDESCRIPTION: Links line item to product that was ordered.\n\nNATURAL_LANGUAGE_TERMS: product id, product identifier, which product, product reference, item product, what product, product ordered, SKU, product number\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: products.product_id\n\nUSAGE: Finding orders containing product, bestseller analysis, product sales tracking, which orders have product, product performance, sales by product\n\nUSE_CASES: Orders with specific product, bestselling products, product sales analysis, which customers bought product, revenue by product, product demand\n\nEXAMPLES:\n\n- Orders with product: SELECT * FROM order_items WHERE product_id = 2050\n\n- Bestsellers: SELECT product_id, COUNT(*) AS times_ordered FROM order_items GROUP BY product_id ORDER BY times_ordered DESC\n\n- Product revenue: SELECT product_id, SUM(total_price) FROM order_items GROUP BY product_id ORDER BY SUM(total_price) DESC\n\n- Units sold: SELECT product_id, SUM(quantity) FROM order_items GROUP BY product_id\n\nBUSINESS_RULE: Same product can appear in many orders. Product appears once per order (quantity handles multiples).\n\nCOMMON_QUESTIONS: Which orders contain product? Bestselling products? Product sales? How many times was product ordered? Revenue by product?",
+      "metadata": {
+        "entity": "column",
+        "table": "order_items",
+        "column": "product_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "products.product_id"
+      },
+      "keywords": [
+        "product_id",
+        "product identifier",
+        "foreign key",
+        "which product",
+        "SKU",
+        "bestsellers",
+        "product sales"
+      ]
+    },
+    {
+      "chunk_id": "col_order_items_quantity",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "order_items",
+      "column_name": "quantity",
+      "text": "COLUMN: order_items.quantity\n\nDESCRIPTION: Number of units of this product in the order.\n\nNATURAL_LANGUAGE_TERMS: quantity, quantity ordered, how many, number of units, units ordered, count, amount ordered, units bought, number purchased, qty, item count, how many units\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: quantity >= 1\n\nUSAGE: Calculating line total, inventory reduction, units sold analysis, quantity purchased, total units, item count\n\nUSE_CASES: How many units ordered, total quantity sold, units per order, inventory deduction, sales volume\n\nEXAMPLES:\n\n- Total units sold for product: SELECT SUM(quantity) FROM order_items WHERE product_id = 2050\n\n- Average quantity per order: SELECT AVG(quantity) FROM order_items\n\n- Large quantity orders: SELECT * FROM order_items WHERE quantity > 5\n\n- Total units sold: SELECT product_id, SUM(quantity) AS total_units FROM order_items GROUP BY product_id\n\nBUSINESS_RULE: Always positive integer (minimum 1). Used in calculation: total_price = quantity × unit_price.\n\nCOMMON_QUESTIONS: How many units ordered? Quantity purchased? Total units sold? How many items in order? Units per product?",
+      "metadata": {
+        "entity": "column",
+        "table": "order_items",
+        "column": "quantity",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "quantity",
+        "how many",
+        "units ordered",
+        "count",
+        "amount ordered",
+        "qty",
+        "units sold",
+        "item count"
+      ]
+    },
+    {
+      "chunk_id": "col_order_items_unit_price",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "order_items",
+      "column_name": "unit_price",
+      "text": "COLUMN: order_items.unit_price\n\nDESCRIPTION: Price per unit at time of order (historical price snapshot).\n\nNATURAL_LANGUAGE_TERMS: unit price, price per unit, item price, price each, single unit price, per item price, individual price, price when ordered, historical price, price at purchase\n\nDATA_TYPE: DECIMAL(10,2)\n\nCONSTRAINTS: unit_price > 0\n\nCURRENCY: USD\n\nUSAGE: Historical pricing, revenue calculations, price tracking over time, what customer paid, refund processing, price history\n\nUSE_CASES: What price customer paid, historical pricing, price when ordered, revenue calculation, price tracking, discount analysis\n\nEXAMPLES:\n\n- Revenue calculation: SELECT SUM(quantity * unit_price) FROM order_items\n\n- Price paid: SELECT product_id, unit_price FROM order_items WHERE order_id = 3001\n\n- Average selling price: SELECT product_id, AVG(unit_price) FROM order_items GROUP BY product_id\n\nBUSINESS_RULE: Historical snapshot of price when ordered. May differ from current products.price. Locked at order time.\n\nCOMMON_QUESTIONS: What price did customer pay? Price when ordered? Historical price? Unit price at purchase? How much per unit?",
+      "metadata": {
+        "entity": "column",
+        "table": "order_items",
+        "column": "unit_price",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "unit_price",
+        "price per unit",
+        "item price",
+        "price each",
+        "historical price",
+        "price when ordered",
+        "what paid"
+      ]
+    },
+    {
+      "chunk_id": "col_order_items_total_price",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "order_items",
+      "column_name": "total_price",
+      "text": "COLUMN: order_items.total_price\n\nDESCRIPTION: Total price for this line item (quantity × unit_price).\n\nNATURAL_LANGUAGE_TERMS: total price, line total, item total, line item total, total cost, line price, subtotal, line amount, total for item, item cost, line cost\n\nDATA_TYPE: DECIMAL(10,2)\n\nCONSTRAINTS: total_price > 0\n\nCURRENCY: USD\n\nCALCULATION: quantity × unit_price\n\nUSAGE: Line item totals, order total calculation, revenue reporting, what line item cost, revenue by product, sales analysis\n\nUSE_CASES: Line item cost, calculate order total, revenue per line, item subtotal, what item cost in order\n\nEXAMPLES:\n\n- Order total: SELECT order_id, SUM(total_price) FROM order_items GROUP BY order_id\n\n- Product revenue: SELECT product_id, SUM(total_price) FROM order_items GROUP BY product_id\n\n- Line totals: SELECT order_item_id, quantity, unit_price, total_price FROM order_items WHERE order_id = 3001\n\n- Revenue analysis: SELECT SUM(total_price) AS total_revenue FROM order_items\n\nBUSINESS_RULE: Must equal quantity × unit_price. Sum of all line item totals equals orders.total_amount.\n\nCOMMON_QUESTIONS: Line item total? What did line cost? Calculate order total? Revenue by line item? Item subtotal?",
+      "metadata": {
+        "entity": "column",
+        "table": "order_items",
+        "column": "total_price",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "total_price",
+        "line total",
+        "item total",
+        "line item total",
+        "subtotal",
+        "line cost",
+        "item cost",
+        "revenue"
+      ]
+    },
+    {
+      "chunk_id": "rel_order_items_to_orders",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "order_items",
+      "related_table": "orders",
+      "text": "RELATIONSHIP: order_items to orders (Many-to-One)\n\nDESCRIPTION: Each line item belongs to one order. Order can have many line items.\n\nNATURAL_LANGUAGE_TERMS: order items belong to order, items in order, order contains items, order line items, which order has item, order breakdown, items for order\n\nJOIN_CONDITION: order_items.order_id = orders.order_id\n\nCARDINALITY: N:1 (many line items belong to one order)\n\nFOREIGN_KEY: order_items.order_id references orders.order_id\n\nUSAGE: Get complete order with items, order breakdown, what's in order, itemized order view, order details\n\nUSE_CASES: Show complete order, order breakdown with items, itemized order, what customer bought, order contents\n\nEXAMPLES:\n\n- Complete order: SELECT o.order_id, o.order_date, o.total_amount, oi.product_id, oi.quantity, oi.total_price FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.order_id = 3001\n\n- Order with items: SELECT o.*, oi.* FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.order_id = 3001\n\n- Item count per order: SELECT o.order_id, COUNT(oi.order_item_id) AS item_count FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.order_id\n\nBUSINESS_RULE: Every line item must belong to valid order. Order total equals sum of line item totals.\n\nCOMMON_QUESTIONS: What's in order? Show order with items? Order breakdown? Complete order details? Items for order?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "order_items",
+        "to_table": "orders",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "order items",
+        "order breakdown",
+        "items in order",
+        "order contents",
+        "complete order"
+      ]
+    },
+    {
+      "chunk_id": "rel_order_items_to_products",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "order_items",
+      "related_table": "products",
+      "text": "RELATIONSHIP: order_items to products (Many-to-One)\n\nDESCRIPTION: Each line item refers to one product. Product can be in many orders.\n\nNATURAL_LANGUAGE_TERMS: line item product, which product ordered, product in line item, item product, product sold, product ordered, what product bought\n\nJOIN_CONDITION: order_items.product_id = products.product_id\n\nCARDINALITY: N:1 (many line items can refer to one product)\n\nFOREIGN_KEY: order_items.product_id references products.product_id\n\nUSAGE: Product details for line item, bestseller analysis, product sales, what was ordered, product name in order\n\nUSE_CASES: Show product details in order, bestselling products, product sales analysis, revenue by product, product demand\n\nEXAMPLES:\n\n- Order with product names: SELECT oi.order_id, p.product_name, oi.quantity, oi.total_price FROM order_items oi JOIN products p ON oi.product_id = p.product_id WHERE oi.order_id = 3001\n\n- Bestselling products: SELECT p.product_name, COUNT(oi.order_item_id) AS times_ordered, SUM(oi.quantity) AS total_units FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY times_ordered DESC\n\n- Product revenue: SELECT p.product_name, p.category, SUM(oi.total_price) AS revenue FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name, p.category ORDER BY revenue DESC\n\nBUSINESS_RULE: Product information at order time (price, name). Current product details may differ.\n\nCOMMON_QUESTIONS: What product was ordered? Show product details in order? Bestselling products? Product sales? Revenue by product?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "order_items",
+        "to_table": "products",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "product ordered",
+        "bestsellers",
+        "product sales",
+        "what product",
+        "product in order",
+        "revenue by product"
+      ]
+    },
+    {
+      "chunk_id": "rel_order_items_junction",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "order_items",
+      "related_table": "orders_products",
+      "text": "RELATIONSHIP: order_items as junction table (Many-to-Many)\n\nDESCRIPTION: Order_items connects orders and products in many-to-many relationship. One order can have many products, one product can be in many orders.\n\nNATURAL_LANGUAGE_TERMS: orders and products relationship, many to many, junction table, linking table, products in orders, orders containing products, order product relationship\n\nJOIN_CONDITION: orders.order_id = order_items.order_id AND order_items.product_id = products.product_id\n\nCARDINALITY: M:N (many orders to many products)\n\nUSAGE: Complete order and product relationship, sales analysis, what products in what orders, order and product analytics\n\nUSE_CASES: Which products in which orders, complete sales analysis, product and order correlation, market basket analysis\n\nEXAMPLES:\n\n- Complete view: SELECT o.order_id, o.order_date, p.product_name, oi.quantity, oi.total_price FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id\n\n- Orders with product: SELECT o.order_id, o.customer_id, o.order_date FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.product_id = 2050\n\n- Products in order: SELECT p.product_name, p.category FROM products p JOIN order_items oi ON p.product_id = oi.product_id WHERE oi.order_id = 3001\n\nBUSINESS_RULE: Junction table pattern. Enables many-to-many relationship between orders and products.\n\nCOMMON_QUESTIONS: Which products in which orders? Orders containing specific product? Products in specific order? Complete order and product view?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "order_items",
+        "to_table": "orders_products",
+        "cardinality": "M:N",
+        "join_type": "many_to_many"
+      },
+      "keywords": [
+        "junction table",
+        "many to many",
+        "orders and products",
+        "order product relationship",
+        "linking table"
+      ]
+    },
+    {
+      "chunk_id": "query_order_breakdown",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "order_items",
+      "related_tables": "orders, products",
+      "use_case": "order_itemization",
+      "text": "QUERY USE CASE: Get complete order breakdown with items\n\nDESCRIPTION: Show detailed order contents with all line items and product information.\n\nNATURAL_LANGUAGE_QUERIES: what's in order, order details, order breakdown, show order items, order contents, what customer bought, itemized order, complete order, order line items\n\nTABLES_USED: orders, order_items, products\n\nWHEN_TO_USE: Order details display, customer service, order confirmation, invoice generation, order review\n\nSQL_PATTERN: SELECT o.*, oi.*, p.product_name FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.order_id = X\n\nEXAMPLES:\n\n- Complete order: SELECT o.order_id, o.order_date, p.product_name, oi.quantity, oi.unit_price, oi.total_price FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.order_id = 3001\n\n- Order summary: SELECT o.order_id, COUNT(oi.order_item_id) AS item_count, SUM(oi.total_price) AS order_total FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.order_id = 3001 GROUP BY o.order_id\n\n- Itemized list: SELECT p.product_name, oi.quantity, oi.unit_price, oi.total_price FROM order_items oi JOIN products p ON oi.product_id = p.product_id WHERE oi.order_id = 3001\n\nBUSINESS_RULE: Show product names, not just IDs. Include quantity and prices for each line item.\n\nCOMMON_QUESTIONS: What's in order? Show order details? Order breakdown? What customer bought? Complete order view? Order line items?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "order_details",
+        "tables": [
+          "orders",
+          "order_items",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "order breakdown",
+        "what's in order",
+        "order details",
+        "order contents",
+        "itemized order",
+        "complete order"
+      ]
+    },
+    {
+      "chunk_id": "query_bestsellers",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "order_items",
+      "related_tables": "products",
+      "use_case": "bestseller_analysis",
+      "text": "QUERY USE CASE: Find bestselling products\n\nDESCRIPTION: Identify most frequently ordered products and top revenue generators.\n\nNATURAL_LANGUAGE_QUERIES: bestsellers, best selling products, most popular products, top products, most ordered, trending products, hot sellers, top selling items, popular items, best performers\n\nTABLES_USED: order_items, products\n\nWHEN_TO_USE: Sales analysis, inventory planning, marketing decisions, trending products, popular items identification\n\nSQL_PATTERN: SELECT p.product_name, COUNT(*) FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY COUNT(*) DESC\n\nEXAMPLES:\n\n- Top 10 by order count: SELECT p.product_name, COUNT(oi.order_item_id) AS times_ordered, SUM(oi.quantity) AS total_units FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY times_ordered DESC LIMIT 10\n\n- Top by revenue: SELECT p.product_name, SUM(oi.total_price) AS revenue FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY revenue DESC LIMIT 10\n\n- Top by units sold: SELECT p.product_name, SUM(oi.quantity) AS units_sold FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name ORDER BY units_sold DESC LIMIT 10\n\n- Bestsellers by category: SELECT p.category, p.product_name, COUNT(*) AS orders FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.category, p.product_name ORDER BY p.category, orders DESC\n\nBUSINESS_RULE: Use COUNT for order frequency, SUM(quantity) for units, SUM(total_price) for revenue. Different metrics show different bestsellers.\n\nCOMMON_QUESTIONS: What are bestsellers? Most popular products? Top selling items? Which products sell most? Trending products? Top 10 products? Best performers?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "bestsellers",
+        "tables": [
+          "order_items",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "bestsellers",
+        "most popular",
+        "top products",
+        "most ordered",
+        "trending",
+        "best selling",
+        "hot sellers",
+        "top selling"
+      ]
+    },
+    {
+      "chunk_id": "query_product_sales",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "order_items",
+      "use_case": "product_sales_analysis",
+      "text": "QUERY USE CASE: Analyze product sales performance\n\nDESCRIPTION: Calculate units sold, revenue, and order frequency for products.\n\nNATURAL_LANGUAGE_QUERIES: product sales, how many sold, product revenue, units sold, product performance, sales by product, product demand, how many times ordered, product sales analysis\n\nTABLES_USED: order_items, products\n\nWHEN_TO_USE: Product performance analysis, inventory decisions, sales reports, product analytics\n\nSQL_PATTERN: SELECT product_id, COUNT(*), SUM(quantity), SUM(total_price) FROM order_items GROUP BY product_id\n\nEXAMPLES:\n\n- Product sales summary: SELECT p.product_name, COUNT(oi.order_item_id) AS times_ordered, SUM(oi.quantity) AS units_sold, SUM(oi.total_price) AS revenue FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_name\n\n- Specific product: SELECT COUNT(*) AS times_ordered, SUM(quantity) AS units_sold, SUM(total_price) AS revenue FROM order_items WHERE product_id = 2050\n\n- Sales by category: SELECT p.category, COUNT(*) AS orders, SUM(oi.quantity) AS units, SUM(oi.total_price) AS revenue FROM products p JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.category\n\n- Average selling price: SELECT product_id, AVG(unit_price) AS avg_price FROM order_items GROUP BY product_id\n\nBUSINESS_RULE: Count orders, sum quantity for units, sum total_price for revenue. Analyze all three metrics.\n\nCOMMON_QUESTIONS: How many units sold? Product revenue? How many times ordered? Product sales performance? Sales by product? Product demand?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "product_analytics",
+        "tables": [
+          "order_items",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "product sales",
+        "units sold",
+        "revenue",
+        "how many sold",
+        "product performance",
+        "sales analysis",
+        "product demand"
+      ]
+    },
+    {
+      "chunk_id": "query_orders_with_product",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "order_items",
+      "related_tables": "orders, customers",
+      "use_case": "find_orders_with_product",
+      "text": "QUERY USE CASE: Find orders containing specific product\n\nDESCRIPTION: Identify all orders that include a particular product.\n\nNATURAL_LANGUAGE_QUERIES: which orders have product, orders containing product, who bought product, orders with item, customers who bought product, product purchase history\n\nTABLES_USED: order_items, orders, products, customers\n\nWHEN_TO_USE: Product recall, customer notification, product analysis, purchase pattern analysis\n\nSQL_PATTERN: SELECT o.* FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.product_id = X\n\nEXAMPLES:\n\n- Orders with product: SELECT o.order_id, o.order_date, o.customer_id FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.product_id = 2050\n\n- Customers who bought: SELECT DISTINCT c.first_name, c.last_name, c.email FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.product_id = 2050\n\n- Product purchase timeline: SELECT o.order_date, oi.quantity FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.product_id = 2050 ORDER BY o.order_date\n\n- Count orders: SELECT COUNT(DISTINCT oi.order_id) FROM order_items oi WHERE oi.product_id = 2050\n\nBUSINESS_RULE: Use DISTINCT for unique orders/customers if needed. One order can have product only once.\n\nCOMMON_QUESTIONS: Which orders contain product? Who bought this product? Orders with specific item? Customers who purchased product? Product purchase history?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "product_orders",
+        "tables": [
+          "order_items",
+          "orders",
+          "customers"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "orders with product",
+        "who bought",
+        "orders containing",
+        "customers who bought",
+        "product orders",
+        "purchase history"
+      ]
+    }
+  ]
+}

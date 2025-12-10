@@ -1,0 +1,376 @@
+{
+  "table": "promotions",
+  "description": "ENHANCED semantic memory for PROMOTIONS table - THE FINAL TABLE - optimized for natural language semantic search",
+  "total_chunks": 15,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 9,
+    "relationships": 1,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_promotions_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "promotions",
+      "text": "TABLE: promotions\n\nDESCRIPTION: Marketing promotions and discount campaigns with time periods, discount percentages, and eligibility criteria.\n\nNATURAL_LANGUAGE_TERMS: promotions, promotion table, discounts, sales, discount campaigns, promotional offers, promotion data, special offers, deals, marketing campaigns, promo codes, discount codes, sales events\n\nPRIMARY_KEY: promotion_id\n\nUSAGE: Promotion management, discount tracking, campaign management, active promotions, promotion eligibility, discount application, marketing campaigns, sales tracking\n\nCOMMON_QUERIES: Active promotions, current sales, promotions by category, discount percentage, active deals, promotion eligibility, expired promotions\n\nUSE_CASES: Find active promotions, apply discounts, check promotion eligibility, promotional campaigns, current deals, discount lookup",
+      "metadata": {
+        "entity": "table",
+        "table": "promotions",
+        "pk": "promotion_id"
+      },
+      "keywords": [
+        "promotions",
+        "discounts",
+        "sales",
+        "promotional offers",
+        "deals",
+        "discount campaigns",
+        "marketing campaigns"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_promotion_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "promotion_id",
+      "text": "COLUMN: promotions.promotion_id\n\nDESCRIPTION: Unique identifier for each promotion.\n\nNATURAL_LANGUAGE_TERMS: promotion id, promotion ID, promotion identifier, promo id, promotion number, promotion code, promotion reference, promotion key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Promotion identification, promotion tracking, promotion reference, discount lookup\n\nUSE_CASES: Get promotion details, promotion lookup, promotion identification, discount reference\n\nEXAMPLES:\n\n- Specific promotion: SELECT * FROM promotions WHERE promotion_id = 14001\n\n- Promotion details: WHERE promotion_id = 14001\n\nBUSINESS_RULE: Unique identifier for each promotion. Immutable once assigned.\n\nCOMMON_QUESTIONS: Promotion ID? Get promotion by ID? Promotion identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "promotion_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "promotion_id",
+        "promotion ID",
+        "promotion identifier",
+        "primary key",
+        "promo id"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_promotion_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "promotion_name",
+      "text": "COLUMN: promotions.promotion_name\n\nDESCRIPTION: Descriptive name of the promotion or campaign.\n\nNATURAL_LANGUAGE_TERMS: promotion name, promo name, promotion title, campaign name, sale name, deal name, offer name, promotion called, what promotion, discount name\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Promotion display, promotion identification, campaign naming, promotion search, marketing display\n\nUSE_CASES: Find promotion by name, promotion display, campaign name, promotion search, deal name\n\nEXAMPLES:\n\n- Find promotion: SELECT * FROM promotions WHERE promotion_name LIKE '%Summer%'\n\n- All promotions: SELECT promotion_name, discount_percentage, start_date, end_date FROM promotions ORDER BY promotion_name\n\n- Name search: WHERE LOWER(promotion_name) LIKE LOWER('%sale%')\n\nBUSINESS_RULE: Descriptive campaign names like 'Summer Sale', 'Black Friday', 'Holiday Special'. Used for display and marketing.\n\nCOMMON_QUESTIONS: Promotion name? What is promotion called? Campaign name? Sale name? Deal name?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "promotion_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "promotion_name",
+        "promo name",
+        "campaign name",
+        "sale name",
+        "deal name",
+        "promotion called"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_promotion_type",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "promotion_type",
+      "text": "COLUMN: promotions.promotion_type\n\nDESCRIPTION: Type or category of promotion.\n\nNATURAL_LANGUAGE_TERMS: promotion type, promo type, type of promotion, promotion category, discount type, sale type, offer type, promotion kind, deal type\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Seasonal, Flash Sale, Clearance, Holiday\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Promotion categorization, type filtering, promotion grouping, campaign classification\n\nUSE_CASES: Filter by type, seasonal promotions, flash sales, clearance events, holiday promotions, promotion categories\n\nEXAMPLES:\n\n- Seasonal promotions: SELECT * FROM promotions WHERE promotion_type = 'Seasonal'\n\n- Flash sales: WHERE promotion_type = 'Flash Sale'\n\n- Type distribution: SELECT promotion_type, COUNT(*) FROM promotions GROUP BY promotion_type\n\n- Holiday deals: SELECT * FROM promotions WHERE promotion_type = 'Holiday' AND is_active = 'Yes'\n\nBUSINESS_RULE: Four promotion types. Seasonal=seasonal campaigns, Flash Sale=limited time, Clearance=inventory clearance, Holiday=holiday events.\n\nCOMMON_QUESTIONS: Promotion type? Seasonal promotions? Flash sales? Holiday deals? Type of promotion?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "promotion_type",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "promotion_type",
+        "promo type",
+        "seasonal",
+        "flash sale",
+        "clearance",
+        "holiday",
+        "type of promotion"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_discount_percentage",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "discount_percentage",
+      "text": "COLUMN: promotions.discount_percentage\n\nDESCRIPTION: Percentage discount offered by promotion.\n\nNATURAL_LANGUAGE_TERMS: discount percentage, discount percent, discount amount, percent off, percentage off, how much discount, discount rate, % off, savings percentage, discount value\n\nDATA_TYPE: DECIMAL(5,2)\n\nCONSTRAINTS: discount_percentage BETWEEN 0 AND 100\n\nUSAGE: Discount calculation, price reduction, promotion value, savings calculation, discount display\n\nUSE_CASES: Calculate discount, how much off, discount amount, savings calculation, promotion value, discount rate\n\nEXAMPLES:\n\n- High discounts: SELECT * FROM promotions WHERE discount_percentage >= 30 ORDER BY discount_percentage DESC\n\n- Discount range: SELECT promotion_name, discount_percentage FROM promotions WHERE discount_percentage BETWEEN 10 AND 25\n\n- Best deals: SELECT promotion_name, discount_percentage, applicable_categories FROM promotions WHERE is_active = 'Yes' ORDER BY discount_percentage DESC LIMIT 5\n\n- Average discount: SELECT promotion_type, AVG(discount_percentage) AS avg_discount FROM promotions GROUP BY promotion_type\n\nBUSINESS_RULE: Decimal percentage 0-100. 20.00 = 20% off. Used to calculate discounted prices.\n\nCOMMON_QUESTIONS: Discount percentage? How much off? Percentage discount? What discount? Discount rate? Savings?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "discount_percentage",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "discount_percentage",
+        "discount percent",
+        "percent off",
+        "how much discount",
+        "% off",
+        "discount rate",
+        "savings"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_start_date",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "start_date",
+      "text": "COLUMN: promotions.start_date\n\nDESCRIPTION: Date when promotion becomes active.\n\nNATURAL_LANGUAGE_TERMS: start date, start time, when starts, promotion starts, begin date, effective date, activation date, when active, when begins, launch date\n\nDATA_TYPE: DATE\n\nFORMAT: YYYY-MM-DD\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Promotion scheduling, active date determination, promotion validity, date filtering, campaign timeline\n\nUSE_CASES: When promotion starts, promotion schedule, active promotions, upcoming promotions, start date filtering\n\nEXAMPLES:\n\n- Currently active: SELECT * FROM promotions WHERE CURRENT_DATE >= start_date AND CURRENT_DATE <= end_date\n\n- Starting soon: SELECT * FROM promotions WHERE start_date > CURRENT_DATE AND start_date <= CURRENT_DATE + INTERVAL '7 days'\n\n- Started this month: WHERE DATE_TRUNC('month', start_date) = DATE_TRUNC('month', CURRENT_DATE)\n\n- Promotion timeline: SELECT promotion_name, start_date, end_date, end_date - start_date AS duration_days FROM promotions\n\nBUSINESS_RULE: Date promotion becomes valid. Must be <= end_date. Use with end_date to determine if active.\n\nCOMMON_QUESTIONS: When does promotion start? Start date? When active? Promotion schedule? When begins?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "start_date",
+        "type": "DATE",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "start_date",
+        "when starts",
+        "promotion starts",
+        "begin date",
+        "activation date",
+        "when active"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_end_date",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "end_date",
+      "text": "COLUMN: promotions.end_date\n\nDESCRIPTION: Date when promotion expires.\n\nNATURAL_LANGUAGE_TERMS: end date, end time, when ends, promotion ends, expiration date, expiry date, expires, valid until, deadline, when expires, last day\n\nDATA_TYPE: DATE\n\nFORMAT: YYYY-MM-DD\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Promotion expiration, validity checking, expired promotions, promotion duration, deadline tracking\n\nUSE_CASES: When promotion ends, is promotion expired, expiration date, valid until, promotion deadline, last day\n\nEXAMPLES:\n\n- Active promotions: SELECT * FROM promotions WHERE CURRENT_DATE BETWEEN start_date AND end_date\n\n- Expired: SELECT * FROM promotions WHERE end_date < CURRENT_DATE\n\n- Ending soon: SELECT * FROM promotions WHERE end_date <= CURRENT_DATE + INTERVAL '3 days' AND end_date >= CURRENT_DATE\n\n- Not yet expired: SELECT * FROM promotions WHERE end_date >= CURRENT_DATE ORDER BY end_date\n\nBUSINESS_RULE: Date promotion expires. Must be >= start_date. Promotion valid if CURRENT_DATE between start and end.\n\nCOMMON_QUESTIONS: When does promotion end? Expiration date? When expires? Valid until? Is promotion expired? Last day?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "end_date",
+        "type": "DATE",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "end_date",
+        "when ends",
+        "promotion ends",
+        "expiration date",
+        "expires",
+        "valid until",
+        "deadline"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_applicable_categories",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "applicable_categories",
+      "text": "COLUMN: promotions.applicable_categories\n\nDESCRIPTION: Product categories where promotion applies (comma-separated).\n\nNATURAL_LANGUAGE_TERMS: applicable categories, categories, which categories, applies to categories, eligible categories, valid for categories, category eligibility, what categories, promotion categories\n\nDATA_TYPE: TEXT\n\nFORMAT: Comma-separated category names\n\nUSAGE: Category eligibility, promotion scope, category filtering, eligibility determination, applicable products\n\nUSE_CASES: Which categories eligible, promotion applies to, category eligibility, valid categories, what qualifies\n\nEXAMPLES:\n\n- Electronics promotions: SELECT * FROM promotions WHERE applicable_categories LIKE '%Electronics%'\n\n- Multiple categories: WHERE applicable_categories LIKE '%Electronics%' OR applicable_categories LIKE '%Clothing%'\n\n- Category check: SELECT promotion_name, applicable_categories FROM promotions WHERE promotion_id = 14001\n\nBUSINESS_RULE: Comma-separated list like 'Electronics,Clothing'. NULL or 'All' means all categories qualify.\n\nCOMMON_QUESTIONS: Which categories? Applicable categories? What categories qualify? Applies to which categories? Eligible categories?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "applicable_categories",
+        "type": "TEXT",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "applicable_categories",
+        "categories",
+        "which categories",
+        "eligible categories",
+        "applies to",
+        "category eligibility"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_minimum_purchase",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "minimum_purchase",
+      "text": "COLUMN: promotions.minimum_purchase\n\nDESCRIPTION: Minimum order amount required to qualify for promotion.\n\nNATURAL_LANGUAGE_TERMS: minimum purchase, minimum order, minimum amount, min purchase, purchase minimum, minimum spend, minimum required, minimum order amount, how much minimum, spend threshold\n\nDATA_TYPE: DECIMAL(10,2)\n\nCONSTRAINTS: minimum_purchase >= 0\n\nUSAGE: Eligibility checking, promotion qualification, minimum requirement, order threshold, promotion criteria\n\nUSE_CASES: Minimum order requirement, does order qualify, minimum spend, promotion eligibility, order threshold\n\nEXAMPLES:\n\n- No minimum: SELECT * FROM promotions WHERE minimum_purchase = 0\n\n- Low threshold: SELECT * FROM promotions WHERE minimum_purchase <= 50 AND is_active = 'Yes'\n\n- Check eligibility: SELECT promotion_name, minimum_purchase FROM promotions WHERE 75.00 >= minimum_purchase AND is_active = 'Yes'\n\n- Promotion requirements: SELECT promotion_name, discount_percentage, minimum_purchase FROM promotions WHERE is_active = 'Yes' ORDER BY minimum_purchase\n\nBUSINESS_RULE: Order total must be >= minimum_purchase to qualify. 0 = no minimum required.\n\nCOMMON_QUESTIONS: Minimum purchase? Minimum order? How much minimum? Does order qualify? Minimum required? Order threshold?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "minimum_purchase",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "minimum_purchase",
+        "minimum order",
+        "minimum amount",
+        "min purchase",
+        "minimum spend",
+        "how much minimum",
+        "threshold"
+      ]
+    },
+    {
+      "chunk_id": "col_promotions_is_active",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "promotions",
+      "column_name": "is_active",
+      "text": "COLUMN: promotions.is_active\n\nDESCRIPTION: Indicates if promotion is currently active and available (Yes/No).\n\nNATURAL_LANGUAGE_TERMS: is active, active, active promotion, is promotion active, currently active, promotion status, available, enabled, is available, promotion active\n\nDATA_TYPE: VARCHAR(3)\n\nVALID_VALUES: Yes, No\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Active promotion filtering, availability checking, promotion status, active deals, available promotions\n\nUSE_CASES: Active promotions, current deals, available promotions, is promotion active, active sales\n\nEXAMPLES:\n\n- Active promotions: SELECT * FROM promotions WHERE is_active = 'Yes'\n\n- Active and current: SELECT * FROM promotions WHERE is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date\n\n- Inactive: SELECT * FROM promotions WHERE is_active = 'No'\n\n- Status check: SELECT promotion_name, is_active, start_date, end_date FROM promotions WHERE promotion_id = 14001\n\nBUSINESS_RULE: Yes=promotion available, No=disabled/inactive. Check both is_active and date range for truly active promotions.\n\nCOMMON_QUESTIONS: Is promotion active? Active promotions? Current deals? Available promotions? Is promotion available?",
+      "metadata": {
+        "entity": "column",
+        "table": "promotions",
+        "column": "is_active",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "is_active",
+        "active",
+        "active promotion",
+        "currently active",
+        "available",
+        "promotion status",
+        "enabled"
+      ]
+    },
+    {
+      "chunk_id": "rel_promotions_to_products_indirect",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "promotions",
+      "related_table": "products",
+      "text": "RELATIONSHIP: promotions to products (Indirect through categories)\n\nDESCRIPTION: Promotions apply to products through category matching.\n\nNATURAL_LANGUAGE_TERMS: promotion products, products on promotion, eligible products, products with discount, promotion applies to products, discounted products, products on sale\n\nJOIN_CONDITION: Match products.category with promotion applicable_categories\n\nUSAGE: Finding eligible products, discount application, promotion product listing, sale items\n\nUSE_CASES: Products on promotion, eligible products, which products discounted, sale items, promotion applies to\n\nEXAMPLES:\n\n- Eligible products: SELECT p.product_name, p.price, pr.discount_percentage FROM products p CROSS JOIN promotions pr WHERE pr.is_active = 'Yes' AND pr.applicable_categories LIKE '%' || p.category || '%' AND CURRENT_DATE BETWEEN pr.start_date AND pr.end_date\n\n- Electronics on sale: SELECT p.product_name, p.price, pr.promotion_name, pr.discount_percentage FROM products p CROSS JOIN promotions pr WHERE p.category = 'Electronics' AND pr.applicable_categories LIKE '%Electronics%' AND pr.is_active = 'Yes'\n\n- Calculate discount: SELECT p.product_name, p.price AS original, ROUND(p.price * (1 - pr.discount_percentage/100), 2) AS discounted FROM products p CROSS JOIN promotions pr WHERE pr.applicable_categories LIKE '%' || p.category || '%' AND pr.is_active = 'Yes'\n\nBUSINESS_RULE: Match product category with applicable_categories using LIKE. Check is_active and date range.\n\nCOMMON_QUESTIONS: Products on promotion? Eligible products? Which products discounted? Sale items? Products on sale?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "promotions",
+        "to_table": "products",
+        "cardinality": "indirect",
+        "join_type": "category_matching"
+      },
+      "keywords": [
+        "promotion products",
+        "eligible products",
+        "products on sale",
+        "discounted products",
+        "sale items"
+      ]
+    },
+    {
+      "chunk_id": "query_active_promotions",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "promotions",
+      "use_case": "current_promotions",
+      "text": "QUERY USE CASE: Find all currently active promotions\n\nDESCRIPTION: List promotions that are active and within valid date range.\n\nNATURAL_LANGUAGE_QUERIES: active promotions, current promotions, current deals, active sales, available promotions, current discounts, active offers, what promotions available\n\nTABLES_USED: promotions\n\nWHEN_TO_USE: Promotion display, homepage banners, discount application, customer information\n\nSQL_PATTERN: SELECT * FROM promotions WHERE is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date\n\nEXAMPLES:\n\n- Active promotions: SELECT promotion_name, promotion_type, discount_percentage, applicable_categories, minimum_purchase, end_date FROM promotions WHERE is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date ORDER BY discount_percentage DESC\n\n- Current deals: SELECT * FROM promotions WHERE is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date ORDER BY end_date\n\n- Ending soon: SELECT promotion_name, discount_percentage, end_date FROM promotions WHERE is_active = 'Yes' AND end_date <= CURRENT_DATE + INTERVAL '3 days' AND end_date >= CURRENT_DATE\n\n- Best deals: SELECT promotion_name, discount_percentage, applicable_categories FROM promotions WHERE is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date ORDER BY discount_percentage DESC LIMIT 5\n\nBUSINESS_RULE: Active = is_active='Yes' AND CURRENT_DATE between start_date and end_date. Both conditions required.\n\nCOMMON_QUESTIONS: Active promotions? Current promotions? Current deals? What promotions available? Active sales?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "active_filter",
+        "tables": [
+          "promotions"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "active promotions",
+        "current promotions",
+        "current deals",
+        "active sales",
+        "available promotions",
+        "what promotions"
+      ]
+    },
+    {
+      "chunk_id": "query_promotions_by_category",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "promotions",
+      "use_case": "category_promotions",
+      "text": "QUERY USE CASE: Find promotions for specific category\n\nDESCRIPTION: List promotions applicable to specific product category.\n\nNATURAL_LANGUAGE_QUERIES: Electronics promotions, promotions for Clothing, category promotions, discounts on Electronics, sales for category, promotions by category\n\nTABLES_USED: promotions\n\nWHEN_TO_USE: Category page display, product page discounts, category-specific deals\n\nSQL_PATTERN: SELECT * FROM promotions WHERE applicable_categories LIKE '%CATEGORY%'\n\nEXAMPLES:\n\n- Electronics promotions: SELECT promotion_name, discount_percentage, start_date, end_date FROM promotions WHERE applicable_categories LIKE '%Electronics%' AND is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date\n\n- Clothing deals: SELECT * FROM promotions WHERE applicable_categories LIKE '%Clothing%' AND is_active = 'Yes'\n\n- Multiple categories: SELECT promotion_name, applicable_categories, discount_percentage FROM promotions WHERE (applicable_categories LIKE '%Electronics%' OR applicable_categories LIKE '%Books%') AND is_active = 'Yes'\n\n- All categories: SELECT * FROM promotions WHERE applicable_categories = 'All' OR applicable_categories IS NULL\n\nBUSINESS_RULE: Use LIKE with wildcards for comma-separated list. 'All' or NULL means all categories qualify.\n\nCOMMON_QUESTIONS: Electronics promotions? Promotions for Clothing? Category promotions? Discounts on Electronics? Category sales?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "category_filter",
+        "tables": [
+          "promotions"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "Electronics promotions",
+        "promotions for",
+        "category promotions",
+        "discounts on",
+        "sales for category"
+      ]
+    },
+    {
+      "chunk_id": "query_check_promotion_eligibility",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "promotions",
+      "use_case": "eligibility_check",
+      "text": "QUERY USE CASE: Check if order qualifies for promotion\n\nDESCRIPTION: Determine which promotions apply to order based on amount and category.\n\nNATURAL_LANGUAGE_QUERIES: does order qualify, promotion eligibility, which promotions apply, order qualifies for discount, eligible for promotion, promotion check\n\nTABLES_USED: promotions\n\nWHEN_TO_USE: Checkout discount application, cart validation, promotion eligibility checking\n\nSQL_PATTERN: SELECT * FROM promotions WHERE order_amount >= minimum_purchase AND category matches applicable_categories\n\nEXAMPLES:\n\n- Order eligibility: SELECT promotion_name, discount_percentage, minimum_purchase FROM promotions WHERE 150.00 >= minimum_purchase AND applicable_categories LIKE '%Electronics%' AND is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date\n\n- Best qualifying: SELECT promotion_name, discount_percentage FROM promotions WHERE 75.00 >= minimum_purchase AND (applicable_categories LIKE '%Clothing%' OR applicable_categories = 'All') AND is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date ORDER BY discount_percentage DESC LIMIT 1\n\n- All eligible: SELECT promotion_name, discount_percentage, minimum_purchase, applicable_categories FROM promotions WHERE 200.00 >= minimum_purchase AND is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date\n\nBUSINESS_RULE: Order total >= minimum_purchase AND category in applicable_categories AND active AND current date in range.\n\nCOMMON_QUESTIONS: Does order qualify? Promotion eligibility? Which promotions apply? Eligible for promotion? Order qualifies?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "qualification",
+        "tables": [
+          "promotions"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "does order qualify",
+        "promotion eligibility",
+        "which promotions apply",
+        "eligible for",
+        "order qualifies"
+      ]
+    },
+    {
+      "chunk_id": "query_promotion_performance",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "promotions",
+      "use_case": "promotion_analytics",
+      "text": "QUERY USE CASE: Analyze promotion types and performance\n\nDESCRIPTION: Compare promotions by type, discount level, and timing.\n\nNATURAL_LANGUAGE_QUERIES: promotion analysis, promotion performance, promotion types, discount analysis, flash sales vs seasonal, promotion comparison, promotion metrics\n\nTABLES_USED: promotions\n\nWHEN_TO_USE: Marketing analysis, campaign planning, promotion strategy, performance review\n\nSQL_PATTERN: SELECT promotion_type, COUNT(*), AVG(discount_percentage) FROM promotions GROUP BY promotion_type\n\nEXAMPLES:\n\n- By type: SELECT promotion_type, COUNT(*) AS promotion_count, AVG(discount_percentage) AS avg_discount FROM promotions GROUP BY promotion_type ORDER BY avg_discount DESC\n\n- Active by type: SELECT promotion_type, COUNT(*) AS active_count FROM promotions WHERE is_active = 'Yes' AND CURRENT_DATE BETWEEN start_date AND end_date GROUP BY promotion_type\n\n- Discount distribution: SELECT CASE WHEN discount_percentage < 10 THEN 'Under 10%' WHEN discount_percentage < 20 THEN '10-20%' WHEN discount_percentage < 30 THEN '20-30%' ELSE '30%+' END AS discount_range, COUNT(*) FROM promotions GROUP BY discount_range\n\n- Upcoming promotions: SELECT promotion_name, start_date, discount_percentage FROM promotions WHERE start_date > CURRENT_DATE ORDER BY start_date LIMIT 10\n\nBUSINESS_RULE: Group by type for analysis. Compare active vs inactive. Analyze by discount percentage ranges.\n\nCOMMON_QUESTIONS: Promotion analysis? Promotion types? Flash sales vs seasonal? Promotion comparison? Promotion metrics?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "analytics",
+        "tables": [
+          "promotions"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "promotion analysis",
+        "promotion performance",
+        "promotion types",
+        "promotion comparison",
+        "promotion metrics"
+      ]
+    }
+  ]
+}

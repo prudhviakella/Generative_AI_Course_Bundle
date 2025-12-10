@@ -1,0 +1,501 @@
+order_id,customer_id,order_date,total_amount,payment_method,order_status,shipping_address,shipping_city,shipping_state,shipping_zip
+3001,1092,2023-10-21 10:46:00,1324.89,PayPal,Cancelled,4565 Chavez Fort,East Derekshire,CT,20870
+3002,1020,2024-03-08 12:16:00,1308.39,Debit Card,In Transit,14363 Beck Land Suite 885,Barajasside,MA,46613
+3003,1103,2024-01-20 09:16:00,337.04,PayPal,Cancelled,62299 Sara Port Apt. 485,Bakerfort,OK,80318
+3004,1241,2023-08-13 16:13:00,3065.19,Credit Card,Delivered,5370 Julia Trace,Erinstad,ID,12293
+3005,1163,2023-09-07 19:23:00,3387.39,PayPal,In Transit,602 Cunningham Shoals Apt. 222,South Kylemouth,LA,82611
+3006,1108,2023-08-18 13:50:00,1012.43,Debit Card,Cancelled,428 Kelly Mountains Apt. 482,Destinybury,MI,29773
+3007,1007,2023-10-05 09:17:00,2741.17,Credit Card,Processing,60647 Henderson Street,Mooreport,IL,08166
+3008,1176,2024-03-07 14:04:00,1769.52,Debit Card,Processing,9692 Hicks Plaza Suite 653,South Cassandra,OK,65795
+3009,1093,2023-11-18 20:17:00,2116.17,Credit Card,In Transit,6804 Wilkins Extensions,South Melissaside,WA,72606
+3010,1071,2023-06-06 09:24:00,359.94,Credit Card,Cancelled,50392 Hickman Hills,New John,MP,51508
+3011,1244,2023-07-24 20:59:00,1736.67,Credit Card,In Transit,73505 Sherry Trail,Duranmouth,OR,16862
+3012,1135,2023-11-04 17:52:00,642.42,Debit Card,Processing,02146 Caldwell Lodge Apt. 801,New Justinside,PW,76907
+3013,1136,2023-11-26 19:36:00,1852.1,Debit Card,Delivered,489 Benson Lane,Carrillomouth,WI,60643
+3014,1156,2023-07-21 08:10:00,1728.23,Debit Card,Cancelled,0514 Ruiz Isle,Lake Amanda,IL,72121
+3015,1047,2023-11-24 20:47:00,2246.9,PayPal,Cancelled,03054 Hays Plains Suite 403,Michaelton,VI,86449
+3016,1123,2024-03-30 10:16:00,2854.37,Credit Card,In Transit,4840 Robertson Pass,Tuckerport,MH,85898
+3017,1169,2023-08-04 10:24:00,963.2,PayPal,Delivered,235 Oconnor Pine Suite 521,East Jenny,NH,51302
+3018,1014,2023-12-07 19:49:00,2981.26,Credit Card,Cancelled,87083 Stephen Unions,Contrerasside,PA,42089
+3019,1181,2024-01-21 10:28:00,3856.64,Debit Card,Cancelled,921 Jon Mountain Apt. 746,Jonathanland,KY,08678
+3020,1129,2023-10-25 12:27:00,1337.31,PayPal,In Transit,84498 Nicholas Lane Suite 918,Nicholasbury,NC,53695
+3021,1079,2023-07-15 12:26:00,570.44,Debit Card,Processing,155 Williamson Via Suite 991,West David,ME,15829
+3022,1163,2023-07-11 09:46:00,3207.79,Credit Card,Processing,602 Cunningham Shoals Apt. 222,South Kylemouth,LA,82611
+3023,1043,2024-03-21 08:05:00,1316.86,PayPal,Delivered,1888 Ebony Wells,New Nicholas,GA,24204
+3024,1142,2024-02-08 20:55:00,692.34,Credit Card,Cancelled,17800 Warren Corner,West Christineland,SD,51598
+3025,1174,2024-02-16 19:08:00,2438.54,Debit Card,Cancelled,29022 Schmidt Loaf,Gonzalezmouth,ME,75248
+3026,1132,2024-02-28 19:07:00,640.73,Debit Card,Processing,686 Golden Square,Perezfort,WY,50470
+3027,1158,2023-09-06 19:00:00,1948.34,PayPal,Cancelled,554 Wendy Parkway Suite 046,New Stacybury,FL,45299
+3028,1180,2024-02-29 19:22:00,3005.9,Credit Card,Processing,49673 April Springs Apt. 580,Port Carloschester,CT,69348
+3029,1156,2024-01-16 10:43:00,1546.61,PayPal,In Transit,0514 Ruiz Isle,Lake Amanda,IL,72121
+3030,1045,2023-07-09 13:53:00,977.54,Credit Card,Delivered,52204 Horton Dam Suite 790,North Jonathanberg,OH,95821
+3031,1244,2023-06-27 14:31:00,2601.84,Debit Card,In Transit,73505 Sherry Trail,Duranmouth,OR,16862
+3032,1096,2023-07-28 13:58:00,468.62,PayPal,In Transit,039 Kelly Villages Apt. 239,Lindastad,PW,78038
+3033,1213,2024-03-03 20:54:00,3497.8,Credit Card,Delivered,34764 Tracy Landing,West Amyfort,TX,32790
+3034,1077,2024-02-03 12:16:00,1242.36,Credit Card,Processing,9825 Timothy Hill Suite 112,Larrymouth,WY,27615
+3035,1189,2024-03-18 14:13:00,1144.38,Debit Card,Processing,39726 Taylor Stravenue Apt. 543,Davidshire,AR,37280
+3036,1240,2024-01-24 17:54:00,730.88,Debit Card,Processing,097 Rachel Spring,South Angela,UT,92683
+3037,1092,2023-06-04 17:29:00,1181.95,Debit Card,Delivered,4565 Chavez Fort,East Derekshire,CT,20870
+3038,1091,2023-07-25 08:22:00,634.78,PayPal,In Transit,0641 Alyssa Freeway,Vasquezton,FL,93778
+3039,1103,2023-11-29 08:06:00,2307.22,Debit Card,Cancelled,62299 Sara Port Apt. 485,Bakerfort,OK,80318
+3040,1051,2023-07-14 16:32:00,2462.23,Credit Card,Cancelled,018 Kevin Estates Suite 358,Meghanview,ID,83739
+3041,1032,2024-02-05 08:09:00,4446.24,PayPal,Delivered,8692 Pena Village Suite 964,Lake Mitchellmouth,NV,31448
+3042,1058,2024-01-27 14:23:00,1590.64,Debit Card,Delivered,473 Maria Groves Suite 219,East Brent,MH,70105
+3043,1110,2023-09-02 16:51:00,3637.19,Debit Card,Processing,8300 Jeremy Wells,Larryville,MS,66474
+3044,1113,2024-01-11 10:08:00,569.91,Debit Card,Cancelled,18114 Stephen Hill Suite 701,Port Benjamin,LA,47715
+3045,1002,2023-12-01 19:12:00,1653.65,Credit Card,In Transit,7525 Clark Grove Apt. 928,East Steven,KY,84387
+3046,1073,2023-06-21 10:25:00,584.6,Debit Card,Delivered,7888 Garcia Corners,Angelamouth,VI,50994
+3047,1231,2023-06-17 10:42:00,2776.96,Credit Card,Cancelled,673 Terry Valleys,Roweport,CO,05346
+3048,1246,2023-10-15 09:26:00,4970.58,Debit Card,Cancelled,9723 Laura Circle Apt. 496,Larryside,WI,19588
+3049,1205,2023-08-05 13:48:00,961.09,Debit Card,Cancelled,3539 Martinez Villages,Hardyview,WV,94020
+3050,1034,2023-07-27 09:50:00,1525.66,Credit Card,In Transit,5891 Gordon Ridges Apt. 847,North Yolandafurt,NE,90429
+3051,1040,2023-11-24 16:00:00,772.24,PayPal,In Transit,77997 Lin Road,Edwardland,NJ,58462
+3052,1014,2023-11-23 14:38:00,340.37,PayPal,Processing,87083 Stephen Unions,Contrerasside,PA,42089
+3053,1112,2024-02-01 12:18:00,2622.45,Debit Card,Processing,6184 Robert Cove,West Danielville,NM,26538
+3054,1195,2024-01-06 11:39:00,1429.59,Credit Card,In Transit,055 Nathan Plains,New Kevin,PW,03767
+3055,1064,2023-10-22 20:07:00,1130.61,Debit Card,In Transit,75243 Antonio Shore,Mendeztown,IA,27512
+3056,1171,2024-01-06 11:30:00,721.05,PayPal,Processing,016 Christopher Lock Apt. 997,Larryborough,VT,99906
+3057,1180,2024-02-13 17:11:00,2503.71,Credit Card,In Transit,49673 April Springs Apt. 580,Port Carloschester,CT,69348
+3058,1059,2023-08-01 10:25:00,2051.83,Credit Card,Delivered,2067 Sharon Well,Nancytown,ME,74944
+3059,1050,2023-08-14 14:01:00,722.23,PayPal,In Transit,25831 Laura Freeway Suite 058,Tannerside,DC,80710
+3060,1024,2023-06-27 14:26:00,1031.67,PayPal,Delivered,671 Bailey Isle,Elizabethburgh,MA,54456
+3061,1180,2023-09-27 11:21:00,2290.64,Debit Card,Cancelled,49673 April Springs Apt. 580,Port Carloschester,CT,69348
+3062,1016,2024-02-17 14:41:00,107.07,Credit Card,Delivered,6889 Tracy Groves Suite 706,Elizabethfurt,VA,22133
+3063,1029,2023-10-16 13:17:00,1344.45,Debit Card,Cancelled,474 Rachel Mountain Suite 821,Landryshire,ME,84247
+3064,1064,2023-11-11 08:11:00,1243.83,Credit Card,Processing,75243 Antonio Shore,Mendeztown,IA,27512
+3065,1014,2023-11-12 11:18:00,2534.69,Debit Card,Delivered,87083 Stephen Unions,Contrerasside,PA,42089
+3066,1233,2023-07-22 14:11:00,4210.69,Debit Card,Cancelled,26611 Roger Curve Suite 371,Ericafurt,OR,73766
+3067,1094,2023-11-19 12:07:00,296.53,Credit Card,Processing,721 Martinez Mountain,East Sandrachester,GU,95453
+3068,1175,2024-03-09 20:55:00,1982.96,Credit Card,Delivered,40369 Garrett Station Suite 666,Lake Glenn,DC,25172
+3069,1093,2023-12-03 19:49:00,1643.36,PayPal,Delivered,6804 Wilkins Extensions,South Melissaside,WA,72606
+3070,1061,2023-10-20 11:37:00,388.98,Debit Card,Processing,4268 Vaughn Route,Michaelbury,IN,18008
+3071,1228,2023-07-25 10:40:00,1125.65,PayPal,Processing,4338 Yvette Knolls Suite 522,Port Brycechester,DE,81446
+3072,1011,2024-03-27 18:52:00,1237.74,Credit Card,In Transit,16073 Lisa Mount Suite 433,Lake Jamesmouth,KY,09600
+3073,1181,2024-01-15 09:04:00,3382.89,PayPal,Delivered,921 Jon Mountain Apt. 746,Jonathanland,KY,08678
+3074,1078,2024-01-29 20:12:00,962.07,PayPal,In Transit,673 Soto Ferry Suite 609,South Brittany,MS,01084
+3075,1012,2023-08-05 11:26:00,1764.4,PayPal,Delivered,9816 Jonathan Station Suite 088,West Ryan,TN,43780
+3076,1229,2024-03-13 13:57:00,2691.6,Debit Card,Cancelled,13524 Gill Parks,East Deborahmouth,GU,18559
+3077,1162,2023-07-31 14:04:00,1301.92,Debit Card,Cancelled,4472 Phillips Center Apt. 771,East Kimberlyside,DC,52021
+3078,1135,2024-02-13 20:01:00,697.38,Credit Card,Delivered,02146 Caldwell Lodge Apt. 801,New Justinside,PW,76907
+3079,1179,2023-08-06 12:02:00,399.93,PayPal,Processing,3723 Brown Greens Apt. 027,Alvarezfort,WA,99123
+3080,1204,2023-09-06 19:52:00,2416.32,Debit Card,Cancelled,71827 Bush Point Apt. 157,South Justinport,TX,58691
+3081,1176,2024-02-28 16:04:00,3826.62,Credit Card,Cancelled,9692 Hicks Plaza Suite 653,South Cassandra,OK,65795
+3082,1193,2024-02-16 14:35:00,1181.14,Debit Card,Cancelled,9513 Miller Lock Apt. 411,West Daniel,FL,65555
+3083,1156,2023-10-18 11:11:00,943.14,Credit Card,In Transit,0514 Ruiz Isle,Lake Amanda,IL,72121
+3084,1147,2023-09-20 17:44:00,1713.21,Credit Card,Cancelled,24916 Albert Canyon Suite 925,East Ericland,TX,81588
+3085,1129,2024-02-24 12:19:00,730.88,Credit Card,Delivered,84498 Nicholas Lane Suite 918,Nicholasbury,NC,53695
+3086,1182,2023-10-16 16:07:00,2417.1,Credit Card,In Transit,410 Chad Stream Suite 707,Lake Danielle,AZ,87612
+3087,1012,2024-02-29 11:18:00,120.66,Credit Card,In Transit,9816 Jonathan Station Suite 088,West Ryan,TN,43780
+3088,1242,2023-10-21 10:17:00,646.04,Credit Card,In Transit,399 Cameron Crossroad,East Jordanshire,PR,30380
+3089,1211,2023-09-16 16:07:00,2467.77,Credit Card,Delivered,2324 Jenkins Wall Apt. 364,Debbieview,TX,79305
+3090,1162,2023-12-06 13:05:00,1404.3,PayPal,Delivered,4472 Phillips Center Apt. 771,East Kimberlyside,DC,52021
+3091,1185,2023-08-08 14:57:00,1588.03,PayPal,Delivered,931 Ronald Valleys Suite 519,West Mary,WY,28449
+3092,1084,2023-06-30 18:52:00,570.27,Credit Card,Delivered,54152 Randy Inlet Apt. 611,East Thomasberg,OR,30148
+3093,1057,2023-10-22 10:16:00,1557.21,Credit Card,Processing,78585 Bishop Fields Apt. 484,West Kellie,VT,27669
+3094,1185,2023-12-13 18:16:00,3882.1,PayPal,In Transit,931 Ronald Valleys Suite 519,West Mary,WY,28449
+3095,1210,2024-01-13 11:20:00,3421.64,Debit Card,In Transit,1484 Alvarado Island,South Richard,RI,68051
+3096,1149,2023-12-20 10:28:00,987.56,Credit Card,Cancelled,186 Alexandria Parks Apt. 945,Davidsonville,CT,69077
+3097,1095,2023-08-15 15:05:00,2489.05,Debit Card,In Transit,6263 Crystal Unions,South Kimberlystad,NJ,71872
+3098,1118,2023-09-03 10:12:00,2921.51,PayPal,Cancelled,917 Barrett Parkways,South Adam,WA,06867
+3099,1242,2023-09-01 18:18:00,815.73,Credit Card,Delivered,399 Cameron Crossroad,East Jordanshire,PR,30380
+3100,1042,2023-08-30 14:43:00,103.26,PayPal,In Transit,4925 Brandi Divide Suite 462,West Angelicamouth,GU,17251
+3101,1018,2023-08-13 09:27:00,2089.02,Credit Card,Cancelled,90496 David Flat Apt. 931,Melissaville,WY,74678
+3102,1233,2023-12-24 09:46:00,646.04,PayPal,In Transit,26611 Roger Curve Suite 371,Ericafurt,OR,73766
+3103,1187,2023-06-07 17:06:00,727.88,Debit Card,Cancelled,195 Steven Road,West Brian,DE,20059
+3104,1006,2023-07-27 08:48:00,3834.18,PayPal,Processing,6701 Richard Junction Apt. 333,Taylorburgh,KY,61138
+3105,1034,2023-10-06 20:05:00,988.59,Debit Card,In Transit,5891 Gordon Ridges Apt. 847,North Yolandafurt,NE,90429
+3106,1241,2023-06-07 20:00:00,949.78,Credit Card,Delivered,5370 Julia Trace,Erinstad,ID,12293
+3107,1219,2023-07-14 11:08:00,1133.09,Debit Card,Cancelled,485 Stafford Island Suite 287,East Edgarbury,HI,05201
+3108,1209,2023-08-23 12:21:00,1672.19,Debit Card,In Transit,7852 Cox Mews,South Cynthia,WY,10373
+3109,1063,2023-06-29 16:44:00,1662.76,Debit Card,Processing,70462 Katie Stream,Brooksfurt,NV,49980
+3110,1006,2023-06-23 09:34:00,1170.95,Debit Card,Processing,6701 Richard Junction Apt. 333,Taylorburgh,KY,61138
+3111,1131,2023-12-30 10:00:00,368.89,Credit Card,Processing,842 Nielsen Ranch,East Nicholasberg,CT,02671
+3112,1059,2024-01-05 14:09:00,1364.97,Debit Card,Delivered,2067 Sharon Well,Nancytown,ME,74944
+3113,1058,2023-12-14 18:56:00,1059.74,PayPal,Processing,473 Maria Groves Suite 219,East Brent,MH,70105
+3114,1126,2023-08-26 09:14:00,1709.95,Credit Card,Delivered,814 John Flat Suite 552,North Justin,CA,25863
+3115,1092,2023-07-10 17:21:00,1755.77,Credit Card,Delivered,4565 Chavez Fort,East Derekshire,CT,20870
+3116,1237,2023-07-14 08:38:00,1027.3,Credit Card,In Transit,1246 Brian Islands,North Jennifer,ME,51611
+3117,1110,2024-02-27 13:38:00,1443.09,Credit Card,Cancelled,8300 Jeremy Wells,Larryville,MS,66474
+3118,1039,2023-11-02 17:52:00,2314.86,Debit Card,Delivered,60529 Collier Lake Apt. 613,Chapmanhaven,CO,52374
+3119,1225,2023-07-24 12:58:00,2931.75,Debit Card,Delivered,303 Wong Run,South Megan,PR,71094
+3120,1239,2023-10-14 20:58:00,1199.5,PayPal,Processing,74946 Kirby Forest,Brandonside,OK,09667
+3121,1202,2023-06-02 10:49:00,733.08,PayPal,In Transit,07603 Antonio Shoals,South Davidview,AZ,09184
+3122,1082,2023-08-15 14:28:00,2194.26,PayPal,Cancelled,481 Sydney Turnpike Suite 042,East Dustin,MD,32948
+3123,1209,2023-07-05 09:36:00,1751.64,Debit Card,Delivered,7852 Cox Mews,South Cynthia,WY,10373
+3124,1038,2023-07-17 13:08:00,2363.02,Credit Card,Cancelled,69003 Dougherty Trafficway,Port Jonathan,MD,16227
+3125,1091,2023-11-11 15:27:00,2043.17,Debit Card,Cancelled,0641 Alyssa Freeway,Vasquezton,FL,93778
+3126,1155,2023-11-18 10:51:00,132.15,PayPal,In Transit,938 John Grove Suite 591,Lake Robertstad,MI,25468
+3127,1099,2024-01-01 16:31:00,1720.39,PayPal,Cancelled,7658 Garcia Neck,East Shannon,AS,04880
+3128,1137,2024-03-01 11:24:00,2579.66,Credit Card,Cancelled,275 Robinson Ports,Ianborough,NM,97115
+3129,1135,2024-03-22 20:44:00,1953.39,PayPal,In Transit,02146 Caldwell Lodge Apt. 801,New Justinside,PW,76907
+3130,1180,2023-07-15 11:23:00,2003.16,Credit Card,In Transit,49673 April Springs Apt. 580,Port Carloschester,CT,69348
+3131,1218,2023-06-09 13:35:00,2483.41,Debit Card,In Transit,48964 Lambert Curve,New Harryburgh,NY,65098
+3132,1236,2023-07-27 08:58:00,2521.86,Debit Card,Delivered,890 Karen Parkway,North Dominiqueside,HI,02987
+3133,1218,2023-08-11 12:29:00,1046.22,Credit Card,Cancelled,48964 Lambert Curve,New Harryburgh,NY,65098
+3134,1063,2023-09-16 11:03:00,1533.48,PayPal,In Transit,70462 Katie Stream,Brooksfurt,NV,49980
+3135,1031,2023-08-13 14:46:00,1474.6,Credit Card,Cancelled,516 Joseph Crossing Suite 549,Carsonstad,CT,88953
+3136,1096,2023-06-28 19:06:00,2767.43,PayPal,Processing,039 Kelly Villages Apt. 239,Lindastad,PW,78038
+3137,1123,2023-08-20 08:09:00,4306.81,Debit Card,In Transit,4840 Robertson Pass,Tuckerport,MH,85898
+3138,1021,2023-10-04 09:00:00,293.58,PayPal,Cancelled,40824 Terri Plaza Suite 271,New Justinfort,NV,45158
+3139,1039,2023-09-02 15:47:00,1042.89,Credit Card,Delivered,60529 Collier Lake Apt. 613,Chapmanhaven,CO,52374
+3140,1121,2023-12-28 19:21:00,852.14,Debit Card,Processing,347 Tonya Club,East Jill,DE,49941
+3141,1074,2023-07-27 10:03:00,148.95,PayPal,Processing,64647 Michael Gateway,Wheelerborough,NH,14522
+3142,1155,2023-08-28 16:10:00,1576.6,Credit Card,Cancelled,938 John Grove Suite 591,Lake Robertstad,MI,25468
+3143,1214,2024-01-03 18:56:00,3374.04,Debit Card,Delivered,6064 Davis View,West Jason,FM,21502
+3144,1236,2024-03-19 16:19:00,1289.31,PayPal,In Transit,890 Karen Parkway,North Dominiqueside,HI,02987
+3145,1109,2023-08-20 12:05:00,2447.18,PayPal,Cancelled,0223 Ortiz Port Suite 252,South Marvinburgh,MD,83666
+3146,1244,2023-08-04 19:13:00,486.3,Debit Card,Processing,73505 Sherry Trail,Duranmouth,OR,16862
+3147,1057,2023-12-18 10:52:00,1464.51,PayPal,Processing,78585 Bishop Fields Apt. 484,West Kellie,VT,27669
+3148,1210,2024-01-26 15:20:00,2322.24,PayPal,Cancelled,1484 Alvarado Island,South Richard,RI,68051
+3149,1212,2023-12-12 10:03:00,4078.01,Debit Card,Cancelled,700 Lee Hills,South Pennyland,MO,95427
+3150,1050,2023-10-17 09:06:00,1942.41,Credit Card,Delivered,25831 Laura Freeway Suite 058,Tannerside,DC,80710
+3151,1155,2023-11-19 08:15:00,2512.86,Debit Card,In Transit,938 John Grove Suite 591,Lake Robertstad,MI,25468
+3152,1139,2023-07-25 09:13:00,2753.38,PayPal,Processing,2763 Haynes Landing Suite 647,New David,OK,90417
+3153,1194,2023-11-06 11:35:00,3138.74,Credit Card,Processing,9557 Ellis Port Apt. 424,South Nathan,LA,06703
+3154,1062,2023-10-16 09:36:00,4252.89,PayPal,Processing,8713 Davis Pass,Stokesmouth,DC,67773
+3155,1145,2024-02-03 08:03:00,2377.43,Debit Card,Processing,50208 Jacob Cove Suite 427,East Christophertown,NM,28968
+3156,1242,2023-11-06 08:22:00,1787.42,Debit Card,Cancelled,399 Cameron Crossroad,East Jordanshire,PR,30380
+3157,1129,2023-09-08 13:48:00,794.76,Debit Card,Delivered,84498 Nicholas Lane Suite 918,Nicholasbury,NC,53695
+3158,1250,2023-08-06 19:43:00,1719.01,Credit Card,Delivered,587 Wells Prairie Suite 903,East Shannon,IA,52392
+3159,1105,2024-02-13 09:32:00,1158.36,Credit Card,Processing,345 Wagner Roads Apt. 035,Wheelerburgh,VI,62705
+3160,1151,2023-12-13 15:37:00,3092.19,Credit Card,Delivered,761 Laura Plaza Suite 852,Mahoneymouth,OH,43054
+3161,1042,2023-08-17 18:29:00,2820.38,Credit Card,Processing,4925 Brandi Divide Suite 462,West Angelicamouth,GU,17251
+3162,1244,2023-09-27 11:51:00,1783.35,PayPal,In Transit,73505 Sherry Trail,Duranmouth,OR,16862
+3163,1197,2023-08-22 16:33:00,1825.21,PayPal,Delivered,2656 Smith Key Suite 478,East Jessicamouth,WA,54975
+3164,1115,2023-08-07 13:18:00,3052.95,Debit Card,Cancelled,508 Tiffany Skyway Suite 889,South Dorothybury,NJ,45819
+3165,1011,2023-12-16 11:13:00,975.12,PayPal,Processing,16073 Lisa Mount Suite 433,Lake Jamesmouth,KY,09600
+3166,1246,2023-08-18 17:40:00,466.04,Debit Card,Processing,9723 Laura Circle Apt. 496,Larryside,WI,19588
+3167,1207,2023-06-08 10:49:00,2162.16,Debit Card,Processing,276 Larry Loaf Suite 197,Alvarezburgh,NY,07806
+3168,1128,2023-07-19 15:20:00,778.13,Credit Card,Delivered,78816 Shaw Shore Apt. 928,South Erik,OK,74663
+3169,1042,2023-07-05 12:36:00,3479.16,Debit Card,Delivered,4925 Brandi Divide Suite 462,West Angelicamouth,GU,17251
+3170,1023,2023-07-07 10:45:00,3912.52,Debit Card,Delivered,02499 Gonzales Mountain,Hollyview,NY,71277
+3171,1122,2023-10-10 20:56:00,1754.52,Debit Card,In Transit,81826 Davis Forges,Lake Martin,MN,38980
+3172,1241,2023-08-03 17:31:00,280.58,Credit Card,Delivered,5370 Julia Trace,Erinstad,ID,12293
+3173,1220,2023-10-25 14:26:00,363.68,PayPal,In Transit,849 Brandy Avenue,South Samantha,IA,65789
+3174,1113,2023-12-05 16:54:00,362.44,PayPal,Delivered,18114 Stephen Hill Suite 701,Port Benjamin,LA,47715
+3175,1096,2023-07-13 18:26:00,3121.87,PayPal,Cancelled,039 Kelly Villages Apt. 239,Lindastad,PW,78038
+3176,1068,2023-06-22 17:41:00,1675.8,Credit Card,In Transit,53693 Pierce Spur,Jonathanfort,VA,84609
+3177,1180,2024-03-14 08:09:00,2480.18,Credit Card,Delivered,49673 April Springs Apt. 580,Port Carloschester,CT,69348
+3178,1097,2023-08-21 17:25:00,1525.38,Credit Card,In Transit,59325 Samantha Vista Suite 002,Port Daniel,NC,48327
+3179,1100,2024-01-23 18:05:00,1560.69,Debit Card,Cancelled,01533 Terry Stravenue Suite 443,North Philipside,MP,64850
+3180,1120,2024-02-29 15:06:00,412.49,Credit Card,In Transit,00342 Vega Drive Apt. 438,West Lisaville,RI,89043
+3181,1188,2023-07-26 14:49:00,1616.69,Debit Card,In Transit,082 Kristen Oval,North Pattymouth,OR,76491
+3182,1103,2023-11-16 09:20:00,5405.5,Debit Card,Cancelled,62299 Sara Port Apt. 485,Bakerfort,OK,80318
+3183,1055,2024-01-30 09:17:00,1509.58,Debit Card,Processing,000 Jennifer Unions Suite 872,West Sarah,MD,21800
+3184,1140,2023-08-19 15:09:00,1417.52,PayPal,In Transit,8906 Hannah Circle Apt. 471,Garnerview,MN,47727
+3185,1082,2024-03-17 08:38:00,4869.4,Debit Card,Processing,481 Sydney Turnpike Suite 042,East Dustin,MD,32948
+3186,1240,2023-12-03 20:27:00,2289.55,Debit Card,In Transit,097 Rachel Spring,South Angela,UT,92683
+3187,1014,2023-09-17 08:48:00,335.26,PayPal,Cancelled,87083 Stephen Unions,Contrerasside,PA,42089
+3188,1070,2023-10-08 18:11:00,1649.67,Credit Card,In Transit,6793 Kevin Views,Lake Victoriaton,CO,53621
+3189,1018,2023-10-19 14:05:00,712.0,Debit Card,Cancelled,90496 David Flat Apt. 931,Melissaville,WY,74678
+3190,1224,2024-01-01 16:13:00,1177.8,PayPal,Delivered,9779 Peterson Well Apt. 321,Monicaville,NE,70542
+3191,1048,2023-06-28 09:57:00,973.59,Debit Card,Delivered,54479 Jackson Mills,Sergiostad,RI,57509
+3192,1247,2023-10-31 10:12:00,1258.32,Debit Card,Cancelled,599 Jensen Manor Suite 217,South Jeffreytown,SC,29733
+3193,1124,2024-01-30 16:44:00,453.3,Credit Card,Cancelled,75011 Gregory Glen,New Lorraineview,MT,51361
+3194,1091,2024-03-19 14:52:00,3479.13,Credit Card,In Transit,0641 Alyssa Freeway,Vasquezton,FL,93778
+3195,1020,2024-03-23 17:09:00,1345.32,Debit Card,Delivered,14363 Beck Land Suite 885,Barajasside,MA,46613
+3196,1004,2023-08-17 15:59:00,1060.96,Credit Card,Cancelled,2880 Burns Creek,Natashaport,IA,08093
+3197,1222,2023-11-10 09:50:00,1703.04,PayPal,Cancelled,492 Wade Village Suite 837,Mcclurefort,KY,74302
+3198,1068,2024-02-22 19:00:00,1961.41,Debit Card,In Transit,53693 Pierce Spur,Jonathanfort,VA,84609
+3199,1163,2024-01-17 18:37:00,2418.89,Credit Card,Processing,602 Cunningham Shoals Apt. 222,South Kylemouth,LA,82611
+3200,1056,2023-09-05 14:44:00,3127.62,PayPal,In Transit,097 Alexandria Stravenue,Hernandezbury,AZ,75548
+3201,1154,2023-12-11 11:22:00,580.88,Credit Card,In Transit,48058 Mark Square Apt. 206,Mullinsshire,NY,12308
+3202,1249,2024-03-22 08:23:00,2249.1,Debit Card,Processing,655 Rowland Gardens,Port Christinaborough,PR,70685
+3203,1078,2023-11-05 16:52:00,3174.56,Credit Card,Cancelled,673 Soto Ferry Suite 609,South Brittany,MS,01084
+3204,1167,2024-01-20 14:26:00,2524.63,Debit Card,Delivered,556 Marilyn Fields,Marthafort,PW,62694
+3205,1213,2024-03-04 14:33:00,3391.62,Debit Card,Processing,34764 Tracy Landing,West Amyfort,TX,32790
+3206,1238,2023-08-30 15:27:00,1584.3,Debit Card,In Transit,8617 Rick Fort Apt. 489,East Kathrynberg,ME,74982
+3207,1142,2023-08-23 16:27:00,3198.0,Debit Card,Delivered,17800 Warren Corner,West Christineland,SD,51598
+3208,1217,2024-01-10 18:18:00,407.7,PayPal,Processing,93436 Ricky Drive Apt. 443,Solomonstad,OR,90189
+3209,1023,2023-07-24 09:41:00,2315.83,Credit Card,Cancelled,02499 Gonzales Mountain,Hollyview,NY,71277
+3210,1027,2024-02-10 19:48:00,1352.53,PayPal,Processing,766 Tyler Camp Apt. 895,Port Meganville,NC,60391
+3211,1163,2024-01-14 16:37:00,2877.44,Credit Card,Delivered,602 Cunningham Shoals Apt. 222,South Kylemouth,LA,82611
+3212,1219,2024-01-02 11:14:00,886.83,Debit Card,Cancelled,485 Stafford Island Suite 287,East Edgarbury,HI,05201
+3213,1030,2023-09-09 15:07:00,1722.4,Debit Card,Cancelled,95339 Byrd Stravenue Apt. 104,Johnsonstad,VA,17725
+3214,1106,2023-12-20 08:23:00,2777.74,Credit Card,Delivered,680 Thomas Curve Apt. 903,Charleneport,VT,93479
+3215,1069,2023-10-14 12:53:00,2649.86,Debit Card,In Transit,38750 Hopkins Brook,New Andreatown,AK,69892
+3216,1002,2023-12-30 08:00:00,1054.56,Credit Card,In Transit,7525 Clark Grove Apt. 928,East Steven,KY,84387
+3217,1203,2023-12-09 16:52:00,1467.53,PayPal,Delivered,938 Cory Prairie,New Jayborough,LA,23015
+3218,1086,2023-08-27 17:27:00,2025.11,Credit Card,Cancelled,999 Maxwell Spurs,Port Melanieport,IL,68363
+3219,1050,2023-12-19 08:51:00,2037.15,PayPal,Cancelled,25831 Laura Freeway Suite 058,Tannerside,DC,80710
+3220,1033,2023-12-17 19:11:00,918.18,Debit Card,Delivered,335 Kristina Ranch,West Micheleberg,DC,71308
+3221,1133,2023-08-21 14:14:00,1986.69,Credit Card,In Transit,356 Rodriguez Meadow Suite 486,Cherylfurt,WV,27199
+3222,1130,2023-07-31 18:36:00,946.22,Debit Card,Delivered,1777 Brittany Rue Suite 030,New Brittany,DC,83016
+3223,1215,2024-03-10 10:20:00,4279.15,Credit Card,Processing,27206 Courtney Island,North Erichaven,VT,85590
+3224,1024,2023-06-14 14:00:00,819.72,PayPal,In Transit,671 Bailey Isle,Elizabethburgh,MA,54456
+3225,1008,2024-03-05 09:36:00,2055.16,Debit Card,Processing,998 Donovan Ford Suite 346,Lake Debbie,NH,41942
+3226,1191,2023-08-06 15:40:00,628.61,PayPal,Delivered,25431 Timothy Inlet Apt. 799,South Stevenberg,VI,92662
+3227,1048,2023-10-01 18:57:00,879.35,Credit Card,Delivered,54479 Jackson Mills,Sergiostad,RI,57509
+3228,1050,2024-03-01 11:46:00,1082.57,Debit Card,Delivered,25831 Laura Freeway Suite 058,Tannerside,DC,80710
+3229,1169,2023-06-27 12:05:00,4584.28,Credit Card,Processing,235 Oconnor Pine Suite 521,East Jenny,NH,51302
+3230,1164,2024-03-23 09:07:00,1488.87,Debit Card,Processing,903 Harvey Point,North Jack,AR,86127
+3231,1028,2023-08-12 12:16:00,89.93,Credit Card,Processing,1172 Berger Cape,Lauraport,MI,49632
+3232,1020,2024-02-09 13:58:00,2281.95,Credit Card,Cancelled,14363 Beck Land Suite 885,Barajasside,MA,46613
+3233,1026,2024-02-07 20:01:00,1350.84,Debit Card,Processing,3982 Joshua Turnpike,Morganhaven,KY,00837
+3234,1125,2023-07-10 11:43:00,3791.92,Debit Card,Cancelled,0728 Derek Lock Suite 245,New Nancyberg,DE,05976
+3235,1228,2023-11-08 18:58:00,2099.81,Debit Card,In Transit,4338 Yvette Knolls Suite 522,Port Brycechester,DE,81446
+3236,1047,2023-10-31 08:57:00,5041.29,Credit Card,Processing,03054 Hays Plains Suite 403,Michaelton,VI,86449
+3237,1031,2023-11-23 13:30:00,495.19,PayPal,Processing,516 Joseph Crossing Suite 549,Carsonstad,CT,88953
+3238,1041,2024-02-23 19:16:00,1754.52,Credit Card,In Transit,9782 Shannon Valleys,Toniland,NY,85190
+3239,1156,2023-06-16 16:01:00,456.24,PayPal,In Transit,0514 Ruiz Isle,Lake Amanda,IL,72121
+3240,1056,2023-12-04 09:57:00,2044.31,Credit Card,Processing,097 Alexandria Stravenue,Hernandezbury,AZ,75548
+3241,1084,2023-08-10 11:05:00,1899.74,PayPal,In Transit,54152 Randy Inlet Apt. 611,East Thomasberg,OR,30148
+3242,1069,2023-10-19 15:12:00,705.7,Credit Card,Delivered,38750 Hopkins Brook,New Andreatown,AK,69892
+3243,1182,2024-03-09 18:18:00,3519.07,Debit Card,Cancelled,410 Chad Stream Suite 707,Lake Danielle,AZ,87612
+3244,1112,2024-02-18 14:59:00,1028.28,Credit Card,Delivered,6184 Robert Cove,West Danielville,NM,26538
+3245,1045,2023-09-10 18:54:00,2595.69,PayPal,Delivered,52204 Horton Dam Suite 790,North Jonathanberg,OH,95821
+3246,1247,2023-12-19 09:37:00,5237.22,PayPal,Delivered,599 Jensen Manor Suite 217,South Jeffreytown,SC,29733
+3247,1043,2023-09-14 19:31:00,2468.28,Debit Card,Cancelled,1888 Ebony Wells,New Nicholas,GA,24204
+3248,1109,2023-10-18 13:39:00,89.89,Credit Card,Cancelled,0223 Ortiz Port Suite 252,South Marvinburgh,MD,83666
+3249,1110,2023-09-11 17:22:00,493.62,Debit Card,Processing,8300 Jeremy Wells,Larryville,MS,66474
+3250,1116,2023-08-25 08:32:00,3299.39,Debit Card,Cancelled,0838 Powell Freeway Apt. 779,Millerfort,NV,41927
+3251,1076,2024-02-27 13:25:00,973.74,Credit Card,Processing,8911 Diane Knoll,Lake Cheyenne,OK,85046
+3252,1047,2023-11-13 14:50:00,1901.16,Credit Card,Delivered,03054 Hays Plains Suite 403,Michaelton,VI,86449
+3253,1063,2023-07-08 11:42:00,456.24,Debit Card,Delivered,70462 Katie Stream,Brooksfurt,NV,49980
+3254,1038,2023-11-08 09:00:00,393.09,Debit Card,Processing,69003 Dougherty Trafficway,Port Jonathan,MD,16227
+3255,1184,2023-11-16 11:29:00,3490.22,PayPal,Delivered,05050 Wilson Valley Suite 829,North Benjamin,FL,64581
+3256,1231,2023-09-28 16:04:00,658.72,Debit Card,Delivered,673 Terry Valleys,Roweport,CO,05346
+3257,1155,2023-09-17 16:13:00,3002.84,Credit Card,Delivered,938 John Grove Suite 591,Lake Robertstad,MI,25468
+3258,1184,2023-07-09 17:57:00,430.88,PayPal,Cancelled,05050 Wilson Valley Suite 829,North Benjamin,FL,64581
+3259,1175,2024-01-09 13:52:00,3695.23,Debit Card,In Transit,40369 Garrett Station Suite 666,Lake Glenn,DC,25172
+3260,1051,2023-06-26 20:31:00,1934.13,Debit Card,Processing,018 Kevin Estates Suite 358,Meghanview,ID,83739
+3261,1071,2024-01-02 09:07:00,3707.2,Debit Card,In Transit,50392 Hickman Hills,New John,MP,51508
+3262,1154,2023-11-15 17:24:00,2807.07,Credit Card,Processing,48058 Mark Square Apt. 206,Mullinsshire,NY,12308
+3263,1073,2023-06-10 18:50:00,1822.82,PayPal,Processing,7888 Garcia Corners,Angelamouth,VI,50994
+3264,1234,2024-01-23 12:08:00,1315.81,Debit Card,Processing,285 Carolyn Lodge,North Mikeport,AZ,69022
+3265,1230,2024-02-29 16:02:00,1851.38,Debit Card,Processing,6678 Acevedo Mills,Port Alejandro,AS,68310
+3266,1018,2024-01-27 09:53:00,3623.84,Debit Card,Delivered,90496 David Flat Apt. 931,Melissaville,WY,74678
+3267,1071,2023-11-10 20:22:00,1932.14,Debit Card,Processing,50392 Hickman Hills,New John,MP,51508
+3268,1143,2023-11-08 15:39:00,2048.94,Credit Card,Cancelled,979 Mills Route,Reginafort,ND,30271
+3269,1077,2024-01-19 15:54:00,402.54,PayPal,Processing,9825 Timothy Hill Suite 112,Larrymouth,WY,27615
+3270,1216,2023-12-09 17:06:00,810.24,Credit Card,In Transit,89317 Jose Walk,North Richard,NE,79195
+3271,1013,2023-06-06 10:06:00,301.52,Debit Card,Cancelled,3699 Marshall Mills Apt. 872,West Zacharymouth,CO,98954
+3272,1058,2023-08-27 09:12:00,1753.64,PayPal,Delivered,473 Maria Groves Suite 219,East Brent,MH,70105
+3273,1209,2024-03-02 08:59:00,3129.29,PayPal,Processing,7852 Cox Mews,South Cynthia,WY,10373
+3274,1067,2023-06-23 09:03:00,3978.16,Debit Card,Processing,739 Randy Garden,Kimberlyfurt,NH,70447
+3275,1068,2023-11-16 19:39:00,2489.33,Debit Card,Delivered,53693 Pierce Spur,Jonathanfort,VA,84609
+3276,1179,2023-08-27 10:37:00,13.06,Debit Card,Processing,3723 Brown Greens Apt. 027,Alvarezfort,WA,99123
+3277,1033,2023-11-11 10:48:00,222.8,PayPal,Cancelled,335 Kristina Ranch,West Micheleberg,DC,71308
+3278,1164,2024-01-15 18:07:00,1241.37,PayPal,In Transit,903 Harvey Point,North Jack,AR,86127
+3279,1148,2024-01-31 18:31:00,2560.86,Debit Card,Delivered,2407 Hansen Plains Suite 392,Mariomouth,KY,78971
+3280,1198,2024-02-03 11:05:00,217.77,Debit Card,Delivered,64628 Page Throughway,East Jacob,MS,38441
+3281,1183,2023-07-13 13:35:00,2114.96,Credit Card,In Transit,0158 Miller Mount Suite 328,South Donnaport,UT,51632
+3282,1178,2023-07-10 09:31:00,2773.61,Credit Card,In Transit,7128 Melissa Harbors,Davidview,KY,34180
+3283,1004,2023-09-19 15:52:00,2482.89,Debit Card,In Transit,2880 Burns Creek,Natashaport,IA,08093
+3284,1125,2023-07-24 13:13:00,2613.21,PayPal,Delivered,0728 Derek Lock Suite 245,New Nancyberg,DE,05976
+3285,1195,2023-11-07 19:29:00,4050.91,PayPal,In Transit,055 Nathan Plains,New Kevin,PW,03767
+3286,1218,2024-02-14 09:58:00,1798.46,Credit Card,In Transit,48964 Lambert Curve,New Harryburgh,NY,65098
+3287,1235,2023-12-04 14:28:00,883.98,PayPal,In Transit,06794 Mccullough Tunnel Suite 792,New Dana,WV,59474
+3288,1200,2023-12-22 11:04:00,2400.21,Debit Card,Cancelled,4818 Katie Falls,New Karenside,MD,41947
+3289,1043,2023-11-05 17:41:00,1042.14,Credit Card,In Transit,1888 Ebony Wells,New Nicholas,GA,24204
+3290,1119,2023-07-25 19:07:00,3474.77,Credit Card,Processing,4722 Morrison Summit Suite 858,East Jason,VT,38587
+3291,1229,2024-01-22 10:17:00,148.15,Credit Card,Cancelled,13524 Gill Parks,East Deborahmouth,GU,18559
+3292,1170,2024-02-27 15:22:00,2447.48,Debit Card,Processing,34485 Lambert Groves Apt. 241,New Anitaville,IL,71611
+3293,1238,2024-03-08 09:22:00,1633.2,Debit Card,In Transit,8617 Rick Fort Apt. 489,East Kathrynberg,ME,74982
+3294,1039,2023-12-21 16:27:00,1107.43,PayPal,Delivered,60529 Collier Lake Apt. 613,Chapmanhaven,CO,52374
+3295,1014,2024-01-12 12:23:00,2886.31,Credit Card,Processing,87083 Stephen Unions,Contrerasside,PA,42089
+3296,1167,2023-12-13 19:59:00,3088.32,Debit Card,In Transit,556 Marilyn Fields,Marthafort,PW,62694
+3297,1076,2023-09-05 14:11:00,1605.56,PayPal,Delivered,8911 Diane Knoll,Lake Cheyenne,OK,85046
+3298,1136,2024-02-08 16:27:00,2934.08,Credit Card,Processing,489 Benson Lane,Carrillomouth,WI,60643
+3299,1166,2023-10-06 09:14:00,1657.24,Credit Card,Processing,978 Vasquez Falls,Lake Kelly,ID,00708
+3300,1230,2023-06-19 17:17:00,434.03,Credit Card,Processing,6678 Acevedo Mills,Port Alejandro,AS,68310
+3301,1137,2023-07-22 12:14:00,2447.74,PayPal,Cancelled,275 Robinson Ports,Ianborough,NM,97115
+3302,1101,2023-12-19 09:14:00,1924.31,PayPal,Delivered,418 Lopez Light Suite 270,Scottview,IN,35701
+3303,1127,2023-09-14 10:50:00,1913.22,Credit Card,Delivered,5478 Gregory Rest Apt. 428,West Jessica,SC,10523
+3304,1164,2023-10-26 19:38:00,774.23,Debit Card,Processing,903 Harvey Point,North Jack,AR,86127
+3305,1025,2023-09-03 16:58:00,1425.6,PayPal,Cancelled,770 Joseph Curve Suite 771,Lake Chelseabury,VT,21259
+3306,1190,2023-11-04 19:15:00,2898.74,Credit Card,Delivered,97740 Fitzgerald Gateway Apt. 569,New Sophia,PW,75697
+3307,1175,2023-07-06 10:11:00,4490.85,Debit Card,Cancelled,40369 Garrett Station Suite 666,Lake Glenn,DC,25172
+3308,1037,2023-06-07 18:30:00,1749.41,Debit Card,Delivered,83667 Moore Inlet,Kimberlyshire,PA,11636
+3309,1006,2023-08-30 12:56:00,818.4,Credit Card,In Transit,6701 Richard Junction Apt. 333,Taylorburgh,KY,61138
+3310,1174,2023-06-05 17:22:00,2758.87,Debit Card,Processing,29022 Schmidt Loaf,Gonzalezmouth,ME,75248
+3311,1126,2023-10-05 15:07:00,627.19,Credit Card,Processing,814 John Flat Suite 552,North Justin,CA,25863
+3312,1146,2023-10-27 11:33:00,3351.92,PayPal,In Transit,6013 Wise Mills,Lake Virginia,ID,60903
+3313,1194,2023-08-15 20:06:00,1364.07,Credit Card,Delivered,9557 Ellis Port Apt. 424,South Nathan,LA,06703
+3314,1206,2023-11-19 15:31:00,2515.35,PayPal,Delivered,70269 Hernandez Road,Port Charleshaven,WI,65013
+3315,1140,2023-10-10 18:31:00,1212.72,Debit Card,Delivered,8906 Hannah Circle Apt. 471,Garnerview,MN,47727
+3316,1118,2023-06-07 13:19:00,3149.1,PayPal,Delivered,917 Barrett Parkways,South Adam,WA,06867
+3317,1229,2024-02-21 20:42:00,312.55,PayPal,Cancelled,13524 Gill Parks,East Deborahmouth,GU,18559
+3318,1029,2023-10-17 18:33:00,1718.98,PayPal,Processing,474 Rachel Mountain Suite 821,Landryshire,ME,84247
+3319,1038,2023-12-28 11:42:00,788.54,Credit Card,Delivered,69003 Dougherty Trafficway,Port Jonathan,MD,16227
+3320,1128,2023-06-16 11:36:00,320.88,PayPal,Cancelled,78816 Shaw Shore Apt. 928,South Erik,OK,74663
+3321,1093,2023-09-14 19:05:00,3455.05,Credit Card,Cancelled,6804 Wilkins Extensions,South Melissaside,WA,72606
+3322,1164,2023-07-26 12:56:00,2112.98,PayPal,Cancelled,903 Harvey Point,North Jack,AR,86127
+3323,1246,2024-02-25 10:16:00,1111.89,PayPal,Delivered,9723 Laura Circle Apt. 496,Larryside,WI,19588
+3324,1228,2023-11-17 14:37:00,1550.19,Debit Card,Delivered,4338 Yvette Knolls Suite 522,Port Brycechester,DE,81446
+3325,1080,2023-09-06 08:37:00,1205.02,PayPal,Delivered,72368 Ortiz Overpass Suite 772,New Anthonybury,LA,04786
+3326,1214,2023-08-02 14:50:00,2765.05,Debit Card,Delivered,6064 Davis View,West Jason,FM,21502
+3327,1074,2023-07-27 08:31:00,2337.29,PayPal,In Transit,64647 Michael Gateway,Wheelerborough,NH,14522
+3328,1120,2023-08-16 16:18:00,3378.79,PayPal,In Transit,00342 Vega Drive Apt. 438,West Lisaville,RI,89043
+3329,1078,2024-02-05 12:04:00,2365.85,Debit Card,Processing,673 Soto Ferry Suite 609,South Brittany,MS,01084
+3330,1117,2023-06-21 11:18:00,3763.92,PayPal,Processing,37589 Moran Lakes Suite 113,West Michaelport,OH,68918
+3331,1014,2024-02-06 12:00:00,1201.14,Debit Card,Delivered,87083 Stephen Unions,Contrerasside,PA,42089
+3332,1170,2023-06-01 08:16:00,2203.12,Credit Card,Delivered,34485 Lambert Groves Apt. 241,New Anitaville,IL,71611
+3333,1225,2023-10-24 20:54:00,3704.61,PayPal,In Transit,303 Wong Run,South Megan,PR,71094
+3334,1245,2023-07-15 19:17:00,2601.32,Credit Card,In Transit,6619 Hall Rapid,South Patrickchester,FM,81793
+3335,1111,2024-03-26 09:18:00,844.03,Credit Card,Processing,098 David Station,South Nancyview,WI,70589
+3336,1122,2023-11-29 11:51:00,1736.28,PayPal,Cancelled,81826 Davis Forges,Lake Martin,MN,38980
+3337,1109,2023-12-22 09:57:00,1199.5,Debit Card,Delivered,0223 Ortiz Port Suite 252,South Marvinburgh,MD,83666
+3338,1153,2023-11-07 10:36:00,532.0,Debit Card,Delivered,4196 Jessica Stream,Lauraburgh,NM,90887
+3339,1206,2024-03-23 10:43:00,1429.59,Credit Card,Delivered,70269 Hernandez Road,Port Charleshaven,WI,65013
+3340,1035,2023-12-31 16:12:00,246.33,Debit Card,Delivered,18367 Robert Views Suite 661,Ronaldview,MN,20507
+3341,1022,2023-10-31 17:59:00,380.62,PayPal,Cancelled,4964 Chelsea Streets Apt. 334,East Johnside,CA,21018
+3342,1140,2023-09-02 14:50:00,3569.28,Debit Card,Processing,8906 Hannah Circle Apt. 471,Garnerview,MN,47727
+3343,1036,2024-02-25 15:44:00,590.57,Debit Card,Delivered,1983 Diane Fork Apt. 585,Port Joshuabury,AS,56745
+3344,1120,2023-11-29 14:29:00,3405.11,Debit Card,Cancelled,00342 Vega Drive Apt. 438,West Lisaville,RI,89043
+3345,1119,2023-06-15 16:01:00,2295.69,Debit Card,Processing,4722 Morrison Summit Suite 858,East Jason,VT,38587
+3346,1194,2023-08-11 17:58:00,2615.59,Debit Card,In Transit,9557 Ellis Port Apt. 424,South Nathan,LA,06703
+3347,1149,2024-02-18 13:08:00,5373.84,PayPal,Delivered,186 Alexandria Parks Apt. 945,Davidsonville,CT,69077
+3348,1014,2023-12-19 10:25:00,1340.41,PayPal,Processing,87083 Stephen Unions,Contrerasside,PA,42089
+3349,1119,2024-02-21 15:53:00,979.13,Credit Card,Processing,4722 Morrison Summit Suite 858,East Jason,VT,38587
+3350,1015,2023-10-17 18:06:00,2583.26,Debit Card,Processing,434 Flores Plains,East Edwardfurt,UT,20529
+3351,1211,2023-10-27 17:30:00,4157.13,PayPal,Delivered,2324 Jenkins Wall Apt. 364,Debbieview,TX,79305
+3352,1222,2023-07-02 09:47:00,1417.18,PayPal,Processing,492 Wade Village Suite 837,Mcclurefort,KY,74302
+3353,1180,2023-09-13 16:09:00,1574.82,PayPal,Cancelled,49673 April Springs Apt. 580,Port Carloschester,CT,69348
+3354,1035,2023-09-23 18:40:00,2402.44,Credit Card,Delivered,18367 Robert Views Suite 661,Ronaldview,MN,20507
+3355,1161,2023-11-07 19:59:00,175.41,Credit Card,Cancelled,33127 Watts Way Suite 366,New Jillfurt,VA,41513
+3356,1160,2023-09-11 09:04:00,1921.53,Credit Card,In Transit,12209 Obrien Ridge,New Jesse,TX,03919
+3357,1155,2023-08-01 16:06:00,2697.17,Credit Card,In Transit,938 John Grove Suite 591,Lake Robertstad,MI,25468
+3358,1027,2024-01-29 08:53:00,1938.3,PayPal,Cancelled,766 Tyler Camp Apt. 895,Port Meganville,NC,60391
+3359,1101,2023-06-29 09:19:00,1262.4,Debit Card,Cancelled,418 Lopez Light Suite 270,Scottview,IN,35701
+3360,1048,2023-09-29 16:16:00,296.53,PayPal,Cancelled,54479 Jackson Mills,Sergiostad,RI,57509
+3361,1220,2023-08-03 14:09:00,2486.24,PayPal,Processing,849 Brandy Avenue,South Samantha,IA,65789
+3362,1048,2023-08-12 19:42:00,1525.82,Credit Card,In Transit,54479 Jackson Mills,Sergiostad,RI,57509
+3363,1131,2024-03-06 11:30:00,1166.6,Debit Card,Delivered,842 Nielsen Ranch,East Nicholasberg,CT,02671
+3364,1075,2023-07-22 17:31:00,531.69,Debit Card,Delivered,356 Velasquez Lock Suite 193,Lake Katrina,AK,95818
+3365,1101,2023-12-15 19:51:00,3455.3,Credit Card,Cancelled,418 Lopez Light Suite 270,Scottview,IN,35701
+3366,1107,2024-01-04 10:01:00,1173.92,Debit Card,Cancelled,171 Mcneil Route Suite 444,East Zachary,IA,07942
+3367,1031,2024-03-15 14:00:00,2622.14,PayPal,Delivered,516 Joseph Crossing Suite 549,Carsonstad,CT,88953
+3368,1009,2024-01-14 08:58:00,1684.98,Debit Card,In Transit,8498 Elizabeth Plaza,Sarahville,FM,18102
+3369,1120,2024-01-21 12:00:00,830.0,Credit Card,Delivered,00342 Vega Drive Apt. 438,West Lisaville,RI,89043
+3370,1129,2024-02-13 11:22:00,3564.43,PayPal,Cancelled,84498 Nicholas Lane Suite 918,Nicholasbury,NC,53695
+3371,1132,2023-07-03 10:41:00,917.74,Credit Card,Delivered,686 Golden Square,Perezfort,WY,50470
+3372,1168,2024-03-15 13:29:00,1134.16,PayPal,In Transit,0568 Ashley Loaf,New Darryl,WY,99006
+3373,1072,2023-11-03 14:04:00,265.3,PayPal,Cancelled,477 Michael Lane,Lopezshire,TN,50317
+3374,1097,2024-01-28 17:42:00,1695.68,Credit Card,Delivered,59325 Samantha Vista Suite 002,Port Daniel,NC,48327
+3375,1034,2023-11-13 17:37:00,435.28,Debit Card,Cancelled,5891 Gordon Ridges Apt. 847,North Yolandafurt,NE,90429
+3376,1018,2023-06-24 08:54:00,1623.91,PayPal,In Transit,90496 David Flat Apt. 931,Melissaville,WY,74678
+3377,1060,2023-07-20 18:06:00,817.25,Debit Card,Cancelled,549 Gregory Walks,Wilcoxhaven,MD,11869
+3378,1083,2023-09-27 20:51:00,1477.91,PayPal,In Transit,518 Robinson Meadow Apt. 745,Matthewshire,DC,74706
+3379,1027,2023-08-29 19:57:00,762.22,Debit Card,Cancelled,766 Tyler Camp Apt. 895,Port Meganville,NC,60391
+3380,1237,2023-07-03 08:39:00,399.61,Debit Card,Processing,1246 Brian Islands,North Jennifer,ME,51611
+3381,1010,2023-07-08 15:48:00,425.82,Debit Card,Processing,680 Charles Spurs Apt. 805,South David,ME,48296
+3382,1237,2023-08-29 13:06:00,2537.67,PayPal,Cancelled,1246 Brian Islands,North Jennifer,ME,51611
+3383,1097,2023-08-08 18:36:00,758.96,PayPal,In Transit,59325 Samantha Vista Suite 002,Port Daniel,NC,48327
+3384,1051,2023-10-08 15:28:00,758.08,PayPal,Delivered,018 Kevin Estates Suite 358,Meghanview,ID,83739
+3385,1058,2023-09-12 19:10:00,1542.4,Debit Card,In Transit,473 Maria Groves Suite 219,East Brent,MH,70105
+3386,1023,2024-03-25 08:40:00,97.86,PayPal,Processing,02499 Gonzales Mountain,Hollyview,NY,71277
+3387,1053,2023-06-18 20:08:00,3759.88,Credit Card,Delivered,1473 Colin Highway,Linchester,IA,21433
+3388,1199,2023-12-26 17:34:00,1708.86,Credit Card,Delivered,47195 Cunningham Ways,Courtneyfort,UT,16175
+3389,1048,2024-02-26 15:12:00,1545.64,Credit Card,Cancelled,54479 Jackson Mills,Sergiostad,RI,57509
+3390,1129,2023-11-28 13:39:00,2209.76,PayPal,In Transit,84498 Nicholas Lane Suite 918,Nicholasbury,NC,53695
+3391,1206,2023-07-05 15:27:00,849.51,PayPal,Cancelled,70269 Hernandez Road,Port Charleshaven,WI,65013
+3392,1224,2023-07-07 17:05:00,1353.38,Credit Card,Delivered,9779 Peterson Well Apt. 321,Monicaville,NE,70542
+3393,1026,2023-07-31 15:14:00,297.9,Credit Card,Delivered,3982 Joshua Turnpike,Morganhaven,KY,00837
+3394,1006,2023-09-23 12:59:00,949.07,Debit Card,Cancelled,6701 Richard Junction Apt. 333,Taylorburgh,KY,61138
+3395,1181,2023-12-01 09:55:00,3095.5,Credit Card,Delivered,921 Jon Mountain Apt. 746,Jonathanland,KY,08678
+3396,1020,2024-02-29 17:15:00,2918.49,PayPal,Delivered,14363 Beck Land Suite 885,Barajasside,MA,46613
+3397,1103,2023-06-30 16:44:00,369.93,Credit Card,Cancelled,62299 Sara Port Apt. 485,Bakerfort,OK,80318
+3398,1240,2023-10-13 18:01:00,333.42,Credit Card,Delivered,097 Rachel Spring,South Angela,UT,92683
+3399,1108,2023-10-12 11:21:00,2997.29,Credit Card,In Transit,428 Kelly Mountains Apt. 482,Destinybury,MI,29773
+3400,1053,2024-03-07 19:21:00,2131.43,PayPal,Processing,1473 Colin Highway,Linchester,IA,21433
+3401,1061,2024-02-08 09:51:00,677.75,PayPal,Processing,4268 Vaughn Route,Michaelbury,IN,18008
+3402,1089,2023-07-07 14:38:00,1813.88,PayPal,Processing,8507 Michael Glens Apt. 913,North Micheletown,IA,06527
+3403,1228,2024-03-09 15:08:00,3780.55,Debit Card,Processing,4338 Yvette Knolls Suite 522,Port Brycechester,DE,81446
+3404,1027,2023-06-19 15:32:00,3236.64,Credit Card,Delivered,766 Tyler Camp Apt. 895,Port Meganville,NC,60391
+3405,1111,2024-01-31 12:50:00,64.98,Credit Card,Processing,098 David Station,South Nancyview,WI,70589
+3406,1239,2023-06-29 08:49:00,368.27,Credit Card,Cancelled,74946 Kirby Forest,Brandonside,OK,09667
+3407,1175,2023-06-10 16:30:00,430.88,Credit Card,Cancelled,40369 Garrett Station Suite 666,Lake Glenn,DC,25172
+3408,1197,2023-12-11 19:08:00,1214.1,Debit Card,Cancelled,2656 Smith Key Suite 478,East Jessicamouth,WA,54975
+3409,1141,2023-08-10 09:28:00,2908.56,Credit Card,Delivered,225 Welch Ports Suite 112,Jeremymouth,SD,38689
+3410,1091,2023-09-08 13:27:00,2101.47,Credit Card,In Transit,0641 Alyssa Freeway,Vasquezton,FL,93778
+3411,1060,2023-07-18 17:00:00,902.84,Credit Card,Cancelled,549 Gregory Walks,Wilcoxhaven,MD,11869
+3412,1192,2024-03-01 17:02:00,3856.49,Credit Card,In Transit,16579 Michael Extensions Apt. 832,Johnville,SD,63218
+3413,1209,2023-06-30 09:03:00,407.83,Credit Card,Cancelled,7852 Cox Mews,South Cynthia,WY,10373
+3414,1047,2023-10-23 08:20:00,3943.38,Debit Card,In Transit,03054 Hays Plains Suite 403,Michaelton,VI,86449
+3415,1075,2023-08-06 17:25:00,2655.65,Debit Card,Processing,356 Velasquez Lock Suite 193,Lake Katrina,AK,95818
+3416,1169,2023-07-10 09:16:00,889.37,PayPal,In Transit,235 Oconnor Pine Suite 521,East Jenny,NH,51302
+3417,1127,2023-11-30 11:28:00,2777.79,PayPal,Delivered,5478 Gregory Rest Apt. 428,West Jessica,SC,10523
+3418,1242,2023-12-05 20:35:00,1291.99,Debit Card,In Transit,399 Cameron Crossroad,East Jordanshire,PR,30380
+3419,1135,2023-10-15 13:44:00,997.73,PayPal,Processing,02146 Caldwell Lodge Apt. 801,New Justinside,PW,76907
+3420,1014,2023-11-25 14:45:00,2887.26,PayPal,Cancelled,87083 Stephen Unions,Contrerasside,PA,42089
+3421,1072,2023-07-11 11:58:00,3345.11,Credit Card,In Transit,477 Michael Lane,Lopezshire,TN,50317
+3422,1079,2024-03-10 11:07:00,1210.29,Debit Card,In Transit,155 Williamson Via Suite 991,West David,ME,15829
+3423,1010,2023-09-29 19:28:00,353.51,PayPal,Cancelled,680 Charles Spurs Apt. 805,South David,ME,48296
+3424,1244,2023-07-29 08:31:00,1442.87,Credit Card,Delivered,73505 Sherry Trail,Duranmouth,OR,16862
+3425,1072,2024-03-28 14:19:00,1474.66,Credit Card,Processing,477 Michael Lane,Lopezshire,TN,50317
+3426,1072,2023-12-14 15:01:00,2436.78,Debit Card,Cancelled,477 Michael Lane,Lopezshire,TN,50317
+3427,1114,2023-06-23 11:13:00,706.06,Debit Card,In Transit,66746 Marsh Run,North David,VA,08187
+3428,1169,2024-01-07 16:03:00,659.12,PayPal,Delivered,235 Oconnor Pine Suite 521,East Jenny,NH,51302
+3429,1009,2024-03-04 20:22:00,333.12,Credit Card,Delivered,8498 Elizabeth Plaza,Sarahville,FM,18102
+3430,1237,2023-10-13 20:48:00,1485.66,PayPal,In Transit,1246 Brian Islands,North Jennifer,ME,51611
+3431,1194,2023-06-15 13:46:00,1791.19,PayPal,Cancelled,9557 Ellis Port Apt. 424,South Nathan,LA,06703
+3432,1222,2024-01-05 20:46:00,1166.91,PayPal,Processing,492 Wade Village Suite 837,Mcclurefort,KY,74302
+3433,1207,2023-07-26 16:24:00,1595.07,PayPal,Delivered,276 Larry Loaf Suite 197,Alvarezburgh,NY,07806
+3434,1220,2024-02-29 15:27:00,2977.61,PayPal,Delivered,849 Brandy Avenue,South Samantha,IA,65789
+3435,1042,2023-12-13 15:47:00,323.02,Credit Card,In Transit,4925 Brandi Divide Suite 462,West Angelicamouth,GU,17251
+3436,1233,2023-06-08 12:51:00,1136.34,PayPal,Delivered,26611 Roger Curve Suite 371,Ericafurt,OR,73766
+3437,1022,2023-10-06 20:34:00,1079.13,Debit Card,Delivered,4964 Chelsea Streets Apt. 334,East Johnside,CA,21018
+3438,1147,2023-12-20 08:39:00,3808.8,Debit Card,Delivered,24916 Albert Canyon Suite 925,East Ericland,TX,81588
+3439,1069,2023-10-07 20:41:00,1281.9,PayPal,Processing,38750 Hopkins Brook,New Andreatown,AK,69892
+3440,1032,2023-11-05 17:42:00,2388.04,Debit Card,Delivered,8692 Pena Village Suite 964,Lake Mitchellmouth,NV,31448
+3441,1217,2023-08-31 15:29:00,3683.28,Credit Card,Cancelled,93436 Ricky Drive Apt. 443,Solomonstad,OR,90189
+3442,1003,2024-01-25 08:22:00,2048.35,Debit Card,In Transit,653 William Course Apt. 122,Carlsonfurt,MS,78605
+3443,1105,2023-06-30 17:05:00,3022.01,Debit Card,Delivered,345 Wagner Roads Apt. 035,Wheelerburgh,VI,62705
+3444,1245,2023-07-03 15:11:00,119.01,Debit Card,Delivered,6619 Hall Rapid,South Patrickchester,FM,81793
+3445,1067,2024-02-09 10:14:00,3011.7,PayPal,In Transit,739 Randy Garden,Kimberlyfurt,NH,70447
+3446,1038,2023-06-26 11:07:00,101.58,PayPal,Processing,69003 Dougherty Trafficway,Port Jonathan,MD,16227
+3447,1048,2024-02-15 15:37:00,668.46,Debit Card,Processing,54479 Jackson Mills,Sergiostad,RI,57509
+3448,1142,2023-09-25 08:45:00,1799.34,Debit Card,Delivered,17800 Warren Corner,West Christineland,SD,51598
+3449,1005,2023-11-28 16:45:00,2062.38,Credit Card,In Transit,8713 Caleb Brooks Apt. 930,Lake Crystalbury,CA,04618
+3450,1090,2023-07-26 09:32:00,1810.4,Debit Card,Processing,38061 Cline Trail,Markside,NH,01545
+3451,1131,2023-07-10 11:13:00,1641.63,Debit Card,Delivered,842 Nielsen Ranch,East Nicholasberg,CT,02671
+3452,1213,2023-12-30 09:41:00,2168.01,Debit Card,Delivered,34764 Tracy Landing,West Amyfort,TX,32790
+3453,1037,2023-06-13 13:38:00,389.22,Debit Card,Delivered,83667 Moore Inlet,Kimberlyshire,PA,11636
+3454,1250,2023-12-26 18:23:00,1319.36,Debit Card,Delivered,587 Wells Prairie Suite 903,East Shannon,IA,52392
+3455,1160,2023-06-16 10:23:00,1365.02,Credit Card,Delivered,12209 Obrien Ridge,New Jesse,TX,03919
+3456,1239,2023-08-16 17:01:00,730.58,Credit Card,In Transit,74946 Kirby Forest,Brandonside,OK,09667
+3457,1207,2023-11-08 16:45:00,815.73,PayPal,Delivered,276 Larry Loaf Suite 197,Alvarezburgh,NY,07806
+3458,1241,2023-09-19 14:53:00,1877.86,PayPal,Processing,5370 Julia Trace,Erinstad,ID,12293
+3459,1169,2023-08-16 14:48:00,1444.8,PayPal,Processing,235 Oconnor Pine Suite 521,East Jenny,NH,51302
+3460,1245,2023-07-10 11:36:00,2895.57,PayPal,Cancelled,6619 Hall Rapid,South Patrickchester,FM,81793
+3461,1138,2023-08-02 16:51:00,3200.96,Credit Card,Cancelled,2846 Karen Crossroad Apt. 867,New Michaelburgh,NH,16277
+3462,1169,2024-02-24 16:28:00,551.05,Debit Card,Delivered,235 Oconnor Pine Suite 521,East Jenny,NH,51302
+3463,1050,2024-03-21 12:58:00,1028.28,Credit Card,Delivered,25831 Laura Freeway Suite 058,Tannerside,DC,80710
+3464,1063,2023-12-03 11:29:00,2958.64,Debit Card,Processing,70462 Katie Stream,Brooksfurt,NV,49980
+3465,1178,2023-10-02 15:46:00,3781.08,Debit Card,Delivered,7128 Melissa Harbors,Davidview,KY,34180
+3466,1021,2023-11-28 16:32:00,3008.74,Credit Card,Delivered,40824 Terri Plaza Suite 271,New Justinfort,NV,45158
+3467,1168,2024-02-03 17:14:00,1667.62,Debit Card,Cancelled,0568 Ashley Loaf,New Darryl,WY,99006
+3468,1059,2024-03-18 10:59:00,909.73,PayPal,In Transit,2067 Sharon Well,Nancytown,ME,74944
+3469,1199,2023-12-26 18:37:00,2360.11,PayPal,In Transit,47195 Cunningham Ways,Courtneyfort,UT,16175
+3470,1156,2023-10-12 20:18:00,1753.57,Debit Card,Delivered,0514 Ruiz Isle,Lake Amanda,IL,72121
+3471,1031,2023-07-12 14:26:00,3455.32,PayPal,In Transit,516 Joseph Crossing Suite 549,Carsonstad,CT,88953
+3472,1148,2024-02-09 18:56:00,181.05,Credit Card,In Transit,2407 Hansen Plains Suite 392,Mariomouth,KY,78971
+3473,1225,2024-01-19 08:10:00,1619.84,Credit Card,Cancelled,303 Wong Run,South Megan,PR,71094
+3474,1068,2024-03-10 19:59:00,633.96,Debit Card,Processing,53693 Pierce Spur,Jonathanfort,VA,84609
+3475,1033,2023-06-18 14:01:00,945.65,PayPal,In Transit,335 Kristina Ranch,West Micheleberg,DC,71308
+3476,1019,2023-08-07 16:55:00,1142.71,PayPal,Cancelled,9453 Joshua Mission Apt. 799,Rogersfort,PR,43101
+3477,1232,2024-01-03 13:08:00,2209.78,Debit Card,In Transit,681 Mckenzie Green Suite 101,Evanstown,NH,44931
+3478,1183,2023-10-29 09:21:00,479.71,Debit Card,Processing,0158 Miller Mount Suite 328,South Donnaport,UT,51632
+3479,1185,2023-06-24 09:47:00,1312.08,Debit Card,Cancelled,931 Ronald Valleys Suite 519,West Mary,WY,28449
+3480,1234,2023-12-27 18:28:00,2240.01,PayPal,Cancelled,285 Carolyn Lodge,North Mikeport,AZ,69022
+3481,1075,2024-01-31 19:08:00,284.94,PayPal,In Transit,356 Velasquez Lock Suite 193,Lake Katrina,AK,95818
+3482,1186,2024-03-28 16:05:00,1378.41,Credit Card,Processing,71002 Jasmine Ramp,Robertfort,UT,17133
+3483,1152,2024-03-30 13:43:00,232.52,PayPal,Cancelled,049 Zachary Hollow,West Traceyborough,PR,41776
+3484,1098,2023-11-12 15:11:00,1535.7,PayPal,Delivered,09690 Carrie Valleys,Lake Ariana,NM,18935
+3485,1242,2023-07-20 11:19:00,81.92,Debit Card,Delivered,399 Cameron Crossroad,East Jordanshire,PR,30380
+3486,1013,2024-03-15 16:57:00,399.48,PayPal,Cancelled,3699 Marshall Mills Apt. 872,West Zacharymouth,CO,98954
+3487,1074,2023-11-13 14:20:00,3187.48,Credit Card,In Transit,64647 Michael Gateway,Wheelerborough,NH,14522
+3488,1011,2023-09-16 14:33:00,259.8,Debit Card,Delivered,16073 Lisa Mount Suite 433,Lake Jamesmouth,KY,09600
+3489,1026,2023-11-25 12:10:00,438.62,Credit Card,Delivered,3982 Joshua Turnpike,Morganhaven,KY,00837
+3490,1071,2024-02-05 15:14:00,338.7,Credit Card,Delivered,50392 Hickman Hills,New John,MP,51508
+3491,1241,2023-10-11 17:48:00,2314.88,Credit Card,In Transit,5370 Julia Trace,Erinstad,ID,12293
+3492,1171,2023-10-21 10:06:00,1657.56,Credit Card,In Transit,016 Christopher Lock Apt. 997,Larryborough,VT,99906
+3493,1008,2023-06-21 16:34:00,1760.88,Credit Card,Processing,998 Donovan Ford Suite 346,Lake Debbie,NH,41942
+3494,1126,2023-06-14 13:13:00,314.8,Debit Card,Cancelled,814 John Flat Suite 552,North Justin,CA,25863
+3495,1188,2024-01-14 16:08:00,2673.99,Debit Card,Delivered,082 Kristen Oval,North Pattymouth,OR,76491
+3496,1236,2023-07-27 19:45:00,1736.05,Credit Card,Cancelled,890 Karen Parkway,North Dominiqueside,HI,02987
+3497,1228,2024-01-08 15:16:00,284.94,Credit Card,In Transit,4338 Yvette Knolls Suite 522,Port Brycechester,DE,81446
+3498,1072,2023-07-30 13:51:00,2038.25,Credit Card,In Transit,477 Michael Lane,Lopezshire,TN,50317
+3499,1187,2023-07-09 13:10:00,589.63,PayPal,Delivered,195 Steven Road,West Brian,DE,20059
+3500,1071,2024-01-19 18:47:00,3170.29,PayPal,Processing,50392 Hickman Hills,New John,MP,51508

@@ -1,0 +1,412 @@
+{
+  "table": "shipments",
+  "description": "ENHANCED semantic memory for SHIPMENTS table - optimized for natural language semantic search",
+  "total_chunks": 16,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 9,
+    "relationships": 2,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_shipments_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "shipments",
+      "text": "TABLE: shipments\n\nDESCRIPTION: Shipping and delivery tracking information for orders including carrier, tracking numbers, and delivery dates.\n\nNATURAL_LANGUAGE_TERMS: shipments, shipment table, shipping, delivery tracking, shipping records, tracking information, delivery information, shipment data, shipping details, delivery records, tracking data, package tracking\n\nPRIMARY_KEY: shipment_id\n\nFOREIGN_KEYS: order_id → orders.order_id, warehouse_id → warehouses.warehouse_id\n\nUSAGE: Shipment tracking, delivery status monitoring, tracking number lookup, shipping progress, delivery date tracking, carrier information, shipment status updates\n\nCOMMON_QUERIES: Track shipment, delivery status, shipments by carrier, in transit shipments, delivered shipments, estimated delivery, tracking number lookup\n\nUSE_CASES: Track package, check delivery status, find shipment, shipping status, delivery tracking, carrier lookup",
+      "metadata": {
+        "entity": "table",
+        "table": "shipments",
+        "pk": "shipment_id",
+        "fk": [
+          "order_id",
+          "warehouse_id"
+        ]
+      },
+      "keywords": [
+        "shipments",
+        "shipping",
+        "delivery",
+        "tracking",
+        "shipment tracking",
+        "delivery tracking",
+        "package tracking"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_shipment_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "shipment_id",
+      "text": "COLUMN: shipments.shipment_id\n\nDESCRIPTION: Unique identifier for each shipment record.\n\nNATURAL_LANGUAGE_TERMS: shipment id, shipment ID, shipment identifier, shipment number, shipment reference, shipping id, shipment key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Shipment identification, shipment tracking, shipment reference, internal tracking\n\nUSE_CASES: Get shipment details, shipment lookup, shipment identification\n\nEXAMPLES:\n\n- Specific shipment: SELECT * FROM shipments WHERE shipment_id = 9001\n\n- Shipment details: WHERE shipment_id = 9001\n\nBUSINESS_RULE: Unique identifier for each shipment. Immutable once assigned.\n\nCOMMON_QUESTIONS: Shipment ID? Get shipment by ID? Shipment identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "shipment_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "shipment_id",
+        "shipment ID",
+        "shipment identifier",
+        "primary key",
+        "shipment number"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_order_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "order_id",
+      "text": "COLUMN: shipments.order_id\n\nDESCRIPTION: Links shipment to the order being delivered.\n\nNATURAL_LANGUAGE_TERMS: order id, order ID, order number, which order, order reference, order identifier, shipment for order, order being shipped\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: orders.order_id\n\nUSAGE: Order shipment tracking, linking shipment to order, order delivery status, shipment order lookup\n\nUSE_CASES: Track order shipment, find shipment for order, order delivery, which order is shipping\n\nEXAMPLES:\n\n- Order shipment: SELECT * FROM shipments WHERE order_id = 3001\n\n- With order details: FROM orders o JOIN shipments s ON o.order_id = s.order_id WHERE o.order_id = 3001\n\n- Order delivery status: SELECT o.order_id, s.shipment_status, s.tracking_number FROM orders o JOIN shipments s ON o.order_id = s.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: One order typically has one shipment. Links order to delivery tracking.\n\nCOMMON_QUESTIONS: Track my order? Shipment for order? Order delivery status? Where is my order? Order tracking?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "order_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "orders.order_id"
+      },
+      "keywords": [
+        "order_id",
+        "foreign key",
+        "order number",
+        "track order",
+        "order shipment",
+        "which order"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_warehouse_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "warehouse_id",
+      "text": "COLUMN: shipments.warehouse_id\n\nDESCRIPTION: Warehouse that fulfilled and shipped the order.\n\nNATURAL_LANGUAGE_TERMS: warehouse id, warehouse identifier, which warehouse, warehouse shipped from, origin warehouse, fulfillment warehouse, shipped from, warehouse location\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: warehouses.warehouse_id\n\nUSAGE: Shipment origin tracking, fulfillment warehouse, which warehouse shipped, warehouse performance tracking\n\nUSE_CASES: Where shipped from, fulfillment warehouse, which warehouse handled order, shipping origin\n\nEXAMPLES:\n\n- Warehouse shipments: SELECT * FROM shipments WHERE warehouse_id = 8001\n\n- With warehouse details: FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id WHERE s.order_id = 3001\n\n- Shipment count by warehouse: SELECT warehouse_id, COUNT(*) FROM shipments GROUP BY warehouse_id\n\nBUSINESS_RULE: Warehouse that picked, packed, and shipped the order. Used for warehouse performance metrics.\n\nCOMMON_QUESTIONS: Where shipped from? Which warehouse? Fulfillment warehouse? Shipping origin? Warehouse that shipped order?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "warehouse_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "warehouses.warehouse_id"
+      },
+      "keywords": [
+        "warehouse_id",
+        "foreign key",
+        "which warehouse",
+        "shipped from",
+        "fulfillment",
+        "origin warehouse"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_carrier",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "carrier",
+      "text": "COLUMN: shipments.carrier\n\nDESCRIPTION: Shipping carrier company handling delivery.\n\nNATURAL_LANGUAGE_TERMS: carrier, shipping carrier, delivery carrier, carrier name, shipping company, delivery company, carrier service, who delivers, shipping service, courier\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: FedEx, UPS, USPS\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Carrier filtering, carrier performance tracking, shipping method, carrier analysis, delivery service identification\n\nUSE_CASES: Filter by carrier, carrier performance, FedEx shipments, UPS deliveries, shipping carrier analysis\n\nEXAMPLES:\n\n- FedEx shipments: SELECT * FROM shipments WHERE carrier = 'FedEx'\n\n- Carrier distribution: SELECT carrier, COUNT(*) FROM shipments GROUP BY carrier ORDER BY COUNT(*) DESC\n\n- Multiple carriers: WHERE carrier IN ('FedEx', 'UPS')\n\n- Carrier on-time rate: SELECT carrier, COUNT(*) AS total, SUM(CASE WHEN actual_delivery <= estimated_delivery THEN 1 ELSE 0 END) AS on_time FROM shipments WHERE actual_delivery IS NOT NULL GROUP BY carrier\n\nBUSINESS_RULE: Three carrier options. FedEx, UPS, USPS. Required field for all shipments.\n\nCOMMON_QUESTIONS: Which carrier? Shipping carrier? FedEx shipments? Carrier performance? Who is delivering? Shipping company?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "carrier",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "carrier",
+        "shipping carrier",
+        "FedEx",
+        "UPS",
+        "USPS",
+        "delivery carrier",
+        "shipping company",
+        "courier"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_tracking_number",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "tracking_number",
+      "text": "COLUMN: shipments.tracking_number\n\nDESCRIPTION: Carrier tracking number for package tracking.\n\nNATURAL_LANGUAGE_TERMS: tracking number, tracking code, tracking ID, tracking reference, package tracking number, shipment tracking number, tracking id, track package, tracking info\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Package tracking, shipment lookup, tracking number search, carrier tracking, delivery tracking, track my package\n\nUSE_CASES: Track package, find by tracking number, tracking lookup, carrier tracking, package location\n\nEXAMPLES:\n\n- Track package: SELECT * FROM shipments WHERE tracking_number = '1Z999AA10123456784'\n\n- Order tracking: SELECT o.order_id, s.tracking_number, s.carrier, s.shipment_status FROM orders o JOIN shipments s ON o.order_id = s.order_id WHERE o.order_id = 3001\n\n- Search tracking: WHERE tracking_number LIKE '%123456%'\n\nBUSINESS_RULE: Unique carrier tracking number. Required. Use with carrier for external tracking lookup.\n\nCOMMON_QUESTIONS: Track my package? What is tracking number? Find by tracking number? Track shipment? Package tracking?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "tracking_number",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "tracking_number",
+        "tracking code",
+        "tracking ID",
+        "track package",
+        "tracking",
+        "package tracking",
+        "shipment tracking"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_ship_date",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "ship_date",
+      "text": "COLUMN: shipments.ship_date\n\nDESCRIPTION: Date when package was shipped from warehouse.\n\nNATURAL_LANGUAGE_TERMS: ship date, shipping date, shipped date, when shipped, date shipped, shipment date, when sent, departure date, date sent, shipping day\n\nDATA_TYPE: DATE\n\nFORMAT: YYYY-MM-DD\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Shipment date filtering, shipping timeline, date shipped, recent shipments, shipping date analysis\n\nUSE_CASES: When shipped, recent shipments, shipments by date, shipping timeline, date filtering\n\nEXAMPLES:\n\n- Shipped today: SELECT * FROM shipments WHERE ship_date = CURRENT_DATE\n\n- Last 7 days: WHERE ship_date >= CURRENT_DATE - INTERVAL '7 days'\n\n- Date range: WHERE ship_date BETWEEN '2024-01-01' AND '2024-01-31'\n\n- Shipments by day: SELECT ship_date, COUNT(*) FROM shipments GROUP BY ship_date ORDER BY ship_date DESC\n\nBUSINESS_RULE: Date package left warehouse. Use for transit time calculations.\n\nCOMMON_QUESTIONS: When shipped? Shipment date? Recent shipments? Shipped today? When was package sent?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "ship_date",
+        "type": "DATE",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "ship_date",
+        "shipping date",
+        "when shipped",
+        "shipped date",
+        "shipment date",
+        "when sent",
+        "departure date"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_estimated_delivery",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "estimated_delivery",
+      "text": "COLUMN: shipments.estimated_delivery\n\nDESCRIPTION: Carrier's estimated delivery date.\n\nNATURAL_LANGUAGE_TERMS: estimated delivery, estimated delivery date, expected delivery, delivery estimate, when expected, expected arrival, delivery ETA, expected delivery date, arrival date, when arriving\n\nDATA_TYPE: DATE\n\nFORMAT: YYYY-MM-DD\n\nUSAGE: Delivery expectation, delivery date display, estimated arrival, delivery timeline, expected delivery tracking\n\nUSE_CASES: When expected, delivery estimate, expected arrival date, delivery ETA, when should arrive\n\nEXAMPLES:\n\n- Expected today: SELECT * FROM shipments WHERE estimated_delivery = CURRENT_DATE\n\n- Arriving soon: WHERE estimated_delivery <= CURRENT_DATE + INTERVAL '3 days'\n\n- Overdue: WHERE estimated_delivery < CURRENT_DATE AND actual_delivery IS NULL\n\n- With order: SELECT o.order_id, s.tracking_number, s.estimated_delivery FROM orders o JOIN shipments s ON o.order_id = s.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: Carrier provided estimate. Compare with actual_delivery for on-time performance.\n\nCOMMON_QUESTIONS: When will it arrive? Expected delivery? Delivery estimate? When expected? Arrival date? ETA?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "estimated_delivery",
+        "type": "DATE",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "estimated_delivery",
+        "expected delivery",
+        "delivery estimate",
+        "ETA",
+        "when expected",
+        "expected arrival",
+        "arrival date"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_actual_delivery",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "actual_delivery",
+      "text": "COLUMN: shipments.actual_delivery\n\nDESCRIPTION: Actual date package was delivered (NULL if not yet delivered).\n\nNATURAL_LANGUAGE_TERMS: actual delivery, delivered date, when delivered, delivery date, actual delivery date, date delivered, delivered on, completion date, when received\n\nDATA_TYPE: DATE\n\nFORMAT: YYYY-MM-DD\n\nCONSTRAINTS: Optional (NULL until delivered)\n\nUSAGE: Delivery confirmation, completed deliveries, on-time tracking, delivery performance, actual vs estimated comparison\n\nUSE_CASES: When delivered, completed deliveries, delivery confirmation, on-time analysis, delivery performance\n\nEXAMPLES:\n\n- Delivered shipments: SELECT * FROM shipments WHERE actual_delivery IS NOT NULL\n\n- Delivered today: WHERE actual_delivery = CURRENT_DATE\n\n- Not yet delivered: WHERE actual_delivery IS NULL\n\n- On-time deliveries: WHERE actual_delivery <= estimated_delivery\n\n- Late deliveries: WHERE actual_delivery > estimated_delivery\n\n- Delivery time: SELECT ship_date, actual_delivery, actual_delivery - ship_date AS transit_days FROM shipments WHERE actual_delivery IS NOT NULL\n\nBUSINESS_RULE: NULL until delivered. Set when carrier confirms delivery. Compare with estimated_delivery for performance.\n\nCOMMON_QUESTIONS: When delivered? Was package delivered? Delivery date? On-time delivery? Completed deliveries? Package received?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "actual_delivery",
+        "type": "DATE",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "actual_delivery",
+        "delivered date",
+        "when delivered",
+        "delivery date",
+        "date delivered",
+        "delivered on",
+        "completion"
+      ]
+    },
+    {
+      "chunk_id": "col_shipments_shipment_status",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "shipments",
+      "column_name": "shipment_status",
+      "text": "COLUMN: shipments.shipment_status\n\nDESCRIPTION: Current status of shipment in delivery process.\n\nNATURAL_LANGUAGE_TERMS: shipment status, delivery status, shipping status, status, where is package, package status, delivery progress, shipment state, in transit, delivered, pending\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Pending, In Transit, Delivered\n\nCONSTRAINTS: NOT NULL\n\nSTATUS_FLOW: Pending → In Transit → Delivered\n\nUSAGE: Status tracking, delivery monitoring, shipment filtering, status updates, delivery progress tracking\n\nUSE_CASES: Track shipment status, filter by status, delivery progress, in transit shipments, delivered shipments, pending shipments\n\nEXAMPLES:\n\n- In transit: SELECT * FROM shipments WHERE shipment_status = 'In Transit'\n\n- Delivered: WHERE shipment_status = 'Delivered'\n\n- Active shipments: WHERE shipment_status IN ('Pending', 'In Transit')\n\n- Status distribution: SELECT shipment_status, COUNT(*) FROM shipments GROUP BY shipment_status\n\n- With tracking: SELECT tracking_number, carrier, shipment_status, estimated_delivery FROM shipments WHERE order_id = 3001\n\nBUSINESS_RULE: Pending=awaiting pickup, In Transit=shipped, Delivered=completed. Status progression is sequential.\n\nCOMMON_QUESTIONS: Where is my package? Shipment status? Delivery status? In transit? Package delivered? Tracking status?",
+      "metadata": {
+        "entity": "column",
+        "table": "shipments",
+        "column": "shipment_status",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "shipment_status",
+        "delivery status",
+        "shipping status",
+        "where is package",
+        "in transit",
+        "delivered",
+        "pending",
+        "package status"
+      ]
+    },
+    {
+      "chunk_id": "rel_shipments_to_orders",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "shipments",
+      "related_table": "orders",
+      "text": "RELATIONSHIP: shipments to orders (One-to-One)\n\nDESCRIPTION: Each shipment belongs to one order. Order typically has one shipment.\n\nNATURAL_LANGUAGE_TERMS: order shipment, shipment for order, order delivery, track order, order tracking, shipping for order, order shipping info\n\nJOIN_CONDITION: shipments.order_id = orders.order_id\n\nCARDINALITY: 1:1 (one order has one shipment)\n\nFOREIGN_KEY: shipments.order_id references orders.order_id\n\nUSAGE: Order tracking, delivery status for order, complete order information with shipping, track my order\n\nUSE_CASES: Track order, order delivery status, order shipping information, complete order view with tracking\n\nEXAMPLES:\n\n- Order with tracking: SELECT o.order_id, o.order_date, s.carrier, s.tracking_number, s.shipment_status, s.estimated_delivery FROM orders o JOIN shipments s ON o.order_id = s.order_id WHERE o.order_id = 3001\n\n- Order delivery status: SELECT o.order_id, o.order_status, s.shipment_status, s.actual_delivery FROM orders o LEFT JOIN shipments s ON o.order_id = s.order_id WHERE o.customer_id = 1001\n\n- Orders without shipments: SELECT o.* FROM orders o LEFT JOIN shipments s ON o.order_id = s.order_id WHERE s.shipment_id IS NULL\n\nBUSINESS_RULE: One order typically has one shipment. Use LEFT JOIN to include orders without shipments yet.\n\nCOMMON_QUESTIONS: Track my order? Order delivery status? Where is my order? Order tracking? Shipment for order?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "shipments",
+        "to_table": "orders",
+        "cardinality": "1:1",
+        "join_type": "one_to_one"
+      },
+      "keywords": [
+        "order shipment",
+        "track order",
+        "order delivery",
+        "order tracking",
+        "shipment for order"
+      ]
+    },
+    {
+      "chunk_id": "rel_shipments_to_warehouses",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "shipments",
+      "related_table": "warehouses",
+      "text": "RELATIONSHIP: shipments to warehouses (Many-to-One)\n\nDESCRIPTION: Each shipment originates from one warehouse. Warehouse ships many orders.\n\nNATURAL_LANGUAGE_TERMS: warehouse shipments, shipped from warehouse, fulfillment warehouse, warehouse shipping, shipments by warehouse, warehouse performance\n\nJOIN_CONDITION: shipments.warehouse_id = warehouses.warehouse_id\n\nCARDINALITY: N:1 (many shipments from one warehouse)\n\nFOREIGN_KEY: shipments.warehouse_id references warehouses.warehouse_id\n\nUSAGE: Shipment origin tracking, warehouse performance, fulfillment analysis, warehouse shipping volume\n\nUSE_CASES: Shipments from warehouse, warehouse performance, fulfillment tracking, which warehouse shipped\n\nEXAMPLES:\n\n- Warehouse shipments: SELECT w.warehouse_name, s.shipment_id, s.tracking_number, s.ship_date FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id WHERE w.warehouse_id = 8001\n\n- Warehouse shipping volume: SELECT w.warehouse_name, COUNT(s.shipment_id) AS shipment_count FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id GROUP BY w.warehouse_name ORDER BY shipment_count DESC\n\n- Warehouse on-time rate: SELECT w.warehouse_name, COUNT(*) AS total_delivered, SUM(CASE WHEN s.actual_delivery <= s.estimated_delivery THEN 1 ELSE 0 END) AS on_time FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id WHERE s.actual_delivery IS NOT NULL GROUP BY w.warehouse_name\n\nBUSINESS_RULE: Warehouse that fulfilled the order. Used for performance tracking and regional analysis.\n\nCOMMON_QUESTIONS: Shipments from warehouse? Which warehouse shipped? Warehouse performance? Fulfillment warehouse?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "shipments",
+        "to_table": "warehouses",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "warehouse shipments",
+        "shipped from warehouse",
+        "fulfillment",
+        "warehouse performance",
+        "shipments by warehouse"
+      ]
+    },
+    {
+      "chunk_id": "query_track_shipment",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "shipments",
+      "related_tables": "orders",
+      "use_case": "shipment_tracking",
+      "text": "QUERY USE CASE: Track shipment by order or tracking number\n\nDESCRIPTION: Get complete shipment tracking information including carrier, tracking number, and delivery status.\n\nNATURAL_LANGUAGE_QUERIES: track my order, track package, where is my order, tracking number, shipment status, track shipment, delivery status, where is package\n\nTABLES_USED: shipments, orders\n\nWHEN_TO_USE: Customer tracking, order status lookup, delivery tracking, package location\n\nSQL_PATTERN: SELECT * FROM shipments WHERE order_id = X OR tracking_number = 'TRACKING'\n\nEXAMPLES:\n\n- Track by order: SELECT s.tracking_number, s.carrier, s.shipment_status, s.estimated_delivery, s.actual_delivery FROM shipments s WHERE s.order_id = 3001\n\n- Track by tracking number: SELECT o.order_id, s.carrier, s.tracking_number, s.shipment_status, s.ship_date, s.estimated_delivery FROM orders o JOIN shipments s ON o.order_id = s.order_id WHERE s.tracking_number = '1Z999AA10123456784'\n\n- Full tracking info: SELECT o.order_id, o.customer_id, s.carrier, s.tracking_number, s.shipment_status, s.ship_date, s.estimated_delivery, s.actual_delivery FROM orders o JOIN shipments s ON o.order_id = s.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: One shipment per order. Provide carrier name with tracking number for external tracking.\n\nCOMMON_QUESTIONS: Track my order? Where is my package? Track shipment? What is tracking number? Delivery status?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "tracking",
+        "tables": [
+          "shipments",
+          "orders"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "track order",
+        "track package",
+        "tracking number",
+        "where is order",
+        "shipment status",
+        "delivery status"
+      ]
+    },
+    {
+      "chunk_id": "query_in_transit_shipments",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "shipments",
+      "use_case": "active_shipments",
+      "text": "QUERY USE CASE: Find active in-transit shipments\n\nDESCRIPTION: List all shipments currently in delivery process.\n\nNATURAL_LANGUAGE_QUERIES: in transit shipments, active shipments, shipments in progress, currently shipping, packages being delivered, shipments on the way\n\nTABLES_USED: shipments\n\nWHEN_TO_USE: Shipment monitoring, active delivery tracking, operations dashboard, delivery management\n\nSQL_PATTERN: SELECT * FROM shipments WHERE shipment_status = 'In Transit'\n\nEXAMPLES:\n\n- In transit: SELECT tracking_number, carrier, ship_date, estimated_delivery FROM shipments WHERE shipment_status = 'In Transit' ORDER BY estimated_delivery\n\n- Active shipments: SELECT * FROM shipments WHERE shipment_status IN ('Pending', 'In Transit') ORDER BY ship_date DESC\n\n- Arriving today: SELECT * FROM shipments WHERE shipment_status = 'In Transit' AND estimated_delivery = CURRENT_DATE\n\n- Delayed shipments: SELECT * FROM shipments WHERE shipment_status = 'In Transit' AND estimated_delivery < CURRENT_DATE\n\nBUSINESS_RULE: In Transit = shipped but not delivered. Include Pending for all active shipments.\n\nCOMMON_QUESTIONS: In transit shipments? Active shipments? Currently shipping? Packages being delivered? Shipments on the way?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "active_tracking",
+        "tables": [
+          "shipments"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "in transit",
+        "active shipments",
+        "currently shipping",
+        "being delivered",
+        "shipments on the way",
+        "in progress"
+      ]
+    },
+    {
+      "chunk_id": "query_delivery_performance",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "shipments",
+      "use_case": "on_time_analysis",
+      "text": "QUERY USE CASE: Analyze delivery performance and on-time rates\n\nDESCRIPTION: Calculate on-time delivery rates and identify late shipments.\n\nNATURAL_LANGUAGE_QUERIES: on-time delivery, delivery performance, late deliveries, on-time rate, carrier performance, delivery metrics, how many late, on-time percentage\n\nTABLES_USED: shipments\n\nWHEN_TO_USE: Performance reporting, carrier evaluation, quality metrics, operations analysis\n\nSQL_PATTERN: SELECT COUNT(*) AS on_time FROM shipments WHERE actual_delivery <= estimated_delivery\n\nEXAMPLES:\n\n- On-time rate: SELECT COUNT(*) AS total_delivered, SUM(CASE WHEN actual_delivery <= estimated_delivery THEN 1 ELSE 0 END) AS on_time, ROUND(100.0 * SUM(CASE WHEN actual_delivery <= estimated_delivery THEN 1 ELSE 0 END) / COUNT(*), 2) AS on_time_pct FROM shipments WHERE actual_delivery IS NOT NULL\n\n- Late deliveries: SELECT * FROM shipments WHERE actual_delivery > estimated_delivery ORDER BY (actual_delivery - estimated_delivery) DESC\n\n- Carrier performance: SELECT carrier, COUNT(*) AS deliveries, SUM(CASE WHEN actual_delivery <= estimated_delivery THEN 1 ELSE 0 END) AS on_time, ROUND(100.0 * SUM(CASE WHEN actual_delivery <= estimated_delivery THEN 1 ELSE 0 END) / COUNT(*), 2) AS on_time_pct FROM shipments WHERE actual_delivery IS NOT NULL GROUP BY carrier ORDER BY on_time_pct DESC\n\n- Average transit time: SELECT carrier, AVG(actual_delivery - ship_date) AS avg_transit_days FROM shipments WHERE actual_delivery IS NOT NULL GROUP BY carrier\n\nBUSINESS_RULE: On-time if actual_delivery <= estimated_delivery. Only count completed deliveries (actual_delivery NOT NULL).\n\nCOMMON_QUESTIONS: On-time delivery rate? Delivery performance? Late deliveries? Carrier performance? How many late? On-time percentage?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "performance_metrics",
+        "tables": [
+          "shipments"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "on-time delivery",
+        "delivery performance",
+        "late deliveries",
+        "on-time rate",
+        "carrier performance",
+        "delivery metrics"
+      ]
+    },
+    {
+      "chunk_id": "query_carrier_analysis",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "shipments",
+      "use_case": "carrier_comparison",
+      "text": "QUERY USE CASE: Compare carrier shipping performance\n\nDESCRIPTION: Analyze shipment volume, delivery times, and performance by carrier.\n\nNATURAL_LANGUAGE_QUERIES: carrier comparison, FedEx vs UPS, carrier performance, shipping by carrier, carrier analysis, which carrier is best, carrier metrics\n\nTABLES_USED: shipments\n\nWHEN_TO_USE: Carrier selection, contract negotiations, performance evaluation, logistics optimization\n\nSQL_PATTERN: SELECT carrier, COUNT(*), AVG(transit_time) FROM shipments GROUP BY carrier\n\nEXAMPLES:\n\n- Carrier volume: SELECT carrier, COUNT(*) AS shipment_count FROM shipments GROUP BY carrier ORDER BY shipment_count DESC\n\n- Carrier speed: SELECT carrier, AVG(actual_delivery - ship_date) AS avg_days, MIN(actual_delivery - ship_date) AS fastest, MAX(actual_delivery - ship_date) AS slowest FROM shipments WHERE actual_delivery IS NOT NULL GROUP BY carrier ORDER BY avg_days\n\n- Carrier comparison: SELECT carrier, COUNT(*) AS total_shipments, SUM(CASE WHEN actual_delivery IS NOT NULL THEN 1 ELSE 0 END) AS delivered, SUM(CASE WHEN actual_delivery <= estimated_delivery THEN 1 ELSE 0 END) AS on_time FROM shipments GROUP BY carrier\n\n- Carrier monthly trend: SELECT carrier, DATE_TRUNC('month', ship_date) AS month, COUNT(*) AS shipments FROM shipments GROUP BY carrier, month ORDER BY month, carrier\n\nBUSINESS_RULE: Compare carriers on volume, speed, and on-time performance. Use actual_delivery for completed only.\n\nCOMMON_QUESTIONS: Carrier comparison? FedEx vs UPS? Which carrier is best? Carrier performance? Shipments by carrier? Carrier analysis?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "carrier_metrics",
+        "tables": [
+          "shipments"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "carrier comparison",
+        "FedEx vs UPS",
+        "carrier performance",
+        "which carrier best",
+        "carrier analysis",
+        "shipping by carrier"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+category_id,category_name,parent_category_id,category_level,description,created_at
+1,Electronics,,1,Electronics products and accessories,2023-01-01 10:00:00
+2,Clothing,,1,Clothing products and accessories,2023-01-01 10:00:00
+3,Home & Kitchen,,1,Home & Kitchen products and accessories,2023-01-01 10:00:00
+4,Sports & Outdoors,,1,Sports & Outdoors products and accessories,2023-01-01 10:00:00
+5,Beauty & Personal Care,,1,Beauty & Personal Care products and accessories,2023-01-01 10:00:00
+6,Books,,1,Books products and accessories,2023-01-01 10:00:00
+7,Pet Supplies,,1,Pet Supplies products and accessories,2023-01-01 10:00:00
+8,Health & Wellness,,1,Health & Wellness products and accessories,2023-01-01 10:00:00
+9,Home & Office,,1,Home & Office products and accessories,2023-01-01 10:00:00
+10,Bags & Luggage,,1,Bags & Luggage products and accessories,2023-01-01 10:00:00
+11,Accessories,,1,Accessories products and accessories,2023-01-01 10:00:00
+12,Footwear,,1,Footwear products and accessories,2023-01-01 10:00:00
+13,Toys & Games,,1,Toys & Games products and accessories,2023-01-01 10:00:00
+14,Automotive,,1,Automotive products and accessories,2023-01-01 10:00:00
+15,Baby Products,,1,Baby Products products and accessories,2023-01-01 10:00:00
+16,Premium Electronics,1,2,Premium Electronics products,2023-01-01 10:15:00
+17,Professional Electronics,1,2,Professional Electronics products,2023-01-01 10:15:00
+18,Premium Clothing,2,2,Premium Clothing products,2023-01-01 10:15:00
+19,Professional Clothing,2,2,Professional Clothing products,2023-01-01 10:15:00
+20,Budget Clothing,2,2,Budget Clothing products,2023-01-01 10:15:00
+21,Luxury Clothing,2,2,Luxury Clothing products,2023-01-01 10:15:00
+22,Premium Home & Kitchen,3,2,Premium Home & Kitchen products,2023-01-01 10:15:00
+23,Professional Home & Kitchen,3,2,Professional Home & Kitchen products,2023-01-01 10:15:00
+24,Budget Home & Kitchen,3,2,Budget Home & Kitchen products,2023-01-01 10:15:00
+25,Premium Sports & Outdoors,4,2,Premium Sports & Outdoors products,2023-01-01 10:15:00
+26,Professional Sports & Outdoors,4,2,Professional Sports & Outdoors products,2023-01-01 10:15:00
+27,Premium Beauty & Personal Care,5,2,Premium Beauty & Personal Care products,2023-01-01 10:15:00
+28,Professional Beauty & Personal Care,5,2,Professional Beauty & Personal Care products,2023-01-01 10:15:00
+29,Budget Beauty & Personal Care,5,2,Budget Beauty & Personal Care products,2023-01-01 10:15:00
+30,Premium Books,6,2,Premium Books products,2023-01-01 10:15:00
+31,Professional Books,6,2,Professional Books products,2023-01-01 10:15:00
+32,Budget Books,6,2,Budget Books products,2023-01-01 10:15:00
+33,Premium Pet Supplies,7,2,Premium Pet Supplies products,2023-01-01 10:15:00
+34,Professional Pet Supplies,7,2,Professional Pet Supplies products,2023-01-01 10:15:00
+35,Budget Pet Supplies,7,2,Budget Pet Supplies products,2023-01-01 10:15:00
+36,Premium Health & Wellness,8,2,Premium Health & Wellness products,2023-01-01 10:15:00
+37,Professional Health & Wellness,8,2,Professional Health & Wellness products,2023-01-01 10:15:00
+38,Budget Health & Wellness,8,2,Budget Health & Wellness products,2023-01-01 10:15:00
+39,Luxury Health & Wellness,8,2,Luxury Health & Wellness products,2023-01-01 10:15:00
+40,Premium Home & Office,9,2,Premium Home & Office products,2023-01-01 10:15:00
+41,Professional Home & Office,9,2,Professional Home & Office products,2023-01-01 10:15:00
+42,Premium Bags & Luggage,10,2,Premium Bags & Luggage products,2023-01-01 10:15:00
+43,Professional Bags & Luggage,10,2,Professional Bags & Luggage products,2023-01-01 10:15:00
+44,Premium Accessories,11,2,Premium Accessories products,2023-01-01 10:15:00
+45,Professional Accessories,11,2,Professional Accessories products,2023-01-01 10:15:00
+46,Premium Footwear,12,2,Premium Footwear products,2023-01-01 10:15:00
+47,Professional Footwear,12,2,Professional Footwear products,2023-01-01 10:15:00
+48,Premium Toys & Games,13,2,Premium Toys & Games products,2023-01-01 10:15:00
+49,Professional Toys & Games,13,2,Professional Toys & Games products,2023-01-01 10:15:00
+50,Budget Toys & Games,13,2,Budget Toys & Games products,2023-01-01 10:15:00
+51,Premium Automotive,14,2,Premium Automotive products,2023-01-01 10:15:00
+52,Professional Automotive,14,2,Professional Automotive products,2023-01-01 10:15:00
+53,Budget Automotive,14,2,Budget Automotive products,2023-01-01 10:15:00
+54,Luxury Automotive,14,2,Luxury Automotive products,2023-01-01 10:15:00
+55,Premium Baby Products,15,2,Premium Baby Products products,2023-01-01 10:15:00
+56,Professional Baby Products,15,2,Professional Baby Products products,2023-01-01 10:15:00

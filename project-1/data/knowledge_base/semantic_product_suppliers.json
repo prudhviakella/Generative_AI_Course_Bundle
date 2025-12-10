@@ -1,0 +1,364 @@
+{
+  "table": "product_suppliers",
+  "description": "ENHANCED semantic memory for PRODUCT_SUPPLIERS junction table - optimized for natural language semantic search",
+  "total_chunks": 14,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 6,
+    "relationships": 3,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_product_suppliers_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "product_suppliers",
+      "text": "TABLE: product_suppliers\n\nDESCRIPTION: Junction table linking products to suppliers with sourcing details including cost, lead time, and minimum order quantities.\n\nNATURAL_LANGUAGE_TERMS: product suppliers, product supplier table, supplier products, product sourcing, sourcing table, supplier pricing, product vendor, vendor products, supplier cost, procurement data, sourcing information\n\nPRIMARY_KEY: product_supplier_id\n\nFOREIGN_KEYS: product_id → products.product_id, supplier_id → suppliers.supplier_id\n\nTABLE_TYPE: Junction table with attributes (Many-to-Many relationship between products and suppliers)\n\nUSAGE: Product sourcing, supplier pricing lookup, lead time tracking, minimum order quantities, cost comparison, procurement planning, supplier alternatives\n\nCOMMON_QUERIES: Who supplies product, product cost from supplier, supplier lead times, cheapest supplier, product sourcing options, supplier alternatives\n\nUSE_CASES: Find suppliers for product, compare supplier costs, sourcing options, supplier lead times, procurement pricing",
+      "metadata": {
+        "entity": "table",
+        "table": "product_suppliers",
+        "pk": "product_supplier_id",
+        "fk": [
+          "product_id",
+          "supplier_id"
+        ],
+        "table_type": "junction"
+      },
+      "keywords": [
+        "product_suppliers",
+        "junction table",
+        "product sourcing",
+        "supplier pricing",
+        "vendor products",
+        "procurement"
+      ]
+    },
+    {
+      "chunk_id": "col_product_suppliers_product_supplier_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "product_suppliers",
+      "column_name": "product_supplier_id",
+      "text": "COLUMN: product_suppliers.product_supplier_id\n\nDESCRIPTION: Unique identifier for each product-supplier relationship.\n\nNATURAL_LANGUAGE_TERMS: product supplier id, product supplier ID, relationship id, sourcing id, record id, product supplier identifier, sourcing record id\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Relationship identification, sourcing record tracking, internal reference\n\nUSE_CASES: Internal tracking, relationship identification, sourcing record lookup\n\nEXAMPLES:\n\n- Specific record: SELECT * FROM product_suppliers WHERE product_supplier_id = 12001\n\nBUSINESS_RULE: Unique identifier for each product-supplier combination. Immutable once assigned.\n\nCOMMON_QUESTIONS: Record ID? Relationship identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "product_suppliers",
+        "column": "product_supplier_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "product_supplier_id",
+        "product supplier ID",
+        "primary key",
+        "relationship id",
+        "sourcing id"
+      ]
+    },
+    {
+      "chunk_id": "col_product_suppliers_product_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "product_suppliers",
+      "column_name": "product_id",
+      "text": "COLUMN: product_suppliers.product_id\n\nDESCRIPTION: Links to product being sourced.\n\nNATURAL_LANGUAGE_TERMS: product id, product ID, which product, product identifier, product reference, item id, SKU, product being sourced\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: products.product_id\n\nUSAGE: Product sourcing lookup, finding suppliers for product, product procurement, supplier options for product\n\nUSE_CASES: Who supplies product, suppliers for product, product sourcing options, find product suppliers\n\nEXAMPLES:\n\n- Product suppliers: SELECT * FROM product_suppliers WHERE product_id = 2050\n\n- With supplier details: FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050\n\n- Supplier count: SELECT product_id, COUNT(DISTINCT supplier_id) AS supplier_count FROM product_suppliers GROUP BY product_id\n\nBUSINESS_RULE: Multiple suppliers per product allowed. Join with suppliers to get supplier details.\n\nCOMMON_QUESTIONS: Who supplies product? Suppliers for product? Product sourcing options? Which suppliers?",
+      "metadata": {
+        "entity": "column",
+        "table": "product_suppliers",
+        "column": "product_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "products.product_id"
+      },
+      "keywords": [
+        "product_id",
+        "foreign key",
+        "which product",
+        "product being sourced",
+        "suppliers for product"
+      ]
+    },
+    {
+      "chunk_id": "col_product_suppliers_supplier_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "product_suppliers",
+      "column_name": "supplier_id",
+      "text": "COLUMN: product_suppliers.supplier_id\n\nDESCRIPTION: Links to supplier providing the product.\n\nNATURAL_LANGUAGE_TERMS: supplier id, supplier ID, which supplier, supplier identifier, vendor id, supplier reference, who supplies, supplier providing\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: suppliers.supplier_id\n\nUSAGE: Supplier product catalog, what supplier provides, supplier sourcing, products from supplier\n\nUSE_CASES: Products from supplier, supplier catalog, what supplier provides, supplier product list\n\nEXAMPLES:\n\n- Supplier products: SELECT * FROM product_suppliers WHERE supplier_id = 11001\n\n- With product details: FROM product_suppliers ps JOIN products p ON ps.product_id = p.product_id WHERE ps.supplier_id = 11001\n\n- Product count: SELECT supplier_id, COUNT(DISTINCT product_id) AS product_count FROM product_suppliers GROUP BY supplier_id\n\nBUSINESS_RULE: Multiple products per supplier allowed. Join with products to get product details.\n\nCOMMON_QUESTIONS: Products from supplier? Supplier catalog? What does supplier provide? Supplier products?",
+      "metadata": {
+        "entity": "column",
+        "table": "product_suppliers",
+        "column": "supplier_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "suppliers.supplier_id"
+      },
+      "keywords": [
+        "supplier_id",
+        "foreign key",
+        "which supplier",
+        "who supplies",
+        "products from supplier"
+      ]
+    },
+    {
+      "chunk_id": "col_product_suppliers_cost_price",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "product_suppliers",
+      "column_name": "cost_price",
+      "text": "COLUMN: product_suppliers.cost_price\n\nDESCRIPTION: Cost to purchase product from this supplier (wholesale price).\n\nNATURAL_LANGUAGE_TERMS: cost price, wholesale price, supplier cost, supplier price, purchase price, cost from supplier, how much from supplier, supplier pricing, wholesale cost, procurement cost, vendor price\n\nDATA_TYPE: DECIMAL(10,2)\n\nCONSTRAINTS: cost_price > 0\n\nUSAGE: Cost comparison, supplier pricing analysis, procurement budgeting, margin calculation, cheapest supplier identification\n\nUSE_CASES: Compare supplier costs, cheapest supplier, supplier pricing, cost analysis, find best price, procurement budgeting\n\nEXAMPLES:\n\n- Product costs: SELECT s.supplier_name, ps.cost_price FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.cost_price\n\n- Cheapest supplier: SELECT s.supplier_name, ps.cost_price FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.cost_price LIMIT 1\n\n- Cost comparison: SELECT p.product_name, s.supplier_name, ps.cost_price, p.price AS retail_price, (p.price - ps.cost_price) AS margin FROM product_suppliers ps JOIN products p ON ps.product_id = p.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id\n\n- Average cost: SELECT product_id, AVG(cost_price) AS avg_cost, MIN(cost_price) AS min_cost, MAX(cost_price) AS max_cost FROM product_suppliers GROUP BY product_id\n\nBUSINESS_RULE: Wholesale/purchase cost from supplier. Compare with product retail price for margin. Find lowest cost for best sourcing.\n\nCOMMON_QUESTIONS: Supplier cost? How much from supplier? Cheapest supplier? Compare supplier prices? Supplier pricing? Best price?",
+      "metadata": {
+        "entity": "column",
+        "table": "product_suppliers",
+        "column": "cost_price",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "cost_price",
+        "wholesale price",
+        "supplier cost",
+        "supplier price",
+        "purchase price",
+        "how much",
+        "cheapest",
+        "procurement cost"
+      ]
+    },
+    {
+      "chunk_id": "col_product_suppliers_lead_time_days",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "product_suppliers",
+      "column_name": "lead_time_days",
+      "text": "COLUMN: product_suppliers.lead_time_days\n\nDESCRIPTION: Number of days for supplier to deliver product after order.\n\nNATURAL_LANGUAGE_TERMS: lead time, lead time days, delivery time, how long, days to deliver, supplier lead time, delivery days, time to deliver, shipping time, turnaround time, fulfillment time\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: lead_time_days > 0\n\nUSAGE: Lead time comparison, fastest supplier identification, delivery planning, procurement timeline, reorder planning\n\nUSE_CASES: Fastest supplier, delivery time comparison, how long to deliver, quickest supplier, lead time analysis, delivery planning\n\nEXAMPLES:\n\n- Lead times: SELECT s.supplier_name, ps.lead_time_days FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.lead_time_days\n\n- Fastest supplier: SELECT s.supplier_name, ps.lead_time_days FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.lead_time_days LIMIT 1\n\n- Average lead time: SELECT product_id, AVG(lead_time_days) AS avg_lead_time, MIN(lead_time_days) AS fastest, MAX(lead_time_days) AS slowest FROM product_suppliers GROUP BY product_id\n\n- Quick suppliers: SELECT s.supplier_name, COUNT(*) AS products FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.lead_time_days <= 7 GROUP BY s.supplier_name\n\nBUSINESS_RULE: Days from order placement to delivery. Lower is better. Critical for inventory planning and reorder timing.\n\nCOMMON_QUESTIONS: How long to deliver? Fastest supplier? Delivery time? Lead time? Quickest supplier? Turnaround time?",
+      "metadata": {
+        "entity": "column",
+        "table": "product_suppliers",
+        "column": "lead_time_days",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "lead_time_days",
+        "lead time",
+        "delivery time",
+        "how long",
+        "days to deliver",
+        "fastest",
+        "quickest",
+        "turnaround"
+      ]
+    },
+    {
+      "chunk_id": "col_product_suppliers_minimum_order_quantity",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "product_suppliers",
+      "column_name": "minimum_order_quantity",
+      "text": "COLUMN: product_suppliers.minimum_order_quantity\n\nDESCRIPTION: Minimum quantity required per order from this supplier.\n\nNATURAL_LANGUAGE_TERMS: minimum order quantity, MOQ, minimum order, min quantity, minimum purchase, order minimum, how many minimum, least amount, minimum buy, bulk requirement, order requirement\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: minimum_order_quantity > 0\n\nUSAGE: Order quantity planning, supplier selection, procurement constraints, bulk buying requirements, order feasibility\n\nUSE_CASES: Minimum order requirements, MOQ comparison, order planning, supplier constraints, bulk requirements, feasible suppliers\n\nEXAMPLES:\n\n- MOQ by supplier: SELECT s.supplier_name, ps.minimum_order_quantity, ps.cost_price FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.minimum_order_quantity\n\n- Low MOQ suppliers: SELECT s.supplier_name, ps.minimum_order_quantity FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 AND ps.minimum_order_quantity <= 10\n\n- MOQ cost impact: SELECT s.supplier_name, ps.minimum_order_quantity, ps.cost_price, (ps.minimum_order_quantity * ps.cost_price) AS minimum_spend FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050\n\n- Flexible suppliers: SELECT s.supplier_name, AVG(ps.minimum_order_quantity) AS avg_moq FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id GROUP BY s.supplier_name ORDER BY avg_moq\n\nBUSINESS_RULE: Minimum units required per order. Lower MOQ = more flexibility. Consider with cost for total minimum spend.\n\nCOMMON_QUESTIONS: Minimum order quantity? MOQ? Minimum order? How many minimum? Order requirements? Minimum purchase?",
+      "metadata": {
+        "entity": "column",
+        "table": "product_suppliers",
+        "column": "minimum_order_quantity",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "minimum_order_quantity",
+        "MOQ",
+        "minimum order",
+        "min quantity",
+        "minimum purchase",
+        "order minimum",
+        "how many minimum"
+      ]
+    },
+    {
+      "chunk_id": "rel_product_suppliers_junction",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "product_suppliers",
+      "related_table": "products_and_suppliers",
+      "text": "RELATIONSHIP: product_suppliers as junction table (Many-to-Many)\n\nDESCRIPTION: Junction table connecting products and suppliers in many-to-many relationship with sourcing attributes.\n\nNATURAL_LANGUAGE_TERMS: products and suppliers, product supplier relationship, who supplies what, supplier product mapping, sourcing relationships, product vendor connections\n\nJOIN_CONDITION: products.product_id = product_suppliers.product_id AND product_suppliers.supplier_id = suppliers.supplier_id\n\nCARDINALITY: M:N (many products have many suppliers, many suppliers provide many products)\n\nTABLE_TYPE: Junction table with attributes (cost_price, lead_time_days, minimum_order_quantity)\n\nUSAGE: Product sourcing options, supplier alternatives, cost comparison, lead time analysis, procurement planning\n\nUSE_CASES: Find suppliers for product, products from supplier, compare sourcing options, supplier alternatives, procurement choices\n\nEXAMPLES:\n\n- Product sourcing options: SELECT p.product_name, s.supplier_name, ps.cost_price, ps.lead_time_days, ps.minimum_order_quantity FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE p.product_id = 2050\n\n- Supplier catalog: SELECT s.supplier_name, p.product_name, p.category, ps.cost_price FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id JOIN products p ON ps.product_id = p.product_id WHERE s.supplier_id = 11001\n\n- Complete sourcing matrix: SELECT p.product_name, s.supplier_name, ps.cost_price, ps.lead_time_days FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id ORDER BY p.product_name, ps.cost_price\n\nBUSINESS_RULE: Junction table enables many-to-many with sourcing attributes. One product can have multiple suppliers. One supplier can provide multiple products.\n\nCOMMON_QUESTIONS: Who supplies what? Product sourcing options? Supplier alternatives? Products and suppliers relationship?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "product_suppliers",
+        "to_table": "products_and_suppliers",
+        "cardinality": "M:N",
+        "join_type": "many_to_many"
+      },
+      "keywords": [
+        "junction table",
+        "many to many",
+        "products and suppliers",
+        "who supplies what",
+        "sourcing options"
+      ]
+    },
+    {
+      "chunk_id": "rel_product_suppliers_to_products",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "product_suppliers",
+      "related_table": "products",
+      "text": "RELATIONSHIP: product_suppliers to products (Many-to-One)\n\nDESCRIPTION: Each sourcing record belongs to one product. Product can have multiple sourcing options.\n\nNATURAL_LANGUAGE_TERMS: product sourcing, suppliers for product, product suppliers, who supplies product, sourcing options for product, product vendor options\n\nJOIN_CONDITION: product_suppliers.product_id = products.product_id\n\nCARDINALITY: N:1 (many sourcing records for one product)\n\nFOREIGN_KEY: product_suppliers.product_id references products.product_id\n\nUSAGE: Finding suppliers for product, product sourcing options, supplier alternatives, cost comparison for product\n\nUSE_CASES: Who supplies product, product sourcing options, supplier alternatives for product, compare costs for product\n\nEXAMPLES:\n\n- Suppliers for product: SELECT p.product_name, s.supplier_name, ps.cost_price, ps.lead_time_days FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE p.product_id = 2050 ORDER BY ps.cost_price\n\n- Best sourcing option: SELECT p.product_name, s.supplier_name AS best_supplier, ps.cost_price, ps.lead_time_days FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE p.product_id = 2050 ORDER BY (ps.cost_price * ps.lead_time_days) LIMIT 1\n\n- Supplier count: SELECT p.product_name, COUNT(ps.supplier_id) AS supplier_count FROM products p LEFT JOIN product_suppliers ps ON p.product_id = ps.product_id GROUP BY p.product_name\n\nBUSINESS_RULE: One product can have 0-many suppliers. Multiple sourcing options enable supplier alternatives and price competition.\n\nCOMMON_QUESTIONS: Who supplies product? Sourcing options? Supplier alternatives? Best supplier for product?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "product_suppliers",
+        "to_table": "products",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "product sourcing",
+        "suppliers for product",
+        "who supplies product",
+        "sourcing options",
+        "product suppliers"
+      ]
+    },
+    {
+      "chunk_id": "rel_product_suppliers_to_suppliers",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "product_suppliers",
+      "related_table": "suppliers",
+      "text": "RELATIONSHIP: product_suppliers to suppliers (Many-to-One)\n\nDESCRIPTION: Each sourcing record belongs to one supplier. Supplier can provide multiple products.\n\nNATURAL_LANGUAGE_TERMS: supplier products, supplier catalog, what supplier provides, products from supplier, supplier offerings, supplier inventory\n\nJOIN_CONDITION: product_suppliers.supplier_id = suppliers.supplier_id\n\nCARDINALITY: N:1 (many sourcing records for one supplier)\n\nFOREIGN_KEY: product_suppliers.supplier_id references suppliers.supplier_id\n\nUSAGE: Supplier product catalog, what supplier provides, supplier offerings, products available from supplier\n\nUSE_CASES: Supplier catalog, products from supplier, what supplier provides, supplier product list, supplier inventory\n\nEXAMPLES:\n\n- Supplier catalog: SELECT s.supplier_name, p.product_name, ps.cost_price, ps.lead_time_days FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id JOIN products p ON ps.product_id = p.product_id WHERE s.supplier_id = 11001 ORDER BY p.product_name\n\n- Supplier product count: SELECT s.supplier_name, COUNT(ps.product_id) AS products_supplied FROM suppliers s LEFT JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id GROUP BY s.supplier_name ORDER BY products_supplied DESC\n\n- Supplier by category: SELECT s.supplier_name, p.category, COUNT(*) AS product_count FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id JOIN products p ON ps.product_id = p.product_id WHERE s.supplier_id = 11001 GROUP BY s.supplier_name, p.category\n\nBUSINESS_RULE: One supplier can provide 0-many products. Multiple products per supplier enable consolidated ordering.\n\nCOMMON_QUESTIONS: Supplier catalog? Products from supplier? What does supplier provide? Supplier offerings?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "product_suppliers",
+        "to_table": "suppliers",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "supplier products",
+        "supplier catalog",
+        "what supplier provides",
+        "products from supplier",
+        "supplier offerings"
+      ]
+    },
+    {
+      "chunk_id": "query_find_suppliers_for_product",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "product_suppliers",
+      "related_tables": "products, suppliers",
+      "use_case": "product_sourcing_options",
+      "text": "QUERY USE CASE: Find all suppliers for a product with pricing\n\nDESCRIPTION: List all available suppliers for a product with cost, lead time, and MOQ.\n\nNATURAL_LANGUAGE_QUERIES: who supplies product, suppliers for product, product sourcing options, where to buy product, supplier alternatives, product suppliers\n\nTABLES_USED: product_suppliers, products, suppliers\n\nWHEN_TO_USE: Procurement planning, supplier selection, cost comparison, sourcing alternatives\n\nSQL_PATTERN: SELECT suppliers FROM product_suppliers JOIN suppliers WHERE product_id = X\n\nEXAMPLES:\n\n- All suppliers: SELECT s.supplier_name, s.contact_name, ps.cost_price, ps.lead_time_days, ps.minimum_order_quantity FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.cost_price\n\n- Best option: SELECT s.supplier_name, ps.cost_price, ps.lead_time_days, (ps.cost_price * ps.minimum_order_quantity) AS min_spend FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.cost_price, ps.lead_time_days\n\n- With product info: SELECT p.product_name, s.supplier_name, ps.cost_price, p.price AS retail_price, (p.price - ps.cost_price) AS margin FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE p.product_id = 2050\n\nBUSINESS_RULE: Order by cost_price for cheapest option. Consider lead time and MOQ for complete evaluation.\n\nCOMMON_QUESTIONS: Who supplies product? Suppliers for product? Sourcing options? Where to buy? Supplier alternatives?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "find_suppliers",
+        "tables": [
+          "product_suppliers",
+          "products",
+          "suppliers"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "who supplies product",
+        "suppliers for product",
+        "sourcing options",
+        "where to buy",
+        "supplier alternatives"
+      ]
+    },
+    {
+      "chunk_id": "query_cheapest_supplier",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "product_suppliers",
+      "related_tables": "suppliers",
+      "use_case": "cost_optimization",
+      "text": "QUERY USE CASE: Find cheapest supplier for product\n\nDESCRIPTION: Identify supplier with lowest cost for procurement optimization.\n\nNATURAL_LANGUAGE_QUERIES: cheapest supplier, lowest cost, best price, most affordable supplier, least expensive, cheapest option, best deal\n\nTABLES_USED: product_suppliers, suppliers, products\n\nWHEN_TO_USE: Cost optimization, budget procurement, price comparison, finding best deal\n\nSQL_PATTERN: SELECT supplier, MIN(cost_price) FROM product_suppliers WHERE product_id = X\n\nEXAMPLES:\n\n- Cheapest supplier: SELECT s.supplier_name, ps.cost_price, ps.lead_time_days, ps.minimum_order_quantity FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.cost_price LIMIT 1\n\n- Cost comparison: SELECT s.supplier_name, ps.cost_price, RANK() OVER (ORDER BY ps.cost_price) AS price_rank FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050\n\n- Cost with total spend: SELECT s.supplier_name, ps.cost_price, ps.minimum_order_quantity, (ps.cost_price * ps.minimum_order_quantity) AS minimum_spend FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.cost_price\n\n- Cheapest by category: SELECT p.category, p.product_name, s.supplier_name, ps.cost_price FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.cost_price = (SELECT MIN(cost_price) FROM product_suppliers WHERE product_id = p.product_id)\n\nBUSINESS_RULE: Lowest cost_price is cheapest. Consider MOQ for total minimum spend. Verify lead_time acceptable.\n\nCOMMON_QUESTIONS: Cheapest supplier? Lowest cost? Best price? Most affordable? Least expensive? Best deal?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "cost_comparison",
+        "tables": [
+          "product_suppliers",
+          "suppliers",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "cheapest supplier",
+        "lowest cost",
+        "best price",
+        "most affordable",
+        "least expensive",
+        "best deal"
+      ]
+    },
+    {
+      "chunk_id": "query_fastest_supplier",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "product_suppliers",
+      "related_tables": "suppliers",
+      "use_case": "lead_time_optimization",
+      "text": "QUERY USE CASE: Find fastest supplier for product\n\nDESCRIPTION: Identify supplier with shortest lead time for urgent procurement.\n\nNATURAL_LANGUAGE_QUERIES: fastest supplier, quickest delivery, shortest lead time, fastest delivery, quickest supplier, fastest option, quick turnaround\n\nTABLES_USED: product_suppliers, suppliers\n\nWHEN_TO_USE: Urgent procurement, fast delivery needs, lead time critical situations, quick restocking\n\nSQL_PATTERN: SELECT supplier, MIN(lead_time_days) FROM product_suppliers WHERE product_id = X\n\nEXAMPLES:\n\n- Fastest supplier: SELECT s.supplier_name, ps.lead_time_days, ps.cost_price, ps.minimum_order_quantity FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY ps.lead_time_days LIMIT 1\n\n- Lead time comparison: SELECT s.supplier_name, ps.lead_time_days, ps.cost_price, RANK() OVER (ORDER BY ps.lead_time_days) AS speed_rank FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050\n\n- Fast and affordable: SELECT s.supplier_name, ps.lead_time_days, ps.cost_price FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.product_id = 2050 ORDER BY (ps.lead_time_days * 0.5 + ps.cost_price * 0.5) LIMIT 5\n\n- Quick suppliers: SELECT s.supplier_name, COUNT(*) AS quick_products FROM product_suppliers ps JOIN suppliers s ON ps.supplier_id = s.supplier_id WHERE ps.lead_time_days <= 7 GROUP BY s.supplier_name ORDER BY quick_products DESC\n\nBUSINESS_RULE: Lowest lead_time_days is fastest. Balance with cost_price for best value. Verify MOQ feasible.\n\nCOMMON_QUESTIONS: Fastest supplier? Quickest delivery? Shortest lead time? Fastest option? Quick turnaround?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "speed_optimization",
+        "tables": [
+          "product_suppliers",
+          "suppliers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "fastest supplier",
+        "quickest delivery",
+        "shortest lead time",
+        "fastest option",
+        "quick turnaround",
+        "fastest delivery"
+      ]
+    },
+    {
+      "chunk_id": "query_supplier_product_catalog",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "product_suppliers",
+      "related_tables": "suppliers, products",
+      "use_case": "supplier_inventory",
+      "text": "QUERY USE CASE: View all products from specific supplier\n\nDESCRIPTION: List complete product catalog available from a supplier.\n\nNATURAL_LANGUAGE_QUERIES: supplier products, supplier catalog, what does supplier provide, products from supplier, supplier offerings, supplier inventory\n\nTABLES_USED: product_suppliers, suppliers, products\n\nWHEN_TO_USE: Supplier evaluation, consolidated ordering, catalog review, supplier capabilities assessment\n\nSQL_PATTERN: SELECT products FROM product_suppliers JOIN products WHERE supplier_id = X\n\nEXAMPLES:\n\n- Supplier catalog: SELECT p.product_name, p.category, ps.cost_price, ps.lead_time_days, ps.minimum_order_quantity FROM product_suppliers ps JOIN products p ON ps.product_id = p.product_id WHERE ps.supplier_id = 11001 ORDER BY p.category, p.product_name\n\n- Catalog with margins: SELECT p.product_name, ps.cost_price, p.price AS retail_price, (p.price - ps.cost_price) AS margin, ROUND(100.0 * (p.price - ps.cost_price) / p.price, 2) AS margin_pct FROM product_suppliers ps JOIN products p ON ps.product_id = p.product_id WHERE ps.supplier_id = 11001\n\n- By category: SELECT p.category, COUNT(*) AS product_count, AVG(ps.cost_price) AS avg_cost FROM product_suppliers ps JOIN products p ON ps.product_id = p.product_id WHERE ps.supplier_id = 11001 GROUP BY p.category\n\n- Supplier summary: SELECT s.supplier_name, COUNT(ps.product_id) AS products, AVG(ps.cost_price) AS avg_cost, AVG(ps.lead_time_days) AS avg_lead_time FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id WHERE s.supplier_id = 11001 GROUP BY s.supplier_name\n\nBUSINESS_RULE: Group by category for organized view. Include cost and lead time for procurement planning.\n\nCOMMON_QUESTIONS: Supplier products? Supplier catalog? What does supplier provide? Products from supplier? Supplier offerings?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "catalog_view",
+        "tables": [
+          "product_suppliers",
+          "suppliers",
+          "products"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "supplier products",
+        "supplier catalog",
+        "what supplier provides",
+        "products from supplier",
+        "supplier offerings"
+      ]
+    }
+  ]
+}

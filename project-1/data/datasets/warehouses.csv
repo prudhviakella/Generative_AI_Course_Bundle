@@ -1,0 +1,6 @@
+warehouse_id,warehouse_name,address,city,state,zip_code,country,phone,email,capacity_sqft,manager_name,operating_since
+1,East Coast Distribution Center,5000 Industrial Parkway,Newark,NJ,07102,USA,555-0201,ec-warehouse@ecommerce.com,150000,Sarah Johnson,2020-03-15
+2,West Coast Fulfillment Hub,8800 Logistics Way,Los Angeles,CA,90001,USA,555-0202,wc-warehouse@ecommerce.com,180000,Michael Chen,2019-06-20
+3,Central Processing Facility,3200 Commerce Drive,Chicago,IL,60601,USA,555-0203,central-warehouse@ecommerce.com,120000,David Martinez,2021-01-10
+4,Southern Distribution Point,7500 Freight Boulevard,Atlanta,GA,30301,USA,555-0204,south-warehouse@ecommerce.com,95000,Emily Rodriguez,2022-08-05
+5,Northwest Logistics Center,9100 Distribution Avenue,Seattle,WA,98101,USA,555-0205,nw-warehouse@ecommerce.com,110000,James Wilson,2021-11-15

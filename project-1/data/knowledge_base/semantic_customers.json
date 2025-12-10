@@ -1,0 +1,544 @@
+{
+  "table": "customers",
+  "description": "ENHANCED semantic memory for CUSTOMERS table - optimized for natural language semantic search with comprehensive term coverage",
+  "total_chunks": 19,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 11,
+    "relationships": 3,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Added extensive synonym coverage",
+    "use_cases": "Added plain English scenarios",
+    "common_questions": "Added typical user questions",
+    "conversational_phrases": "Added how users actually ask questions"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_customers_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "customers",
+      "text": "TABLE: customers\n\nDESCRIPTION: Master customer account data storing personal information and contact details for all registered users.\n\nNATURAL_LANGUAGE_TERMS: customers, customer table, users, accounts, registered users, buyers, clients, shoppers, customer data, user accounts, customer information, customer records, customer database\n\nPRIMARY_KEY: customer_id\n\nREFERENCED_BY: orders.customer_id, customer_addresses.customer_id, reviews.customer_id\n\nUSAGE: Customer lookup, find customer, search users, customer authentication, contact information retrieval, demographic analysis, customer segmentation, user management, account management\n\nCOMMON_QUERIES: Find customer by email, list customers by location, show new customers, get customer details, search customer, customer contact information, where do customers live, how many customers\n\nUSE_CASES: Looking up customer accounts, finding customer contact info, authenticating users, analyzing customer demographics, customer service inquiries, searching for specific customers",
+      "metadata": {
+        "entity": "table",
+        "table": "customers",
+        "pk": "customer_id"
+      },
+      "keywords": [
+        "customers",
+        "users",
+        "accounts",
+        "buyers",
+        "clients",
+        "shoppers",
+        "customer data",
+        "registered users",
+        "customer table"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_customer_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "customer_id",
+      "text": "COLUMN: customers.customer_id\n\nDESCRIPTION: Unique identifier for each customer account.\n\nNATURAL_LANGUAGE_TERMS: customer id, customer ID, customer identifier, user id, account id, customer number, account number, unique customer id, customer key, user identifier, account identifier\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nREFERENCED_BY: orders.customer_id, customer_addresses.customer_id, reviews.customer_id\n\nUSAGE: Unique customer identification, joining customers with orders, linking customer data, customer-specific queries, finding customer by ID, getting customer details, customer record lookup\n\nUSE_CASES: Get customer by ID, lookup customer record, find specific customer, join customers with orders, link customer to addresses, customer unique identification, retrieve customer data\n\nEXAMPLES:\n\n- Get customer details: SELECT * FROM customers WHERE customer_id = 1001\n\n- Customer orders: SELECT * FROM orders WHERE customer_id = 1001\n\n- Join with orders: FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE c.customer_id = 1001\n\n- Customer addresses: FROM customer_addresses WHERE customer_id = 1001\n\nBUSINESS_RULE: Immutable once assigned. Primary identifier across all customer-related tables.\n\nCOMMON_QUESTIONS: How to find customer by ID? What is customer ID? How to get customer details? How to lookup customer record? Which column is customer identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "customer_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "customer_id",
+        "customer ID",
+        "user id",
+        "account id",
+        "customer identifier",
+        "primary key",
+        "unique id",
+        "customer number"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_first_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "first_name",
+      "text": "COLUMN: customers.first_name\n\nDESCRIPTION: Customer's given name or first name.\n\nNATURAL_LANGUAGE_TERMS: first name, given name, first name, customer first name, user first name, forename, Christian name, customer name, person name, individual name\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Customer name display, personalization, name-based searching, find customer by name, search by first name, alphabetical sorting, greeting generation, customer identification by name\n\nUSE_CASES: Search customer by first name, find customer named John, lookup by name, display customer name, personalize greeting, alphabetical customer list, name-based search, full name construction\n\nEXAMPLES:\n\n- Full name display: SELECT first_name || ' ' || last_name AS full_name FROM customers\n\n- Search by first name: SELECT * FROM customers WHERE first_name LIKE 'John%'\n\n- Case-insensitive search: WHERE LOWER(first_name) = 'john'\n\n- Sort alphabetically: ORDER BY first_name, last_name\n\n- Name analysis: SELECT first_name, COUNT(*) FROM customers GROUP BY first_name ORDER BY COUNT(*) DESC\n\nBUSINESS_RULE: Required field for account creation. May contain hyphens (Mary-Anne) or apostrophes (O'Brien).\n\nCOMMON_QUESTIONS: How to search customer by first name? How to find customer named John? What is customer's first name? How to search by name? How to get customer name? Find customer by name?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "first_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "first_name",
+        "given name",
+        "customer name",
+        "name search",
+        "first name",
+        "forename",
+        "search by name"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_last_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "last_name",
+      "text": "COLUMN: customers.last_name\n\nDESCRIPTION: Customer's family name or surname.\n\nNATURAL_LANGUAGE_TERMS: last name, surname, family name, last name, customer last name, user surname, family surname, second name\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Formal customer identification, surname-based searching, find customer by last name, search by surname, alphabetical sorting, full name construction, customer lookup by family name\n\nUSE_CASES: Search customer by last name, find customers with surname Smith, lookup by family name, alphabetical sorting, surname-based filtering, full name display, formal identification\n\nEXAMPLES:\n\n- Full name: SELECT first_name || ' ' || last_name AS full_name FROM customers\n\n- Search by last name: SELECT * FROM customers WHERE last_name = 'Smith'\n\n- Starts with pattern: WHERE last_name LIKE 'Sm%'\n\n- Sort by surname: ORDER BY last_name, first_name\n\n- Common surnames: SELECT last_name, COUNT(*) FROM customers GROUP BY last_name ORDER BY COUNT(*) DESC LIMIT 10\n\nBUSINESS_RULE: Required field. May contain hyphens (Smith-Jones), apostrophes (O'Connor), or spaces (Van Der Berg).\n\nCOMMON_QUESTIONS: How to search by last name? Find customers with surname Smith. What is customer's last name? Search by family name. How to find customer by surname?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "last_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "last_name",
+        "surname",
+        "family name",
+        "customer surname",
+        "name search",
+        "family surname"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_email",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "email",
+      "text": "COLUMN: customers.email\n\nDESCRIPTION: Customer email address for login and communication.\n\nNATURAL_LANGUAGE_TERMS: email, email address, e-mail, mail, user email, login email, account email, contact email, customer email, email ID, email id, electronic mail, user mail, customer mail, login id\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: UNIQUE, NOT NULL\n\nUSAGE: Customer authentication, login, find customer by email, primary customer lookup, search by email, account verification, email communication, duplicate account prevention, user identification, contact method, password reset\n\nUSE_CASES: Find customer by email, lookup user account, authenticate login, verify customer email, search by email address, check if email exists, customer login, contact customer via email, validate email, account lookup, user authentication\n\nEXAMPLES:\n\n- Find customer by email: SELECT * FROM customers WHERE email = 'john@example.com'\n\n- Case-insensitive lookup: WHERE LOWER(email) = LOWER('John@Example.com')\n\n- Check if email exists: SELECT COUNT(*) FROM customers WHERE email = 'test@example.com'\n\n- Email domain analysis: WHERE email LIKE '%@gmail.com'\n\n- List all Gmail users: SELECT * FROM customers WHERE email LIKE '%@gmail.com'\n\nBUSINESS_RULE: Must be unique across all customers. Required for account creation. Valid email format enforced (username@domain.com).\n\nCOMMON_QUESTIONS: How to find customer by email? How do I lookup user email? Where is customer email? How to search by email address? How to contact customer? What is customer's email? Find customer email address. How to verify email? Check if email exists?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "email",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "email",
+        "email address",
+        "e-mail",
+        "mail",
+        "user email",
+        "login email",
+        "account email",
+        "contact email",
+        "customer email",
+        "email ID",
+        "electronic mail",
+        "authenticate",
+        "login"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_phone",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "phone",
+      "text": "COLUMN: customers.phone\n\nDESCRIPTION: Customer's contact phone number.\n\nNATURAL_LANGUAGE_TERMS: phone, phone number, telephone, telephone number, contact number, mobile, mobile number, cell phone, contact phone, customer phone, user phone, phone no, tel, call, contact\n\nDATA_TYPE: VARCHAR(15)\n\nFORMAT: US phone number format, may include dashes or parentheses\n\nUSAGE: Customer contact, reach customer, phone-based lookup, find customer by phone, customer support, delivery coordination, call customer, contact customer, customer communication, phone search\n\nUSE_CASES: Find customer by phone number, contact customer, get customer phone, call customer, customer support lookup, delivery notifications, phone-based search, verify phone number, customer contact info\n\nEXAMPLES:\n\n- Find by phone: SELECT * FROM customers WHERE phone = '555-0123'\n\n- Clean phone format: SELECT customer_id, REGEXP_REPLACE(phone, '[^0-9]', '', 'g') AS clean_phone FROM customers\n\n- Phone search: WHERE phone LIKE '%555%'\n\nBUSINESS_RULE: US phone number format. Used for order notifications and customer support contact.\n\nCOMMON_QUESTIONS: How to find customer by phone? What is customer's phone number? How to contact customer? How to call customer? Find customer phone. Get contact number. Customer telephone number?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "phone",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "phone",
+        "phone number",
+        "telephone",
+        "mobile",
+        "contact number",
+        "cell phone",
+        "customer phone",
+        "contact",
+        "call"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_address",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "address",
+      "text": "COLUMN: customers.address\n\nDESCRIPTION: Customer's primary street address.\n\nNATURAL_LANGUAGE_TERMS: address, street address, customer address, location, physical address, mailing address, home address, residence, street, delivery address, shipping address, where customer lives\n\nDATA_TYPE: VARCHAR(100)\n\nUSAGE: Default shipping address, billing address, customer location, find customer by address, address-based searches, location analysis, delivery information, customer residence, where customer lives\n\nUSE_CASES: Get customer address, find shipping address, lookup delivery location, customer residence, where does customer live, physical location, mailing information, address lookup\n\nEXAMPLES:\n\n- Get full address: SELECT address || ', ' || city || ', ' || state || ' ' || zip_code FROM customers\n\n- Search by street: WHERE address LIKE '%Main Street%'\n\n- Apartment filter: WHERE address LIKE '%Apt%'\n\nBUSINESS_RULE: Street number and street name. Default address unless overridden in customer_addresses table.\n\nCOMMON_QUESTIONS: What is customer address? Where does customer live? Customer shipping address? Get delivery location. Where to ship order? Customer residence address?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "address",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "address",
+        "street address",
+        "customer address",
+        "location",
+        "physical address",
+        "mailing address",
+        "home address",
+        "residence",
+        "where customer lives",
+        "delivery address"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_city",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "city",
+      "text": "COLUMN: customers.city\n\nDESCRIPTION: City name where customer resides.\n\nNATURAL_LANGUAGE_TERMS: city, city name, customer city, town, municipality, location, urban area, metro area, customers in city, city location, where customer lives, customer location, place, locality\n\nDATA_TYPE: VARCHAR(50)\n\nUSAGE: Geographic filtering, find customers in city, customers by city, regional demographics, location-based marketing, shipping zone calculation, city-level reporting, filter by location, show customers from city\n\nUSE_CASES: Find customers in New York, show customers by city, customers in specific city, city-based filtering, count customers per city, geographic analysis, regional reporting, location filtering, city demographics\n\nEXAMPLES:\n\n- Customers in specific city: SELECT * FROM customers WHERE city = 'New York'\n\n- Count by city: SELECT city, COUNT(*) AS customer_count FROM customers GROUP BY city ORDER BY customer_count DESC\n\n- Multiple cities: WHERE city IN ('New York', 'Los Angeles', 'Chicago')\n\n- City search pattern: WHERE city LIKE '%York%'\n\n- Top 10 cities: SELECT city, state, COUNT(*) FROM customers GROUP BY city, state ORDER BY COUNT(*) DESC LIMIT 10\n\nBUSINESS_RULE: Full city names used (not abbreviations). Combined with state and zip_code for complete address.\n\nCOMMON_QUESTIONS: How to find customers in New York? Show me customers by city. Which customers are in Chicago? Count customers per city. Customers from specific city? Which city has most customers? Filter by city?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "city",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "city",
+        "city name",
+        "location",
+        "geographic",
+        "customer city",
+        "town",
+        "municipality",
+        "customers in city",
+        "filter by city",
+        "city location",
+        "where customer lives"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_state",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "state",
+      "text": "COLUMN: customers.state\n\nDESCRIPTION: US state abbreviation where customer resides.\n\nNATURAL_LANGUAGE_TERMS: state, state code, US state, state abbreviation, region, location, area, territory, province, customers by state, state filter, geographic location, customers in state, from state, state name\n\nDATA_TYPE: VARCHAR(2)\n\nFORMAT: Two-letter uppercase US state codes\n\nVALID_VALUES: CA, NY, TX, FL, IL, WA, OR, NV, AZ, CO, MA, PA, OH, GA, NC, VA, MI, NJ, MD, WI\n\nSTATE_EXAMPLES: CA (California), NY (New York), TX (Texas), FL (Florida), IL (Illinois), WA (Washington), OR (Oregon), NV (Nevada), AZ (Arizona), CO (Colorado)\n\nUSAGE: State-level geographic filtering, find customers in state, customers by state, regional reporting, tax jurisdiction, shipping cost calculation, state distribution analysis, filter by state, customers from California, show customers in Texas\n\nUSE_CASES: Find customers in California, show California customers, customers from Texas, filter by state, count customers per state, regional analysis, state-based reporting, customers by region, geographic filtering, which state has most customers, state demographics\n\nEXAMPLES:\n\n- California customers: SELECT * FROM customers WHERE state = 'CA'\n\n- Multiple states: WHERE state IN ('CA', 'NY', 'TX')\n\n- Count per state: SELECT state, COUNT(*) AS customer_count FROM customers GROUP BY state ORDER BY customer_count DESC\n\n- West coast states: WHERE state IN ('CA', 'OR', 'WA')\n\n- State with city: SELECT state, city, COUNT(*) FROM customers GROUP BY state, city\n\nBUSINESS_RULE: Must be valid 2-letter USPS state abbreviation. CA=California, NY=New York, TX=Texas, FL=Florida, IL=Illinois. Used for tax calculations and shipping costs.\n\nCOMMON_QUESTIONS: How to find customers in California? Show me customers from Texas. Which customers are in NY? Filter by state. Count customers per state. Customers in specific state? Which state has most customers? Find California customers. Show all states. Customers from Florida?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "state",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "state",
+        "state code",
+        "US state",
+        "geographic",
+        "regional",
+        "California",
+        "Texas",
+        "New York",
+        "Florida",
+        "CA",
+        "NY",
+        "TX",
+        "FL",
+        "state abbreviation",
+        "customers by state",
+        "filter by state",
+        "from state"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_zip_code",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "zip_code",
+      "text": "COLUMN: customers.zip_code\n\nDESCRIPTION: US postal zip code.\n\nNATURAL_LANGUAGE_TERMS: zip code, zipcode, zip, postal code, postcode, area code, zip area, customer zip, location zip, mail code\n\nDATA_TYPE: VARCHAR(10)\n\nFORMAT: 5-digit or 9-digit format (XXXXX or XXXXX-XXXX)\n\nUSAGE: Precise location identification, find customers by zip, shipping cost calculation, zone mapping, delivery routing, zip-based filtering, location analysis\n\nUSE_CASES: Find customers in zip code, customers by zip, zip code lookup, delivery zone analysis, shipping calculations, location filtering\n\nEXAMPLES:\n\n- Customers in zip: SELECT * FROM customers WHERE zip_code = '90210'\n\n- Zip code pattern: WHERE zip_code LIKE '902%'\n\n- Count by zip: SELECT zip_code, COUNT(*) FROM customers GROUP BY zip_code ORDER BY COUNT(*) DESC\n\n- Zip range: WHERE zip_code BETWEEN '90000' AND '90999'\n\nBUSINESS_RULE: US postal codes. Combines with city and state for complete address. Used for shipping calculations.\n\nCOMMON_QUESTIONS: Find customers by zip code. Customers in 90210. Which zip has most customers? Filter by zip code. Customers in postal code?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "zip_code",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "zip_code",
+        "zipcode",
+        "zip",
+        "postal code",
+        "postcode",
+        "customers by zip",
+        "filter by zip"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_country",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "country",
+      "text": "COLUMN: customers.country\n\nDESCRIPTION: Country name where customer resides.\n\nNATURAL_LANGUAGE_TERMS: country, nation, country name, customer country, location country, USA, United States, America, US, national location\n\nDATA_TYPE: VARCHAR(50)\n\nCURRENT_VALUE: All customers currently from USA\n\nUSAGE: International filtering, country-level filtering, find customers by country, future multi-country operations, national analysis\n\nUSE_CASES: Find USA customers, filter by country, customers from United States, country-based filtering, international expansion\n\nEXAMPLES:\n\n- All USA customers: SELECT * FROM customers WHERE country = 'USA'\n\n- Count by country: SELECT country, COUNT(*) FROM customers GROUP BY country\n\nBUSINESS_RULE: Currently all customers are from USA. Field supports future international expansion.\n\nCOMMON_QUESTIONS: Which country are customers from? Find USA customers. Customers by country. All US customers?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "country",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "country",
+        "nation",
+        "USA",
+        "United States",
+        "America",
+        "US",
+        "customer country"
+      ]
+    },
+    {
+      "chunk_id": "col_customers_created_at",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "customers",
+      "column_name": "created_at",
+      "text": "COLUMN: customers.created_at\n\nDESCRIPTION: Timestamp when customer account was created.\n\nNATURAL_LANGUAGE_TERMS: created at, creation date, signup date, registration date, joined date, account created, when joined, registration time, signup time, join date, member since, signed up, new customer, recent signup, account age, registration timestamp, when registered, account creation\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nUSAGE: Customer acquisition tracking, find new customers, recent signups, new customer filtering, cohort analysis, customer lifetime calculations, registration tracking, find customers who joined, growth analysis, new members, customer age calculation\n\nUSE_CASES: Find new customers, show recent signups, customers who joined this month, new registrations, customers by signup date, recent members, customer acquisition analysis, growth tracking, cohort reporting, new customer list, latest signups, customers joined today\n\nEXAMPLES:\n\n- New customers this month: SELECT * FROM customers WHERE created_at >= DATE_TRUNC('month', CURRENT_DATE)\n\n- Customers who joined in 2024: WHERE created_at >= '2024-01-01'\n\n- Customer growth by month: SELECT DATE_TRUNC('month', created_at) AS month, COUNT(*) FROM customers GROUP BY month ORDER BY month\n\n- Last 30 days signups: WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'\n\n- Oldest customers: ORDER BY created_at ASC LIMIT 10\n\n- Customer age in days: SELECT customer_id, CURRENT_DATE - DATE(created_at) AS days_as_customer FROM customers\n\nBUSINESS_RULE: Set once at account creation, never modified. Use for customer lifetime value calculations and acquisition tracking.\n\nCOMMON_QUESTIONS: How to find new customers? Show me recent signups. Who joined this month? Find customers who registered recently. Which customers are new? Show latest registrations. How many new customers today? Customer growth this year? Customers who signed up this week? New members this month?",
+      "metadata": {
+        "entity": "column",
+        "table": "customers",
+        "column": "created_at",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "created_at",
+        "signup date",
+        "registration date",
+        "joined date",
+        "account created",
+        "new customers",
+        "recent signups",
+        "member since",
+        "signed up",
+        "registration",
+        "new",
+        "recent",
+        "latest",
+        "today",
+        "this month",
+        "this week"
+      ]
+    },
+    {
+      "chunk_id": "rel_customers_to_orders",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "customers",
+      "related_table": "orders",
+      "text": "RELATIONSHIP: customers to orders (One-to-Many)\n\nDESCRIPTION: One customer can place many orders. This is the primary relationship for tracking customer purchase history.\n\nNATURAL_LANGUAGE_TERMS: customer orders, order history, purchase history, customer purchases, orders by customer, what customer bought, customer transactions, buying history, customer shopping history\n\nJOIN_CONDITION: customers.customer_id = orders.customer_id\n\nCARDINALITY: 1:N (one customer can have zero, one, or many orders)\n\nFOREIGN_KEY: orders.customer_id references customers.customer_id\n\nUSAGE: Getting customer order history, calculating customer lifetime value, finding customers with orders, customers without orders, analyzing purchase patterns, customer spending, order count per customer\n\nUSE_CASES: Show customer order history, find what customer bought, customer purchase history, total orders per customer, customer spending analysis, repeat customers, customers with no orders, customer lifetime value\n\nEXAMPLES:\n\n- Customer order history: SELECT c.first_name, c.last_name, o.order_id, o.order_date, o.total_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE c.customer_id = 1001 ORDER BY o.order_date DESC\n\n- Customer lifetime value: SELECT c.customer_id, c.email, SUM(o.total_amount) AS lifetime_value FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id, c.email ORDER BY lifetime_value DESC\n\n- Customers with orders: SELECT c.* FROM customers c WHERE EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.customer_id)\n\n- Customers without orders: SELECT c.* FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_id IS NULL\n\n- Orders per customer: SELECT c.customer_id, c.email, COUNT(o.order_id) AS order_count FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id, c.email\n\nBUSINESS_RULE: Use LEFT JOIN to include customers with zero orders. Every order must have a valid customer_id.\n\nCOMMON_QUESTIONS: Show customer order history. What did customer buy? How many orders per customer? Customer purchase history? Find customers with no orders. Customer lifetime spending? Orders by customer?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "customers",
+        "to_table": "orders",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "customer orders",
+        "order history",
+        "purchase history",
+        "customer purchases",
+        "what customer bought",
+        "customer transactions",
+        "buying history",
+        "lifetime value"
+      ]
+    },
+    {
+      "chunk_id": "rel_customers_to_addresses",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "customers",
+      "related_table": "customer_addresses",
+      "text": "RELATIONSHIP: customers to customer_addresses (One-to-Many)\n\nDESCRIPTION: One customer can have multiple addresses (shipping, billing, etc.).\n\nNATURAL_LANGUAGE_TERMS: customer addresses, multiple addresses, shipping address, billing address, delivery address, customer locations, address book\n\nJOIN_CONDITION: customers.customer_id = customer_addresses.customer_id\n\nCARDINALITY: 1:N (one customer can have multiple addresses)\n\nFOREIGN_KEY: customer_addresses.customer_id references customers.customer_id\n\nUSAGE: Getting all addresses for customer, finding default shipping address, managing delivery locations, address book functionality\n\nUSE_CASES: Show customer addresses, get shipping address, find billing address, default delivery location, all customer addresses, address management\n\nEXAMPLES:\n\n- All addresses for customer: SELECT c.first_name, c.last_name, ca.address_type, ca.address_line1, ca.city, ca.state FROM customers c JOIN customer_addresses ca ON c.customer_id = ca.customer_id WHERE c.customer_id = 1001\n\n- Default shipping address: SELECT ca.* FROM customers c JOIN customer_addresses ca ON c.customer_id = ca.customer_id WHERE c.customer_id = 1001 AND ca.address_type = 'Shipping' AND ca.is_default = 'Yes'\n\nBUSINESS_RULE: Customers typically have 2-3 addresses (billing, shipping, alternate).\n\nCOMMON_QUESTIONS: Show customer addresses. What is shipping address? Get billing address. All delivery addresses for customer?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "customers",
+        "to_table": "customer_addresses",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "customer addresses",
+        "shipping address",
+        "billing address",
+        "delivery address",
+        "multiple addresses",
+        "address book"
+      ]
+    },
+    {
+      "chunk_id": "rel_customers_to_reviews",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "customers",
+      "related_table": "reviews",
+      "text": "RELATIONSHIP: customers to reviews (One-to-Many)\n\nDESCRIPTION: One customer can write many product reviews.\n\nNATURAL_LANGUAGE_TERMS: customer reviews, customer feedback, user reviews, product reviews by customer, customer ratings, review history, what customer reviewed\n\nJOIN_CONDITION: customers.customer_id = reviews.customer_id\n\nCARDINALITY: 1:N (one customer can write zero, one, or many reviews)\n\nFOREIGN_KEY: reviews.customer_id references customers.customer_id\n\nUSAGE: Getting customer reviews, finding active reviewers, customer engagement analysis, review moderation\n\nUSE_CASES: Show customer reviews, find what customer reviewed, active reviewers, customer feedback, review count per customer, top reviewers\n\nEXAMPLES:\n\n- Customer's reviews: SELECT c.first_name, c.last_name, r.rating, r.review_title, r.review_date FROM customers c JOIN reviews r ON c.customer_id = r.customer_id WHERE c.customer_id = 1001 ORDER BY r.review_date DESC\n\n- Top reviewers: SELECT c.customer_id, c.email, COUNT(r.review_id) AS review_count FROM customers c JOIN reviews r ON c.customer_id = r.customer_id GROUP BY c.customer_id, c.email ORDER BY review_count DESC LIMIT 10\n\nBUSINESS_RULE: Customers can only review products they purchased (verified purchase).\n\nCOMMON_QUESTIONS: Show customer reviews. What did customer review? Top reviewers? Customer feedback? How many reviews per customer?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "customers",
+        "to_table": "reviews",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "customer reviews",
+        "customer feedback",
+        "user reviews",
+        "what customer reviewed",
+        "customer ratings",
+        "review history",
+        "top reviewers"
+      ]
+    },
+    {
+      "chunk_id": "query_find_customer_by_email",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customers",
+      "use_case": "find_customer_by_email",
+      "text": "QUERY USE CASE: Find customer by email address\n\nDESCRIPTION: The most common customer lookup method. Email is unique so returns exactly one customer or none.\n\nNATURAL_LANGUAGE_QUERIES: find customer by email, lookup customer email, search customer email, get customer from email, find user by email, customer email lookup, search by email address, who has this email\n\nTABLES_USED: customers\n\nWHEN_TO_USE: Customer login, account lookup, duplicate check, customer service inquiries, password reset, verify email, find account\n\nSQL_PATTERN: SELECT * FROM customers WHERE email = 'email_address'\n\nEXAMPLES:\n\n- Exact match: SELECT * FROM customers WHERE email = 'john.doe@example.com'\n\n- Case-insensitive: SELECT * FROM customers WHERE LOWER(email) = LOWER('John.Doe@Example.com')\n\n- Check existence: SELECT COUNT(*) FROM customers WHERE email = 'test@example.com'\n\n- With full name: SELECT customer_id, first_name || ' ' || last_name AS full_name, email FROM customers WHERE email = 'jane@example.com'\n\nBUSINESS_RULE: Email is unique, query returns 0 or 1 row. Use for authentication and customer identification.\n\nCOMMON_QUESTIONS: How to find customer by email? Lookup customer email. Search customer by email address. Get customer from email. Who has email john@example.com? Find user by email. Customer email search?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "customer_lookup",
+        "tables": [
+          "customers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "find customer email",
+        "customer lookup",
+        "email search",
+        "login",
+        "customer by email",
+        "search email",
+        "lookup email",
+        "find by email"
+      ]
+    },
+    {
+      "chunk_id": "query_customers_by_location",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customers",
+      "use_case": "customers_by_location",
+      "text": "QUERY USE CASE: Find customers by geographic location\n\nDESCRIPTION: Filter customers by city, state, or region for targeted marketing and analysis.\n\nNATURAL_LANGUAGE_QUERIES: customers in California, find customers by state, customers from Texas, show California customers, customers by city, New York customers, filter by state, customers in specific location, geographic filter\n\nTABLES_USED: customers\n\nWHEN_TO_USE: Regional marketing campaigns, demographic analysis, shipping zone reports, location-based promotions, state analysis, city analysis\n\nSQL_PATTERNS:\n\n- By state: SELECT * FROM customers WHERE state = 'STATE_CODE'\n\n- By city: SELECT * FROM customers WHERE city = 'CITY_NAME'\n\n- By region: SELECT * FROM customers WHERE state IN ('CA', 'OR', 'WA')\n\nEXAMPLES:\n\n- California customers: SELECT * FROM customers WHERE state = 'CA'\n\n- New York City: SELECT * FROM customers WHERE city = 'New York' AND state = 'NY'\n\n- West Coast: SELECT * FROM customers WHERE state IN ('CA', 'OR', 'WA')\n\n- Count by state: SELECT state, COUNT(*) AS customer_count FROM customers GROUP BY state ORDER BY customer_count DESC\n\n- Top 10 cities: SELECT city, state, COUNT(*) AS customer_count FROM customers GROUP BY city, state ORDER BY customer_count DESC LIMIT 10\n\nBUSINESS_RULE: Use 2-letter state codes (CA, NY, TX). City names are full names (New York, not NYC).\n\nCOMMON_QUESTIONS: Find customers in California. Show Texas customers. Customers from New York. How many customers in CA? Filter by state. Customers by city. Which state has most customers? California customer count?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "geographic_filter",
+        "tables": [
+          "customers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "customers by location",
+        "customers by state",
+        "customers by city",
+        "California customers",
+        "Texas customers",
+        "New York customers",
+        "geographic",
+        "regional",
+        "filter by state",
+        "customers in",
+        "from state"
+      ]
+    },
+    {
+      "chunk_id": "query_new_customers",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customers",
+      "use_case": "new_customer_acquisition",
+      "text": "QUERY USE CASE: Find new customers by registration date\n\nDESCRIPTION: Identify recently registered customers for onboarding and acquisition analysis.\n\nNATURAL_LANGUAGE_QUERIES: new customers, recent signups, customers who joined this month, new registrations, latest customers, customers joined today, recent members, new signups this week, customer growth, who joined recently\n\nTABLES_USED: customers\n\nWHEN_TO_USE: New customer welcome emails, acquisition reporting, cohort analysis, growth tracking, onboarding campaigns\n\nSQL_PATTERNS:\n\n- Last N days: SELECT * FROM customers WHERE created_at >= CURRENT_DATE - INTERVAL 'N days'\n\n- Specific month: SELECT * FROM customers WHERE DATE_TRUNC('month', created_at) = 'YYYY-MM-01'\n\n- Date range: SELECT * FROM customers WHERE created_at BETWEEN 'start_date' AND 'end_date'\n\nEXAMPLES:\n\n- Last 7 days: SELECT * FROM customers WHERE created_at >= CURRENT_DATE - INTERVAL '7 days'\n\n- This month: SELECT * FROM customers WHERE DATE_TRUNC('month', created_at) = DATE_TRUNC('month', CURRENT_DATE)\n\n- January 2024: SELECT * FROM customers WHERE created_at >= '2024-01-01' AND created_at < '2024-02-01'\n\n- Growth by month: SELECT DATE_TRUNC('month', created_at) AS month, COUNT(*) AS new_customers FROM customers GROUP BY month ORDER BY month\n\n- Last 30 days count: SELECT COUNT(*) FROM customers WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'\n\nBUSINESS_RULE: created_at is set once at registration and never changes. Use for acquisition tracking.\n\nCOMMON_QUESTIONS: Show new customers. Who joined this month? Recent signups. New customers this week. Latest registrations. How many new customers today? Customer growth this month? Customers who signed up recently?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "new_customers",
+        "tables": [
+          "customers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "new customers",
+        "recent signups",
+        "customer acquisition",
+        "registration date",
+        "new signups",
+        "joined this month",
+        "latest customers",
+        "who joined",
+        "recent members",
+        "new",
+        "recent",
+        "latest",
+        "today",
+        "this week",
+        "this month"
+      ]
+    },
+    {
+      "chunk_id": "query_customer_lifetime_value",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "customers",
+      "related_tables": "orders",
+      "use_case": "customer_lifetime_value",
+      "text": "QUERY USE CASE: Calculate customer lifetime value (CLV)\n\nDESCRIPTION: Sum total spending per customer across all their orders to identify most valuable customers.\n\nNATURAL_LANGUAGE_QUERIES: customer lifetime value, total customer spending, best customers, top customers, VIP customers, customer total spend, how much customer spent, customer revenue, most valuable customers, biggest spenders\n\nTABLES_USED: customers, orders\n\nWHEN_TO_USE: VIP customer identification, loyalty programs, marketing ROI, customer segmentation, finding best customers, revenue by customer\n\nSQL_PATTERN: SELECT c.customer_id, SUM(o.total_amount) AS lifetime_value FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id\n\nEXAMPLES:\n\n- Top 10 customers: SELECT c.customer_id, c.first_name, c.last_name, c.email, SUM(o.total_amount) AS lifetime_value FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_status != 'Cancelled' GROUP BY c.customer_id, c.first_name, c.last_name, c.email ORDER BY lifetime_value DESC LIMIT 10\n\n- CLV with order count: SELECT c.customer_id, c.email, COUNT(o.order_id) AS order_count, SUM(o.total_amount) AS lifetime_value FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id, c.email ORDER BY lifetime_value DESC\n\n- VIP customers (>$5000): SELECT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id HAVING SUM(o.total_amount) > 5000\n\nBUSINESS_RULE: Exclude cancelled orders from CLV calculation. Use WHERE o.order_status != 'Cancelled'.\n\nCOMMON_QUESTIONS: Who are best customers? Top spending customers. Customer lifetime value. Most valuable customers. VIP customers. How much did customer spend? Total customer revenue. Biggest spenders. Top 10 customers by spending?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "analytics",
+        "tables": [
+          "customers",
+          "orders"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "customer lifetime value",
+        "CLV",
+        "top customers",
+        "VIP customers",
+        "customer spending",
+        "best customers",
+        "total spend",
+        "revenue",
+        "valuable customers",
+        "biggest spenders",
+        "top spenders"
+      ]
+    }
+  ]
+}

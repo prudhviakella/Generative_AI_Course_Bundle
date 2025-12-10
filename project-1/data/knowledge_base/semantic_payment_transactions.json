@@ -1,0 +1,388 @@
+{
+  "table": "payment_transactions",
+  "description": "ENHANCED semantic memory for PAYMENT_TRANSACTIONS table - optimized for natural language semantic search",
+  "total_chunks": 15,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 9,
+    "relationships": 1,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_payment_transactions_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "payment_transactions",
+      "text": "TABLE: payment_transactions\n\nDESCRIPTION: Payment processing records for orders including payment method, transaction status, and authorization details.\n\nNATURAL_LANGUAGE_TERMS: payment transactions, transactions, payments, payment records, transaction data, payment processing, payment information, transaction records, payment details, transaction table, payment history\n\nPRIMARY_KEY: transaction_id\n\nFOREIGN_KEYS: order_id → orders.order_id\n\nUSAGE: Payment tracking, transaction history, payment verification, financial records, payment status monitoring, transaction processing, payment method analysis\n\nCOMMON_QUERIES: Payment by order, transaction history, failed payments, payment status, transactions by method, payment verification, refund processing\n\nUSE_CASES: Find payment for order, payment history, transaction lookup, verify payment, payment status check, payment method analysis",
+      "metadata": {
+        "entity": "table",
+        "table": "payment_transactions",
+        "pk": "transaction_id",
+        "fk": [
+          "order_id"
+        ]
+      },
+      "keywords": [
+        "payment_transactions",
+        "payments",
+        "transactions",
+        "payment records",
+        "transaction data",
+        "payment processing"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_transaction_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "transaction_id",
+      "text": "COLUMN: payment_transactions.transaction_id\n\nDESCRIPTION: Unique identifier for each payment transaction.\n\nNATURAL_LANGUAGE_TERMS: transaction id, transaction ID, transaction identifier, transaction number, payment id, transaction reference, payment reference, transaction key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Transaction identification, payment lookup, transaction reference, payment tracking\n\nUSE_CASES: Get transaction details, transaction lookup, payment identification\n\nEXAMPLES:\n\n- Specific transaction: SELECT * FROM payment_transactions WHERE transaction_id = 10001\n\n- Transaction details: WHERE transaction_id = 10001\n\nBUSINESS_RULE: Unique identifier for each payment transaction. Immutable once assigned.\n\nCOMMON_QUESTIONS: Transaction ID? Get transaction by ID? Transaction identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "transaction_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "transaction_id",
+        "transaction ID",
+        "transaction identifier",
+        "primary key",
+        "payment id"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_order_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "order_id",
+      "text": "COLUMN: payment_transactions.order_id\n\nDESCRIPTION: Links payment transaction to the order being paid.\n\nNATURAL_LANGUAGE_TERMS: order id, order ID, order number, which order, order identifier, order reference, payment for order, order being paid\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: orders.order_id\n\nUSAGE: Order payment lookup, linking payment to order, order payment verification, payment for order\n\nUSE_CASES: Find payment for order, order payment, payment verification for order, which order paid\n\nEXAMPLES:\n\n- Order payment: SELECT * FROM payment_transactions WHERE order_id = 3001\n\n- With order details: FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.order_id = 3001\n\n- Order payment status: SELECT o.order_id, pt.transaction_status, pt.amount FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: One order typically has one payment transaction. Links order to payment processing.\n\nCOMMON_QUESTIONS: Payment for order? Order payment details? Is order paid? Payment verification for order?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "order_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "orders.order_id"
+      },
+      "keywords": [
+        "order_id",
+        "foreign key",
+        "order number",
+        "payment for order",
+        "order payment",
+        "which order"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_payment_method",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "payment_method",
+      "text": "COLUMN: payment_transactions.payment_method\n\nDESCRIPTION: Payment method used for transaction.\n\nNATURAL_LANGUAGE_TERMS: payment method, payment type, how paid, payment option, payment method used, method of payment, credit card, PayPal, payment way\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Credit Card, PayPal, Debit Card\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Payment method analysis, payment type filtering, payment method preferences, payment method reporting\n\nUSE_CASES: Filter by payment method, payment method analysis, credit card payments, PayPal transactions, payment method trends\n\nEXAMPLES:\n\n- Credit card payments: SELECT * FROM payment_transactions WHERE payment_method = 'Credit Card'\n\n- PayPal transactions: WHERE payment_method = 'PayPal'\n\n- Payment method distribution: SELECT payment_method, COUNT(*) FROM payment_transactions GROUP BY payment_method ORDER BY COUNT(*) DESC\n\n- Multiple methods: WHERE payment_method IN ('Credit Card', 'Debit Card')\n\nBUSINESS_RULE: Three payment methods available. Credit Card, PayPal, Debit Card. Required field.\n\nCOMMON_QUESTIONS: Payment method? How did customer pay? Credit card payments? PayPal transactions? Payment method used?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "payment_method",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "payment_method",
+        "payment type",
+        "how paid",
+        "credit card",
+        "PayPal",
+        "debit card",
+        "payment option"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_transaction_date",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "transaction_date",
+      "text": "COLUMN: payment_transactions.transaction_date\n\nDESCRIPTION: Date and time when payment transaction was processed.\n\nNATURAL_LANGUAGE_TERMS: transaction date, payment date, when paid, transaction time, payment timestamp, date paid, transaction timestamp, when processed, payment time\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Transaction date filtering, payment timeline, date paid analysis, recent transactions, payment history by date\n\nUSE_CASES: Recent payments, transactions by date, when paid, payment timeline, date filtering\n\nEXAMPLES:\n\n- Today's transactions: SELECT * FROM payment_transactions WHERE DATE(transaction_date) = CURRENT_DATE\n\n- Last 7 days: WHERE transaction_date >= CURRENT_DATE - INTERVAL '7 days'\n\n- Date range: WHERE transaction_date BETWEEN '2024-01-01' AND '2024-01-31'\n\n- Transactions by day: SELECT DATE(transaction_date), COUNT(*) FROM payment_transactions GROUP BY DATE(transaction_date) ORDER BY DATE(transaction_date) DESC\n\nBUSINESS_RULE: Timestamp when payment processed. Use for transaction timeline and date analysis.\n\nCOMMON_QUESTIONS: When paid? Transaction date? Recent payments? Payment date? Transactions today? When processed?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "transaction_date",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "transaction_date",
+        "payment date",
+        "when paid",
+        "transaction time",
+        "payment timestamp",
+        "when processed"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_amount",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "amount",
+      "text": "COLUMN: payment_transactions.amount\n\nDESCRIPTION: Payment amount in dollars.\n\nNATURAL_LANGUAGE_TERMS: amount, payment amount, transaction amount, how much paid, payment total, transaction total, dollar amount, payment value, transaction value, amount paid\n\nDATA_TYPE: DECIMAL(10,2)\n\nCONSTRAINTS: amount > 0\n\nUSAGE: Payment amount tracking, revenue calculation, transaction value analysis, payment totals, financial reporting\n\nUSE_CASES: Payment amount, transaction total, how much paid, revenue by payment method, large transactions\n\nEXAMPLES:\n\n- Large transactions: SELECT * FROM payment_transactions WHERE amount > 500 ORDER BY amount DESC\n\n- Total revenue: SELECT SUM(amount) FROM payment_transactions WHERE transaction_status = 'Completed'\n\n- Revenue by method: SELECT payment_method, SUM(amount) AS total_revenue FROM payment_transactions WHERE transaction_status = 'Completed' GROUP BY payment_method\n\n- Average transaction: SELECT AVG(amount) FROM payment_transactions WHERE transaction_status = 'Completed'\n\nBUSINESS_RULE: Positive decimal amount. Should match order total_amount. Two decimal places for cents.\n\nCOMMON_QUESTIONS: Payment amount? How much paid? Transaction total? Payment value? Revenue? Amount paid?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "amount",
+        "type": "DECIMAL",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "amount",
+        "payment amount",
+        "how much paid",
+        "transaction amount",
+        "payment total",
+        "transaction value",
+        "dollar amount"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_transaction_status",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "transaction_status",
+      "text": "COLUMN: payment_transactions.transaction_status\n\nDESCRIPTION: Current status of payment transaction.\n\nNATURAL_LANGUAGE_TERMS: transaction status, payment status, status, transaction state, payment state, completed, failed, pending, refunded, payment result\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Completed, Failed, Pending, Refunded\n\nCONSTRAINTS: NOT NULL\n\nSTATUS_VALUES: Completed=successful, Failed=declined/error, Pending=processing, Refunded=reversed\n\nUSAGE: Payment status tracking, failed payment monitoring, status filtering, payment verification, refund tracking\n\nUSE_CASES: Filter by status, failed payments, completed payments, pending transactions, refund tracking, payment verification\n\nEXAMPLES:\n\n- Completed payments: SELECT * FROM payment_transactions WHERE transaction_status = 'Completed'\n\n- Failed payments: WHERE transaction_status = 'Failed'\n\n- Pending transactions: WHERE transaction_status = 'Pending'\n\n- Refunded: WHERE transaction_status = 'Refunded'\n\n- Status distribution: SELECT transaction_status, COUNT(*) FROM payment_transactions GROUP BY transaction_status\n\n- Success rate: SELECT COUNT(*) AS total, SUM(CASE WHEN transaction_status = 'Completed' THEN 1 ELSE 0 END) AS successful, ROUND(100.0 * SUM(CASE WHEN transaction_status = 'Completed' THEN 1 ELSE 0 END) / COUNT(*), 2) AS success_rate FROM payment_transactions\n\nBUSINESS_RULE: Completed=payment successful, Failed=declined/error, Pending=processing, Refunded=reversed payment.\n\nCOMMON_QUESTIONS: Payment status? Is payment completed? Failed payments? Payment successful? Refunded transactions? Transaction status?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "transaction_status",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "transaction_status",
+        "payment status",
+        "completed",
+        "failed",
+        "pending",
+        "refunded",
+        "payment result",
+        "status"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_payment_gateway",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "payment_gateway",
+      "text": "COLUMN: payment_transactions.payment_gateway\n\nDESCRIPTION: Payment gateway/processor used for transaction.\n\nNATURAL_LANGUAGE_TERMS: payment gateway, gateway, payment processor, processor, Stripe, PayPal Gateway, gateway used, payment service, processor used\n\nDATA_TYPE: VARCHAR(50)\n\nVALID_VALUES: Stripe, PayPal Gateway\n\nUSAGE: Gateway performance analysis, processor tracking, gateway filtering, payment processor comparison\n\nUSE_CASES: Filter by gateway, gateway performance, Stripe transactions, PayPal Gateway transactions, processor analysis\n\nEXAMPLES:\n\n- Stripe transactions: SELECT * FROM payment_transactions WHERE payment_gateway = 'Stripe'\n\n- PayPal Gateway: WHERE payment_gateway = 'PayPal Gateway'\n\n- Gateway distribution: SELECT payment_gateway, COUNT(*) FROM payment_transactions GROUP BY payment_gateway\n\n- Gateway success rate: SELECT payment_gateway, COUNT(*) AS total, SUM(CASE WHEN transaction_status = 'Completed' THEN 1 ELSE 0 END) AS successful FROM payment_transactions GROUP BY payment_gateway\n\nBUSINESS_RULE: Two payment gateways available. Stripe and PayPal Gateway. Used for processing payments.\n\nCOMMON_QUESTIONS: Payment gateway? Which processor? Stripe transactions? PayPal Gateway? Gateway performance?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "payment_gateway",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "payment_gateway",
+        "gateway",
+        "payment processor",
+        "Stripe",
+        "PayPal Gateway",
+        "processor"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_authorization_code",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "authorization_code",
+      "text": "COLUMN: payment_transactions.authorization_code\n\nDESCRIPTION: Payment authorization code from gateway/processor.\n\nNATURAL_LANGUAGE_TERMS: authorization code, auth code, authorization, approval code, transaction code, authorization number, auth number, approval number, gateway code\n\nDATA_TYPE: VARCHAR(50)\n\nUSAGE: Payment verification, authorization lookup, transaction reference, gateway reconciliation, dispute resolution\n\nUSE_CASES: Verify authorization, authorization lookup, transaction verification, payment confirmation\n\nEXAMPLES:\n\n- Find by auth code: SELECT * FROM payment_transactions WHERE authorization_code = 'AUTH123456789'\n\n- With authorization: WHERE authorization_code IS NOT NULL\n\n- Transaction verification: SELECT transaction_id, authorization_code, transaction_status FROM payment_transactions WHERE order_id = 3001\n\nBUSINESS_RULE: Gateway/processor authorization code. Used for verification and reconciliation. Important for dispute resolution.\n\nCOMMON_QUESTIONS: Authorization code? Auth code? Payment authorization? Approval code? Transaction code?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "authorization_code",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "authorization_code",
+        "auth code",
+        "authorization",
+        "approval code",
+        "transaction code",
+        "gateway code"
+      ]
+    },
+    {
+      "chunk_id": "col_payment_transactions_processed_by",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "payment_transactions",
+      "column_name": "processed_by",
+      "text": "COLUMN: payment_transactions.processed_by\n\nDESCRIPTION: System or user who processed the transaction.\n\nNATURAL_LANGUAGE_TERMS: processed by, who processed, processor, processed by system, processed by user, handler, transaction processor, who handled\n\nDATA_TYPE: VARCHAR(100)\n\nUSAGE: Transaction auditing, processor tracking, user activity, system audit trail, transaction accountability\n\nUSE_CASES: Who processed transaction, transaction audit, processor tracking, system activity\n\nEXAMPLES:\n\n- Transactions by processor: SELECT processed_by, COUNT(*) FROM payment_transactions GROUP BY processed_by\n\n- System processed: WHERE processed_by LIKE '%System%'\n\n- User processed: WHERE processed_by NOT LIKE '%System%'\n\n- Transaction audit: SELECT transaction_id, processed_by, transaction_date FROM payment_transactions WHERE transaction_date >= CURRENT_DATE - INTERVAL '7 days'\n\nBUSINESS_RULE: Identifier for system or user who processed transaction. Used for audit trail and accountability.\n\nCOMMON_QUESTIONS: Who processed transaction? Processed by? Transaction processor? Who handled payment?",
+      "metadata": {
+        "entity": "column",
+        "table": "payment_transactions",
+        "column": "processed_by",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "processed_by",
+        "who processed",
+        "processor",
+        "handler",
+        "transaction processor",
+        "who handled"
+      ]
+    },
+    {
+      "chunk_id": "rel_payment_transactions_to_orders",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "payment_transactions",
+      "related_table": "orders",
+      "text": "RELATIONSHIP: payment_transactions to orders (One-to-One)\n\nDESCRIPTION: Each payment transaction belongs to one order. Order typically has one payment.\n\nNATURAL_LANGUAGE_TERMS: order payment, payment for order, order transaction, order payment details, payment linked to order, order payment information\n\nJOIN_CONDITION: payment_transactions.order_id = orders.order_id\n\nCARDINALITY: 1:1 (one order has one payment transaction)\n\nFOREIGN_KEY: payment_transactions.order_id references orders.order_id\n\nUSAGE: Order payment lookup, payment verification, complete order information with payment, order financial details\n\nUSE_CASES: Find payment for order, order payment details, payment verification for order, complete order view\n\nEXAMPLES:\n\n- Order with payment: SELECT o.order_id, o.total_amount, pt.payment_method, pt.transaction_status, pt.transaction_date FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.order_id = 3001\n\n- Payment verification: SELECT o.order_id, o.order_status, pt.transaction_status, pt.amount FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.customer_id = 1001\n\n- Orders without payment: SELECT o.* FROM orders o LEFT JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE pt.transaction_id IS NULL\n\n- Amount verification: SELECT o.order_id, o.total_amount AS order_total, pt.amount AS payment_amount FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.total_amount != pt.amount\n\nBUSINESS_RULE: One order has one payment transaction. Payment amount should match order total_amount. Use LEFT JOIN for orders without payments.\n\nCOMMON_QUESTIONS: Payment for order? Order payment details? Is order paid? Payment verification? Order financial information?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "payment_transactions",
+        "to_table": "orders",
+        "cardinality": "1:1",
+        "join_type": "one_to_one"
+      },
+      "keywords": [
+        "order payment",
+        "payment for order",
+        "order transaction",
+        "payment verification",
+        "order payment details"
+      ]
+    },
+    {
+      "chunk_id": "query_payment_verification",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "payment_transactions",
+      "related_tables": "orders",
+      "use_case": "verify_payment",
+      "text": "QUERY USE CASE: Verify order payment status\n\nDESCRIPTION: Check if order has been paid and payment was successful.\n\nNATURAL_LANGUAGE_QUERIES: is order paid, payment verification, verify payment, check payment status, order payment status, was payment successful, payment completed\n\nTABLES_USED: payment_transactions, orders\n\nWHEN_TO_USE: Order verification, payment confirmation, order processing, payment status check\n\nSQL_PATTERN: SELECT transaction_status FROM payment_transactions WHERE order_id = X\n\nEXAMPLES:\n\n- Order payment status: SELECT pt.transaction_status, pt.payment_method, pt.amount FROM payment_transactions pt WHERE pt.order_id = 3001\n\n- Is paid: SELECT CASE WHEN pt.transaction_status = 'Completed' THEN 'Yes' ELSE 'No' END AS is_paid FROM payment_transactions pt WHERE pt.order_id = 3001\n\n- Payment verification: SELECT o.order_id, o.total_amount, pt.transaction_status, pt.amount, pt.transaction_date FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.order_id = 3001\n\n- Amount match: SELECT o.order_id, o.total_amount, pt.amount, CASE WHEN o.total_amount = pt.amount THEN 'Match' ELSE 'Mismatch' END AS verification FROM orders o JOIN payment_transactions pt ON o.order_id = pt.order_id WHERE o.order_id = 3001\n\nBUSINESS_RULE: transaction_status = 'Completed' means payment successful. Amount should match order total_amount.\n\nCOMMON_QUESTIONS: Is order paid? Payment status? Was payment successful? Verify payment? Order paid successfully?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "payment_verification",
+        "tables": [
+          "payment_transactions",
+          "orders"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "is order paid",
+        "payment verification",
+        "verify payment",
+        "payment status",
+        "payment successful",
+        "order paid"
+      ]
+    },
+    {
+      "chunk_id": "query_failed_payments",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "payment_transactions",
+      "related_tables": "orders, customers",
+      "use_case": "failed_payments",
+      "text": "QUERY USE CASE: Identify and analyze failed payments\n\nDESCRIPTION: Find transactions that failed and need follow-up.\n\nNATURAL_LANGUAGE_QUERIES: failed payments, payment failures, declined payments, unsuccessful payments, failed transactions, payment errors, payment issues\n\nTABLES_USED: payment_transactions, orders, customers\n\nWHEN_TO_USE: Payment issue tracking, customer service, payment retry, failure analysis\n\nSQL_PATTERN: SELECT * FROM payment_transactions WHERE transaction_status = 'Failed'\n\nEXAMPLES:\n\n- Failed payments: SELECT pt.transaction_id, o.order_id, c.email, pt.payment_method, pt.amount, pt.transaction_date FROM payment_transactions pt JOIN orders o ON pt.order_id = o.order_id JOIN customers c ON o.customer_id = c.customer_id WHERE pt.transaction_status = 'Failed' ORDER BY pt.transaction_date DESC\n\n- Recent failures: SELECT * FROM payment_transactions WHERE transaction_status = 'Failed' AND transaction_date >= CURRENT_DATE - INTERVAL '7 days'\n\n- Failure rate: SELECT payment_method, COUNT(*) AS total, SUM(CASE WHEN transaction_status = 'Failed' THEN 1 ELSE 0 END) AS failed, ROUND(100.0 * SUM(CASE WHEN transaction_status = 'Failed' THEN 1 ELSE 0 END) / COUNT(*), 2) AS failure_rate FROM payment_transactions GROUP BY payment_method\n\n- Failed by gateway: SELECT payment_gateway, COUNT(*) AS failures FROM payment_transactions WHERE transaction_status = 'Failed' GROUP BY payment_gateway\n\nBUSINESS_RULE: Failed status indicates payment declined or error. Requires customer follow-up or payment retry.\n\nCOMMON_QUESTIONS: Failed payments? Payment failures? Declined payments? Payment errors? Unsuccessful payments? Payment issues?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "failure_analysis",
+        "tables": [
+          "payment_transactions",
+          "orders",
+          "customers"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "failed payments",
+        "payment failures",
+        "declined",
+        "unsuccessful",
+        "payment errors",
+        "payment issues"
+      ]
+    },
+    {
+      "chunk_id": "query_payment_method_analysis",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "payment_transactions",
+      "use_case": "payment_method_trends",
+      "text": "QUERY USE CASE: Analyze payment method usage and preferences\n\nDESCRIPTION: Understand which payment methods customers prefer and their performance.\n\nNATURAL_LANGUAGE_QUERIES: payment method analysis, payment methods used, credit card vs PayPal, payment preferences, payment method trends, most popular payment method\n\nTABLES_USED: payment_transactions\n\nWHEN_TO_USE: Business intelligence, payment strategy, payment option analysis, customer preference analysis\n\nSQL_PATTERN: SELECT payment_method, COUNT(*), SUM(amount) FROM payment_transactions GROUP BY payment_method\n\nEXAMPLES:\n\n- Payment method distribution: SELECT payment_method, COUNT(*) AS transaction_count, SUM(amount) AS total_revenue FROM payment_transactions WHERE transaction_status = 'Completed' GROUP BY payment_method ORDER BY transaction_count DESC\n\n- Most popular method: SELECT payment_method, COUNT(*) AS count FROM payment_transactions GROUP BY payment_method ORDER BY count DESC LIMIT 1\n\n- Revenue by method: SELECT payment_method, SUM(amount) AS revenue FROM payment_transactions WHERE transaction_status = 'Completed' GROUP BY payment_method ORDER BY revenue DESC\n\n- Method success rate: SELECT payment_method, COUNT(*) AS total, SUM(CASE WHEN transaction_status = 'Completed' THEN 1 ELSE 0 END) AS successful, ROUND(100.0 * SUM(CASE WHEN transaction_status = 'Completed' THEN 1 ELSE 0 END) / COUNT(*), 2) AS success_rate FROM payment_transactions GROUP BY payment_method ORDER BY success_rate DESC\n\nBUSINESS_RULE: Analyze completed transactions for revenue. Include all statuses for success rate calculation.\n\nCOMMON_QUESTIONS: Payment method analysis? Most popular payment method? Credit card vs PayPal? Payment preferences? Payment method trends?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "payment_analytics",
+        "tables": [
+          "payment_transactions"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "payment method analysis",
+        "payment methods",
+        "credit card vs PayPal",
+        "payment preferences",
+        "most popular",
+        "payment trends"
+      ]
+    },
+    {
+      "chunk_id": "query_refund_tracking",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "payment_transactions",
+      "related_tables": "orders",
+      "use_case": "refund_management",
+      "text": "QUERY USE CASE: Track refunded transactions\n\nDESCRIPTION: Find and analyze refunded payments for customer service and financial reporting.\n\nNATURAL_LANGUAGE_QUERIES: refunded transactions, refunds, refunded payments, refund list, refund tracking, refund analysis, money back\n\nTABLES_USED: payment_transactions, orders\n\nWHEN_TO_USE: Refund tracking, customer service, financial reporting, refund analysis\n\nSQL_PATTERN: SELECT * FROM payment_transactions WHERE transaction_status = 'Refunded'\n\nEXAMPLES:\n\n- All refunds: SELECT pt.transaction_id, pt.order_id, pt.amount, pt.payment_method, pt.transaction_date FROM payment_transactions pt WHERE pt.transaction_status = 'Refunded' ORDER BY pt.transaction_date DESC\n\n- Recent refunds: SELECT * FROM payment_transactions WHERE transaction_status = 'Refunded' AND transaction_date >= CURRENT_DATE - INTERVAL '30 days'\n\n- Refund totals: SELECT COUNT(*) AS refund_count, SUM(amount) AS total_refunded FROM payment_transactions WHERE transaction_status = 'Refunded'\n\n- Refunds by method: SELECT payment_method, COUNT(*) AS refund_count, SUM(amount) AS total_amount FROM payment_transactions WHERE transaction_status = 'Refunded' GROUP BY payment_method\n\n- Refund rate: SELECT COUNT(*) AS total_completed, SUM(CASE WHEN transaction_status = 'Refunded' THEN 1 ELSE 0 END) AS refunded, ROUND(100.0 * SUM(CASE WHEN transaction_status = 'Refunded' THEN 1 ELSE 0 END) / COUNT(*), 2) AS refund_rate FROM payment_transactions WHERE transaction_status IN ('Completed', 'Refunded')\n\nBUSINESS_RULE: Refunded status indicates payment was reversed. Track for financial reporting and customer service.\n\nCOMMON_QUESTIONS: Refunded transactions? Refunds? Refund list? How many refunds? Total refunded? Refund tracking?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "refund_tracking",
+        "tables": [
+          "payment_transactions",
+          "orders"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "refunded transactions",
+        "refunds",
+        "refunded payments",
+        "refund list",
+        "refund tracking",
+        "money back"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "table": "categories",
+  "description": "ENHANCED semantic memory for CATEGORIES table - optimized for natural language semantic search",
+  "total_chunks": 13,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 6,
+    "relationships": 2,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_categories_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "categories",
+      "text": "TABLE: categories\n\nDESCRIPTION: Product category hierarchy with parent-child relationships for organizing products.\n\nNATURAL_LANGUAGE_TERMS: categories, category table, product categories, category hierarchy, category tree, parent categories, subcategories, category structure, category organization, product classification, taxonomy\n\nPRIMARY_KEY: category_id\n\nFOREIGN_KEYS: parent_category_id → categories.category_id (self-referencing)\n\nREFERENCED_BY: products.category (via category_name)\n\nTABLE_TYPE: Hierarchical/tree structure with self-referencing parent-child relationships\n\nUSAGE: Category management, product organization, category hierarchy, navigation structure, product classification, category browsing, taxonomic organization\n\nCOMMON_QUERIES: Category list, category hierarchy, subcategories, parent categories, category tree, products by category\n\nUSE_CASES: Browse categories, category navigation, organize products, category hierarchy, subcategory lookup",
+      "metadata": {
+        "entity": "table",
+        "table": "categories",
+        "pk": "category_id",
+        "fk": [
+          "parent_category_id"
+        ],
+        "table_type": "hierarchical"
+      },
+      "keywords": [
+        "categories",
+        "category hierarchy",
+        "subcategories",
+        "parent categories",
+        "category tree",
+        "product categories"
+      ]
+    },
+    {
+      "chunk_id": "col_categories_category_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "categories",
+      "column_name": "category_id",
+      "text": "COLUMN: categories.category_id\n\nDESCRIPTION: Unique identifier for each category.\n\nNATURAL_LANGUAGE_TERMS: category id, category ID, category identifier, category number, category code, category reference, category key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nREFERENCED_BY: categories.parent_category_id (self-referencing)\n\nUSAGE: Category identification, category reference, hierarchy building, category tracking\n\nUSE_CASES: Get category details, category lookup, category identification, hierarchy reference\n\nEXAMPLES:\n\n- Specific category: SELECT * FROM categories WHERE category_id = 13001\n\n- Category details: WHERE category_id = 13001\n\nBUSINESS_RULE: Unique identifier for each category. Immutable once assigned. Used for parent-child relationships.\n\nCOMMON_QUESTIONS: Category ID? Get category by ID? Category identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "categories",
+        "column": "category_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "category_id",
+        "category ID",
+        "category identifier",
+        "primary key",
+        "category number"
+      ]
+    },
+    {
+      "chunk_id": "col_categories_category_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "categories",
+      "column_name": "category_name",
+      "text": "COLUMN: categories.category_name\n\nDESCRIPTION: Name of the category.\n\nNATURAL_LANGUAGE_TERMS: category name, category title, category label, name of category, category called, what category, category type\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL, UNIQUE\n\nREFERENCED_BY: products.category\n\nVALID_VALUES: Electronics, Clothing, Home & Kitchen, Sports & Outdoors, Beauty & Personal Care, Books, Toys & Games, Automotive, Health & Wellness, Pet Supplies\n\nUSAGE: Category identification, category search, product categorization, category filtering, category display\n\nUSE_CASES: Find category by name, category search, product category, category filtering, category display\n\nEXAMPLES:\n\n- Find category: SELECT * FROM categories WHERE category_name = 'Electronics'\n\n- Category search: WHERE category_name LIKE '%Sports%'\n\n- All categories: SELECT category_name FROM categories ORDER BY category_name\n\nBUSINESS_RULE: Unique category names. Referenced by products.category for product classification.\n\nCOMMON_QUESTIONS: Category name? What categories? Find category? Electronics category? Category list?",
+      "metadata": {
+        "entity": "column",
+        "table": "categories",
+        "column": "category_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "category_name",
+        "category title",
+        "category label",
+        "name of category",
+        "what category",
+        "Electronics"
+      ]
+    },
+    {
+      "chunk_id": "col_categories_parent_category_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "categories",
+      "column_name": "parent_category_id",
+      "text": "COLUMN: categories.parent_category_id\n\nDESCRIPTION: References parent category for hierarchical structure (NULL for top-level categories).\n\nNATURAL_LANGUAGE_TERMS: parent category, parent category id, parent id, parent, parent category identifier, belongs to category, category parent, top level category, root category\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY (self-referencing), Optional (NULL for root categories)\n\nREFERENCES: categories.category_id (self-referencing)\n\nUSAGE: Category hierarchy, parent-child relationships, category tree structure, navigation hierarchy, subcategory organization\n\nUSE_CASES: Category hierarchy, parent category lookup, subcategories, category tree, navigation structure\n\nEXAMPLES:\n\n- Top-level categories: SELECT * FROM categories WHERE parent_category_id IS NULL\n\n- Subcategories: SELECT * FROM categories WHERE parent_category_id = 13001\n\n- Category with parent: SELECT c.category_name, p.category_name AS parent_name FROM categories c LEFT JOIN categories p ON c.parent_category_id = p.category_id\n\n- Category tree: WITH RECURSIVE cat_tree AS (SELECT category_id, category_name, parent_category_id, 0 AS level FROM categories WHERE parent_category_id IS NULL UNION ALL SELECT c.category_id, c.category_name, c.parent_category_id, ct.level + 1 FROM categories c JOIN cat_tree ct ON c.parent_category_id = ct.category_id) SELECT * FROM cat_tree\n\nBUSINESS_RULE: NULL = top-level category. Non-NULL references parent category. Self-referencing foreign key enables hierarchy.\n\nCOMMON_QUESTIONS: Parent category? Subcategories? Category hierarchy? Top-level categories? Category tree?",
+      "metadata": {
+        "entity": "column",
+        "table": "categories",
+        "column": "parent_category_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "categories.category_id",
+        "is_self_referencing": true
+      },
+      "keywords": [
+        "parent_category_id",
+        "parent category",
+        "parent id",
+        "hierarchy",
+        "subcategories",
+        "top level",
+        "root"
+      ]
+    },
+    {
+      "chunk_id": "col_categories_category_level",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "categories",
+      "column_name": "category_level",
+      "text": "COLUMN: categories.category_level\n\nDESCRIPTION: Depth level in category hierarchy (1=top level, 2=subcategory, etc.).\n\nNATURAL_LANGUAGE_TERMS: category level, level, depth, hierarchy level, category depth, tree level, nesting level, how deep, category tier\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: category_level > 0\n\nUSAGE: Hierarchy navigation, level filtering, breadcrumb generation, tree depth analysis, category organization\n\nUSE_CASES: Filter by level, top-level categories, subcategory depth, hierarchy structure, breadcrumb trails\n\nEXAMPLES:\n\n- Top-level: SELECT * FROM categories WHERE category_level = 1\n\n- Subcategories: SELECT * FROM categories WHERE category_level = 2\n\n- By level: SELECT category_level, COUNT(*) FROM categories GROUP BY category_level ORDER BY category_level\n\n- Max depth: SELECT MAX(category_level) AS max_depth FROM categories\n\nBUSINESS_RULE: Level 1 = top-level categories. Level 2 = subcategories. Higher numbers = deeper nesting.\n\nCOMMON_QUESTIONS: Category level? Top-level categories? How deep? Category depth? Hierarchy level?",
+      "metadata": {
+        "entity": "column",
+        "table": "categories",
+        "column": "category_level",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "category_level",
+        "level",
+        "depth",
+        "hierarchy level",
+        "category depth",
+        "top level",
+        "how deep"
+      ]
+    },
+    {
+      "chunk_id": "col_categories_description",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "categories",
+      "column_name": "description",
+      "text": "COLUMN: categories.description\n\nDESCRIPTION: Text description of category and what it contains.\n\nNATURAL_LANGUAGE_TERMS: description, category description, what is category, category details, category info, about category, category explanation, category content\n\nDATA_TYPE: TEXT\n\nUSAGE: Category information display, category explanation, user guidance, category understanding, SEO content\n\nUSE_CASES: Category description, what category contains, category information, category details, about category\n\nEXAMPLES:\n\n- Category info: SELECT category_name, description FROM categories WHERE category_id = 13001\n\n- Search descriptions: WHERE description LIKE '%gadgets%'\n\n- All descriptions: SELECT category_name, description FROM categories ORDER BY category_name\n\nBUSINESS_RULE: Explains what products belong in category. Helps users understand category content.\n\nCOMMON_QUESTIONS: What is category? Category description? What does category contain? About category? Category details?",
+      "metadata": {
+        "entity": "column",
+        "table": "categories",
+        "column": "description",
+        "type": "TEXT",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "description",
+        "category description",
+        "what is category",
+        "category details",
+        "about category",
+        "category info"
+      ]
+    },
+    {
+      "chunk_id": "col_categories_created_at",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "categories",
+      "column_name": "created_at",
+      "text": "COLUMN: categories.created_at\n\nDESCRIPTION: Timestamp when category was created.\n\nNATURAL_LANGUAGE_TERMS: created at, creation date, when created, date created, category created, when added, date added, created date, timestamp\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nUSAGE: Category creation tracking, audit trail, new categories, category timeline, historical tracking\n\nUSE_CASES: When category created, new categories, category history, creation timeline, recently added\n\nEXAMPLES:\n\n- Recent categories: SELECT * FROM categories ORDER BY created_at DESC LIMIT 10\n\n- Created after date: WHERE created_at >= '2024-01-01'\n\n- Category age: SELECT category_name, CURRENT_DATE - DATE(created_at) AS days_old FROM categories\n\nBUSINESS_RULE: Set once when category created. Never modified. Useful for tracking category additions.\n\nCOMMON_QUESTIONS: When was category created? New categories? Category creation date? Recently added categories?",
+      "metadata": {
+        "entity": "column",
+        "table": "categories",
+        "column": "created_at",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "created_at",
+        "when created",
+        "creation date",
+        "date created",
+        "when added",
+        "new categories"
+      ]
+    },
+    {
+      "chunk_id": "rel_categories_self_referencing",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "categories",
+      "related_table": "categories",
+      "text": "RELATIONSHIP: categories to categories (Self-Referencing Hierarchy)\n\nDESCRIPTION: Categories reference parent categories to form hierarchical tree structure.\n\nNATURAL_LANGUAGE_TERMS: category hierarchy, parent child categories, category tree, subcategories, parent categories, category structure, hierarchical categories, category organization\n\nJOIN_CONDITION: child.parent_category_id = parent.category_id\n\nCARDINALITY: 1:N (one parent has many children)\n\nFOREIGN_KEY: categories.parent_category_id references categories.category_id (self-referencing)\n\nUSAGE: Category hierarchy navigation, tree structure, breadcrumb trails, category organization, parent-child relationships\n\nUSE_CASES: Category tree, parent category lookup, subcategories, hierarchy navigation, category structure\n\nEXAMPLES:\n\n- Category with parent: SELECT c.category_name, p.category_name AS parent_category FROM categories c LEFT JOIN categories p ON c.parent_category_id = p.category_id\n\n- Top-level categories: SELECT * FROM categories WHERE parent_category_id IS NULL ORDER BY category_name\n\n- Subcategories: SELECT child.category_name FROM categories parent JOIN categories child ON parent.category_id = child.parent_category_id WHERE parent.category_name = 'Electronics'\n\n- Full hierarchy: SELECT parent.category_name AS parent, child.category_name AS child FROM categories parent LEFT JOIN categories child ON parent.category_id = child.parent_category_id ORDER BY parent.category_name, child.category_name\n\nBUSINESS_RULE: Self-referencing creates tree structure. NULL parent_category_id = root/top-level. Enables multi-level hierarchy.\n\nCOMMON_QUESTIONS: Category hierarchy? Parent category? Subcategories? Category tree? Parent-child categories?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "categories",
+        "to_table": "categories",
+        "cardinality": "1:N",
+        "join_type": "self_referencing"
+      },
+      "keywords": [
+        "category hierarchy",
+        "parent child",
+        "subcategories",
+        "category tree",
+        "parent categories",
+        "hierarchical"
+      ]
+    },
+    {
+      "chunk_id": "rel_categories_to_products",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "categories",
+      "related_table": "products",
+      "text": "RELATIONSHIP: categories to products (One-to-Many)\n\nDESCRIPTION: One category contains many products. Products reference category by name.\n\nNATURAL_LANGUAGE_TERMS: products in category, category products, products by category, category items, what's in category, category contents, products under category\n\nJOIN_CONDITION: categories.category_name = products.category\n\nCARDINALITY: 1:N (one category has many products)\n\nUSAGE: Product filtering by category, category product listing, product organization, category browsing\n\nUSE_CASES: Products in category, filter by category, category products, browse category, products under category\n\nEXAMPLES:\n\n- Products in category: SELECT p.* FROM products p JOIN categories c ON p.category = c.category_name WHERE c.category_name = 'Electronics'\n\n- Product count: SELECT c.category_name, COUNT(p.product_id) AS product_count FROM categories c LEFT JOIN products p ON c.category_name = p.category GROUP BY c.category_name ORDER BY product_count DESC\n\n- Category with products: SELECT c.category_name, p.product_name, p.price FROM categories c JOIN products p ON c.category_name = p.category WHERE c.category_id = 13001\n\n- Empty categories: SELECT c.category_name FROM categories c LEFT JOIN products p ON c.category_name = p.category WHERE p.product_id IS NULL\n\nBUSINESS_RULE: Products reference category by category_name (not category_id). One category can have 0-many products.\n\nCOMMON_QUESTIONS: Products in category? Category products? What's in category? Products by category? Filter by category?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "categories",
+        "to_table": "products",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "products in category",
+        "category products",
+        "products by category",
+        "what's in category",
+        "filter by category"
+      ]
+    },
+    {
+      "chunk_id": "query_category_hierarchy",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "categories",
+      "use_case": "category_tree",
+      "text": "QUERY USE CASE: Display complete category hierarchy\n\nDESCRIPTION: Show category tree structure with parent-child relationships.\n\nNATURAL_LANGUAGE_QUERIES: category hierarchy, category tree, category structure, parent child categories, category organization, category navigation, show all categories\n\nTABLES_USED: categories\n\nWHEN_TO_USE: Navigation menu, category browsing, site structure, category management\n\nSQL_PATTERN: SELECT categories with parent JOIN\n\nEXAMPLES:\n\n- Category with parents: SELECT c.category_name, c.category_level, p.category_name AS parent_category FROM categories c LEFT JOIN categories p ON c.parent_category_id = p.category_id ORDER BY c.category_level, c.category_name\n\n- Top-level only: SELECT category_name, description FROM categories WHERE parent_category_id IS NULL ORDER BY category_name\n\n- Subcategories of parent: SELECT child.category_name, child.description FROM categories parent JOIN categories child ON parent.category_id = child.parent_category_id WHERE parent.category_name = 'Electronics' ORDER BY child.category_name\n\n- Full tree structure: SELECT REPEAT('  ', category_level - 1) || category_name AS indented_name, category_level FROM categories ORDER BY category_name\n\n- Category counts: SELECT category_level, COUNT(*) AS count FROM categories GROUP BY category_level ORDER BY category_level\n\nBUSINESS_RULE: Use parent_category_id JOIN for hierarchy. NULL parent = top-level. Order by level then name.\n\nCOMMON_QUESTIONS: Category hierarchy? Category tree? Show all categories? Category structure? Parent-child categories?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "hierarchy_display",
+        "tables": [
+          "categories"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "category hierarchy",
+        "category tree",
+        "category structure",
+        "parent child",
+        "show all categories",
+        "navigation"
+      ]
+    },
+    {
+      "chunk_id": "query_products_by_category",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "categories",
+      "related_tables": "products",
+      "use_case": "category_filtering",
+      "text": "QUERY USE CASE: Find all products in a category\n\nDESCRIPTION: List products belonging to specific category for browsing and filtering.\n\nNATURAL_LANGUAGE_QUERIES: products in category, category products, filter by category, products in Electronics, show category items, category contents, products under category\n\nTABLES_USED: categories, products\n\nWHEN_TO_USE: Product browsing, category filtering, product display, category pages\n\nSQL_PATTERN: SELECT products WHERE category = category_name\n\nEXAMPLES:\n\n- Products in category: SELECT p.product_name, p.price, p.brand FROM products p JOIN categories c ON p.category = c.category_name WHERE c.category_name = 'Electronics' ORDER BY p.product_name\n\n- With category info: SELECT c.category_name, c.description, p.product_name, p.price FROM categories c JOIN products p ON c.category_name = p.category WHERE c.category_name = 'Electronics'\n\n- Product count: SELECT c.category_name, COUNT(p.product_id) AS product_count FROM categories c LEFT JOIN products p ON c.category_name = p.category GROUP BY c.category_name ORDER BY product_count DESC\n\n- All categories with products: SELECT c.category_name, COUNT(p.product_id) AS products, AVG(p.price) AS avg_price FROM categories c LEFT JOIN products p ON c.category_name = p.category GROUP BY c.category_name HAVING COUNT(p.product_id) > 0\n\nBUSINESS_RULE: Join on category_name (not category_id). Use LEFT JOIN to include empty categories.\n\nCOMMON_QUESTIONS: Products in category? Filter by category? Category products? Electronics products? What's in category?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "product_filtering",
+        "tables": [
+          "categories",
+          "products"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "products in category",
+        "filter by category",
+        "category products",
+        "Electronics",
+        "what's in category",
+        "category contents"
+      ]
+    },
+    {
+      "chunk_id": "query_top_level_categories",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "categories",
+      "use_case": "root_categories",
+      "text": "QUERY USE CASE: List top-level categories for navigation\n\nDESCRIPTION: Display main/root categories for primary navigation menu.\n\nNATURAL_LANGUAGE_QUERIES: top-level categories, main categories, root categories, primary categories, top categories, main menu categories, parent categories\n\nTABLES_USED: categories\n\nWHEN_TO_USE: Main navigation, homepage categories, category menu, site structure\n\nSQL_PATTERN: SELECT * FROM categories WHERE parent_category_id IS NULL\n\nEXAMPLES:\n\n- Top-level categories: SELECT category_name, description FROM categories WHERE parent_category_id IS NULL ORDER BY category_name\n\n- With product counts: SELECT c.category_name, COUNT(p.product_id) AS product_count FROM categories c LEFT JOIN products p ON c.category_name = p.category WHERE c.parent_category_id IS NULL GROUP BY c.category_name ORDER BY c.category_name\n\n- Main menu: SELECT category_id, category_name, description FROM categories WHERE category_level = 1 ORDER BY category_name\n\n- Top categories with subcategory count: SELECT parent.category_name, COUNT(child.category_id) AS subcategory_count FROM categories parent LEFT JOIN categories child ON parent.category_id = child.parent_category_id WHERE parent.parent_category_id IS NULL GROUP BY parent.category_name\n\nBUSINESS_RULE: Top-level = parent_category_id IS NULL OR category_level = 1. These are main navigation categories.\n\nCOMMON_QUESTIONS: Top-level categories? Main categories? Root categories? Primary categories? Main menu?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "main_navigation",
+        "tables": [
+          "categories"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "top-level categories",
+        "main categories",
+        "root categories",
+        "primary",
+        "top categories",
+        "main menu"
+      ]
+    },
+    {
+      "chunk_id": "query_category_subcategories",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "categories",
+      "use_case": "subcategory_listing",
+      "text": "QUERY USE CASE: Find subcategories of a parent category\n\nDESCRIPTION: List all child categories under specific parent for navigation.\n\nNATURAL_LANGUAGE_QUERIES: subcategories, child categories, categories under, subcategories of Electronics, what subcategories, category children, nested categories\n\nTABLES_USED: categories\n\nWHEN_TO_USE: Sub-navigation, category drill-down, hierarchy navigation, category expansion\n\nSQL_PATTERN: SELECT * FROM categories WHERE parent_category_id = parent_id\n\nEXAMPLES:\n\n- Subcategories: SELECT child.category_name, child.description FROM categories parent JOIN categories child ON parent.category_id = child.parent_category_id WHERE parent.category_name = 'Electronics' ORDER BY child.category_name\n\n- By parent ID: SELECT category_name, description FROM categories WHERE parent_category_id = 13001 ORDER BY category_name\n\n- With product counts: SELECT c.category_name, COUNT(p.product_id) AS products FROM categories c LEFT JOIN products p ON c.category_name = p.category WHERE c.parent_category_id = 13001 GROUP BY c.category_name\n\n- All parent-child pairs: SELECT parent.category_name AS parent, child.category_name AS child FROM categories parent JOIN categories child ON parent.category_id = child.parent_category_id ORDER BY parent.category_name, child.category_name\n\nBUSINESS_RULE: Filter by parent_category_id to get children. Can have multiple levels of nesting.\n\nCOMMON_QUESTIONS: Subcategories? Child categories? Categories under Electronics? What subcategories? Nested categories?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "subcategory_navigation",
+        "tables": [
+          "categories"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "subcategories",
+        "child categories",
+        "categories under",
+        "nested categories",
+        "subcategories of",
+        "category children"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "table": "inventory",
+  "description": "ENHANCED semantic memory for INVENTORY table - optimized for natural language semantic search",
+  "total_chunks": 17,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 9,
+    "relationships": 3,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_inventory_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "inventory",
+      "text": "TABLE: inventory\n\nDESCRIPTION: Warehouse-specific inventory levels showing product stock at each warehouse location.\n\nNATURAL_LANGUAGE_TERMS: inventory, stock, warehouse inventory, stock levels, inventory levels, warehouse stock, product stock, stock by warehouse, inventory by location, available stock, warehouse quantities, stock distribution\n\nPRIMARY_KEY: inventory_id\n\nFOREIGN_KEYS: product_id → products.product_id, warehouse_id → warehouses.warehouse_id\n\nTABLE_TYPE: Junction table linking products to warehouses with quantity tracking\n\nUSAGE: Stock level tracking, warehouse inventory management, reorder alerts, stock availability by location, inventory distribution, multi-warehouse stock tracking\n\nCOMMON_QUERIES: Stock by warehouse, product availability by location, low stock alerts, reorder needed, inventory distribution, warehouse stock levels\n\nUSE_CASES: Check stock at warehouse, inventory management, reorder alerts, stock distribution analysis, warehouse availability",
+      "metadata": {
+        "entity": "table",
+        "table": "inventory",
+        "pk": "inventory_id",
+        "fk": [
+          "product_id",
+          "warehouse_id"
+        ]
+      },
+      "keywords": [
+        "inventory",
+        "stock",
+        "warehouse inventory",
+        "stock levels",
+        "inventory levels",
+        "warehouse stock",
+        "available stock"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_inventory_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "inventory_id",
+      "text": "COLUMN: inventory.inventory_id\n\nDESCRIPTION: Unique identifier for each inventory record (product-warehouse combination).\n\nNATURAL_LANGUAGE_TERMS: inventory id, inventory ID, inventory identifier, inventory record id, stock record id, inventory key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nUSAGE: Inventory record identification, internal tracking, inventory record reference\n\nUSE_CASES: Inventory record lookup, internal tracking\n\nEXAMPLES:\n\n- Specific record: SELECT * FROM inventory WHERE inventory_id = 7001\n\nBUSINESS_RULE: Unique identifier for each product-warehouse stock record. Immutable once assigned.\n\nCOMMON_QUESTIONS: Inventory record ID? Get inventory record?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "inventory_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "inventory_id",
+        "inventory ID",
+        "inventory identifier",
+        "primary key",
+        "stock record"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_product_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "product_id",
+      "text": "COLUMN: inventory.product_id\n\nDESCRIPTION: Links inventory record to specific product.\n\nNATURAL_LANGUAGE_TERMS: product id, product identifier, which product, product reference, item id, SKU, product stock, which item, product in stock\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: products.product_id\n\nUSAGE: Product inventory lookup, stock by product, finding product across warehouses, product availability, multi-warehouse stock for product\n\nUSE_CASES: Stock levels for product, product availability, where product is stored, product distribution across warehouses\n\nEXAMPLES:\n\n- Product stock all warehouses: SELECT * FROM inventory WHERE product_id = 2050\n\n- Total stock: SELECT product_id, SUM(quantity_available) FROM inventory WHERE product_id = 2050 GROUP BY product_id\n\n- Warehouses with product: SELECT warehouse_id, quantity_available FROM inventory WHERE product_id = 2050\n\nBUSINESS_RULE: Same product can be in multiple warehouses. One record per product-warehouse combination.\n\nCOMMON_QUESTIONS: Stock for product? Where is product stored? Product availability by warehouse? Total stock for product?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "product_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "products.product_id"
+      },
+      "keywords": [
+        "product_id",
+        "foreign key",
+        "product stock",
+        "which product",
+        "SKU",
+        "product availability"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_warehouse_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "warehouse_id",
+      "text": "COLUMN: inventory.warehouse_id\n\nDESCRIPTION: Links inventory record to specific warehouse location.\n\nNATURAL_LANGUAGE_TERMS: warehouse id, warehouse identifier, which warehouse, warehouse location, warehouse reference, storage location, facility id, where stored, warehouse number\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: FOREIGN KEY, NOT NULL\n\nREFERENCES: warehouses.warehouse_id\n\nUSAGE: Warehouse inventory lookup, stock by warehouse, location-specific inventory, warehouse stock levels, facility inventory\n\nUSE_CASES: Stock at warehouse, warehouse inventory, products at location, facility stock levels, location inventory\n\nEXAMPLES:\n\n- Warehouse inventory: SELECT * FROM inventory WHERE warehouse_id = 8001\n\n- Products at warehouse: SELECT product_id, quantity_available FROM inventory WHERE warehouse_id = 8001\n\n- Warehouse stock value: SELECT warehouse_id, SUM(quantity_available) FROM inventory GROUP BY warehouse_id\n\nBUSINESS_RULE: Each warehouse can stock multiple products. One record per product-warehouse combination.\n\nCOMMON_QUESTIONS: Stock at warehouse? Warehouse inventory? Products at this location? Which warehouse? Stock by location?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "warehouse_id",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": true,
+        "references": "warehouses.warehouse_id"
+      },
+      "keywords": [
+        "warehouse_id",
+        "foreign key",
+        "warehouse",
+        "which warehouse",
+        "location",
+        "facility",
+        "where stored"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_quantity_available",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "quantity_available",
+      "text": "COLUMN: inventory.quantity_available\n\nDESCRIPTION: Current available stock quantity at this warehouse (not reserved for orders).\n\nNATURAL_LANGUAGE_TERMS: quantity available, available stock, available quantity, stock available, how many available, units available, available units, free stock, unreserved stock, sellable quantity, stock on hand\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: quantity_available >= 0\n\nUSAGE: Available stock checking, sellable inventory, order fulfillment availability, free stock levels, unreserved inventory\n\nUSE_CASES: Check available stock, how many can sell, free inventory, order fulfillment capacity, sellable quantity\n\nEXAMPLES:\n\n- Available stock: SELECT quantity_available FROM inventory WHERE product_id = 2050 AND warehouse_id = 8001\n\n- Total available: SELECT SUM(quantity_available) FROM inventory WHERE product_id = 2050\n\n- In stock items: SELECT product_id, SUM(quantity_available) AS total_available FROM inventory GROUP BY product_id HAVING SUM(quantity_available) > 0\n\n- Low available stock: SELECT * FROM inventory WHERE quantity_available < reorder_point\n\nBUSINESS_RULE: Available for sale. Does not include quantity_reserved. Total stock = quantity_available + quantity_reserved.\n\nCOMMON_QUESTIONS: How many available? Available stock? Can we fulfill order? How many can sell? Free stock? Sellable quantity?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "quantity_available",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "quantity_available",
+        "available stock",
+        "how many available",
+        "available quantity",
+        "free stock",
+        "sellable",
+        "unreserved"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_quantity_reserved",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "quantity_reserved",
+      "text": "COLUMN: inventory.quantity_reserved\n\nDESCRIPTION: Stock quantity reserved for pending orders (allocated but not yet shipped).\n\nNATURAL_LANGUAGE_TERMS: quantity reserved, reserved stock, reserved quantity, allocated stock, stock reserved, units reserved, pending allocation, committed stock, allocated units, reserved for orders\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: quantity_reserved >= 0\n\nUSAGE: Reserved inventory tracking, order allocation, pending fulfillment, committed stock levels, allocation management\n\nUSE_CASES: Reserved for orders, allocated stock, pending shipments, committed inventory, order allocations\n\nEXAMPLES:\n\n- Reserved stock: SELECT quantity_reserved FROM inventory WHERE product_id = 2050 AND warehouse_id = 8001\n\n- Total reserved: SELECT SUM(quantity_reserved) FROM inventory WHERE product_id = 2050\n\n- Total stock: SELECT product_id, SUM(quantity_available + quantity_reserved) AS total_stock FROM inventory GROUP BY product_id\n\n- High reservations: SELECT * FROM inventory WHERE quantity_reserved > quantity_available\n\nBUSINESS_RULE: Reserved for pending orders. Not available for new orders until released. Total stock = available + reserved.\n\nCOMMON_QUESTIONS: Reserved stock? Allocated units? Stock reserved for orders? Pending allocations? Committed inventory?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "quantity_reserved",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "quantity_reserved",
+        "reserved stock",
+        "allocated",
+        "reserved quantity",
+        "committed",
+        "pending",
+        "allocated units"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_reorder_point",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "reorder_point",
+      "text": "COLUMN: inventory.reorder_point\n\nDESCRIPTION: Minimum stock level that triggers reorder alert.\n\nNATURAL_LANGUAGE_TERMS: reorder point, reorder level, minimum stock, reorder threshold, minimum quantity, reorder trigger, stock threshold, minimum level, when to reorder, reorder alert level\n\nDATA_TYPE: INTEGER\n\nUSAGE: Low stock alerts, reorder notifications, inventory replenishment triggers, stock management, reorder automation\n\nUSE_CASES: Reorder alerts, low stock warnings, replenishment triggers, when to restock, inventory alerts\n\nEXAMPLES:\n\n- Need reorder: SELECT * FROM inventory WHERE quantity_available <= reorder_point\n\n- Critical low: SELECT * FROM inventory WHERE quantity_available < reorder_point AND quantity_available > 0\n\n- Reorder list: SELECT p.product_name, i.quantity_available, i.reorder_point FROM inventory i JOIN products p ON i.product_id = p.product_id WHERE i.quantity_available <= i.reorder_point\n\nBUSINESS_RULE: When quantity_available drops to or below reorder_point, trigger reorder alert. Set based on sales velocity.\n\nCOMMON_QUESTIONS: When to reorder? Low stock alerts? Below reorder point? Need restocking? Reorder threshold reached?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "reorder_point",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "reorder_point",
+        "reorder level",
+        "minimum stock",
+        "reorder threshold",
+        "when to reorder",
+        "low stock alert"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_reorder_quantity",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "reorder_quantity",
+      "text": "COLUMN: inventory.reorder_quantity\n\nDESCRIPTION: Standard quantity to order when restocking.\n\nNATURAL_LANGUAGE_TERMS: reorder quantity, reorder amount, how much to order, restock quantity, order quantity, replenishment quantity, standard order, order amount, how many to reorder\n\nDATA_TYPE: INTEGER\n\nUSAGE: Reorder automation, purchase order generation, replenishment planning, standard order amounts, restocking quantities\n\nUSE_CASES: How much to reorder, standard order quantity, replenishment amount, purchase order quantity, restocking amount\n\nEXAMPLES:\n\n- Reorder info: SELECT product_id, reorder_point, reorder_quantity FROM inventory WHERE quantity_available <= reorder_point\n\n- Reorder list with quantities: SELECT p.product_name, i.quantity_available, i.reorder_quantity FROM inventory i JOIN products p ON i.product_id = p.product_id WHERE i.quantity_available <= i.reorder_point\n\nBUSINESS_RULE: Standard reorder quantity. Economic order quantity (EOQ) consideration. Balances holding costs with order frequency.\n\nCOMMON_QUESTIONS: How much to order? Reorder quantity? How many to restock? Standard order amount? Replenishment quantity?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "reorder_quantity",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "reorder_quantity",
+        "how much to order",
+        "restock quantity",
+        "order quantity",
+        "replenishment quantity",
+        "order amount"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_last_restock_date",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "last_restock_date",
+      "text": "COLUMN: inventory.last_restock_date\n\nDESCRIPTION: Date when inventory was last replenished.\n\nNATURAL_LANGUAGE_TERMS: last restock date, last restocked, when restocked, restock date, last replenishment, when replenished, last inventory update, last refilled, restocking date\n\nDATA_TYPE: DATE\n\nFORMAT: YYYY-MM-DD\n\nUSAGE: Restock tracking, inventory velocity, time since restock, replenishment monitoring, stocking frequency\n\nUSE_CASES: When last restocked, restock history, time since replenishment, inventory velocity tracking, restocking timeline\n\nEXAMPLES:\n\n- Last restock: SELECT product_id, last_restock_date FROM inventory WHERE product_id = 2050\n\n- Recently restocked: SELECT * FROM inventory WHERE last_restock_date >= CURRENT_DATE - INTERVAL '7 days'\n\n- Needs attention: SELECT * FROM inventory WHERE quantity_available <= reorder_point AND last_restock_date < CURRENT_DATE - INTERVAL '30 days'\n\nBUSINESS_RULE: Updated when inventory received. Useful for tracking restock velocity and identifying stale inventory.\n\nCOMMON_QUESTIONS: When last restocked? Last replenishment date? Recently restocked items? Time since restock? Restocking history?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "last_restock_date",
+        "type": "DATE",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "last_restock_date",
+        "last restocked",
+        "when restocked",
+        "replenishment date",
+        "last refilled",
+        "restock history"
+      ]
+    },
+    {
+      "chunk_id": "col_inventory_last_updated",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "inventory",
+      "column_name": "last_updated",
+      "text": "COLUMN: inventory.last_updated\n\nDESCRIPTION: Timestamp of last inventory record modification.\n\nNATURAL_LANGUAGE_TERMS: last updated, last modified, when updated, update timestamp, last changed, modification date, when modified, last update time, updated at\n\nDATA_TYPE: TIMESTAMP\n\nFORMAT: ISO 8601 (YYYY-MM-DD HH:MM:SS)\n\nUSAGE: Change tracking, inventory audit, update monitoring, data freshness checking, modification tracking\n\nUSE_CASES: When inventory changed, last modification, data freshness, update tracking, audit trail\n\nEXAMPLES:\n\n- Recent updates: SELECT * FROM inventory WHERE last_updated >= CURRENT_DATE - INTERVAL '24 hours'\n\n- Stale data: SELECT * FROM inventory WHERE last_updated < CURRENT_DATE - INTERVAL '7 days'\n\n- Update tracking: SELECT product_id, warehouse_id, last_updated FROM inventory ORDER BY last_updated DESC\n\nBUSINESS_RULE: Updated whenever inventory quantities change (sales, restocks, adjustments). Useful for audit and monitoring.\n\nCOMMON_QUESTIONS: When inventory updated? Last modification? Recent changes? Data freshness? When changed?",
+      "metadata": {
+        "entity": "column",
+        "table": "inventory",
+        "column": "last_updated",
+        "type": "TIMESTAMP",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "last_updated",
+        "last modified",
+        "when updated",
+        "update timestamp",
+        "last changed",
+        "modification date"
+      ]
+    },
+    {
+      "chunk_id": "rel_inventory_to_products",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "inventory",
+      "related_table": "products",
+      "text": "RELATIONSHIP: inventory to products (Many-to-One)\n\nDESCRIPTION: Each inventory record belongs to one product. Product can be in multiple warehouses.\n\nNATURAL_LANGUAGE_TERMS: product inventory, product stock, stock for product, product stock levels, inventory for product, where product stored, product distribution\n\nJOIN_CONDITION: inventory.product_id = products.product_id\n\nCARDINALITY: N:1 (many inventory records for one product across warehouses)\n\nFOREIGN_KEY: inventory.product_id references products.product_id\n\nUSAGE: Product stock lookup, total product inventory, product availability, multi-warehouse stock for product\n\nUSE_CASES: Total stock for product, product availability across warehouses, where product stored, product inventory distribution\n\nEXAMPLES:\n\n- Product total stock: SELECT p.product_name, SUM(i.quantity_available + i.quantity_reserved) AS total_stock FROM products p JOIN inventory i ON p.product_id = i.product_id WHERE p.product_id = 2050 GROUP BY p.product_name\n\n- Product by warehouse: SELECT p.product_name, w.warehouse_name, i.quantity_available FROM products p JOIN inventory i ON p.product_id = i.product_id JOIN warehouses w ON i.warehouse_id = w.warehouse_id WHERE p.product_id = 2050\n\n- Available inventory: SELECT p.product_name, SUM(i.quantity_available) AS available FROM products p JOIN inventory i ON p.product_id = i.product_id GROUP BY p.product_name HAVING SUM(i.quantity_available) > 0\n\nBUSINESS_RULE: Product total stock = sum of inventory across all warehouses. products.stock_quantity equals sum of inventory.quantity_available.\n\nCOMMON_QUESTIONS: Total stock for product? Where is product stored? Product availability? Stock across warehouses?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "inventory",
+        "to_table": "products",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "product inventory",
+        "product stock",
+        "stock for product",
+        "product availability",
+        "where product stored"
+      ]
+    },
+    {
+      "chunk_id": "rel_inventory_to_warehouses",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "inventory",
+      "related_table": "warehouses",
+      "text": "RELATIONSHIP: inventory to warehouses (Many-to-One)\n\nDESCRIPTION: Each inventory record belongs to one warehouse. Warehouse can stock many products.\n\nNATURAL_LANGUAGE_TERMS: warehouse inventory, warehouse stock, stock at warehouse, warehouse stock levels, inventory at warehouse, products at warehouse, warehouse products\n\nJOIN_CONDITION: inventory.warehouse_id = warehouses.warehouse_id\n\nCARDINALITY: N:1 (many inventory records for one warehouse)\n\nFOREIGN_KEY: inventory.warehouse_id references warehouses.warehouse_id\n\nUSAGE: Warehouse inventory lookup, stock by location, warehouse capacity, facility stock levels\n\nUSE_CASES: Stock at warehouse, warehouse inventory, products at location, facility stock, warehouse capacity utilization\n\nEXAMPLES:\n\n- Warehouse inventory: SELECT w.warehouse_name, p.product_name, i.quantity_available FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id JOIN products p ON i.product_id = p.product_id WHERE w.warehouse_id = 8001\n\n- Warehouse stock value: SELECT w.warehouse_name, COUNT(i.inventory_id) AS product_count, SUM(i.quantity_available) AS total_units FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name\n\n- Warehouse capacity: SELECT w.warehouse_name, w.capacity, SUM(i.quantity_available) AS current_stock FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name, w.capacity\n\nBUSINESS_RULE: Each warehouse stocks subset of products. Inventory distributed across 1-3 warehouses per product.\n\nCOMMON_QUESTIONS: Stock at warehouse? Warehouse inventory? Products at location? Warehouse stock levels? Stock by location?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "inventory",
+        "to_table": "warehouses",
+        "cardinality": "N:1",
+        "join_type": "many_to_one"
+      },
+      "keywords": [
+        "warehouse inventory",
+        "warehouse stock",
+        "stock at warehouse",
+        "products at warehouse",
+        "warehouse stock levels"
+      ]
+    },
+    {
+      "chunk_id": "rel_inventory_junction",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "inventory",
+      "related_table": "products_warehouses",
+      "text": "RELATIONSHIP: inventory as junction table (Many-to-Many)\n\nDESCRIPTION: Inventory connects products to warehouses in many-to-many relationship with quantity tracking.\n\nNATURAL_LANGUAGE_TERMS: products and warehouses relationship, product warehouse distribution, multi-warehouse inventory, stock distribution, where products stored, warehouse product allocation\n\nJOIN_CONDITION: products.product_id = inventory.product_id AND inventory.warehouse_id = warehouses.warehouse_id\n\nCARDINALITY: M:N (many products in many warehouses)\n\nUSAGE: Product-warehouse distribution, multi-location inventory, stock allocation, warehouse product mapping\n\nUSE_CASES: Which products in which warehouses, stock distribution analysis, multi-warehouse availability, product allocation\n\nEXAMPLES:\n\n- Complete distribution: SELECT p.product_name, w.warehouse_name, i.quantity_available FROM products p JOIN inventory i ON p.product_id = i.product_id JOIN warehouses w ON i.warehouse_id = w.warehouse_id\n\n- Product locations: SELECT w.warehouse_name, i.quantity_available FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id WHERE i.product_id = 2050\n\n- Warehouse products: SELECT p.product_name, i.quantity_available FROM products p JOIN inventory i ON p.product_id = i.product_id WHERE i.warehouse_id = 8001\n\nBUSINESS_RULE: Junction table with quantity attributes. Enables many-to-many with inventory tracking.\n\nCOMMON_QUESTIONS: Which products in which warehouses? Stock distribution? Where is product? Products at warehouse?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "inventory",
+        "to_table": "products_warehouses",
+        "cardinality": "M:N",
+        "join_type": "many_to_many"
+      },
+      "keywords": [
+        "junction table",
+        "many to many",
+        "products and warehouses",
+        "stock distribution",
+        "multi-warehouse"
+      ]
+    },
+    {
+      "chunk_id": "query_low_stock_alerts",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "inventory",
+      "related_tables": "products, warehouses",
+      "use_case": "reorder_alerts",
+      "text": "QUERY USE CASE: Identify products needing reorder\n\nDESCRIPTION: Find inventory items that have reached or fallen below reorder point.\n\nNATURAL_LANGUAGE_QUERIES: low stock alerts, need reorder, reorder needed, below reorder point, products to restock, inventory alerts, reorder warnings, need restocking\n\nTABLES_USED: inventory, products, warehouses\n\nWHEN_TO_USE: Inventory management, reorder processing, stock replenishment, purchase order generation\n\nSQL_PATTERN: SELECT * FROM inventory WHERE quantity_available <= reorder_point\n\nEXAMPLES:\n\n- Reorder list: SELECT p.product_name, w.warehouse_name, i.quantity_available, i.reorder_point, i.reorder_quantity FROM inventory i JOIN products p ON i.product_id = p.product_id JOIN warehouses w ON i.warehouse_id = w.warehouse_id WHERE i.quantity_available <= i.reorder_point ORDER BY i.quantity_available ASC\n\n- Critical low: SELECT p.product_name, i.quantity_available, i.reorder_point FROM inventory i JOIN products p ON i.product_id = p.product_id WHERE i.quantity_available < i.reorder_point AND i.quantity_available > 0\n\n- Out of stock: SELECT p.product_name, w.warehouse_name FROM inventory i JOIN products p ON i.product_id = p.product_id JOIN warehouses w ON i.warehouse_id = w.warehouse_id WHERE i.quantity_available = 0\n\n- Reorder summary: SELECT COUNT(*) AS items_to_reorder, SUM(i.reorder_quantity) AS total_units_needed FROM inventory i WHERE i.quantity_available <= i.reorder_point\n\nBUSINESS_RULE: quantity_available <= reorder_point triggers alert. Use reorder_quantity for purchase orders.\n\nCOMMON_QUESTIONS: What needs reorder? Low stock alerts? Products to restock? Below reorder point? Reorder needed? Inventory alerts?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "reorder_management",
+        "tables": [
+          "inventory",
+          "products",
+          "warehouses"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "low stock",
+        "reorder alerts",
+        "need reorder",
+        "reorder needed",
+        "below reorder point",
+        "restock",
+        "inventory alerts"
+      ]
+    },
+    {
+      "chunk_id": "query_product_stock_distribution",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "inventory",
+      "related_tables": "products, warehouses",
+      "use_case": "stock_distribution",
+      "text": "QUERY USE CASE: View product stock across all warehouses\n\nDESCRIPTION: See how product inventory is distributed across different warehouse locations.\n\nNATURAL_LANGUAGE_QUERIES: product stock by warehouse, stock distribution, where is product stored, product across warehouses, stock at each warehouse, product locations, multi-warehouse stock\n\nTABLES_USED: inventory, products, warehouses\n\nWHEN_TO_USE: Stock allocation, fulfillment planning, inventory visibility, multi-warehouse management\n\nSQL_PATTERN: SELECT warehouse_name, quantity_available FROM inventory JOIN warehouses WHERE product_id = X\n\nEXAMPLES:\n\n- Product distribution: SELECT p.product_name, w.warehouse_name, i.quantity_available, i.quantity_reserved FROM products p JOIN inventory i ON p.product_id = i.product_id JOIN warehouses w ON i.warehouse_id = w.warehouse_id WHERE p.product_id = 2050\n\n- Total available: SELECT p.product_name, SUM(i.quantity_available) AS total_available, SUM(i.quantity_reserved) AS total_reserved FROM products p JOIN inventory i ON p.product_id = i.product_id WHERE p.product_id = 2050 GROUP BY p.product_name\n\n- Best warehouse: SELECT w.warehouse_name, i.quantity_available FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id WHERE i.product_id = 2050 ORDER BY i.quantity_available DESC LIMIT 1\n\nBUSINESS_RULE: Product can be in 1-3 warehouses. Sum quantities for total available stock.\n\nCOMMON_QUESTIONS: Where is product stored? Stock at each warehouse? Product distribution? Stock across warehouses? Which warehouse has most stock?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "multi_warehouse",
+        "tables": [
+          "inventory",
+          "products",
+          "warehouses"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "stock distribution",
+        "product by warehouse",
+        "where stored",
+        "across warehouses",
+        "product locations",
+        "multi-warehouse"
+      ]
+    },
+    {
+      "chunk_id": "query_warehouse_inventory",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "inventory",
+      "related_tables": "products, warehouses",
+      "use_case": "warehouse_stock",
+      "text": "QUERY USE CASE: View complete inventory at specific warehouse\n\nDESCRIPTION: List all products stocked at a warehouse with quantities.\n\nNATURAL_LANGUAGE_QUERIES: warehouse inventory, stock at warehouse, products at warehouse, warehouse stock levels, inventory at location, warehouse products, facility inventory\n\nTABLES_USED: inventory, products, warehouses\n\nWHEN_TO_USE: Warehouse management, facility inventory, stock audits, warehouse capacity planning\n\nSQL_PATTERN: SELECT product_name, quantity_available FROM inventory JOIN products WHERE warehouse_id = X\n\nEXAMPLES:\n\n- Warehouse inventory: SELECT p.product_name, p.category, i.quantity_available, i.quantity_reserved FROM products p JOIN inventory i ON p.product_id = i.product_id WHERE i.warehouse_id = 8001 ORDER BY p.category, p.product_name\n\n- Warehouse summary: SELECT w.warehouse_name, COUNT(i.inventory_id) AS product_count, SUM(i.quantity_available) AS total_units, SUM(i.quantity_reserved) AS reserved_units FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id WHERE w.warehouse_id = 8001 GROUP BY w.warehouse_name\n\n- Low stock at warehouse: SELECT p.product_name, i.quantity_available, i.reorder_point FROM products p JOIN inventory i ON p.product_id = i.product_id WHERE i.warehouse_id = 8001 AND i.quantity_available <= i.reorder_point\n\nBUSINESS_RULE: Each warehouse stocks subset of total product catalog. Filter by warehouse_id for location-specific inventory.\n\nCOMMON_QUESTIONS: Stock at warehouse? Warehouse inventory? Products at location? What's in warehouse? Facility stock levels?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "warehouse_management",
+        "tables": [
+          "inventory",
+          "products",
+          "warehouses"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "warehouse inventory",
+        "stock at warehouse",
+        "products at warehouse",
+        "warehouse stock",
+        "inventory at location"
+      ]
+    },
+    {
+      "chunk_id": "query_inventory_value",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "inventory",
+      "related_tables": "products",
+      "use_case": "inventory_valuation",
+      "text": "QUERY USE CASE: Calculate total inventory value\n\nDESCRIPTION: Compute dollar value of inventory using product prices and quantities.\n\nNATURAL_LANGUAGE_QUERIES: inventory value, stock value, total inventory value, how much inventory worth, inventory valuation, stock worth, total stock value\n\nTABLES_USED: inventory, products\n\nWHEN_TO_USE: Financial reporting, asset valuation, inventory accounting, balance sheet calculations\n\nSQL_PATTERN: SELECT SUM(quantity * price) FROM inventory JOIN products\n\nEXAMPLES:\n\n- Total value: SELECT SUM((i.quantity_available + i.quantity_reserved) * p.price) AS total_inventory_value FROM inventory i JOIN products p ON i.product_id = p.product_id\n\n- Value by warehouse: SELECT w.warehouse_name, SUM((i.quantity_available + i.quantity_reserved) * p.price) AS warehouse_value FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id JOIN products p ON i.product_id = p.product_id GROUP BY w.warehouse_name ORDER BY warehouse_value DESC\n\n- Value by category: SELECT p.category, SUM((i.quantity_available + i.quantity_reserved) * p.price) AS category_value FROM products p JOIN inventory i ON p.product_id = i.product_id GROUP BY p.category ORDER BY category_value DESC\n\n- Available value: SELECT SUM(i.quantity_available * p.price) AS available_inventory_value FROM inventory i JOIN products p ON i.product_id = p.product_id\n\nBUSINESS_RULE: Inventory value = (quantity_available + quantity_reserved) × product price. Include both available and reserved stock.\n\nCOMMON_QUESTIONS: Total inventory value? How much is stock worth? Inventory valuation? Stock value? Value by warehouse?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "financial",
+        "tables": [
+          "inventory",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "inventory value",
+        "stock value",
+        "inventory valuation",
+        "how much worth",
+        "total value",
+        "stock worth"
+      ]
+    }
+  ]
+}

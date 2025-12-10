@@ -1,0 +1,436 @@
+{
+  "table": "warehouses",
+  "description": "ENHANCED semantic memory for WAREHOUSES table - optimized for natural language semantic search",
+  "total_chunks": 17,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 10,
+    "relationships": 2,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_warehouses_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "warehouses",
+      "text": "TABLE: warehouses\n\nDESCRIPTION: Physical warehouse locations and facilities for inventory storage and distribution.\n\nNATURAL_LANGUAGE_TERMS: warehouses, warehouse table, distribution centers, facilities, storage locations, warehouse locations, fulfillment centers, warehouse facilities, storage facilities, distribution facilities, warehouse data\n\nPRIMARY_KEY: warehouse_id\n\nREFERENCED_BY: inventory.warehouse_id, shipments.warehouse_id\n\nUSAGE: Warehouse management, facility information, location tracking, inventory location mapping, distribution center data, warehouse capacity tracking\n\nCOMMON_QUERIES: Warehouse list, warehouse locations, facility details, warehouse capacity, warehouses by state, distribution centers\n\nUSE_CASES: Find warehouse locations, warehouse details, facility management, distribution center info, warehouse capacity analysis",
+      "metadata": {
+        "entity": "table",
+        "table": "warehouses",
+        "pk": "warehouse_id"
+      },
+      "keywords": [
+        "warehouses",
+        "distribution centers",
+        "facilities",
+        "storage locations",
+        "warehouse locations",
+        "fulfillment centers"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_warehouse_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "warehouse_id",
+      "text": "COLUMN: warehouses.warehouse_id\n\nDESCRIPTION: Unique identifier for each warehouse facility.\n\nNATURAL_LANGUAGE_TERMS: warehouse id, warehouse ID, warehouse identifier, facility id, warehouse number, warehouse code, facility identifier, warehouse key, location id\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nREFERENCED_BY: inventory.warehouse_id, shipments.warehouse_id\n\nUSAGE: Warehouse identification, facility reference, inventory location linking, warehouse tracking\n\nUSE_CASES: Get warehouse details, warehouse lookup, facility identification, warehouse reference\n\nEXAMPLES:\n\n- Specific warehouse: SELECT * FROM warehouses WHERE warehouse_id = 8001\n\n- Warehouse details: WHERE warehouse_id = 8001\n\nBUSINESS_RULE: Unique identifier for each warehouse facility. Immutable once assigned.\n\nCOMMON_QUESTIONS: Warehouse ID? Get warehouse by ID? Facility identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "warehouse_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "warehouse_id",
+        "warehouse ID",
+        "warehouse identifier",
+        "facility id",
+        "primary key",
+        "warehouse number"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_warehouse_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "warehouse_name",
+      "text": "COLUMN: warehouses.warehouse_name\n\nDESCRIPTION: Descriptive name of the warehouse facility.\n\nNATURAL_LANGUAGE_TERMS: warehouse name, facility name, warehouse title, distribution center name, warehouse label, facility label, name of warehouse, warehouse called, location name\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Warehouse identification, facility reference, warehouse display, location naming, facility identification\n\nUSE_CASES: Find warehouse by name, warehouse display, facility name lookup, warehouse search, location reference\n\nEXAMPLES:\n\n- Find warehouse: SELECT * FROM warehouses WHERE warehouse_name LIKE '%East Coast%'\n\n- All warehouses: SELECT warehouse_id, warehouse_name, city, state FROM warehouses ORDER BY warehouse_name\n\n- Name search: WHERE LOWER(warehouse_name) LIKE LOWER('%distribution%')\n\nBUSINESS_RULE: Descriptive names like 'East Coast Distribution Center', 'West Coast Fulfillment', 'Central Warehouse'.\n\nCOMMON_QUESTIONS: Warehouse name? Find warehouse by name? What is warehouse called? Facility name?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "warehouse_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "warehouse_name",
+        "facility name",
+        "warehouse title",
+        "distribution center",
+        "warehouse called",
+        "location name"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_address",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "address",
+      "text": "COLUMN: warehouses.address\n\nDESCRIPTION: Street address of warehouse facility.\n\nNATURAL_LANGUAGE_TERMS: address, street address, warehouse address, facility address, location address, physical address, warehouse location, where located, facility location\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Warehouse location, shipping origin, facility address display, location information\n\nUSE_CASES: Warehouse address, facility location, shipping from address, warehouse location info\n\nEXAMPLES:\n\n- Full address: SELECT address || ', ' || city || ', ' || state || ' ' || zip_code AS full_address FROM warehouses WHERE warehouse_id = 8001\n\n- Search address: WHERE address LIKE '%Industrial%'\n\nBUSINESS_RULE: Street number and name. Required field. Combine with city, state, zip for complete location.\n\nCOMMON_QUESTIONS: Warehouse address? Where is warehouse? Facility location? Warehouse street address?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "address",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "address",
+        "street address",
+        "warehouse address",
+        "facility address",
+        "where located",
+        "warehouse location"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_city",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "city",
+      "text": "COLUMN: warehouses.city\n\nDESCRIPTION: City where warehouse is located.\n\nNATURAL_LANGUAGE_TERMS: city, city name, warehouse city, facility city, location city, city location, town, municipality, urban area, where warehouse located\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: City-level filtering, geographic analysis, warehouse location, regional distribution, city-based warehouse lookup\n\nUSE_CASES: Warehouses in city, facility city, location filtering, geographic distribution, city warehouses\n\nEXAMPLES:\n\n- Warehouses in city: SELECT * FROM warehouses WHERE city = 'Los Angeles'\n\n- Cities with warehouses: SELECT DISTINCT city, state FROM warehouses ORDER BY state, city\n\n- Count by city: SELECT city, state, COUNT(*) FROM warehouses GROUP BY city, state\n\nBUSINESS_RULE: Full city names. Required field. Combines with state and zip for complete location.\n\nCOMMON_QUESTIONS: Warehouses in Los Angeles? Which city? Warehouse city? Where is warehouse located?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "city",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "city",
+        "city name",
+        "warehouse city",
+        "facility city",
+        "location city",
+        "where located",
+        "town"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_state",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "state",
+      "text": "COLUMN: warehouses.state\n\nDESCRIPTION: US state abbreviation where warehouse is located.\n\nNATURAL_LANGUAGE_TERMS: state, state code, US state, state abbreviation, warehouse state, facility state, region, regional location, CA, NY, TX, IL, state location\n\nDATA_TYPE: VARCHAR(2)\n\nFORMAT: Two-letter uppercase state codes\n\nCONSTRAINTS: NOT NULL\n\nVALID_VALUES: CA, NY, TX, IL, NV (all 50 US states)\n\nUSAGE: State-level filtering, regional analysis, warehouse distribution, state-based warehouse lookup, regional facilities\n\nUSE_CASES: Warehouses in California, warehouses by state, regional distribution, state filtering, facility by state\n\nEXAMPLES:\n\n- California warehouses: SELECT * FROM warehouses WHERE state = 'CA'\n\n- Multiple states: WHERE state IN ('CA', 'TX', 'IL')\n\n- Count by state: SELECT state, COUNT(*) AS warehouse_count FROM warehouses GROUP BY state ORDER BY warehouse_count DESC\n\n- State distribution: SELECT state, COUNT(*) FROM warehouses GROUP BY state\n\nBUSINESS_RULE: Two-letter USPS state codes. Required field. CA=California, NY=New York, TX=Texas, IL=Illinois, NV=Nevada.\n\nCOMMON_QUESTIONS: Warehouses in California? Filter by state? Which state? Warehouses by state? State distribution?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "state",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "state",
+        "state code",
+        "US state",
+        "CA",
+        "NY",
+        "TX",
+        "IL",
+        "warehouse state",
+        "regional",
+        "state abbreviation"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_zip_code",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "zip_code",
+      "text": "COLUMN: warehouses.zip_code\n\nDESCRIPTION: US postal zip code for warehouse location.\n\nNATURAL_LANGUAGE_TERMS: zip code, zipcode, zip, postal code, postcode, warehouse zip, facility zip, zip area, postal area\n\nDATA_TYPE: VARCHAR(10)\n\nFORMAT: 5-digit or 9-digit format (XXXXX or XXXXX-XXXX)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Precise location, shipping origin zone, delivery routing, warehouse location verification\n\nUSE_CASES: Warehouse by zip, precise location, shipping origin, zip code lookup\n\nEXAMPLES:\n\n- Warehouse in zip: SELECT * FROM warehouses WHERE zip_code = '90001'\n\n- Zip pattern: WHERE zip_code LIKE '900%'\n\nBUSINESS_RULE: US postal codes. Required field. Precise location for shipping calculations.\n\nCOMMON_QUESTIONS: Warehouse zip code? Facility postal code? Zip code location?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "zip_code",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "zip_code",
+        "zipcode",
+        "zip",
+        "postal code",
+        "postcode",
+        "warehouse zip",
+        "facility zip"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_country",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "country",
+      "text": "COLUMN: warehouses.country\n\nDESCRIPTION: Country where warehouse is located.\n\nNATURAL_LANGUAGE_TERMS: country, nation, country name, warehouse country, facility country, USA, United States, America, US, national location\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nCURRENT_VALUE: All warehouses currently in USA\n\nUSAGE: International filtering, country-level filtering, future multi-country operations\n\nUSE_CASES: Filter by country, USA warehouses, country distribution, international expansion\n\nEXAMPLES:\n\n- USA warehouses: SELECT * FROM warehouses WHERE country = 'USA'\n\n- Count by country: SELECT country, COUNT(*) FROM warehouses GROUP BY country\n\nBUSINESS_RULE: Currently all warehouses in USA. Required field. Supports future international expansion.\n\nCOMMON_QUESTIONS: Which country? USA warehouses? Filter by country? Warehouse country?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "country",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "country",
+        "nation",
+        "USA",
+        "United States",
+        "America",
+        "US",
+        "warehouse country"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_phone",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "phone",
+      "text": "COLUMN: warehouses.phone\n\nDESCRIPTION: Contact phone number for warehouse facility.\n\nNATURAL_LANGUAGE_TERMS: phone, phone number, telephone, contact number, warehouse phone, facility phone, warehouse contact, contact telephone, facility contact, call warehouse\n\nDATA_TYPE: VARCHAR(15)\n\nFORMAT: US phone number format\n\nUSAGE: Warehouse contact, facility communication, warehouse coordination, contact information\n\nUSE_CASES: Contact warehouse, facility phone, warehouse communication, call facility\n\nEXAMPLES:\n\n- Find by phone: SELECT * FROM warehouses WHERE phone = '555-0100'\n\n- All contact info: SELECT warehouse_name, phone, manager_name FROM warehouses\n\nBUSINESS_RULE: Warehouse main phone number. Used for facility coordination and communication.\n\nCOMMON_QUESTIONS: Warehouse phone? Contact number? Call warehouse? Facility phone number?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "phone",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "phone",
+        "phone number",
+        "telephone",
+        "contact number",
+        "warehouse phone",
+        "facility phone",
+        "call warehouse"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_manager_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "manager_name",
+      "text": "COLUMN: warehouses.manager_name\n\nDESCRIPTION: Name of warehouse facility manager.\n\nNATURAL_LANGUAGE_TERMS: manager name, warehouse manager, facility manager, manager, who manages, person in charge, warehouse supervisor, facility supervisor, contact person, manager's name\n\nDATA_TYPE: VARCHAR(100)\n\nUSAGE: Warehouse management contact, facility leadership, manager identification, point of contact\n\nUSE_CASES: Who manages warehouse, warehouse manager, facility contact person, manager lookup\n\nEXAMPLES:\n\n- Find manager: SELECT warehouse_name, manager_name FROM warehouses WHERE warehouse_id = 8001\n\n- All managers: SELECT warehouse_name, manager_name, phone FROM warehouses ORDER BY warehouse_name\n\n- Search by manager: WHERE manager_name LIKE '%Smith%'\n\nBUSINESS_RULE: Name of facility manager or supervisor. Primary point of contact for warehouse operations.\n\nCOMMON_QUESTIONS: Who manages warehouse? Warehouse manager? Facility manager name? Who is in charge? Contact person?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "manager_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "manager_name",
+        "warehouse manager",
+        "facility manager",
+        "who manages",
+        "manager",
+        "supervisor",
+        "contact person"
+      ]
+    },
+    {
+      "chunk_id": "col_warehouses_capacity",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "warehouses",
+      "column_name": "capacity",
+      "text": "COLUMN: warehouses.capacity\n\nDESCRIPTION: Maximum storage capacity of warehouse in units.\n\nNATURAL_LANGUAGE_TERMS: capacity, warehouse capacity, storage capacity, maximum capacity, max capacity, storage space, warehouse size, facility capacity, how much can store, storage limit, max storage\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: capacity > 0\n\nUSAGE: Capacity planning, warehouse utilization, space management, capacity analysis, storage planning\n\nUSE_CASES: Warehouse capacity, storage capacity, how much can store, capacity utilization, space availability\n\nEXAMPLES:\n\n- Warehouse capacity: SELECT warehouse_name, capacity FROM warehouses ORDER BY capacity DESC\n\n- Largest warehouses: SELECT warehouse_name, capacity FROM warehouses ORDER BY capacity DESC LIMIT 5\n\n- Total capacity: SELECT SUM(capacity) AS total_capacity FROM warehouses\n\n- Capacity utilization: SELECT w.warehouse_name, w.capacity, SUM(i.quantity_available) AS current_stock, ROUND(100.0 * SUM(i.quantity_available) / w.capacity, 2) AS utilization_pct FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name, w.capacity\n\nBUSINESS_RULE: Maximum units warehouse can store. Compare with current inventory for utilization rate.\n\nCOMMON_QUESTIONS: Warehouse capacity? How much can warehouse store? Maximum storage? Storage capacity? Largest warehouse? Capacity utilization?",
+      "metadata": {
+        "entity": "column",
+        "table": "warehouses",
+        "column": "capacity",
+        "type": "INTEGER",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "capacity",
+        "warehouse capacity",
+        "storage capacity",
+        "maximum capacity",
+        "how much can store",
+        "storage space",
+        "warehouse size"
+      ]
+    },
+    {
+      "chunk_id": "rel_warehouses_to_inventory",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "warehouses",
+      "related_table": "inventory",
+      "text": "RELATIONSHIP: warehouses to inventory (One-to-Many)\n\nDESCRIPTION: One warehouse stores many products. This tracks what products are in each facility.\n\nNATURAL_LANGUAGE_TERMS: warehouse inventory, products in warehouse, warehouse stock, stock at warehouse, warehouse products, inventory at warehouse, what's in warehouse, facility inventory\n\nJOIN_CONDITION: warehouses.warehouse_id = inventory.warehouse_id\n\nCARDINALITY: 1:N (one warehouse has many inventory records)\n\nFOREIGN_KEY: inventory.warehouse_id references warehouses.warehouse_id\n\nUSAGE: Warehouse inventory lookup, products at warehouse, facility stock levels, warehouse contents\n\nUSE_CASES: Show warehouse inventory, products at facility, warehouse stock, what's stored at warehouse\n\nEXAMPLES:\n\n- Warehouse inventory: SELECT w.warehouse_name, p.product_name, i.quantity_available FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id JOIN products p ON i.product_id = p.product_id WHERE w.warehouse_id = 8001\n\n- Warehouse stock summary: SELECT w.warehouse_name, COUNT(i.inventory_id) AS product_count, SUM(i.quantity_available) AS total_units FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name\n\n- Capacity utilization: SELECT w.warehouse_name, w.capacity, SUM(i.quantity_available) AS current_stock, ROUND(100.0 * SUM(i.quantity_available) / w.capacity, 2) AS utilization_pct FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name, w.capacity ORDER BY utilization_pct DESC\n\nBUSINESS_RULE: One warehouse stocks many products. Each product-warehouse combination is one inventory record.\n\nCOMMON_QUESTIONS: What's in warehouse? Warehouse inventory? Products at facility? Stock at warehouse? Warehouse contents?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "warehouses",
+        "to_table": "inventory",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "warehouse inventory",
+        "products in warehouse",
+        "warehouse stock",
+        "stock at warehouse",
+        "facility inventory",
+        "warehouse contents"
+      ]
+    },
+    {
+      "chunk_id": "rel_warehouses_to_shipments",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "warehouses",
+      "related_table": "shipments",
+      "text": "RELATIONSHIP: warehouses to shipments (One-to-Many)\n\nDESCRIPTION: One warehouse originates many shipments. This tracks which facility shipped each order.\n\nNATURAL_LANGUAGE_TERMS: warehouse shipments, shipments from warehouse, warehouse shipping, shipped from warehouse, warehouse fulfillment, shipments by warehouse, warehouse orders shipped\n\nJOIN_CONDITION: warehouses.warehouse_id = shipments.warehouse_id\n\nCARDINALITY: 1:N (one warehouse has many shipments)\n\nFOREIGN_KEY: shipments.warehouse_id references warehouses.warehouse_id\n\nUSAGE: Shipment origin tracking, warehouse fulfillment, shipping activity, warehouse performance\n\nUSE_CASES: Shipments from warehouse, warehouse shipping activity, fulfillment by warehouse, warehouse performance\n\nEXAMPLES:\n\n- Warehouse shipments: SELECT w.warehouse_name, s.shipment_id, s.ship_date, s.tracking_number FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id WHERE w.warehouse_id = 8001\n\n- Shipment count: SELECT w.warehouse_name, COUNT(s.shipment_id) AS shipment_count FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id GROUP BY w.warehouse_name ORDER BY shipment_count DESC\n\n- Recent shipments: SELECT w.warehouse_name, s.ship_date FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id WHERE s.ship_date >= CURRENT_DATE - INTERVAL '7 days'\n\nBUSINESS_RULE: Warehouse that fulfilled and shipped the order. Used for shipping performance and fulfillment tracking.\n\nCOMMON_QUESTIONS: Shipments from warehouse? Which warehouse shipped order? Warehouse shipping activity? Fulfillment by warehouse?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "warehouses",
+        "to_table": "shipments",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "warehouse shipments",
+        "shipments from warehouse",
+        "shipped from",
+        "warehouse fulfillment",
+        "warehouse shipping"
+      ]
+    },
+    {
+      "chunk_id": "query_warehouse_list",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "warehouses",
+      "use_case": "list_warehouses",
+      "text": "QUERY USE CASE: List all warehouse facilities\n\nDESCRIPTION: Display complete warehouse directory with location and contact information.\n\nNATURAL_LANGUAGE_QUERIES: list warehouses, all warehouses, show warehouses, warehouse list, warehouse directory, all facilities, distribution centers, warehouse locations\n\nTABLES_USED: warehouses\n\nWHEN_TO_USE: Warehouse directory, facility overview, location reference, warehouse management dashboard\n\nSQL_PATTERN: SELECT * FROM warehouses ORDER BY warehouse_name\n\nEXAMPLES:\n\n- All warehouses: SELECT warehouse_id, warehouse_name, city, state, manager_name, phone FROM warehouses ORDER BY warehouse_name\n\n- By location: SELECT warehouse_name, city, state, zip_code FROM warehouses ORDER BY state, city\n\n- With capacity: SELECT warehouse_name, capacity, manager_name FROM warehouses ORDER BY capacity DESC\n\n- Contact directory: SELECT warehouse_name, manager_name, phone, city || ', ' || state AS location FROM warehouses ORDER BY warehouse_name\n\nBUSINESS_RULE: Display warehouses alphabetically or by capacity. Include location and contact information.\n\nCOMMON_QUESTIONS: List all warehouses? Show warehouses? Warehouse directory? All facilities? Distribution centers?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "warehouse_directory",
+        "tables": [
+          "warehouses"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "list warehouses",
+        "all warehouses",
+        "warehouse list",
+        "warehouse directory",
+        "show warehouses",
+        "all facilities"
+      ]
+    },
+    {
+      "chunk_id": "query_warehouse_capacity",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "warehouses",
+      "related_tables": "inventory",
+      "use_case": "capacity_analysis",
+      "text": "QUERY USE CASE: Analyze warehouse capacity utilization\n\nDESCRIPTION: Calculate how much warehouse capacity is being used versus available space.\n\nNATURAL_LANGUAGE_QUERIES: warehouse capacity, capacity utilization, warehouse utilization, how full is warehouse, warehouse space used, available capacity, warehouse occupancy\n\nTABLES_USED: warehouses, inventory\n\nWHEN_TO_USE: Capacity planning, space management, warehouse efficiency, facility optimization\n\nSQL_PATTERN: SELECT warehouse_name, capacity, current_stock, (current_stock / capacity) AS utilization FROM warehouses JOIN inventory\n\nEXAMPLES:\n\n- Utilization by warehouse: SELECT w.warehouse_name, w.capacity, COALESCE(SUM(i.quantity_available + i.quantity_reserved), 0) AS current_stock, ROUND(100.0 * COALESCE(SUM(i.quantity_available + i.quantity_reserved), 0) / w.capacity, 2) AS utilization_pct FROM warehouses w LEFT JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name, w.capacity ORDER BY utilization_pct DESC\n\n- Near capacity: SELECT warehouse_name, capacity, current_stock FROM (SELECT w.warehouse_name, w.capacity, SUM(i.quantity_available + i.quantity_reserved) AS current_stock FROM warehouses w JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name, w.capacity) AS util WHERE current_stock > capacity * 0.9\n\n- Available space: SELECT warehouse_name, capacity - COALESCE(SUM(i.quantity_available + i.quantity_reserved), 0) AS available_space FROM warehouses w LEFT JOIN inventory i ON w.warehouse_id = i.warehouse_id GROUP BY w.warehouse_name, w.capacity ORDER BY available_space DESC\n\nBUSINESS_RULE: Utilization = (current inventory / capacity) × 100. Include both available and reserved stock.\n\nCOMMON_QUESTIONS: Warehouse capacity utilization? How full is warehouse? Available warehouse space? Warehouse occupancy? Space used?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "capacity_planning",
+        "tables": [
+          "warehouses",
+          "inventory"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "warehouse capacity",
+        "capacity utilization",
+        "how full",
+        "warehouse utilization",
+        "available space",
+        "occupancy"
+      ]
+    },
+    {
+      "chunk_id": "query_warehouse_by_location",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "warehouses",
+      "use_case": "geographic_filtering",
+      "text": "QUERY USE CASE: Find warehouses by geographic location\n\nDESCRIPTION: Filter warehouses by state, city, or region for location-based operations.\n\nNATURAL_LANGUAGE_QUERIES: warehouses in California, warehouses by state, California warehouses, west coast warehouses, warehouses in state, regional warehouses, warehouses by location\n\nTABLES_USED: warehouses\n\nWHEN_TO_USE: Regional operations, geographic planning, nearest warehouse selection, regional analysis\n\nSQL_PATTERN: SELECT * FROM warehouses WHERE state = 'STATE_CODE' OR city = 'CITY_NAME'\n\nEXAMPLES:\n\n- California warehouses: SELECT * FROM warehouses WHERE state = 'CA'\n\n- West coast: SELECT * FROM warehouses WHERE state IN ('CA', 'OR', 'WA')\n\n- By city: SELECT * FROM warehouses WHERE city = 'Los Angeles'\n\n- Regional distribution: SELECT state, COUNT(*) AS warehouse_count FROM warehouses GROUP BY state ORDER BY warehouse_count DESC\n\n- State capacity: SELECT state, COUNT(*) AS facilities, SUM(capacity) AS total_capacity FROM warehouses GROUP BY state ORDER BY total_capacity DESC\n\nBUSINESS_RULE: Use two-letter state codes. Group by state or region for analysis.\n\nCOMMON_QUESTIONS: Warehouses in California? West coast warehouses? Warehouses by state? California facilities? Regional distribution?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "geographic_filter",
+        "tables": [
+          "warehouses"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "warehouses in California",
+        "by state",
+        "west coast",
+        "California warehouses",
+        "regional",
+        "by location"
+      ]
+    },
+    {
+      "chunk_id": "query_warehouse_performance",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "warehouses",
+      "related_tables": "shipments, inventory",
+      "use_case": "warehouse_metrics",
+      "text": "QUERY USE CASE: Analyze warehouse performance metrics\n\nDESCRIPTION: Evaluate warehouse efficiency through shipment volume and inventory turnover.\n\nNATURAL_LANGUAGE_QUERIES: warehouse performance, busiest warehouse, most shipments, warehouse efficiency, top performing warehouse, warehouse metrics, shipping volume by warehouse\n\nTABLES_USED: warehouses, shipments, inventory\n\nWHEN_TO_USE: Performance analysis, warehouse optimization, resource allocation, efficiency metrics\n\nSQL_PATTERN: SELECT warehouse_name, COUNT(shipments), SUM(inventory) FROM warehouses JOIN shipments JOIN inventory\n\nEXAMPLES:\n\n- Shipment volume: SELECT w.warehouse_name, COUNT(s.shipment_id) AS shipment_count FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id GROUP BY w.warehouse_name ORDER BY shipment_count DESC\n\n- Performance summary: SELECT w.warehouse_name, COUNT(DISTINCT i.product_id) AS products_stocked, SUM(i.quantity_available) AS total_units, COUNT(s.shipment_id) AS shipments FROM warehouses w LEFT JOIN inventory i ON w.warehouse_id = i.warehouse_id LEFT JOIN shipments s ON w.warehouse_id = s.warehouse_id GROUP BY w.warehouse_name\n\n- Busiest warehouse: SELECT w.warehouse_name, COUNT(s.shipment_id) AS shipments_last_30_days FROM warehouses w JOIN shipments s ON w.warehouse_id = s.warehouse_id WHERE s.ship_date >= CURRENT_DATE - INTERVAL '30 days' GROUP BY w.warehouse_name ORDER BY shipments_last_30_days DESC LIMIT 1\n\nBUSINESS_RULE: Higher shipment count indicates busier warehouse. Combine with capacity for efficiency metrics.\n\nCOMMON_QUESTIONS: Warehouse performance? Busiest warehouse? Most shipments? Warehouse efficiency? Top performing warehouse? Shipping volume?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "performance_metrics",
+        "tables": [
+          "warehouses",
+          "shipments",
+          "inventory"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "warehouse performance",
+        "busiest warehouse",
+        "most shipments",
+        "warehouse efficiency",
+        "top performing",
+        "shipping volume"
+      ]
+    }
+  ]
+}

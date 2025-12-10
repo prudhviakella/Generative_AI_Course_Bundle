@@ -1,0 +1,26 @@
+supplier_id,supplier_name,contact_person,email,phone,address,city,state,country,payment_terms,rating,created_at
+10001,TechSound Manufacturing,Kimberly Graham,kimberly.graham@techsound.com,+460-604-6398,8294 Heather Cape Apt. 796,Shenzhen,Guangdong,China,Net 30,3.7,2023-01-17 20:36:00
+10002,EcoWear Textiles,Laurie Reynolds,laurie.reynolds@ecowear.com,+510-618-2613,7784 Joshua Coves,Mumbai,Maharashtra,India,Net 60,4.0,2022-06-08 14:54:00
+10003,HydroLife Industries,Robert Roberts,robert.roberts@hydrolife.com,+962-754-1747,163 Perkins Brooks,Portland,Oregon,USA,Net 15,3.7,2023-01-28 08:09:00
+10004,FitZone Sports,Melissa Parks,melissa.parks@fitzone.com,+303-905-5795,9250 Paul Cliffs,Taichung,,Taiwan,Net 15,4.6,2023-01-14 20:17:00
+10005,BrightWork Electronics,Michael Austin,michael.austin@brightwork.com,+433-891-8578,9823 Timothy Cape,Dubai,,UAE,Net 15,3.7,2023-01-02 09:28:00
+10006,SpeedRun Footwear,Andrew Brown,andrew.brown@speedrun.com,+105-127-8547,490 Jason Trail,Ho Chi Minh,,Vietnam,Net 45,3.6,2023-05-28 15:07:00
+10007,BrewMaster Appliances,Timothy Hall,timothy.hall@brewmaster.com,+371-493-5318,249 Davis Alley Apt. 695,Seoul,,South Korea,Net 15,4.3,2022-08-24 15:42:00
+10008,Wanderer Outdoor Gear,Rebecca Austin,rebecca.austin@wanderer.com,+741-162-4547,294 Santana Canyon,Kathmandu,,Nepal,Net 30,4.2,2022-11-11 11:33:00
+10009,GadgetPro Solutions,John Ritter,john.ritter@gadgetpro.com,+17-894-4042,791 Hamilton Knolls,Taipei,,Taiwan,Net 15,3.9,2022-03-16 12:32:00
+10010,NutriPower Health,Brittany Davis,brittany.davis@nutripower.com,+867-432-8520,203 Anna Summit,Melbourne,Victoria,Australia,Net 45,4.1,2022-06-15 17:11:00
+10011,StyleMax Fashion,Tina Haney,tina.haney@stylemax.com,+341-365-7462,6942 Audrey Highway Apt. 837,Bangkok,,Thailand,Net 15,5.0,2023-04-07 10:35:00
+10012,HomeGoods Direct,Michael Hensley,michael.hensley@homegoods.com,+529-953-5919,88463 Ball Garden Suite 850,Singapore,,Singapore,Net 30,4.2,2023-03-15 12:08:00
+10013,ProGear Manufacturing,Jill Smith,jill.smith@progear.com,+11-556-7180,7217 Lisa Locks,Tokyo,,Japan,Net 45,3.7,2022-03-11 19:13:00
+10014,EliteWare Supplies,Eric Williams,eric.williams@eliteware.com,+966-446-4411,3267 Joshua Ville Suite 837,Hong Kong,,Hong Kong,Net 15,4.2,2022-05-22 13:38:00
+10015,PremiumBrand Goods,Douglas Finley,douglas.finley@premiumbrand.com,+129-323-9667,793 Valencia Common Apt. 867,Bangalore,Karnataka,India,Net 15,4.6,2023-05-02 17:03:00
+10016,QualityFirst Products,Gabriel Freeman,gabriel.freeman@qualityfirst.com,+417-787-1494,8691 Kelly Mills Suite 296,Shanghai,,China,Net 60,4.3,2023-02-07 17:43:00
+10017,TopTier Merchandise,Michelle Krueger,michelle.krueger@toptier.com,+240-280-1942,2415 Robinson Shores Apt. 204,Manila,,Philippines,Net 60,4.7,2022-08-29 12:00:00
+10018,BestChoice Supplies,Andrew Jones,andrew.jones@bestchoice.com,+356-907-1416,1912 Wright Spurs,Jakarta,,Indonesia,Net 45,4.2,2023-03-05 19:05:00
+10019,SuperValue Trading,John Brown,john.brown@supervalue.com,+980-435-8362,5781 Oliver Forges,Kuala Lumpur,,Malaysia,Net 15,4.9,2022-01-10 13:12:00
+10020,MegaBrand Industries,Lauren Stewart,lauren.stewart@megabrand.com,+699-771-6270,353 Dorothy Burgs,Hanoi,,Vietnam,Net 15,4.2,2023-05-01 16:38:00
+10021,UltraChoice Manufacturing,Nicole Ball,nicole.ball@ultrachoice.com,+903-574-9188,6731 Thomas Square Apt. 174,Guangzhou,Guangdong,China,Net 60,4.0,2022-06-12 14:54:00
+10022,GlobalTrade Partners,Ashley Davis,ashley.davis@globaltrade.com,+79-700-1452,6073 Jackson Cove Suite 373,Dhaka,,Bangladesh,Net 45,4.7,2022-09-23 10:54:00
+10023,WorldClass Suppliers,Joel Larson,joel.larson@worldclass.com,+186-588-4441,01492 Moore Views,Colombo,,Sri Lanka,Net 15,4.6,2022-05-14 15:46:00
+10024,InternationalGoods Co,Lauren Arnold,lauren.arnold@internationalgoods.com,+212-284-1977,40061 Alexandria Isle,Karachi,,Pakistan,Net 45,3.8,2022-05-31 15:06:00
+10025,PacificRim Traders,Joseph Schwartz,joseph.schwartz@pacificrim.com,+109-879-2228,0251 Wright Plains Apt. 471,Auckland,,New Zealand,Net 15,4.7,2023-05-17 14:38:00

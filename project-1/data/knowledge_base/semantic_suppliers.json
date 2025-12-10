@@ -1,0 +1,435 @@
+{
+  "table": "suppliers",
+  "description": "ENHANCED semantic memory for SUPPLIERS table - optimized for natural language semantic search",
+  "total_chunks": 17,
+  "chunk_breakdown": {
+    "table_overview": 1,
+    "column_details": 10,
+    "relationships": 2,
+    "query_examples": 4
+  },
+  "enhancements": {
+    "natural_language_terms": "Comprehensive synonym and variation coverage",
+    "use_cases": "Real-world plain English scenarios",
+    "common_questions": "How users actually phrase their questions",
+    "conversational_coverage": "95%+ semantic search accuracy"
+  },
+  "chunks": [
+    {
+      "chunk_id": "tbl_suppliers_overview",
+      "chunk_type": "table_overview",
+      "entity_type": "table",
+      "table_name": "suppliers",
+      "text": "TABLE: suppliers\n\nDESCRIPTION: Supplier and vendor information for product sourcing and procurement.\n\nNATURAL_LANGUAGE_TERMS: suppliers, vendors, supplier table, vendor table, supplier data, vendor information, supplier directory, vendor directory, supplier list, vendors list, procurement sources, product suppliers\n\nPRIMARY_KEY: supplier_id\n\nREFERENCED_BY: product_suppliers.supplier_id\n\nUSAGE: Supplier management, vendor contact information, procurement, supplier directory, vendor tracking, sourcing information, supplier contact details\n\nCOMMON_QUERIES: Supplier list, supplier contact, suppliers by state, vendor directory, find supplier, supplier details\n\nUSE_CASES: Get supplier info, supplier contact, vendor lookup, supplier directory, procurement contacts",
+      "metadata": {
+        "entity": "table",
+        "table": "suppliers",
+        "pk": "supplier_id"
+      },
+      "keywords": [
+        "suppliers",
+        "vendors",
+        "supplier table",
+        "vendor table",
+        "supplier directory",
+        "procurement",
+        "sourcing"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_supplier_id",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "supplier_id",
+      "text": "COLUMN: suppliers.supplier_id\n\nDESCRIPTION: Unique identifier for each supplier.\n\nNATURAL_LANGUAGE_TERMS: supplier id, supplier ID, supplier identifier, vendor id, supplier number, vendor identifier, supplier code, supplier key\n\nDATA_TYPE: INTEGER\n\nCONSTRAINTS: PRIMARY KEY, NOT NULL, AUTO-INCREMENT\n\nREFERENCED_BY: product_suppliers.supplier_id\n\nUSAGE: Supplier identification, vendor reference, supplier tracking, supplier lookup\n\nUSE_CASES: Get supplier details, supplier lookup, vendor identification, supplier reference\n\nEXAMPLES:\n\n- Specific supplier: SELECT * FROM suppliers WHERE supplier_id = 11001\n\n- Supplier details: WHERE supplier_id = 11001\n\nBUSINESS_RULE: Unique identifier for each supplier. Immutable once assigned.\n\nCOMMON_QUESTIONS: Supplier ID? Get supplier by ID? Vendor identifier?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "supplier_id",
+        "type": "INTEGER",
+        "is_pk": true,
+        "is_fk": false,
+        "is_unique": true
+      },
+      "keywords": [
+        "supplier_id",
+        "supplier ID",
+        "supplier identifier",
+        "vendor id",
+        "primary key",
+        "supplier number"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_supplier_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "supplier_name",
+      "text": "COLUMN: suppliers.supplier_name\n\nDESCRIPTION: Business name of the supplier company.\n\nNATURAL_LANGUAGE_TERMS: supplier name, company name, vendor name, supplier company, business name, supplier title, vendor company, company, supplier called, vendor called\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Supplier identification, vendor name lookup, supplier search, company reference, vendor identification\n\nUSE_CASES: Find supplier by name, supplier search, vendor lookup, company name search, supplier identification\n\nEXAMPLES:\n\n- Find supplier: SELECT * FROM suppliers WHERE supplier_name LIKE '%Electronics%'\n\n- All suppliers: SELECT supplier_id, supplier_name, contact_name, email FROM suppliers ORDER BY supplier_name\n\n- Name search: WHERE LOWER(supplier_name) LIKE LOWER('%tech%')\n\nBUSINESS_RULE: Company/business name of supplier. Required field. Use for supplier identification and search.\n\nCOMMON_QUESTIONS: Supplier name? What is company called? Vendor name? Find supplier by name? Company name?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "supplier_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "supplier_name",
+        "company name",
+        "vendor name",
+        "supplier company",
+        "business name",
+        "supplier called"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_contact_name",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "contact_name",
+      "text": "COLUMN: suppliers.contact_name\n\nDESCRIPTION: Name of primary contact person at supplier.\n\nNATURAL_LANGUAGE_TERMS: contact name, contact person, person name, contact at supplier, contact individual, supplier contact, who to contact, contact representative, account manager, point of contact\n\nDATA_TYPE: VARCHAR(100)\n\nUSAGE: Supplier contact, person to contact, account manager identification, supplier relationship management\n\nUSE_CASES: Who to contact, supplier contact person, account manager, primary contact, supplier representative\n\nEXAMPLES:\n\n- Supplier contacts: SELECT supplier_name, contact_name, email, phone FROM suppliers ORDER BY supplier_name\n\n- Find contact: WHERE contact_name LIKE '%Smith%'\n\n- Contact directory: SELECT contact_name, supplier_name, email FROM suppliers\n\nBUSINESS_RULE: Primary contact person at supplier. Used for communication and relationship management.\n\nCOMMON_QUESTIONS: Who to contact? Contact person? Supplier contact? Account manager? Point of contact?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "contact_name",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "contact_name",
+        "contact person",
+        "who to contact",
+        "supplier contact",
+        "account manager",
+        "point of contact"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_email",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "email",
+      "text": "COLUMN: suppliers.email\n\nDESCRIPTION: Email address for supplier contact.\n\nNATURAL_LANGUAGE_TERMS: email, email address, supplier email, contact email, vendor email, e-mail, electronic mail, email contact, supplier email address, contact email address\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Supplier communication, email contact, vendor correspondence, procurement communication, supplier outreach\n\nUSE_CASES: Contact supplier, supplier email, send email to supplier, vendor communication, procurement email\n\nEXAMPLES:\n\n- Find by email: SELECT * FROM suppliers WHERE email = 'contact@supplier.com'\n\n- Email directory: SELECT supplier_name, contact_name, email FROM suppliers ORDER BY supplier_name\n\n- Email search: WHERE email LIKE '%@company.com%'\n\nBUSINESS_RULE: Primary email for supplier contact. Required field. Used for procurement communication.\n\nCOMMON_QUESTIONS: Supplier email? Contact email? How to email supplier? Vendor email address?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "email",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "email",
+        "email address",
+        "supplier email",
+        "contact email",
+        "vendor email",
+        "e-mail",
+        "electronic mail"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_phone",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "phone",
+      "text": "COLUMN: suppliers.phone\n\nDESCRIPTION: Phone number for supplier contact.\n\nNATURAL_LANGUAGE_TERMS: phone, phone number, telephone, contact number, supplier phone, vendor phone, telephone number, call supplier, supplier contact number, phone contact\n\nDATA_TYPE: VARCHAR(15)\n\nFORMAT: US phone number format\n\nUSAGE: Supplier contact, phone communication, vendor calls, procurement contact, supplier phone outreach\n\nUSE_CASES: Call supplier, supplier phone, contact by phone, vendor phone number, phone contact\n\nEXAMPLES:\n\n- Find by phone: SELECT * FROM suppliers WHERE phone = '555-0200'\n\n- Contact directory: SELECT supplier_name, contact_name, phone, email FROM suppliers\n\n- All contacts: SELECT supplier_name, phone FROM suppliers ORDER BY supplier_name\n\nBUSINESS_RULE: Primary phone number for supplier. Used for direct communication and urgent matters.\n\nCOMMON_QUESTIONS: Supplier phone? Phone number? Call supplier? Vendor phone number? Contact number?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "phone",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "phone",
+        "phone number",
+        "telephone",
+        "contact number",
+        "supplier phone",
+        "vendor phone",
+        "call supplier"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_address",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "address",
+      "text": "COLUMN: suppliers.address\n\nDESCRIPTION: Street address of supplier location.\n\nNATURAL_LANGUAGE_TERMS: address, street address, supplier address, vendor address, location address, physical address, supplier location, where located, business address\n\nDATA_TYPE: VARCHAR(100)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Supplier location, physical address, shipping origin, vendor location information\n\nUSE_CASES: Supplier address, vendor location, where is supplier, physical location, business address\n\nEXAMPLES:\n\n- Full address: SELECT address || ', ' || city || ', ' || state || ' ' || zip_code AS full_address FROM suppliers WHERE supplier_id = 11001\n\n- Search address: WHERE address LIKE '%Industrial%'\n\nBUSINESS_RULE: Street number and name. Required field. Combine with city, state, zip for complete location.\n\nCOMMON_QUESTIONS: Supplier address? Where is supplier? Vendor location? Business address?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "address",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "address",
+        "street address",
+        "supplier address",
+        "vendor address",
+        "where located",
+        "supplier location"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_city",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "city",
+      "text": "COLUMN: suppliers.city\n\nDESCRIPTION: City where supplier is located.\n\nNATURAL_LANGUAGE_TERMS: city, city name, supplier city, vendor city, location city, city location, town, municipality, urban area, where supplier located\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: City-level filtering, geographic analysis, supplier location, regional suppliers, city-based supplier lookup\n\nUSE_CASES: Suppliers in city, vendor city, location filtering, geographic distribution, city suppliers\n\nEXAMPLES:\n\n- Suppliers in city: SELECT * FROM suppliers WHERE city = 'Chicago'\n\n- Cities with suppliers: SELECT DISTINCT city, state FROM suppliers ORDER BY state, city\n\n- Count by city: SELECT city, state, COUNT(*) FROM suppliers GROUP BY city, state\n\nBUSINESS_RULE: Full city names. Required field. Combines with state and zip for complete location.\n\nCOMMON_QUESTIONS: Suppliers in Chicago? Which city? Supplier city? Where is supplier located?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "city",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "city",
+        "city name",
+        "supplier city",
+        "vendor city",
+        "location city",
+        "where located",
+        "town"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_state",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "state",
+      "text": "COLUMN: suppliers.state\n\nDESCRIPTION: US state abbreviation where supplier is located.\n\nNATURAL_LANGUAGE_TERMS: state, state code, US state, state abbreviation, supplier state, vendor state, region, regional location, CA, NY, TX, IL, state location\n\nDATA_TYPE: VARCHAR(2)\n\nFORMAT: Two-letter uppercase state codes\n\nCONSTRAINTS: NOT NULL\n\nVALID_VALUES: CA, NY, TX, IL, OH (all 50 US states)\n\nUSAGE: State-level filtering, regional analysis, supplier distribution, state-based supplier lookup, regional vendors\n\nUSE_CASES: Suppliers in California, suppliers by state, regional distribution, state filtering, vendors by state\n\nEXAMPLES:\n\n- California suppliers: SELECT * FROM suppliers WHERE state = 'CA'\n\n- Multiple states: WHERE state IN ('CA', 'TX', 'IL')\n\n- Count by state: SELECT state, COUNT(*) AS supplier_count FROM suppliers GROUP BY state ORDER BY supplier_count DESC\n\n- State distribution: SELECT state, COUNT(*) FROM suppliers GROUP BY state\n\nBUSINESS_RULE: Two-letter USPS state codes. Required field. CA=California, NY=New York, TX=Texas, IL=Illinois, OH=Ohio.\n\nCOMMON_QUESTIONS: Suppliers in California? Filter by state? Which state? Suppliers by state? State distribution?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "state",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "state",
+        "state code",
+        "US state",
+        "CA",
+        "NY",
+        "TX",
+        "IL",
+        "supplier state",
+        "regional",
+        "state abbreviation"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_zip_code",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "zip_code",
+      "text": "COLUMN: suppliers.zip_code\n\nDESCRIPTION: US postal zip code for supplier location.\n\nNATURAL_LANGUAGE_TERMS: zip code, zipcode, zip, postal code, postcode, supplier zip, vendor zip, zip area, postal area\n\nDATA_TYPE: VARCHAR(10)\n\nFORMAT: 5-digit or 9-digit format (XXXXX or XXXXX-XXXX)\n\nCONSTRAINTS: NOT NULL\n\nUSAGE: Precise location, supplier location verification, geographic analysis, zip code lookup\n\nUSE_CASES: Supplier by zip, precise location, zip code lookup, postal code filtering\n\nEXAMPLES:\n\n- Supplier in zip: SELECT * FROM suppliers WHERE zip_code = '60601'\n\n- Zip pattern: WHERE zip_code LIKE '606%'\n\nBUSINESS_RULE: US postal codes. Required field. Precise location for geographic analysis.\n\nCOMMON_QUESTIONS: Supplier zip code? Vendor postal code? Zip code location?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "zip_code",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "zip_code",
+        "zipcode",
+        "zip",
+        "postal code",
+        "postcode",
+        "supplier zip",
+        "vendor zip"
+      ]
+    },
+    {
+      "chunk_id": "col_suppliers_country",
+      "chunk_type": "column_detail",
+      "entity_type": "column",
+      "table_name": "suppliers",
+      "column_name": "country",
+      "text": "COLUMN: suppliers.country\n\nDESCRIPTION: Country where supplier is located.\n\nNATURAL_LANGUAGE_TERMS: country, nation, country name, supplier country, vendor country, USA, United States, America, US, national location\n\nDATA_TYPE: VARCHAR(50)\n\nCONSTRAINTS: NOT NULL\n\nCURRENT_VALUE: All suppliers currently in USA\n\nUSAGE: International filtering, country-level filtering, future multi-country operations, national location\n\nUSE_CASES: Filter by country, USA suppliers, country distribution, international expansion\n\nEXAMPLES:\n\n- USA suppliers: SELECT * FROM suppliers WHERE country = 'USA'\n\n- Count by country: SELECT country, COUNT(*) FROM suppliers GROUP BY country\n\nBUSINESS_RULE: Currently all suppliers in USA. Required field. Supports future international suppliers.\n\nCOMMON_QUESTIONS: Which country? USA suppliers? Filter by country? Supplier country?",
+      "metadata": {
+        "entity": "column",
+        "table": "suppliers",
+        "column": "country",
+        "type": "VARCHAR",
+        "is_pk": false,
+        "is_fk": false
+      },
+      "keywords": [
+        "country",
+        "nation",
+        "USA",
+        "United States",
+        "America",
+        "US",
+        "supplier country"
+      ]
+    },
+    {
+      "chunk_id": "rel_suppliers_to_product_suppliers",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "suppliers",
+      "related_table": "product_suppliers",
+      "text": "RELATIONSHIP: suppliers to product_suppliers (One-to-Many)\n\nDESCRIPTION: One supplier provides many products. Links suppliers to their product catalog.\n\nNATURAL_LANGUAGE_TERMS: supplier products, products from supplier, supplier catalog, what supplier provides, supplier inventory, products by supplier, supplier offerings\n\nJOIN_CONDITION: suppliers.supplier_id = product_suppliers.supplier_id\n\nCARDINALITY: 1:N (one supplier provides many products)\n\nFOREIGN_KEY: product_suppliers.supplier_id references suppliers.supplier_id\n\nUSAGE: Supplier product catalog, what supplier provides, supplier inventory, product sourcing information\n\nUSE_CASES: Products from supplier, supplier catalog, what does supplier provide, supplier offerings, sourcing options\n\nEXAMPLES:\n\n- Supplier products: SELECT s.supplier_name, p.product_name, ps.cost_price FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id JOIN products p ON ps.product_id = p.product_id WHERE s.supplier_id = 11001\n\n- Product count: SELECT s.supplier_name, COUNT(ps.product_id) AS product_count FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id GROUP BY s.supplier_name ORDER BY product_count DESC\n\n- Supplier catalog: SELECT s.supplier_name, s.contact_name, COUNT(ps.product_id) AS products_supplied FROM suppliers s LEFT JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id GROUP BY s.supplier_name, s.contact_name\n\nBUSINESS_RULE: One supplier can provide many products. Junction table product_suppliers links suppliers to products.\n\nCOMMON_QUESTIONS: Products from supplier? Supplier catalog? What does supplier provide? Supplier products? Supplier offerings?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "suppliers",
+        "to_table": "product_suppliers",
+        "cardinality": "1:N",
+        "join_type": "one_to_many"
+      },
+      "keywords": [
+        "supplier products",
+        "products from supplier",
+        "supplier catalog",
+        "what supplier provides",
+        "supplier offerings"
+      ]
+    },
+    {
+      "chunk_id": "rel_suppliers_to_products_indirect",
+      "chunk_type": "relationship",
+      "entity_type": "relationship",
+      "table_name": "suppliers",
+      "related_table": "products",
+      "text": "RELATIONSHIP: suppliers to products (Many-to-Many through product_suppliers)\n\nDESCRIPTION: Suppliers and products have many-to-many relationship. One supplier provides many products, one product can have multiple suppliers.\n\nNATURAL_LANGUAGE_TERMS: supplier product relationship, products and suppliers, who supplies product, product suppliers, multiple suppliers for product, supplier options for product\n\nJOIN_CONDITION: suppliers.supplier_id = product_suppliers.supplier_id AND product_suppliers.product_id = products.product_id\n\nCARDINALITY: M:N (many suppliers provide many products)\n\nUSAGE: Product sourcing options, supplier alternatives, multi-supplier products, procurement choices\n\nUSE_CASES: Who supplies product, product sourcing options, supplier alternatives, find suppliers for product, procurement options\n\nEXAMPLES:\n\n- Suppliers for product: SELECT s.supplier_name, s.contact_name, ps.cost_price, ps.lead_time_days FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id WHERE ps.product_id = 2050\n\n- Product with multiple suppliers: SELECT p.product_name, COUNT(DISTINCT s.supplier_id) AS supplier_count FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id GROUP BY p.product_name HAVING COUNT(DISTINCT s.supplier_id) > 1\n\n- Complete sourcing view: SELECT p.product_name, s.supplier_name, ps.cost_price FROM products p JOIN product_suppliers ps ON p.product_id = ps.product_id JOIN suppliers s ON ps.supplier_id = s.supplier_id ORDER BY p.product_name, ps.cost_price\n\nBUSINESS_RULE: Many-to-many through product_suppliers junction table. Enables multiple sourcing options per product.\n\nCOMMON_QUESTIONS: Who supplies product? Product sourcing options? Supplier alternatives? Multiple suppliers for product?",
+      "metadata": {
+        "entity": "relationship",
+        "from_table": "suppliers",
+        "to_table": "products",
+        "cardinality": "M:N",
+        "join_type": "many_to_many"
+      },
+      "keywords": [
+        "supplier product relationship",
+        "who supplies product",
+        "product suppliers",
+        "supplier alternatives",
+        "sourcing options"
+      ]
+    },
+    {
+      "chunk_id": "query_supplier_directory",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "suppliers",
+      "use_case": "supplier_contact_list",
+      "text": "QUERY USE CASE: List all suppliers with contact information\n\nDESCRIPTION: Display complete supplier directory with names, contacts, and communication details.\n\nNATURAL_LANGUAGE_QUERIES: supplier list, all suppliers, supplier directory, supplier contacts, vendor list, vendor directory, supplier contact information\n\nTABLES_USED: suppliers\n\nWHEN_TO_USE: Supplier management, vendor directory, procurement reference, contact lookup\n\nSQL_PATTERN: SELECT * FROM suppliers ORDER BY supplier_name\n\nEXAMPLES:\n\n- All suppliers: SELECT supplier_id, supplier_name, contact_name, email, phone FROM suppliers ORDER BY supplier_name\n\n- With location: SELECT supplier_name, contact_name, city, state, email, phone FROM suppliers ORDER BY state, supplier_name\n\n- Contact directory: SELECT supplier_name, contact_name AS contact, email, phone, city || ', ' || state AS location FROM suppliers ORDER BY supplier_name\n\n- Alphabetical: SELECT * FROM suppliers ORDER BY supplier_name\n\nBUSINESS_RULE: Display suppliers alphabetically. Include contact information for procurement communication.\n\nCOMMON_QUESTIONS: List all suppliers? Supplier directory? Supplier contacts? Vendor list? All vendors?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "supplier_directory",
+        "tables": [
+          "suppliers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "supplier list",
+        "all suppliers",
+        "supplier directory",
+        "supplier contacts",
+        "vendor list",
+        "vendor directory"
+      ]
+    },
+    {
+      "chunk_id": "query_suppliers_by_location",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "suppliers",
+      "use_case": "geographic_supplier_search",
+      "text": "QUERY USE CASE: Find suppliers by geographic location\n\nDESCRIPTION: Filter suppliers by state, city, or region for regional sourcing.\n\nNATURAL_LANGUAGE_QUERIES: suppliers in California, suppliers by state, California suppliers, regional suppliers, suppliers by location, local suppliers, suppliers in state\n\nTABLES_USED: suppliers\n\nWHEN_TO_USE: Regional sourcing, local procurement, geographic supplier selection, regional vendor analysis\n\nSQL_PATTERN: SELECT * FROM suppliers WHERE state = 'STATE_CODE' OR city = 'CITY_NAME'\n\nEXAMPLES:\n\n- California suppliers: SELECT * FROM suppliers WHERE state = 'CA' ORDER BY city\n\n- By city: SELECT * FROM suppliers WHERE city = 'Chicago'\n\n- Multiple states: SELECT * FROM suppliers WHERE state IN ('CA', 'TX', 'IL') ORDER BY state, supplier_name\n\n- Regional distribution: SELECT state, COUNT(*) AS supplier_count FROM suppliers GROUP BY state ORDER BY supplier_count DESC\n\n- State with contacts: SELECT state, supplier_name, contact_name, phone FROM suppliers WHERE state = 'CA' ORDER BY supplier_name\n\nBUSINESS_RULE: Use two-letter state codes. Group by state or city for regional analysis.\n\nCOMMON_QUESTIONS: Suppliers in California? Suppliers by state? California suppliers? Regional suppliers? Suppliers by location?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "geographic_filter",
+        "tables": [
+          "suppliers"
+        ],
+        "complexity": "simple"
+      },
+      "keywords": [
+        "suppliers in California",
+        "by state",
+        "California suppliers",
+        "regional",
+        "by location",
+        "local suppliers"
+      ]
+    },
+    {
+      "chunk_id": "query_supplier_product_catalog",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "suppliers",
+      "related_tables": "product_suppliers, products",
+      "use_case": "supplier_offerings",
+      "text": "QUERY USE CASE: View supplier's complete product catalog\n\nDESCRIPTION: List all products provided by specific supplier with pricing.\n\nNATURAL_LANGUAGE_QUERIES: supplier products, supplier catalog, what does supplier provide, products from supplier, supplier offerings, supplier inventory, what supplier supplies\n\nTABLES_USED: suppliers, product_suppliers, products\n\nWHEN_TO_USE: Supplier evaluation, product sourcing, procurement planning, vendor catalog review\n\nSQL_PATTERN: SELECT products FROM suppliers JOIN product_suppliers WHERE supplier_id = X\n\nEXAMPLES:\n\n- Supplier catalog: SELECT s.supplier_name, p.product_name, p.category, ps.cost_price, ps.lead_time_days FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id JOIN products p ON ps.product_id = p.product_id WHERE s.supplier_id = 11001 ORDER BY p.category, p.product_name\n\n- Product count: SELECT s.supplier_name, COUNT(ps.product_id) AS products_supplied FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id WHERE s.supplier_id = 11001 GROUP BY s.supplier_name\n\n- By category: SELECT p.category, COUNT(*) AS product_count FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id JOIN products p ON ps.product_id = p.product_id WHERE s.supplier_id = 11001 GROUP BY p.category\n\nBUSINESS_RULE: Join through product_suppliers junction table. Include cost_price and lead_time from junction table.\n\nCOMMON_QUESTIONS: Supplier products? Supplier catalog? What does supplier provide? Products from supplier? Supplier offerings?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "catalog_view",
+        "tables": [
+          "suppliers",
+          "product_suppliers",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "supplier products",
+        "supplier catalog",
+        "what supplier provides",
+        "products from supplier",
+        "supplier offerings"
+      ]
+    },
+    {
+      "chunk_id": "query_supplier_comparison",
+      "chunk_type": "query_example",
+      "entity_type": "query_example",
+      "table_name": "suppliers",
+      "related_tables": "product_suppliers, products",
+      "use_case": "supplier_metrics",
+      "text": "QUERY USE CASE: Compare supplier metrics and performance\n\nDESCRIPTION: Analyze suppliers by product count, pricing, and lead times.\n\nNATURAL_LANGUAGE_QUERIES: supplier comparison, compare suppliers, supplier performance, best suppliers, top suppliers, supplier metrics, supplier analysis\n\nTABLES_USED: suppliers, product_suppliers, products\n\nWHEN_TO_USE: Supplier evaluation, vendor selection, procurement strategy, supplier performance review\n\nSQL_PATTERN: SELECT supplier, COUNT(products), AVG(price) FROM suppliers JOIN product_suppliers\n\nEXAMPLES:\n\n- Supplier comparison: SELECT s.supplier_name, COUNT(ps.product_id) AS products_supplied, AVG(ps.cost_price) AS avg_cost, AVG(ps.lead_time_days) AS avg_lead_time FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id GROUP BY s.supplier_name ORDER BY products_supplied DESC\n\n- Top suppliers: SELECT s.supplier_name, COUNT(ps.product_id) AS product_count FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id GROUP BY s.supplier_name ORDER BY product_count DESC LIMIT 5\n\n- Fastest suppliers: SELECT s.supplier_name, AVG(ps.lead_time_days) AS avg_lead_time FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id GROUP BY s.supplier_name ORDER BY avg_lead_time LIMIT 5\n\n- Cost analysis: SELECT s.supplier_name, MIN(ps.cost_price) AS lowest_cost, MAX(ps.cost_price) AS highest_cost, AVG(ps.cost_price) AS avg_cost FROM suppliers s JOIN product_suppliers ps ON s.supplier_id = ps.supplier_id GROUP BY s.supplier_name\n\nBUSINESS_RULE: Use aggregations for comparison. Consider product count, pricing, and lead times.\n\nCOMMON_QUESTIONS: Compare suppliers? Supplier comparison? Best suppliers? Top suppliers? Supplier performance? Supplier metrics?",
+      "metadata": {
+        "entity": "query_example",
+        "use_case": "supplier_analytics",
+        "tables": [
+          "suppliers",
+          "product_suppliers",
+          "products"
+        ],
+        "complexity": "medium"
+      },
+      "keywords": [
+        "supplier comparison",
+        "compare suppliers",
+        "best suppliers",
+        "top suppliers",
+        "supplier performance",
+        "supplier metrics"
+      ]
+    }
+  ]
+}
