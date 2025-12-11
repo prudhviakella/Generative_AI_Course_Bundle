@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a3ee523-36e5-4ac6-8e26-8916ea8f9fb2" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/12_database_connectivity/faker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/12_database_connectivity/faker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/12_database_connectivity/files/customers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/12_database_connectivity/files/customers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module_1/12_database_connectivity/files/orders.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Module_1/12_database_connectivity/files/orders.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +136,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1765337168709</updated>
-      <workItem from="1765337169744" duration="10825000" />
+      <workItem from="1765337169744" duration="11056000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -173,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765417775855</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1765422094071</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765422094071</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +200,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Generative_AI_Course_Bundle$faker.coverage" NAME="faker Coverage Results" MODIFIED="1765421472510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Module_1/12_database_connectivity" />
+    <SUITE FILE_PATH="coverage/Generative_AI_Course_Bundle$faker.coverage" NAME="faker Coverage Results" MODIFIED="1765422085517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Module_1/12_database_connectivity" />
     <SUITE FILE_PATH="coverage/Generative_AI_Course_Bundle$test.coverage" NAME="test Coverage Results" MODIFIED="1765421036281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Module_1" />
   </component>
   <component name="github-copilot-workspace">
