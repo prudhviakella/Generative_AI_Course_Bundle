@@ -38,7 +38,7 @@ NUM_CUSTOMERS = 200      # change as needed
 NUM_ORDERS = 2000        # change as needed
 CUSTOMERS_CSV = "datasets/customers.csv"
 ORDERS_CSV = "datasets/orders.csv"
-
+#
 START_DATE = datetime.now() - timedelta(days=365 * 2)  # two years ago
 END_DATE = datetime.now()
 
@@ -67,6 +67,7 @@ def gen_customer_name():
 
 def gen_email(name, idx):
     # simple deterministic email from name and index
+    #Example = Prudhvi Akella -> prudhvi.akella.1@mail.com
     namepart = "".join(ch for ch in name.lower() if ch.isalnum() or ch == " ").replace(" ", ".")
     domain = random.choice(["example.com", "mail.com", "email.com", "test.com"])
     return f"{namepart}.{idx}@{domain}"
@@ -124,14 +125,12 @@ def generate_orders(customers, num_orders: int):
     num_customers = len(customers)
     # Build mapping from index to created_at for ensuring order_date >= created_at (mostly)
     cust_created_map = {c["customer_id"]: datetime.strptime(c["created_at"], "%Y-%m-%d %H:%M:%S") for c in customers}
-
     for i in range(1, num_orders + 1):
         order_id = f"ORD{i:07d}"
         # choose a random customer uniformly
         cust = random.choice(customers)
         cust_id = cust["customer_id"]
         cust_created_at = cust_created_map[cust_id]
-
         # order_date is after customer created_at (or same day) and before END_DATE
         order_start = cust_created_at
         # if start is too close to END_DATE, allow slight jitter
@@ -185,6 +184,9 @@ def main():
 
     # Ensure output folder exists (current)
     out_dir = os.getcwd()
+    # file_path_splits = __file__.split("/")
+    # file_path_splits = file_path_splits[:-1]
+    # print("/".join(file_path_splits))
     cust_path = os.path.join(out_dir, CUSTOMERS_CSV)
     orders_path = os.path.join(out_dir, ORDERS_CSV)
 
