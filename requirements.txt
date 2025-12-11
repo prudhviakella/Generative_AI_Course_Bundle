@@ -1,5 +1,25 @@
-# cd <path where requirements.txt file exist>
-#pip install -r requirements.txt
+# ------------------------------------------------------------
+# How to Install External Libraries
+# ------------------------------------------------------------
+# 1. Navigate to the folder where the requirements.txt file exists:
+#       cd <path-to-requirements-file>
+# 2. Add all required libraries with their versions to this file.
+# 3. Install all dependencies using:
+#       pip install -r requirements.txt
+
+# ------------------------------------------------------------
+# How to Activate a Virtual Environment (venv)
+# ------------------------------------------------------------
+# 1. Go to the project root directory:
+#       cd <project-root-folder>
+# 2. Enter the .venv directory:
+#       cd .venv
+# 3. Move into the 'bin' folder:
+#       cd bin
+# 4. Activate the virtual environment:
+#       macOS/Linux:  source activate
+#       Windows:      activate
+
 annotated-types==0.7.0
 anyio==4.11.0
 attrs==25.4.0
